@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SagaOfTheAylopors"
+        tools:targetApi="31">
+        
+        <!-- Splash Activity - Launcher -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main Menu Activity -->
+        <activity
+            android:name=".MainMenuActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors" />
+
+        <!-- Character Select Activity -->
+        <activity
+            android:name=".CharacterSelectActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors" />
+
+        <!-- Map Activity -->
+        <activity
+            android:name=".MapActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors" />
+
+        <!-- Dialogue Activity -->
+        <activity
+            android:name=".DialogueActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors" />
+
+        <!-- Pause Stats Activity (legacy, kept for compatibility) -->
+        <activity
+            android:name=".PauseStatsActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- Pause Activity -->
+        <activity
+            android:name=".PauseActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors" />
+
+        <!-- End Game Activity (legacy, kept for compatibility) -->
+        <activity
+            android:name=".EndGameActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors" />
+
+        <!-- Final Screen Activity -->
+        <activity
+            android:name=".FinalScreenActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors" />
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors" />
+
+        <!-- Main Activity (kept for compatibility, but not used as launcher) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SagaOfTheAylopors" />
+    </application>
+
+</manifest>

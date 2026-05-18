@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Design Color Palette -->
+    <color name="color_primary">#FF5D4037</color>
+    <color name="color_accent">#FFF39C12</color>
+    <color name="color_accent_dark">#FFD35400</color>
+    <color name="color_background_parchment">#FFE8DCC8</color>
+    <color name="color_background_parchment_light">#FFF5E6D3</color>
+    <color name="color_text_dark">#FF5D4037</color>
+    <color name="color_text_light">#FFE8DCC8</color>
+    <color name="color_green">#FF1B5E20</color>
+    <color name="color_blue">#FF283593</color>
+    <color name="color_poi_completed">#FF4CAF50</color>
+    <color name="color_poi_active">#FFFF9800</color>
+    
+    <!-- Design1 Splash Screen Colors -->
+    <color name="splash_bg_dark">#FF0a0e27</color>
+    <color name="splash_overlay_1">#FF1a1d3a</color>
+    <color name="splash_overlay_2">#FF0f1829</color>
+    <color name="splash_overlay_3">#FF2d1b4e</color>
+    <color name="splash_overlay_4">#FF1b3a4e</color>
+    <color name="splash_text_gold_light">#FFF4E4C1</color>
+    <color name="splash_text_gold">#FFD4AF37</color>
+    <color name="splash_text_gold_dark">#FFC9A961</color>
+    <color name="splash_text_cyan">#FFA8DADC</color>
+    <color name="splash_button_bg_dark">#FF5c2e2e</color>
+    <color name="splash_button_bg_darker">#FF3d1f1f</color>
+    <color name="splash_button_border">#FFD4AF37</color>
+    
+    <!-- Navigation Bar Theme Colors -->
+    <color name="app_primary_dark">#FF3d1f1f</color>
+    <color name="app_accent">@color/color_accent</color>
+</resources>

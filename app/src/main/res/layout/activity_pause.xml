@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_menu"
+    tools:context=".PauseActivity">
+
+    <!-- Background ImageView (can be blurred game scene or abstract) -->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.4"
+        android:contentDescription="@string/pause_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Overlay for readability -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B05D4037"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/pauseTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pause_title"
+        android:textColor="@color/color_accent"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Buttons Container - Centered vertically -->
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginHorizontal="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pauseTitleTextView"
+        app:layout_constraintVertical_bias="0.4">
+
+        <!-- Continue Game Button -->
+        <Button
+            android:id="@+id/continueButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginBottom="24dp"
+            android:minHeight="72dp"
+            android:text="@string/button_resume"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/button_primary"
+            android:textColor="@color/white"
+            android:padding="20dp" />
+
+        <!-- Save Game Button -->
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginBottom="24dp"
+            android:minHeight="72dp"
+            android:text="@string/button_save_game"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/button_secondary"
+            android:textColor="@color/color_text_light"
+            android:padding="20dp" />
+
+        <!-- Settings Button -->
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginBottom="24dp"
+            android:minHeight="72dp"
+            android:text="@string/button_pause_settings"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/button_secondary"
+            android:textColor="@color/color_text_light"
+            android:padding="20dp" />
+
+        <!-- Exit Button -->
+        <Button
+            android:id="@+id/exitButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:minHeight="72dp"
+            android:text="@string/button_main_menu"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/button_secondary"
+            android:textColor="@color/color_text_light"
+            android:padding="20dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

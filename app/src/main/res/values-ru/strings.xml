@@ -1,0 +1,148 @@
+<resources>
+    <string name="app_name">Сага Айлопороса</string>
+    
+    <!-- Splash Screen -->
+    <string name="splash_title_main">САГА АЙЛОПОРОСА</string>
+    <string name="splash_title_sub">Путь начинается там, где кончается карта</string>
+    <string name="splash_button_start">НАЧАТЬ САГУ</string>
+    <string name="splash_button_settings">Настройки</string>
+    <string name="splash_button_about">О игре</string>
+    
+    <!-- Main Menu -->
+    <string name="main_menu_title">Главное меню</string>
+    <string name="button_new_game">Новая игра</string>
+    <string name="button_continue">Продолжить</string>
+    <string name="button_settings">Настройки</string>
+    <string name="button_exit">Выход</string>
+    
+    <!-- Character Selection -->
+    <string name="character_select_title">Выбери своего героя</string>
+    <string name="character_select_subtitle">С кем ты отправишься в путь?</string>
+    <string name="character_cat_name">Кот в сапогах</string>
+    <string name="character_cat_desc">Хитрый и ловкий авантюрист</string>
+    <string name="character_king_name">Король</string>
+    <string name="character_king_desc">Мудрый правитель</string>
+    <string name="character_princess_name">Принцесса</string>
+    <string name="character_princess_desc">Прекрасная и умная</string>
+    <string name="character_ogre_name">Людоед</string>
+    <string name="character_ogre_desc">Могучий и опасный</string>
+    <string name="button_select">Выбрать</string>
+    <string name="button_continue_with">Отправиться с ним</string>
+    <string name="character_unavailable">Появится позже</string>
+    <string name="button_select_companion">Выбрать спутника</string>
+    
+    <!-- Map Screen -->
+    <string name="map_title">Карта Саги</string>
+    <string name="map_subtitle">Путь семи приключений</string>
+    <string name="chapter_1_title">Дорога зовёт</string>
+    <string name="chapter_2_title">План хитреца</string>
+    <string name="chapter_3_title">Встреча с королём</string>
+    <string name="chapter_4_title">Замок людоеда</string>
+    <string name="chapter_5_title">Превращения</string>
+    <string name="chapter_6_title">Триумф</string>
+    <string name="chapter_7_title">Эпилог</string>
+    <string name="button_start_chapter">Начать главу %1$d</string>
+    <string name="button_continue_chapter">Продолжить главу %1$d</string>
+    <string name="chapter_completed">Завершено</string>
+    <string name="chapter_current">Текущая</string>
+    <string name="chapter_locked">Закрыто</string>
+    
+    <!-- Dialogue Screen -->
+    <string name="dialogue_chapter_title">Глава %1$d: %2$s</string>
+    <string name="speaker_narrator">Рассказчик</string>
+    <string name="speaker_young_son">Младший сын</string>
+    <string name="speaker_puss">Кот в сапогах</string>
+    <string name="speaker_cat">Кот в сапогах</string>
+    <string name="speaker_mentor">Альвард</string>
+    <string name="speaker_tricky_helper">Локиан</string>
+    <string name="speaker_weak_but_knowing">Мирелин</string>
+    <string name="speaker_strong_but_dependent">Лаврик</string>
+    <string name="speaker_king">Король</string>
+
+    <string name="test_dialog_line_1">Старый мельник умер, оставив троим сыновьям скромное наследство: мельницу, осла и кота.</string>
+    <string name="test_dialog_line_2">Братья взяли мельницу и осла, а мне достался лишь этот кот. Что толку от такого наследства?</string>
+    <string name="test_dialog_line_3">Не печалься, хозяин! Дай мне мешок и пару сапог, и я сделаю тебя богачом. Ты увидишь, что получил лучшую долю!</string>
+    <string name="test_dialog_line_4">Младший сын удивился, услышав, как кот говорит, но решил довериться ему. Так началась удивительная авантюра…</string>
+    <string name="button_next">Далее</string>
+    <string name="button_end_chapter">Конец главы</string>
+    <string name="button_pause">Пауза</string>
+    
+    <!-- Pause Menu -->
+    <string name="pause_title">Путь приостановлен</string>
+    <string name="button_resume">Продолжить путь</string>
+    <string name="button_save_game">Сохранить игру</string>
+    <string name="button_pause_settings">Настройки</string>
+    <string name="button_main_menu">В главное меню</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Настройки пути</string>
+    <string name="settings_music_volume">Громкость музыки</string>
+    <string name="settings_sound_volume">Громкость звуков</string>
+    <string name="settings_language">Язык</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_english">English</string>
+    <string name="settings_version">Версия: 1.0</string>
+    <string name="settings_release_date">Дата выпуска: 2026</string>
+    <string name="settings_contact">Связь с разработчиком</string>
+    <string name="settings_email">dima.gurliv@gmail.com</string>
+    <string name="button_back_to_game">Вернуться в игру</string>
+    
+    <!-- Final Screen -->
+    <string name="final_screen_thank_you">Спасибо за прохождение игры!</string>
+    <string name="final_screen_total_playtime">Время игры: %1$s</string>
+    <string name="final_screen_author">Автор: Дмитрий Гурлив, ПИм-404</string>
+    <string name="final_screen_email">Email: dima.gurliv@gmail.com</string>
+    <string name="button_back_to_main_menu">В главное меню</string>
+    
+    <!-- Common -->
+    <string name="percent_format">%1$d%%</string>
+    <string name="page_indicator">%1$d / %2$d</string>
+    
+    <!-- Navigation -->
+    <string name="nav_back">Назад</string>
+    <string name="nav_home">Главная</string>
+    <string name="nav_recent">Недавние</string>
+    
+    <!-- Chapter 1: Наследство Мельника -->
+    <!-- Scene 1: В мельнице -->
+    <string name="chapter_1_scene_1_dialogue_1">Солнечные лучи пробиваются сквозь пыльные щели старой мельницы, играя на мешках с мукой и скрипучих полках. В воздухе пахнет теплом, свежестью утра и тонкой тревогой — будто мир готовит тебя к чему-то большому. Ты — Кот в Сапогах. Сегодняшний день обещает перемены, которые нельзя игнорировать.\n\nНа столе хозяина лежит письмо, печать которого блестит золотым воском. Ветер тихо шевелит край пергамента, словно подталкивая к действию.</string>
+    
+    <string name="chapter_1_scene_1_dialogue_2">Письмо… Интересно, что там внутри? Похоже, это не обычная бумага. Чувствую запах дороги и… приключений. Может, пришло время действовать?</string>
+    
+    <string name="chapter_1_scene_1_dialogue_3">Ты осторожно подбираешь сапоги. Кожа тихо шуршит, мех на лапах слегка вздыбливается. Мир за пределами мельницы кажется манящим, таинственным.\n\nТы понимаешь — пора решать. Как поступить?</string>
+    
+    <!-- Choice 1: Реакция на призыв к приключению -->
+    <string name="chapter_1_scene_1_dialogue_3_choice_1">Я возьму дело в свои лапы и пойду первым!</string>
+    <string name="chapter_1_scene_1_dialogue_3_choice_2">Надо сначала узнать больше, присмотреться к дороге и плану.</string>
+    <string name="chapter_1_scene_1_dialogue_3_choice_3">Хм… а что если подшутить над ситуацией и посмотреть, что будет?</string>
+    
+    <string name="chapter_1_scene_1_dialogue_4">Ты решаешь, какой путь выбрать. Каждое решение формирует твою хитрость, смелость и креативность.</string>
+    
+    <string name="chapter_1_scene_1_dialogue_5">Теперь нужно решить, что делать с письмом. Оно пахнет дальними землями и замком, где таится наследство. Каждый вариант открывает новый путь.</string>
+    
+    <!-- Choice 2: Работа с письмом -->
+    <string name="chapter_1_scene_1_dialogue_5_choice_1">Спрячу письмо и держу при себе. Никто не должен узнать, пока не будет безопасно.</string>
+    <string name="chapter_1_scene_1_dialogue_5_choice_2">Покажу хозяину. Вместе лучше планировать путь, чем рисковать одному.</string>
+    <string name="chapter_1_scene_1_dialogue_5_choice_3">Использую письмо как приманку — интересно, кто проявит интерес и как реагирует.</string>
+    
+    <string name="chapter_1_scene_1_dialogue_6">В зависимости от выбора, мир реагирует по-разному. Спрятанное письмо — скрытность и осторожность; совместное обсуждение — доверие и сотрудничество; игра с письмом — хитрость и наблюдательность.</string>
+    
+    <string name="chapter_1_scene_1_dialogue_7">Ты берёшь сумку. Сапоги плотно затянуты, мех на лапах слегка ворсится от волнения. Как подготовиться к дороге?</string>
+    
+    <!-- Choice 3: Сбор припасов -->
+    <string name="chapter_1_scene_1_dialogue_7_choice_1">Только самое необходимое — ловкость важнее, чем груз.</string>
+    <string name="chapter_1_scene_1_dialogue_7_choice_2">Лучше взять лишние припасы — никогда не знаешь, что ждёт впереди.</string>
+    <string name="chapter_1_scene_1_dialogue_7_choice_3">Возьму несколько странных вещей, которые кажутся бессмысленными — вдруг пригодятся.</string>
+    
+    <string name="chapter_1_scene_1_dialogue_8">Ты упаковываешь свои вещи, чувствуя азарт и тяжесть. Мир зовёт тебя за пределы мельницы. С каждым шагом к двери, каждый вдох становится частью твоей будущей истории.</string>
+    
+    <string name="chapter_1_scene_1_dialogue_9">Ты выглядываешь в окно. Ветер шевелит траву, дорога в лесу петляет среди холмов. Дальше ждут мосты, реки, леса и испытания. Первый шаг почти сделан.</string>
+    
+    <!-- Choice 4: Выход на дорогу -->
+    <string name="chapter_1_scene_1_dialogue_9_choice_1">Выйду сразу на дорогу — вперед, без оглядки!</string>
+    <string name="chapter_1_scene_1_dialogue_9_choice_2">Сначала огляжусь, изучу маршрут и возможные препятствия.</string>
+    <string name="chapter_1_scene_1_dialogue_9_choice_3">Сделаю маленькую хитрость — оставлю пометки и проверю, кто рядом.</string>
+    
+    <string name="chapter_1_scene_1_dialogue_10">Ты делаешь свой выбор. Мельница остаётся позади, дорога зовёт. Каждый твой шаг, каждая хитрость и решение начинают формировать тебя — Кота в Сапогах — будущего героя.</string>
+</resources>
+

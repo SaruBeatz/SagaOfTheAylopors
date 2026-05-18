@@ -1,0 +1,148 @@
+<resources>
+    <string name="app_name">Saga Ailoporosa</string>
+    
+    <!-- Splash Screen -->
+    <string name="splash_title_main">SAGA AILOPOROSA</string>
+    <string name="splash_title_sub">The path begins where the map ends</string>
+    <string name="splash_button_start">START SAGA</string>
+    <string name="splash_button_settings">Settings</string>
+    <string name="splash_button_about">About</string>
+    
+    <!-- Main Menu -->
+    <string name="main_menu_title">Main Menu</string>
+    <string name="button_new_game">New Game</string>
+    <string name="button_continue">Continue</string>
+    <string name="button_settings">Settings</string>
+    <string name="button_exit">Exit</string>
+    
+    <!-- Character Selection -->
+    <string name="character_select_title">Choose Your Hero</string>
+    <string name="character_select_subtitle">Who will you travel with?</string>
+    <string name="character_cat_name">Puss in Boots</string>
+    <string name="character_cat_desc">Cunning and agile adventurer</string>
+    <string name="character_king_name">King</string>
+    <string name="character_king_desc">Wise ruler</string>
+    <string name="character_princess_name">Princess</string>
+    <string name="character_princess_desc">Beautiful and smart</string>
+    <string name="character_ogre_name">Ogre</string>
+    <string name="character_ogre_desc">Mighty and dangerous</string>
+    <string name="button_select">Select</string>
+    <string name="button_continue_with">Continue with Him</string>
+    <string name="character_unavailable">Unavailable in current version</string>
+    <string name="button_select_companion">Select as Companion</string>
+    
+    <!-- Map Screen -->
+    <string name="map_title">Saga Map</string>
+    <string name="map_subtitle">Path of Seven Adventures</string>
+    <string name="chapter_1_title">Miller\'s Inheritance</string>
+    <string name="chapter_2_title">The Trickster\'s Plan</string>
+    <string name="chapter_3_title">Meeting the King</string>
+    <string name="chapter_4_title">Ogre\'s Castle</string>
+    <string name="chapter_5_title">Transformations</string>
+    <string name="chapter_6_title">Triumph</string>
+    <string name="chapter_7_title">Epilogue</string>
+    <string name="button_start_chapter">Start Chapter %1$d</string>
+    <string name="button_continue_chapter">Continue Chapter %1$d</string>
+    <string name="chapter_completed">Completed</string>
+    <string name="chapter_current">Current</string>
+    <string name="chapter_locked">Locked</string>
+    
+    <!-- Dialogue Screen -->
+    <string name="dialogue_chapter_title">Chapter %1$d: %2$s</string>
+    <string name="speaker_narrator">Narrator</string>
+    <string name="speaker_young_son">Younger Son</string>
+    <string name="speaker_puss">Puss in Boots</string>
+    <string name="speaker_cat">Puss in Boots</string>
+    <string name="speaker_mentor">Alvard</string>
+    <string name="speaker_tricky_helper">Lokian</string>
+    <string name="speaker_weak_but_knowing"> Mirelin </string>
+    <string name="speaker_strong_but_dependent"> Lavrik </string>
+    <string name="speaker_king">King</string>
+
+    <string name="test_dialog_line_1">An old miller died, leaving his three sons a modest inheritance: a mill, a donkey, and a cat.</string>
+    <string name="test_dialog_line_2">My brothers took the mill and the donkey, and I only got this cat. What use is such an inheritance?</string>
+    <string name="test_dialog_line_3">Don\'t be sad, master! Give me a bag and a pair of boots, and I\'ll make you rich. You\'ll see that you got the best share!</string>
+    <string name="test_dialog_line_4">The younger son was surprised to hear the cat speak, but decided to trust him. And so began an amazing adventure...</string>
+    <string name="button_next">Next</string>
+    <string name="button_end_chapter">End of Chapter</string>
+    <string name="button_pause">Pause</string>
+    
+    <!-- Pause Menu -->
+    <string name="pause_title">Journey Paused</string>
+    <string name="button_resume">Resume Journey</string>
+    <string name="button_save_game">Save Game</string>
+    <string name="button_pause_settings">Settings</string>
+    <string name="button_main_menu">Main Menu</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Path Settings</string>
+    <string name="settings_music_volume">Music Volume</string>
+    <string name="settings_sound_volume">Sound Volume</string>
+    <string name="settings_language">Language</string>
+    <string name="language_russian">Russian</string>
+    <string name="language_english">English</string>
+    <string name="settings_version">Version: 1.0</string>
+    <string name="settings_release_date">Release Date: 2026</string>
+    <string name="settings_contact">Contact Developer</string>
+    <string name="settings_email">dima.gurliv@gmail.com</string>
+    <string name="button_back_to_game">Back to Game</string>
+    
+    <!-- Final Screen -->
+    <string name="final_screen_thank_you">Thank you for completing the game!</string>
+    <string name="final_screen_total_playtime">Total playtime: %1$s</string>
+    <string name="final_screen_author">Author: Дмитрий Гурлив, PIM-404</string>
+    <string name="final_screen_email">Email: dima.gurliv@gmail.com</string>
+    <string name="button_back_to_main_menu">Back to Main Menu</string>
+    
+    <!-- Common -->
+    <string name="percent_format">%1$d%%</string>
+    <string name="page_indicator">%1$d / %2$d</string>
+    
+    <!-- Navigation -->
+    <string name="nav_back">Back</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_recent">Recent Apps</string>
+    
+    <!-- Chapter 1: The Miller\'s Inheritance -->
+    <!-- Scene 1: In the Mill -->
+    <string name="chapter_1_scene_1_dialogue_1">Sunlight filters through the dusty slats of the old mill, playing across sacks of flour and creaking shelves. The air smells of warmth, morning freshness, and a subtle unease - as if the world is preparing you for something significant. You are the Puss in Boots. Today promises changes that cannot be ignored.\n\nOn the miller\'s table lies a letter, its seal gleaming with golden wax. The wind gently stirs the edge of the parchment, almost nudging you to act.</string>
+
+    <string name="chapter_1_scene_1_dialogue_2">A letter... I wonder what\'s inside? It doesn\'t seem like ordinary paper. I can smell the road and... adventure. Maybe it\'s time to act?</string>
+
+    <string name="chapter_1_scene_1_dialogue_3">You carefully pick up your boots. The leather rustles softly, the fur on your paws lifts slightly. The world beyond the mill looks inviting, mysterious.\n\nYou realize - it\'s time to decide. What will you do?</string>
+
+    <!-- Choice 1: Reaction to the Call of Adventure -->
+    <string name="chapter_1_scene_1_dialogue_3_choice_1">I\'ll take matters into my own paws and go first!</string>
+    <string name="chapter_1_scene_1_dialogue_3_choice_2">I need to learn more first, observe the road and the plan.</string>
+    <string name="chapter_1_scene_1_dialogue_3_choice_3">Hmm... what if I play a little trick and see what happens?</string>
+
+    <string name="chapter_1_scene_1_dialogue_4">You decide which path to take. Each choice shapes your cunning, bravery, and creativity.</string>
+
+    <string name="chapter_1_scene_1_dialogue_5">Now you must decide what to do with the letter. It smells of distant lands and a castle where an inheritance awaits. Each option opens a new path.</string>
+
+    <!-- Choice 2: Working with the Letter -->
+    <string name="chapter_1_scene_1_dialogue_5_choice_1">I\'ll hide the letter and keep it to myself. No one should know until it\'s safe.</string>
+    <string name="chapter_1_scene_1_dialogue_5_choice_2">I\'ll show it to the miller. Planning together is better than risking it alone.</string>
+    <string name="chapter_1_scene_1_dialogue_5_choice_3">I\'ll use the letter as bait - curious to see who shows interest and how they react.</string>
+
+    <string name="chapter_1_scene_1_dialogue_6">Depending on your choice, the world reacts differently. A hidden letter - stealth and caution; a shared discussion - trust and cooperation; playing with the letter - cunning and observation.</string>
+
+    <string name="chapter_1_scene_1_dialogue_7">You grab your bag. Boots tightly fastened, fur on your paws bristling with excitement. How will you prepare for the journey?</string>
+
+    <!-- Choice 3: Gathering Supplies -->
+    <string name="chapter_1_scene_1_dialogue_7_choice_1">Only the essentials - agility matters more than load.</string>
+    <string name="chapter_1_scene_1_dialogue_7_choice_2">Better take extra supplies - you never know what lies ahead.</string>
+    <string name="chapter_1_scene_1_dialogue_7_choice_3">I\'ll grab a few odd things that seem useless - just in case they\'re needed.</string>
+
+    <string name="chapter_1_scene_1_dialogue_8">You pack your things, feeling the thrill and weight. The world beckons beyond the mill. With each step toward the door, each breath becomes part of your future story.</string>
+
+    <string name="chapter_1_scene_1_dialogue_9">You peek out the window. The wind stirs the grass, the road winding through the forested hills. Bridges, rivers, forests, and trials await. The first step is nearly taken.</string>
+
+    <!-- Choice 4: Stepping onto the Road -->
+    <string name="chapter_1_scene_1_dialogue_9_choice_1">I\'ll step onto the road immediately - forward, without looking back!</string>
+    <string name="chapter_1_scene_1_dialogue_9_choice_2">First, I\'ll look around, study the route and possible obstacles.</string>
+    <string name="chapter_1_scene_1_dialogue_9_choice_3">I\'ll play a small trick - leave markings and check who\'s nearby.</string>
+
+    <string name="chapter_1_scene_1_dialogue_10">You make your choice. The mill fades behind you, the road calls. Each step, each bit of cunning and decision begins to shape you - the Puss in Boots - the hero-to-be.</string>
+
+</resources>

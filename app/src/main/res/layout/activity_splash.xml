@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/splash_bg_dark"
+    tools:context=".SplashActivity">
+
+    <!-- Background ImageView - Will be animated to pan upward -->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="matrix"
+        android:adjustViewBounds="true"
+        android:src="@drawable/splash_background"
+        android:contentDescription="@string/app_name"
+        android:layout_gravity="top|start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Dark Overlay - Will fade out to brighten the scene -->
+    <View
+        android:id="@+id/darkOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#B3000000"
+        android:alpha="0.7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Warm Color Overlay - Will fade in to add warmth -->
+    <View
+        android:id="@+id/warmOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_splash_warm_overlay"
+        android:alpha="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title Container -->
+    <LinearLayout
+        android:id="@+id/titleContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9">
+
+        <!-- Main Title -->
+        <TextView
+            android:id="@+id/titleMainTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/splash_title_main"
+            android:textColor="@color/splash_text_gold_light"
+            android:textSize="48sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="32sp"
+            android:autoSizeMaxTextSize="48sp"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:letterSpacing="0.05"
+            android:gravity="center"
+            android:maxLines="2"
+            android:lineSpacingExtra="4sp"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            tools:text="САГА АЙЛОПОРОСА" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/titleSubTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/splash_title_sub"
+            android:textColor="@color/splash_text_cyan"
+            android:textSize="18sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="14sp"
+            android:autoSizeMaxTextSize="18sp"
+            android:textStyle="italic"
+            android:fontFamily="sans-serif"
+            android:alpha="0.95"
+            android:maxLines="2"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:shadowColor="#80000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            tools:text="Путь начинается там, где кончается карта" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

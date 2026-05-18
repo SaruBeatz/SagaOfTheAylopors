@@ -1,0 +1,276 @@
+{
+  "chapter_id": 2,
+  "title": "Тени сомнения",
+  "scenes": [
+    {
+      "id": "ch2_s1",
+      "order": 1,
+      "background": "bg_ch2_forest_path",
+      "dialogues": [
+        {
+          "id": "ch2_s1_d1",
+          "order": 1,
+          "speaker": "Narrator",
+          "text": "Дорога, по которой ты идёшь, больше не похожа на ту, что начиналась у мельницы. Земля здесь темнее, плотнее, будто впитала в себя множество шагов и мыслей. Колеи от телег исчезли, и теперь путь обозначают лишь примятые травы да редкие камни, утопленные в почву.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d2"
+        },
+        {
+          "id": "ch2_s1_d2",
+          "order": 2,
+          "speaker": "Cat",
+          "text": "«Странно… дорога вроде бы та же, но идти по ней уже не так легко. Будто она проверяет, зачем я здесь».",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d3"
+        },
+        {
+          "id": "ch2_s1_d3",
+          "order": 3,
+          "speaker": "Narrator",
+          "text": "Ты продолжаешь путь, и вскоре начинаешь замечать детали.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch2_s1_d3_c1",
+              "text": "Идти уверенно, не замедляясь",
+              "background": "bg_ch2_forest_path",
+              "effects": {
+                "courage": 10,
+                "prudence": -5
+              },
+              "next_scene": "ch2_s2"
+            },
+            {
+              "id": "ch2_s1_d3_c2",
+              "text": "Идти медленно, присматриваясь",
+              "background": "bg_ch2_forest_path",
+              "effects": {
+                "caution": 10,
+                "observation": 5
+              },
+              "next_scene": "ch2_s2"
+            },
+            {
+              "id": "ch2_s1_d3_c3",
+              "text": "Сойти с дороги на несколько шагов",
+              "background": "bg_ch2_forest_path",
+              "effects": {
+                "curiosity": 10,
+                "risk": 5
+              },
+              "next_scene": "ch2_s2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2_s2",
+      "order": 2,
+      "background": "bg_ch2_forest_path",
+      "dialogues": [
+        {
+          "id": "ch2_s2_d1",
+          "order": 1,
+          "speaker": "Narrator",
+          "text": "Перед тобой — небольшая поляна, вытянутая и неровная. Дорога здесь не исчезает, но теряет чёткие очертания. Справа — старый указатель без надписей, слева — камни, покрытые мхом, а впереди слышен звук воды.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch2_s2_d1_c1",
+              "text": "Подойти к указателю",
+              "background": "bg_ch2_forest_path",
+              "effects": {
+                "curiosity": 5
+              },
+              "next_scene": "ch2_s3"
+            },
+            {
+              "id": "ch2_s2_d1_c2",
+              "text": "Осмотреть камни",
+              "background": "bg_ch2_forest_path",
+              "effects": {
+                "observation": 10
+              },
+              "next_scene": "ch2_s3"
+            },
+            {
+              "id": "ch2_s2_d1_c3",
+              "text": "Прислушаться к звуку воды",
+              "background": "bg_ch2_forest_path",
+              "effects": {
+                "intuition": 10
+              },
+              "next_scene": "ch2_s3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2_s3",
+      "order": 3,
+      "background": "bg_ch2_forest_path",
+      "dialogues": [
+        {
+          "id": "ch2_s3_d1",
+          "order": 1,
+          "speaker": "Narrator",
+          "text": "Поляна остаётся позади. Дорога тянется вперёд, но через несколько десятков шагов снова распадается. Перед тобой три направления.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch2_s3_d1_c1",
+              "text": "Повернуть к воде",
+              "background": "bg_ch2_forest_path",
+              "effects": {
+                "caution": 5,
+                "observation": 5
+              },
+              "next_scene": "ch2_s4"
+            },
+            {
+              "id": "ch2_s3_d1_c2",
+              "text": "Идти прямым лесным коридором",
+              "background": "bg_ch2_forest_path",
+              "effects": {
+                "courage": 5,
+                "focus": 5
+              },
+              "next_scene": "ch2_s4"
+            },
+            {
+              "id": "ch2_s3_d1_c3",
+              "text": "Подняться вверх по камням",
+              "background": "bg_ch2_forest_path",
+              "effects": {
+                "agility": 10,
+                "observation": 5
+              },
+              "next_scene": "ch2_s4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2_s4",
+      "order": 4,
+      "background": "bg_ch2_forest_path",
+      "dialogues": [
+        {
+          "id": "ch2_s4_d1",
+          "order": 1,
+          "speaker": "Narrator",
+          "text": "Земля выравнивается. Перед тобой участок дороги, где лес расступается, а воздух становится суше. Ты чувствуешь: дальше будет что-то, что нельзя просто обойти.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s5_d1"
+        }
+      ]
+    },
+    {
+      "id": "ch2_s5",
+      "order": 5,
+      "background": "bg_ch2_forest_path",
+      "dialogues": [
+        {
+          "id": "ch2_s5_d1",
+          "order": 1,
+          "speaker": "Narrator",
+          "text": "Ты делаешь ещё несколько шагов — и дорога обрывается. Перед тобой лежит огромное поваленное дерево. Его корни вырваны из земли, ствол перегородил путь полностью, а ветви переплелись так, что пролезть под ними невозможно.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch2_s5_d1_c1",
+              "text": "Перепрыгнуть",
+              "background": "bg_ch2_forest_path",
+              "effects": { "agility": 10, "risk": 5 },
+              "next_scene": "ch2_s6"
+            },
+            {
+              "id": "ch2_s5_d1_c2",
+              "text": "Обойти",
+              "background": "bg_ch2_forest_path",
+              "effects": { "caution": 5, "observation": 5 },
+              "next_scene": "ch2_s6"
+            },
+            {
+              "id": "ch2_s5_d1_c3",
+              "text": "Разобрать и использовать",
+              "background": "bg_ch2_forest_path",
+              "effects": { "creativity": 10, "prudence": 5 },
+              "next_scene": "ch2_s6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2_s6",
+      "order": 6,
+      "background": "bg_ch2_forest_path",
+      "dialogues": [
+        {
+          "id": "ch2_s6_d1",
+          "order": 1,
+          "speaker": "Narrator",
+          "text": "Оказавшись по ту сторону дерева, ты останавливаешься. Дорога снова перед тобой — прямая, ясная, будто ничего и не произошло.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s7_d1"
+        }
+      ]
+    },
+    {
+      "id": "ch2_s7",
+      "order": 7,
+      "background": "bg_ch2_forest_path",
+      "dialogues": [
+        {
+          "id": "ch2_s7_d1",
+          "order": 1,
+          "speaker": "Narrator",
+          "text": "Перед тобой — большая поляна, почти круглая. В центре поляны — камни, некоторые покрыты символами, другие — гладкие. Между ними проходит узкая тропка к центру.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch2_s7_d1_c1",
+              "text": "Подойти к камням по тропке",
+              "background": "bg_ch2_forest_path",
+              "effects": { "curiosity": 5 },
+              "next_scene": "ch2_s8"
+            },
+            {
+              "id": "ch2_s7_d1_c2",
+              "text": "Обойти камни по кругу",
+              "background": "bg_ch2_forest_path",
+              "effects": { "observation": 5 },
+              "next_scene": "ch2_s8"
+            },
+            {
+              "id": "ch2_s7_d1_c3",
+              "text": "Остановиться и смотреть издалека",
+              "background": "bg_ch2_forest_path",
+              "effects": { "intuition": 5 },
+              "next_scene": "ch2_s8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2_s8",
+      "order": 8,
+      "background": "bg_ch2_forest_path",
+      "dialogues": [
+        {
+          "id": "ch2_s8_d1",
+          "order": 1,
+          "speaker": "Narrator",
+          "text": "Когда ты уже собираешься идти дальше, взгляд цепляется за горизонт. За поляной едва различим силуэт башен. Поляна остаётся позади. Тени сомнения не исчезли полностью, но теперь они отступили.",
+          "has_choices": false,
+          "next_dialogue": null
+        }
+      ]
+    }
+  ]
+}

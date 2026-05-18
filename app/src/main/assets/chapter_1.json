@@ -1,0 +1,97 @@
+{
+  "chapter_id": 1,
+  "title": "Дорога зовёт",
+  "scenes": [
+    {
+      "id": "ch1_s1",
+      "order": 1,
+      "background": "bg_ch1_mill_morning",
+      "dialogues": [
+        {
+          "id": "ch1_s1_d1",
+          "order": 1,
+          "speaker": "Narrator",
+          "text": "Солнечные лучи пробиваются сквозь пыльные щели старой мельницы, играя на мешках с мукой и скрипучих полках. В воздухе пахнет теплом, свежестью утра и тонкой тревогой — будто мир готовит тебя к чему-то большому. Ты — Кот в Сапогах. Сегодняшний день обещает перемены, которые нельзя игнорировать.",
+          "has_choices": false,
+          "next_dialogue": "ch1_s1_d2"
+        },
+        {
+          "id": "ch1_s1_d2",
+          "order": 2,
+          "speaker": "Narrator",
+          "text": "На столе хозяина лежит письмо, печать которого блестит золотым воском. Ветер тихо шевелит край пергамента, словно подталкивая к действию.",
+          "background": "bg_ch1_mill_letter_focus",
+          "has_choices": false,
+          "next_dialogue": "ch1_s1_d3"
+        },
+        {
+          "id": "ch1_s1_d3",
+          "order": 3,
+          "speaker": "Cat",
+          "text": "Письмо… Интересно, что там внутри? Похоже, это не обычная бумага. Чувствую запах дороги и… приключений. Может, пришло время действовать?",
+          "has_choices": false,
+          "next_dialogue": "ch1_s1_d4"
+        },
+        {
+          "id": "ch1_s1_d4",
+          "order": 4,
+          "speaker": "Narrator",
+          "text": "Ты осторожно подбираешь сапоги. Кожа тихо шуршит, мех на лапах слегка вздыбливается. Мир за пределами мельницы кажется манящим, таинственным.",
+          "has_choices": false,
+          "next_dialogue": "ch1_s1_d5"
+        },
+        {
+          "id": "ch1_s1_d5",
+          "order": 5,
+          "speaker": "Narrator",
+          "text": "Ты понимаешь — пора решать. Как поступить?",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch1_s1_d5_c1",
+              "text": "Я возьму дело в свои лапы и пойду первым!",
+              "background": "bg_ch1_mill_door_open",
+              "effects": {
+                "empathy": 0,
+                "self_confidence": 15,
+                "prudence": -5,
+                "ambition": 20,
+                "creativity": 5,
+                "impulsiveness": 20
+              },
+              "next_scene": "ch1_s2"
+            },
+            {
+              "id": "ch1_s1_d5_c2",
+              "text": "Надо сначала узнать больше, присмотреться к дороге и плану.",
+              "background": "bg_ch1_mill_thinking",
+              "effects": {
+                "empathy": 5,
+                "self_confidence": 0,
+                "prudence": 20,
+                "ambition": 5,
+                "creativity": 10,
+                "impulsiveness": -10
+              },
+              "next_scene": "ch1_s2"
+            },
+            {
+              "id": "ch1_s1_d5_c3",
+              "text": "Хм… а что если подшутить над ситуацией и посмотреть, что будет?",
+              "background": "bg_ch1_mill_mischief",
+              "effects": {
+                "empathy": -5,
+                "self_confidence": 10,
+                "prudence": -5,
+                "ambition": 5,
+                "creativity": 25,
+                "impulsiveness": 15
+              },
+              "next_scene": "ch1_s2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
