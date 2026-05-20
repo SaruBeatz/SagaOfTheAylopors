@@ -25,7 +25,7 @@ import com.example.sagaoftheaylopors.data.entities.Scene;
         Choice.class,
         PlayerProgress.class
     },
-    version = 2,
+    version = 5,
     exportSchema = false
 )
 public abstract class AppDatabase extends RoomDatabase {

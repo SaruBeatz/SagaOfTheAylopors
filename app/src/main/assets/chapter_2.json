@@ -5,271 +5,1040 @@
     {
       "id": "ch2_s1",
       "order": 1,
-      "background": "bg_ch2_forest_path",
+      "background": "bg_ch2_forest_edge",
       "dialogues": [
+
         {
-          "id": "ch2_s1_d1",
+          "id": "ch2_s1_d01",
           "order": 1,
           "speaker": "Narrator",
-          "text": "Дорога, по которой ты идёшь, больше не похожа на ту, что начиналась у мельницы. Земля здесь темнее, плотнее, будто впитала в себя множество шагов и мыслей. Колеи от телег исчезли, и теперь путь обозначают лишь примятые травы да редкие камни, утопленные в почву.",
+          "text": "Чем дальше ты уходишь от мельницы, тем сильнее мир вокруг начинает меняться.",
           "has_choices": false,
-          "next_dialogue": "ch2_s1_d2"
+          "next_dialogue": "ch2_s1_d02"
         },
         {
-          "id": "ch2_s1_d2",
+          "id": "ch2_s1_d02",
           "order": 2,
-          "speaker": "Cat",
-          "text": "«Странно… дорога вроде бы та же, но идти по ней уже не так легко. Будто она проверяет, зачем я здесь».",
+          "speaker": "Narrator",
+          "text": "Сначала исчезает запах лугов.",
           "has_choices": false,
-          "next_dialogue": "ch2_s1_d3"
+          "next_dialogue": "ch2_s1_d03"
         },
         {
-          "id": "ch2_s1_d3",
+          "id": "ch2_s1_d03",
           "order": 3,
           "speaker": "Narrator",
-          "text": "Ты продолжаешь путь, и вскоре начинаешь замечать детали.",
-          "has_choices": true,
-          "choices": [
-            {
-              "id": "ch2_s1_d3_c1",
-              "text": "Идти уверенно, не замедляясь",
-              "background": "bg_ch2_forest_path",
-              "effects": {
-                "courage": 10,
-                "prudence": -5
-              },
-              "next_scene": "ch2_s2"
-            },
-            {
-              "id": "ch2_s1_d3_c2",
-              "text": "Идти медленно, присматриваясь",
-              "background": "bg_ch2_forest_path",
-              "effects": {
-                "caution": 10,
-                "observation": 5
-              },
-              "next_scene": "ch2_s2"
-            },
-            {
-              "id": "ch2_s1_d3_c3",
-              "text": "Сойти с дороги на несколько шагов",
-              "background": "bg_ch2_forest_path",
-              "effects": {
-                "curiosity": 10,
-                "risk": 5
-              },
-              "next_scene": "ch2_s2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ch2_s2",
-      "order": 2,
-      "background": "bg_ch2_forest_path",
-      "dialogues": [
-        {
-          "id": "ch2_s2_d1",
-          "order": 1,
-          "speaker": "Narrator",
-          "text": "Перед тобой — небольшая поляна, вытянутая и неровная. Дорога здесь не исчезает, но теряет чёткие очертания. Справа — старый указатель без надписей, слева — камни, покрытые мхом, а впереди слышен звук воды.",
-          "has_choices": true,
-          "choices": [
-            {
-              "id": "ch2_s2_d1_c1",
-              "text": "Подойти к указателю",
-              "background": "bg_ch2_forest_path",
-              "effects": {
-                "curiosity": 5
-              },
-              "next_scene": "ch2_s3"
-            },
-            {
-              "id": "ch2_s2_d1_c2",
-              "text": "Осмотреть камни",
-              "background": "bg_ch2_forest_path",
-              "effects": {
-                "observation": 10
-              },
-              "next_scene": "ch2_s3"
-            },
-            {
-              "id": "ch2_s2_d1_c3",
-              "text": "Прислушаться к звуку воды",
-              "background": "bg_ch2_forest_path",
-              "effects": {
-                "intuition": 10
-              },
-              "next_scene": "ch2_s3"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ch2_s3",
-      "order": 3,
-      "background": "bg_ch2_forest_path",
-      "dialogues": [
-        {
-          "id": "ch2_s3_d1",
-          "order": 1,
-          "speaker": "Narrator",
-          "text": "Поляна остаётся позади. Дорога тянется вперёд, но через несколько десятков шагов снова распадается. Перед тобой три направления.",
-          "has_choices": true,
-          "choices": [
-            {
-              "id": "ch2_s3_d1_c1",
-              "text": "Повернуть к воде",
-              "background": "bg_ch2_forest_path",
-              "effects": {
-                "caution": 5,
-                "observation": 5
-              },
-              "next_scene": "ch2_s4"
-            },
-            {
-              "id": "ch2_s3_d1_c2",
-              "text": "Идти прямым лесным коридором",
-              "background": "bg_ch2_forest_path",
-              "effects": {
-                "courage": 5,
-                "focus": 5
-              },
-              "next_scene": "ch2_s4"
-            },
-            {
-              "id": "ch2_s3_d1_c3",
-              "text": "Подняться вверх по камням",
-              "background": "bg_ch2_forest_path",
-              "effects": {
-                "agility": 10,
-                "observation": 5
-              },
-              "next_scene": "ch2_s4"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ch2_s4",
-      "order": 4,
-      "background": "bg_ch2_forest_path",
-      "dialogues": [
-        {
-          "id": "ch2_s4_d1",
-          "order": 1,
-          "speaker": "Narrator",
-          "text": "Земля выравнивается. Перед тобой участок дороги, где лес расступается, а воздух становится суше. Ты чувствуешь: дальше будет что-то, что нельзя просто обойти.",
+          "text": "Потом — тепло солнца.",
           "has_choices": false,
-          "next_dialogue": "ch2_s5_d1"
-        }
-      ]
-    },
-    {
-      "id": "ch2_s5",
-      "order": 5,
-      "background": "bg_ch2_forest_path",
-      "dialogues": [
+          "next_dialogue": "ch2_s1_d04"
+        },
         {
-          "id": "ch2_s5_d1",
-          "order": 1,
+          "id": "ch2_s1_d04",
+          "order": 4,
           "speaker": "Narrator",
-          "text": "Ты делаешь ещё несколько шагов — и дорога обрывается. Перед тобой лежит огромное поваленное дерево. Его корни вырваны из земли, ствол перегородил путь полностью, а ветви переплелись так, что пролезть под ними невозможно.",
-          "has_choices": true,
-          "choices": [
-            {
-              "id": "ch2_s5_d1_c1",
-              "text": "Перепрыгнуть",
-              "background": "bg_ch2_forest_path",
-              "effects": { "agility": 10, "risk": 5 },
-              "next_scene": "ch2_s6"
-            },
-            {
-              "id": "ch2_s5_d1_c2",
-              "text": "Обойти",
-              "background": "bg_ch2_forest_path",
-              "effects": { "caution": 5, "observation": 5 },
-              "next_scene": "ch2_s6"
-            },
-            {
-              "id": "ch2_s5_d1_c3",
-              "text": "Разобрать и использовать",
-              "background": "bg_ch2_forest_path",
-              "effects": { "creativity": 10, "prudence": 5 },
-              "next_scene": "ch2_s6"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ch2_s6",
-      "order": 6,
-      "background": "bg_ch2_forest_path",
-      "dialogues": [
-        {
-          "id": "ch2_s6_d1",
-          "order": 1,
-          "speaker": "Narrator",
-          "text": "Оказавшись по ту сторону дерева, ты останавливаешься. Дорога снова перед тобой — прямая, ясная, будто ничего и не произошло.",
+          "text": "Потом — сами звуки жизни.",
           "has_choices": false,
-          "next_dialogue": "ch2_s7_d1"
-        }
-      ]
-    },
-    {
-      "id": "ch2_s7",
-      "order": 7,
-      "background": "bg_ch2_forest_path",
-      "dialogues": [
+          "next_dialogue": "ch2_s1_d05"
+        },
         {
-          "id": "ch2_s7_d1",
-          "order": 1,
+          "id": "ch2_s1_d05",
+          "order": 5,
           "speaker": "Narrator",
-          "text": "Перед тобой — большая поляна, почти круглая. В центре поляны — камни, некоторые покрыты символами, другие — гладкие. Между ними проходит узкая тропка к центру.",
+          "pause_before": 1.0,
+          "text": "Дорога под лапами становится сырой и вязкой.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d06"
+        },
+        {
+          "id": "ch2_s1_d06",
+          "order": 6,
+          "speaker": "Narrator",
+          "text": "Будто земля здесь никогда полностью не высыхала.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d07"
+        },
+        {
+          "id": "ch2_s1_d07",
+          "order": 7,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_canopy",
+          "camera_effect": "pan_up",
+          "text": "Огромные ветви смыкаются над головой.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d08"
+        },
+        {
+          "id": "ch2_s1_d08",
+          "order": 8,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_canopy",
+          "text": "Между ними почти не остаётся света.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d09"
+        },
+        {
+          "id": "ch2_s1_d09",
+          "order": 9,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_canopy",
+          "text": "Только редкие бледные лучи, теряющиеся среди тумана.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d10"
+        },
+        {
+          "id": "ch2_s1_d10",
+          "order": 10,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_canopy",
+          "pause_before": 1.5,
+          "text": "Каждый шаг сапог звучит слишком громко.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d11"
+        },
+        {
+          "id": "ch2_s1_d11",
+          "order": 11,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_canopy",
+          "text": "Грязь чавкает под ногами.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d12"
+        },
+        {
+          "id": "ch2_s1_d12",
+          "order": 12,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_canopy",
+          "text": "Где-то далеко трещит сухая ветка.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d13"
+        },
+        {
+          "id": "ch2_s1_d13",
+          "order": 13,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_canopy",
+          "text": "И сразу после этого — тишина.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d14"
+        },
+        {
+          "id": "ch2_s1_d14",
+          "order": 14,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_canopy",
+          "pause_before": 2.0,
+          "text": "— Мррр…",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d15"
+        },
+        {
+          "id": "ch2_s1_d15",
+          "order": 15,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_canopy",
+          "text": "— Ненавижу такие леса.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d16"
+        },
+        {
+          "id": "ch2_s1_d16",
+          "order": 16,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_canopy",
+          "text": "— Всё вроде обычное.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d17"
+        },
+        {
+          "id": "ch2_s1_d17",
+          "order": 17,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_canopy",
+          "text": "— Корни. Грязь. Камни.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d18"
+        },
+        {
+          "id": "ch2_s1_d18",
+          "order": 18,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_canopy",
+          "text": "— Но воздух здесь неправильный.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d19"
+        },
+        {
+          "id": "ch2_s1_d19",
+          "order": 19,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_canopy",
+          "pause_before": 1.0,
+          "text": "— Будто лес прямо сейчас решает…",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d20"
+        },
+        {
+          "id": "ch2_s1_d20",
+          "order": 20,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_canopy",
+          "text": "— Сожрать меня сразу…",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d21"
+        },
+        {
+          "id": "ch2_s1_d21",
+          "order": 21,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_canopy",
+          "text": "— Или сначала немного поиграть.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d22"
+        },
+
+        {
+          "id": "ch2_s1_d22",
+          "order": 22,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_fork",
+          "transition_before": "fade_in",
+          "text": "Спустя некоторое время лес расступается.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d23"
+        },
+        {
+          "id": "ch2_s1_d23",
+          "order": 23,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_fork",
+          "text": "Ты выходишь на длинную узкую поляну.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d24"
+        },
+        {
+          "id": "ch2_s1_d24",
+          "order": 24,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_fork",
+          "text": "Дорога впереди раскалывается на три пути.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d25"
+        },
+        {
+          "id": "ch2_s1_d25",
+          "order": 25,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_fork_mud",
+          "camera_effect": "panorama",
+          "text": "Справа тропа резко уходит вниз.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d26"
+        },
+        {
+          "id": "ch2_s1_d26",
+          "order": 26,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_fork_mud",
+          "text": "Там чёрная вязкая грязь и шум бурной воды.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d27"
+        },
+        {
+          "id": "ch2_s1_d27",
+          "order": 27,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_tunnel",
+          "text": "Прямо начинается тёмный коридор.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d28"
+        },
+        {
+          "id": "ch2_s1_d28",
+          "order": 28,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_tunnel",
+          "text": "Ветки смыкаются так плотно, что внутри почти нет света.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d29"
+        },
+        {
+          "id": "ch2_s1_d29",
+          "order": 29,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_rocky",
+          "text": "Слева поднимается острый каменистый склон.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d30"
+        },
+        {
+          "id": "ch2_s1_d30",
+          "order": 30,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_rocky",
+          "text": "Тёмные обломки базальта торчат из земли как клыки.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d31"
+        },
+        {
+          "id": "ch2_s1_d31",
+          "order": 31,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_fork",
+          "pause_before": 1.0,
+          "text": "— Три дороги.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d32"
+        },
+        {
+          "id": "ch2_s1_d32",
+          "order": 32,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_fork",
+          "text": "— И ни одной хорошей идеи.",
           "has_choices": true,
           "choices": [
             {
-              "id": "ch2_s7_d1_c1",
-              "text": "Подойти к камням по тропке",
-              "background": "bg_ch2_forest_path",
-              "effects": { "curiosity": 5 },
-              "next_scene": "ch2_s8"
+              "id": "ch2_s1_d32_c1",
+              "text": "К воде.",
+              "effects": {
+                "adaptability": 0.07,
+                "activity": 0.05,
+                "selfControl": -0.03
+              },
+              "next_dialogue": "ch2_s1_d40"
             },
             {
-              "id": "ch2_s7_d1_c2",
-              "text": "Обойти камни по кругу",
-              "background": "bg_ch2_forest_path",
-              "effects": { "observation": 5 },
-              "next_scene": "ch2_s8"
+              "id": "ch2_s1_d32_c2",
+              "text": "В тёмный лесной тоннель.",
+              "effects": {
+                "rigidity": 0.07,
+                "negativeAffect": 0.05,
+                "sociality": -0.07
+              },
+              "next_dialogue": "ch2_s1_d50"
             },
             {
-              "id": "ch2_s7_d1_c3",
-              "text": "Остановиться и смотреть издалека",
-              "background": "bg_ch2_forest_path",
-              "effects": { "intuition": 5 },
-              "next_scene": "ch2_s8"
+              "id": "ch2_s1_d32_c3",
+              "text": "Вверх по скалам.",
+              "effects": {
+                "selfControl": 0.07,
+                "egoFocus": 0.05,
+                "emotionalSensitivity": -0.05
+              },
+              "next_dialogue": "ch2_s1_d60"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ch2_s8",
-      "order": 8,
-      "background": "bg_ch2_forest_path",
-      "dialogues": [
+        },
+
         {
-          "id": "ch2_s8_d1",
-          "order": 1,
+          "id": "ch2_s1_d40",
+          "order": 40,
           "speaker": "Narrator",
-          "text": "Когда ты уже собираешься идти дальше, взгляд цепляется за горизонт. За поляной едва различим силуэт башен. Поляна остаётся позади. Тени сомнения не исчезли полностью, но теперь они отступили.",
+          "background": "bg_ch2_mud_river",
+          "transition_before": "fade_in",
+          "text": "Ты шагаешь прямо в грязь.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d41"
+        },
+        {
+          "id": "ch2_s1_d41",
+          "order": 41,
+          "speaker": "Narrator",
+          "background": "bg_ch2_mud_river",
+          "text": "Холодная жижа мгновенно облепляет сапоги.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d42"
+        },
+        {
+          "id": "ch2_s1_d42",
+          "order": 42,
+          "speaker": "Narrator",
+          "background": "bg_ch2_mud_river",
+          "text": "Земля словно пытается удержать тебя.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d43"
+        },
+        {
+          "id": "ch2_s1_d43",
+          "order": 43,
+          "speaker": "Narrator",
+          "background": "bg_ch2_mud_river",
+          "text": "Рядом ревёт река.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d44"
+        },
+        {
+          "id": "ch2_s1_d44",
+          "order": 44,
+          "speaker": "Narrator",
+          "background": "bg_ch2_mud_river",
+          "text": "Шум воды постепенно вытесняет мысли.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d45"
+        },
+        {
+          "id": "ch2_s1_d45",
+          "order": 45,
+          "speaker": "Cat",
+          "background": "bg_ch2_mud_river",
+          "pause_before": 1.0,
+          "text": "— Попробуй теперь найти меня, лес.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d70"
+        },
+
+        {
+          "id": "ch2_s1_d50",
+          "order": 50,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_tunnel",
+          "transition_before": "darkening",
+          "text": "Ты входишь под свод деревьев.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d51"
+        },
+        {
+          "id": "ch2_s1_d51",
+          "order": 51,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_tunnel",
+          "text": "Мир вокруг резко меняется.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d52"
+        },
+        {
+          "id": "ch2_s1_d52",
+          "order": 52,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_tunnel",
+          "text": "Ветер исчезает.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d53"
+        },
+        {
+          "id": "ch2_s1_d53",
+          "order": 53,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_tunnel",
+          "text": "Даже собственные шаги звучат приглушённо.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d54"
+        },
+        {
+          "id": "ch2_s1_d54",
+          "order": 54,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_tunnel",
+          "pause_before": 1.0,
+          "text": "Глаза постепенно привыкают к темноте.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d55"
+        },
+        {
+          "id": "ch2_s1_d55",
+          "order": 55,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_tunnel",
+          "text": "Ты начинаешь видеть движение между корней.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d56"
+        },
+        {
+          "id": "ch2_s1_d56",
+          "order": 56,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_tunnel",
+          "text": "И скользишь вперёд почти бесшумно.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d57"
+        },
+        {
+          "id": "ch2_s1_d57",
+          "order": 57,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_tunnel",
+          "text": "— О-о-о…",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d58"
+        },
+        {
+          "id": "ch2_s1_d58",
+          "order": 58,
+          "speaker": "Cat",
+          "background": "bg_ch2_forest_tunnel",
+          "text": "— Вот это уже моя территория.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d70"
+        },
+
+        {
+          "id": "ch2_s1_d60",
+          "order": 60,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_rocky",
+          "transition_before": "fade_in",
+          "text": "Подъём оказывается тяжёлым.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d61"
+        },
+        {
+          "id": "ch2_s1_d61",
+          "order": 61,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_rocky",
+          "text": "Острые камни режут лапы.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d62"
+        },
+        {
+          "id": "ch2_s1_d62",
+          "order": 62,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_rocky",
+          "text": "Ветер становится всё сильнее.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d63"
+        },
+        {
+          "id": "ch2_s1_d63",
+          "order": 63,
+          "speaker": "Narrator",
+          "background": "bg_ch2_forest_rocky",
+          "text": "Но постепенно ты поднимаешься выше леса.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d64"
+        },
+        {
+          "id": "ch2_s1_d64",
+          "order": 64,
+          "speaker": "Narrator",
+          "background": "bg_ch2_panoramic_view",
+          "transition_before": "fade_in",
+          "camera_effect": "slow_zoom_out",
+          "text": "Перед тобой раскрывается весь лес.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d65"
+        },
+        {
+          "id": "ch2_s1_d65",
+          "order": 65,
+          "speaker": "Narrator",
+          "background": "bg_ch2_panoramic_view",
+          "text": "Река блестит далеко внизу.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d66"
+        },
+        {
+          "id": "ch2_s1_d66",
+          "order": 66,
+          "speaker": "Narrator",
+          "background": "bg_ch2_panoramic_view",
+          "text": "А среди тумана поднимаются башни.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d67"
+        },
+        {
+          "id": "ch2_s1_d67",
+          "order": 67,
+          "speaker": "Cat",
+          "background": "bg_ch2_panoramic_view",
+          "text": "— А вот это уже полезно.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d70"
+        },
+
+        {
+          "id": "ch2_s1_d70",
+          "order": 70,
+          "speaker": "Narrator",
+          "background": "bg_ch2_fallen_tree",
+          "transition_before": "fade_out_in",
+          "text": "Какой бы путь ты ни выбрал, лес всё равно приводит тебя сюда.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d71"
+        },
+        {
+          "id": "ch2_s1_d71",
+          "order": 71,
+          "speaker": "Narrator",
+          "background": "bg_ch2_fallen_tree",
+          "text": "Дорога оказывается полностью перекрыта.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d72"
+        },
+        {
+          "id": "ch2_s1_d72",
+          "order": 72,
+          "speaker": "Narrator",
+          "background": "bg_ch2_fallen_tree",
+          "text": "Перед тобой лежит гигантское вывернутое дерево.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d73"
+        },
+        {
+          "id": "ch2_s1_d73",
+          "order": 73,
+          "speaker": "Narrator",
+          "background": "bg_ch2_fallen_tree",
+          "camera_effect": "slow_zoom_in",
+          "text": "Корни торчат из земли как рёбра мёртвого чудовища.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d74"
+        },
+        {
+          "id": "ch2_s1_d74",
+          "order": 74,
+          "speaker": "Narrator",
+          "background": "bg_ch2_fallen_tree",
+          "text": "Толстые ветви переплелись в сплошную стену.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d75"
+        },
+        {
+          "id": "ch2_s1_d75",
+          "order": 75,
+          "speaker": "Cat",
+          "background": "bg_ch2_fallen_tree",
+          "pause_before": 1.5,
+          "text": "— Да вы издеваетесь…",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d76"
+        },
+        {
+          "id": "ch2_s1_d76",
+          "order": 76,
+          "speaker": "Cat",
+          "background": "bg_ch2_fallen_tree",
+          "text": "— Это уже не дерево.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d77"
+        },
+        {
+          "id": "ch2_s1_d77",
+          "order": 77,
+          "speaker": "Cat",
+          "background": "bg_ch2_fallen_tree",
+          "text": "— Это полноценная крепость.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch2_s1_d77_c1",
+              "text": "Перепрыгнуть.",
+              "effects": {
+                "activity": 0.10,
+                "impulsivity": 0.07,
+                "selfControl": -0.07
+              },
+              "next_dialogue": "ch2_s1_d90"
+            },
+            {
+              "id": "ch2_s1_d77_c2",
+              "text": "Найти обход.",
+              "effects": {
+                "anxiety": 0.07,
+                "selfControl": 0.07,
+                "activity": -0.05
+              },
+              "next_dialogue": "ch2_s1_d100"
+            },
+            {
+              "id": "ch2_s1_d77_c3",
+              "text": "Построить себе проход.",
+              "effects": {
+                "adaptability": 0.10,
+                "rigidity": -0.05
+              },
+              "next_dialogue": "ch2_s1_d110"
+            }
+          ]
+        },
+
+        {
+          "id": "ch2_s1_d90",
+          "order": 90,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_top",
+          "text": "Ты резко срываешься с места.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d91"
+        },
+        {
+          "id": "ch2_s1_d91",
+          "order": 91,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_top",
+          "text": "Прыжок.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d92"
+        },
+        {
+          "id": "ch2_s1_d92",
+          "order": 92,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_top",
+          "text": "Ещё один.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d93"
+        },
+        {
+          "id": "ch2_s1_d93",
+          "order": 93,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_top",
+          "text": "Когти впиваются в мокрую кору.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d94"
+        },
+        {
+          "id": "ch2_s1_d94",
+          "order": 94,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_top",
+          "text": "На мгновение кажется, что ты сорвёшься вниз.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d95"
+        },
+        {
+          "id": "ch2_s1_d95",
+          "order": 95,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_top",
+          "text": "Но уже через секунду ты перелетаешь через преграду.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d96"
+        },
+        {
+          "id": "ch2_s1_d96",
+          "order": 96,
+          "speaker": "Cat",
+          "background": "bg_ch2_tree_top",
+          "text": "— ХА!",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d97"
+        },
+        {
+          "id": "ch2_s1_d97",
+          "order": 97,
+          "speaker": "Cat",
+          "background": "bg_ch2_tree_top",
+          "text": "— Всё ещё великолепен.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d120"
+        },
+
+        {
+          "id": "ch2_s1_d100",
+          "order": 100,
+          "speaker": "Narrator",
+          "background": "bg_ch2_ivy_thicket",
+          "text": "Ты сворачиваешь к густым зарослям.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d101"
+        },
+        {
+          "id": "ch2_s1_d101",
+          "order": 101,
+          "speaker": "Narrator",
+          "background": "bg_ch2_ivy_thicket",
+          "text": "Работа оказывается долгой и грязной.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d102"
+        },
+        {
+          "id": "ch2_s1_d102",
+          "order": 102,
+          "speaker": "Narrator",
+          "background": "bg_ch2_ivy_thicket",
+          "text": "Колючки цепляются за одежду.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d103"
+        },
+        {
+          "id": "ch2_s1_d103",
+          "order": 103,
+          "speaker": "Narrator",
+          "background": "bg_ch2_ivy_thicket",
+          "text": "Влажные ветви бьют по морде.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d104"
+        },
+        {
+          "id": "ch2_s1_d104",
+          "order": 104,
+          "speaker": "Narrator",
+          "background": "bg_ch2_ivy_thicket",
+          "text": "Но постепенно ты находишь безопасный путь.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d105"
+        },
+        {
+          "id": "ch2_s1_d105",
+          "order": 105,
+          "speaker": "Cat",
+          "background": "bg_ch2_ivy_thicket",
+          "text": "— Иногда быть умнее ужасно скучно.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d120"
+        },
+
+        {
+          "id": "ch2_s1_d110",
+          "order": 110,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_base",
+          "text": "Ты внимательно изучаешь преграду.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d111"
+        },
+        {
+          "id": "ch2_s1_d111",
+          "order": 111,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_base",
+          "text": "Потом начинаешь собирать конструкцию.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d112"
+        },
+        {
+          "id": "ch2_s1_d112",
+          "order": 112,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_base",
+          "text": "Брёвна.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d113"
+        },
+        {
+          "id": "ch2_s1_d113",
+          "order": 113,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_base",
+          "text": "Сучья.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d114"
+        },
+        {
+          "id": "ch2_s1_d114",
+          "order": 114,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_base",
+          "text": "Плоские камни.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d115"
+        },
+        {
+          "id": "ch2_s1_d115",
+          "order": 115,
+          "speaker": "Narrator",
+          "background": "bg_ch2_tree_base",
+          "pause_before": 1.0,
+          "text": "Через некоторое время перед тобой уже стоит мост.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d116"
+        },
+        {
+          "id": "ch2_s1_d116",
+          "order": 116,
+          "speaker": "Cat",
+          "background": "bg_ch2_tree_base",
+          "text": "— Интеллект — страшное оружие.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d120"
+        },
+
+        {
+          "id": "ch2_s1_d120",
+          "order": 120,
+          "speaker": "Narrator",
+          "background": "bg_ch2_bone_clearing",
+          "transition_before": "darkening",
+          "text": "Едва ты оказываешься по другую сторону дерева, под листвой что-то блестит.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d121"
+        },
+        {
+          "id": "ch2_s1_d121",
+          "order": 121,
+          "speaker": "Narrator",
+          "background": "bg_ch2_bone_clearing",
+          "camera_effect": "slow_zoom_in",
+          "text": "Ты разгребаешь листья лапой.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d122"
+        },
+        {
+          "id": "ch2_s1_d122",
+          "order": 122,
+          "speaker": "Narrator",
+          "background": "bg_ch2_bone_clearing",
+          "text": "Кости.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d123"
+        },
+        {
+          "id": "ch2_s1_d123",
+          "order": 123,
+          "speaker": "Narrator",
+          "background": "bg_ch2_bone_clearing",
+          "text": "Старая человеческая кисть.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d124"
+        },
+        {
+          "id": "ch2_s1_d124",
+          "order": 124,
+          "speaker": "Narrator",
+          "background": "bg_ch2_bone_clearing",
+          "text": "А на пальце — массивное кольцо.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d125"
+        },
+        {
+          "id": "ch2_s1_d125",
+          "order": 125,
+          "speaker": "Cat",
+          "background": "bg_ch2_bone_clearing",
+          "pause_before": 2.0,
+          "text": "— Ох, прекрасно.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d126"
+        },
+        {
+          "id": "ch2_s1_d126",
+          "order": 126,
+          "speaker": "Cat",
+          "background": "bg_ch2_bone_clearing",
+          "text": "— Древний лес.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d127"
+        },
+        {
+          "id": "ch2_s1_d127",
+          "order": 127,
+          "speaker": "Cat",
+          "background": "bg_ch2_bone_clearing",
+          "text": "— Мертвецы.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d128"
+        },
+        {
+          "id": "ch2_s1_d128",
+          "order": 128,
+          "speaker": "Cat",
+          "background": "bg_ch2_bone_clearing",
+          "text": "— Странное кольцо.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d129"
+        },
+        {
+          "id": "ch2_s1_d129",
+          "order": 129,
+          "speaker": "Cat",
+          "background": "bg_ch2_bone_clearing",
+          "text": "— Всё как я люблю.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch2_s1_d129_c1",
+              "text": "Забрать кольцо.",
+              "effects": {
+                "egoFocus": 0.07,
+                "negativeAffect": 0.05,
+                "emotionalSensitivity": -0.07
+              },
+              "next_dialogue": "ch2_s1_d140"
+            },
+            {
+              "id": "ch2_s1_d129_c2",
+              "text": "Похоронить кости.",
+              "effects": {
+                "emotionalSensitivity": 0.07,
+                "rigidity": 0.05,
+                "negativeAffect": -0.05
+              },
+              "next_dialogue": "ch2_s1_d140"
+            },
+            {
+              "id": "ch2_s1_d129_c3",
+              "text": "Уйти отсюда.",
+              "effects": {
+                "anxiety": 0.07,
+                "selfControl": 0.05,
+                "activity": -0.05
+              },
+              "next_dialogue": "ch2_s1_d140"
+            }
+          ]
+        },
+
+        {
+          "id": "ch2_s1_d140",
+          "order": 140,
+          "speaker": "Narrator",
+          "background": "bg_ch2_valley_towers",
+          "transition_before": "fade_out_in",
+          "text": "Постепенно деревья начинают редеть.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d141"
+        },
+        {
+          "id": "ch2_s1_d141",
+          "order": 141,
+          "speaker": "Narrator",
+          "background": "bg_ch2_valley_towers",
+          "text": "Туман расступается.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d142"
+        },
+        {
+          "id": "ch2_s1_d142",
+          "order": 142,
+          "speaker": "Narrator",
+          "background": "bg_ch2_valley_towers",
+          "text": "И впереди появляются огромные каменные башни.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d143"
+        },
+        {
+          "id": "ch2_s1_d143",
+          "order": 143,
+          "speaker": "Narrator",
+          "background": "bg_ch2_valley_towers",
+          "camera_effect": "slow_zoom_out",
+          "text": "Древний Лес остаётся позади.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d144"
+        },
+        {
+          "id": "ch2_s1_d144",
+          "order": 144,
+          "speaker": "Narrator",
+          "background": "bg_ch2_valley_towers",
+          "text": "Но ощущение чужого взгляда всё ещё не отпускает тебя.",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d145"
+        },
+        {
+          "id": "ch2_s1_d145",
+          "order": 145,
+          "speaker": "Cat",
+          "background": "bg_ch2_valley_towers",
+          "pause_before": 2.0,
+          "text": "— Ну что ж…",
+          "has_choices": false,
+          "next_dialogue": "ch2_s1_d146"
+        },
+        {
+          "id": "ch2_s1_d146",
+          "order": 146,
+          "speaker": "Cat",
+          "background": "bg_ch2_valley_towers",
+          "text": "— А вот теперь начинаются настоящие проблемы.",
           "has_choices": false,
           "next_dialogue": null
         }
+
       ]
     }
   ]

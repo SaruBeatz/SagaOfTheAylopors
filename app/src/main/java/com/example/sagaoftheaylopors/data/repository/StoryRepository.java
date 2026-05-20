@@ -283,8 +283,20 @@ public class StoryRepository {
         );
     }
     
-    public void updateStats(int cunning, int bravery, int creativity) {
-        database.playerProgressDao().updateStats(cunning, bravery, creativity);
+    /** Persist all 10 behavioral parameters after a choice. */
+    public void updateBehavioralParams(PlayerProgress progress) {
+        database.playerProgressDao().updateBehavioralParams(
+                progress.sociality,
+                progress.activity,
+                progress.emotionalSensitivity,
+                progress.anxiety,
+                progress.selfControl,
+                progress.impulsivity,
+                progress.egoFocus,
+                progress.rigidity,
+                progress.negativeAffect,
+                progress.adaptability
+        );
     }
     
     public void saveProgress(PlayerProgress progress) {

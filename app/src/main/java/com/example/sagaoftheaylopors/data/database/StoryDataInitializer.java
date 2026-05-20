@@ -73,7 +73,7 @@ public class StoryDataInitializer {
                 if (!chapterData.scenes.isEmpty() && !chapterData.scenes.get(0).dialogues.isEmpty()) {
                     int firstSceneId = chapterData.scenes.get(0).scene.sceneId;
                     int firstDialogueId = chapterData.scenes.get(0).dialogues.get(0).dialogueId;
-                    progress = new PlayerProgress(1, firstSceneId, firstDialogueId, 0, 0, 0, "cat");
+                    progress = new PlayerProgress(1, firstSceneId, firstDialogueId, "cat");
                     database.playerProgressDao().insertProgress(progress);
                 } else {
                     progress = new PlayerProgress();

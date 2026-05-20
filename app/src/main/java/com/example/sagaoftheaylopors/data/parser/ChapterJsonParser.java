@@ -159,7 +159,14 @@ public class ChapterJsonParser {
                     // Parse background if present
                     dialogue.background = dialogueJson.has("background") && !dialogueJson.isNull("background")
                         ? dialogueJson.getString("background") : null;
-                    
+
+                    // Parse cinematic / camera / pause fields
+                    dialogue.pauseBefore = (float) dialogueJson.optDouble("pause_before", 0.0);
+                    dialogue.cameraEffect = dialogueJson.has("camera_effect") && !dialogueJson.isNull("camera_effect")
+                        ? dialogueJson.getString("camera_effect") : null;
+                    dialogue.transitionBefore = dialogueJson.has("transition_before") && !dialogueJson.isNull("transition_before")
+                        ? dialogueJson.getString("transition_before") : null;
+
                     dialogues.add(dialogue);
                     
                     // Parse choices if present
@@ -211,28 +218,19 @@ public class ChapterJsonParser {
                             choice.background = choiceJson.has("background") && !choiceJson.isNull("background")
                                 ? choiceJson.getString("background") : null;
                             
-                            // Extract effects - store first non-zero effect as statModifier for compatibility
-                            // Full effects will be stored in separate fields (to be added)
-                            choice.statModifier = null;
-                            choice.statChange = 0;
-                            
-                            // Find first non-zero effect (only if effects object exists)
+                            // Parse all 10 behavioral effect deltas from the "effects" object.
+                            // JSON values are floats (e.g. 0.03, -0.02); all default to 0.0 if absent.
                             if (effects != null) {
-                                String[] effectKeys = {"empathy", "self_confidence", "prudence", "ambition", "creativity", "impulsiveness"};
-                                for (String key : effectKeys) {
-                                    if (effects.has(key) && effects.getInt(key) != 0) {
-                                        // Map to old stat names for compatibility
-                                        if (key.equals("creativity")) {
-                                            choice.statModifier = "creativity";
-                                        } else if (key.equals("self_confidence") || key.equals("ambition")) {
-                                            choice.statModifier = "bravery";
-                                        } else {
-                                            choice.statModifier = "cunning";
-                                        }
-                                        choice.statChange = effects.getInt(key);
-                                        break;
-                                    }
-                                }
+                                choice.effectSociality            = (float) effects.optDouble("sociality",             0.0);
+                                choice.effectActivity             = (float) effects.optDouble("activity",              0.0);
+                                choice.effectEmotionalSensitivity = (float) effects.optDouble("emotional_sensitivity", 0.0);
+                                choice.effectAnxiety              = (float) effects.optDouble("anxiety",               0.0);
+                                choice.effectSelfControl          = (float) effects.optDouble("self_control",          0.0);
+                                choice.effectImpulsivity          = (float) effects.optDouble("impulsivity",           0.0);
+                                choice.effectEgoFocus             = (float) effects.optDouble("ego_focus",             0.0);
+                                choice.effectRigidity             = (float) effects.optDouble("rigidity",              0.0);
+                                choice.effectNegativeAffect       = (float) effects.optDouble("negative_affect",       0.0);
+                                choice.effectAdaptability         = (float) effects.optDouble("adaptability",          0.0);
                             }
                             
                             choice.unlocksPath = false;

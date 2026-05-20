@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/color_background_parchment" />
-    <stroke 
-        android:width="4dp"
+    <!-- 80% opacity parchment — lets backdrop blur show through on API 31+ -->
+    <solid android:color="#CCE8DCC8" />
+    <stroke
+        android:width="2dp"
         android:color="@color/color_primary" />
+    <corners android:radius="8dp" />
 </shape>
-

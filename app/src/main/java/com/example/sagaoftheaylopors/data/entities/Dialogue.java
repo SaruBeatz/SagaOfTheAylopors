@@ -59,13 +59,31 @@ public class Dialogue {
     public int nextDialogueId;
     
     /**
-     * Drawable resource name for the background image (optional)
-     * Examples: "bg_ch1_mill_letter_focus"
-     * Can be null if no background is specified
-     * If set, overrides scene background
+     * Drawable resource name for the background image (optional).
+     * Overrides the scene background when set.
      */
     public String background;
-    
+
+    /**
+     * Seconds to pause (show background only, hide dialogue box) before
+     * this dialogue appears.  0 = no pause.
+     */
+    public float pauseBefore = 0f;
+
+    /**
+     * Camera / background animation to play while this dialogue is shown.
+     * Values: "pan_up", "slow_zoom_in", "slow_zoom_out", "panorama"
+     * null = no effect.
+     */
+    public String cameraEffect;
+
+    /**
+     * Full-screen transition effect that plays before this dialogue.
+     * Values: "fade_in", "fade_out_in", "darkening"
+     * null = no transition.
+     */
+    public String transitionBefore;
+
     public Dialogue() {}
     
     public Dialogue(int dialogueId, int sceneId, int order, String speakerType, 

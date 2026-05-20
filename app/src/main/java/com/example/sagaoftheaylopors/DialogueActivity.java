@@ -2,10 +2,15 @@ package com.example.sagaoftheaylopors;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Matrix;
+import android.graphics.RenderEffect;
+import android.graphics.Shader;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -50,6 +55,20 @@ public class DialogueActivity extends AppCompatActivity {
     private Runnable textAnimationRunnable;
     private boolean isAnimating = false;
     private static final int CHUNK_SIZE = 150; // Characters per chunk (100-200 range)
+
+    // ── Text pagination — long dialogues are split into pages ────────────
+    private final java.util.List<String> textPages = new java.util.ArrayList<>();
+    private int currentPageIndex = 0;
+    // ~130 chars per page keeps text within ~5 lines on typical landscape phones
+    private static final int PAGE_LIMIT = 130;
+
+    // ── Peek mode: hold 2 s outside dialogue box to inspect background ──
+    private final Handler peekHandler = new Handler(Looper.getMainLooper());
+    private boolean peekActive = false;
+    private final Runnable activatePeek = () -> {
+        peekActive = true;
+        animateDialogueUi(0f, 250);
+    };
     private static final long LETTER_DELAY = 30; // Milliseconds between letters
     private static final long FAST_LETTER_DELAY = 5; // Fast animation speed
 
@@ -58,6 +77,13 @@ public class DialogueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityDialogueBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Very light soft-focus on portraits only (radius 2 = almost imperceptible).
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            RenderEffect portraitBlur = RenderEffect.createBlurEffect(2f, 2f, Shader.TileMode.CLAMP);
+            binding.characterPortraitImageView.setRenderEffect(portraitBlur);
+            binding.characterPortraitRight.setRenderEffect(portraitBlur);
+        }
 
         textHandler = new Handler(Looper.getMainLooper());
 
@@ -134,8 +160,17 @@ public class DialogueActivity extends AppCompatActivity {
                     onTextComplete();
                 }
             } else if (currentTextState == TextState.TEXT_COMPLETE) {
-                // Text complete but no choices - progress to next dialogue
-                progressToNextDialogue();
+                if (currentPageIndex < textPages.size() - 1) {
+                    // Advance to the next page of the current dialogue.
+                    currentPageIndex++;
+                    fullText = textPages.get(currentPageIndex);
+                    hideChoiceIndicator();
+                    currentTextState = TextState.TEXT_RENDERING;
+                    startTextAnimation();
+                } else {
+                    // Last page — move to next dialogue.
+                    progressToNextDialogue();
+                }
             } else if (currentTextState == TextState.CHOICE_PENDING) {
                 // Player acknowledged text - show choices
                 showChoices();
@@ -166,8 +201,137 @@ public class DialogueActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Stop music when activity is destroyed
+        peekHandler.removeCallbacks(activatePeek);
         MusicManager.getInstance().stopMusic();
+    }
+
+    /**
+     * Intercept touch events to detect a 2-second hold outside the dialogue box.
+     * When triggered, fades out the UI so the player can inspect the background.
+     * Releasing the finger restores the UI immediately.
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        switch (event.getActionMasked()) {
+            case MotionEvent.ACTION_DOWN:
+                if (!isTouchInsideDialogueBox(event)) {
+                    peekHandler.postDelayed(activatePeek, 1000);
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
+                peekHandler.removeCallbacks(activatePeek);
+                if (peekActive) {
+                    peekActive = false;
+                    animateDialogueUi(1f, 200);
+                }
+                break;
+            default:
+                break;
+        }
+        return super.dispatchTouchEvent(event);
+    }
+
+    private boolean isTouchInsideDialogueBox(MotionEvent event) {
+        int[] loc = new int[2];
+        binding.textArea.getLocationOnScreen(loc);
+        float x = event.getRawX();
+        float y = event.getRawY();
+        return x >= loc[0] && x <= loc[0] + binding.textArea.getWidth()
+            && y >= loc[1] && y <= loc[1] + binding.textArea.getHeight();
+    }
+
+    private void animateDialogueUi(float alpha, int durationMs) {
+        binding.textArea.animate().alpha(alpha).setDuration(durationMs).start();
+        binding.titleContainer.animate().alpha(alpha).setDuration(durationMs).start();
+        binding.characterPortraitImageView.animate().alpha(alpha).setDuration(durationMs).start();
+        binding.characterPortraitRight.animate().alpha(alpha).setDuration(durationMs).start();
+    }
+
+    // ── Camera effects ──────────────────────────────────────────────────
+
+    /**
+     * Plays a background camera effect on the backgroundImageView.
+     * Previous animations are cancelled and transform is reset first.
+     */
+    private void playCameraEffect(String effect) {
+        binding.backgroundImageView.animate().cancel();
+        binding.backgroundImageView.setScaleX(1f);
+        binding.backgroundImageView.setScaleY(1f);
+        binding.backgroundImageView.setTranslationX(0f);
+        binding.backgroundImageView.setTranslationY(0f);
+
+        switch (effect) {
+            case "pan_up":
+                binding.backgroundImageView.animate()
+                    .translationY(-dpToPx(50)).setDuration(5000).start();
+                break;
+            case "slow_zoom_in":
+                binding.backgroundImageView.animate()
+                    .scaleX(1.18f).scaleY(1.18f).setDuration(4000).start();
+                break;
+            case "slow_zoom_out":
+                binding.backgroundImageView.setScaleX(1.18f);
+                binding.backgroundImageView.setScaleY(1.18f);
+                binding.backgroundImageView.animate()
+                    .scaleX(1.0f).scaleY(1.0f).setDuration(4000).start();
+                break;
+            case "panorama":
+                binding.backgroundImageView.animate()
+                    .translationX(dpToPx(55)).setDuration(4500).start();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private float dpToPx(int dp) {
+        return dp * getResources().getDisplayMetrics().density;
+    }
+
+    // ── Full-screen transitions ─────────────────────────────────────────
+
+    /**
+     * Fades the global overlay to black (or dark), changes scene, then fades back.
+     * Fires startTextAnimation() at the right moment.
+     *
+     * @param type "fade_in" | "fade_out_in" | "darkening"
+     */
+    private void playTransitionThenShow(String type) {
+        switch (type) {
+            case "fade_out_in": {
+                // Fade to black → 400 ms hold → fade back → show text
+                binding.globalOverlay.animate().alpha(1f).setDuration(600)
+                    .withEndAction(() -> textHandler.postDelayed(() -> {
+                        binding.globalOverlay.animate().alpha(0.33f).setDuration(700)
+                            .withEndAction(() -> {
+                                Animation fi = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+                                binding.textArea.startAnimation(fi);
+                                startTextAnimation();
+                            }).start();
+                    }, 400)).start();
+                break;
+            }
+            case "darkening": {
+                // Quick darkening, then reveal
+                binding.globalOverlay.animate().alpha(0.85f).setDuration(500)
+                    .withEndAction(() ->
+                        binding.globalOverlay.animate().alpha(0.33f).setDuration(600)
+                            .withEndAction(() -> {
+                                Animation fi = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+                                binding.textArea.startAnimation(fi);
+                                startTextAnimation();
+                            }).start()
+                    ).start();
+                break;
+            }
+            default: { // "fade_in" and anything else
+                Animation fi = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+                binding.textArea.startAnimation(fi);
+                startTextAnimation();
+                break;
+            }
+        }
     }
 
     @Override
@@ -252,6 +416,54 @@ public class DialogueActivity extends AppCompatActivity {
         hideChoiceIndicator();
     }
 
+    /**
+     * Splits text into pages at natural sentence boundaries so that each page
+     * fits within the dialogue box without truncation.
+     * Breaks at . ! ? » or \n; falls back to the last space if needed.
+     */
+    private void buildTextPages(String text) {
+        textPages.clear();
+        currentPageIndex = 0;
+        if (text == null || text.isEmpty()) {
+            textPages.add("");
+            return;
+        }
+        if (text.length() <= PAGE_LIMIT) {
+            textPages.add(text);
+            return;
+        }
+        int start = 0;
+        while (start < text.length()) {
+            int end = Math.min(start + PAGE_LIMIT, text.length());
+            if (end < text.length()) {
+                // Prefer a sentence-ending character in the second half of the page
+                int splitAt = -1;
+                for (int i = end; i > start + PAGE_LIMIT / 2; i--) {
+                    char c = text.charAt(i - 1);
+                    if (c == '.' || c == '!' || c == '?' || c == '»' || c == '\n') {
+                        splitAt = i;
+                        break;
+                    }
+                }
+                if (splitAt > start) {
+                    end = splitAt;
+                } else {
+                    // Fall back to last whitespace
+                    for (int i = end; i > start; i--) {
+                        if (Character.isWhitespace(text.charAt(i - 1))) {
+                            end = i;
+                            break;
+                        }
+                    }
+                }
+            }
+            String page = text.substring(start, end).trim();
+            if (!page.isEmpty()) textPages.add(page);
+            start = end;
+        }
+        if (textPages.isEmpty()) textPages.add(text);
+    }
+
     private void displayDialogue(Dialogue dialogue) {
         // Stop any existing animation
         stopTextAnimation();
@@ -267,8 +479,9 @@ public class DialogueActivity extends AppCompatActivity {
         // Make sure text area is visible
         binding.textArea.setVisibility(View.VISIBLE);
         
-        // Use textKey directly as it now contains the actual text from JSON
-        fullText = dialogue.textKey;
+        // Split long text into pages; short text becomes a single page.
+        buildTextPages(dialogue.textKey);
+        fullText = textPages.get(0);
         currentChunkStart = 0;
         currentCharIndex = 0;
 
@@ -294,12 +507,28 @@ public class DialogueActivity extends AppCompatActivity {
         // Update background (dialogue background > scene background)
         updateBackground();
         
-        // Animate text area appearing
-        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        binding.textArea.startAnimation(fadeIn);
-        
-        // Start text animation
-        startTextAnimation();
+        // ── Camera effect — starts playing right as the scene loads ────────
+        if (dialogue.cameraEffect != null && !dialogue.cameraEffect.isEmpty()) {
+            playCameraEffect(dialogue.cameraEffect);
+        }
+
+        // ── Transition / pause effect ────────────────────────────────────
+        if (dialogue.transitionBefore != null && !dialogue.transitionBefore.isEmpty()) {
+            playTransitionThenShow(dialogue.transitionBefore);
+        } else if (dialogue.pauseBefore > 0f) {
+            // Hide dialogue box, let the player see the background, then reveal.
+            binding.textArea.setAlpha(0f);
+            textHandler.postDelayed(() -> {
+                binding.textArea.setAlpha(1f);
+                Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+                binding.textArea.startAnimation(fadeIn);
+                startTextAnimation();
+            }, (long)(dialogue.pauseBefore * 1000L));
+        } else {
+            Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+            binding.textArea.startAnimation(fadeIn);
+            startTextAnimation();
+        }
     }
 
     private void startTextAnimation() {
@@ -361,28 +590,26 @@ public class DialogueActivity extends AppCompatActivity {
     }
     
     /**
-     * Called when all text has been displayed (animation complete or skipped).
-     * Checks if choices are available and transitions to appropriate state.
+     * Called when the current page's text animation is complete.
+     * If more pages remain, shows the "▼" indicator and waits for a tap.
+     * On the last page, proceeds with the normal choice / progress logic.
      */
     private void onTextComplete() {
         currentTextState = TextState.TEXT_COMPLETE;
-        
-        // Check if dialogue has choices
+
+        // More pages to show — prompt the player to tap to continue reading.
+        if (currentPageIndex < textPages.size() - 1) {
+            showChoiceIndicator(); // reuses the blinking "..." indicator
+            return;
+        }
+
+        // Last page — normal logic: check for choices.
         if (currentDialogue != null && currentDialogue.hasChoices) {
-            // Choices are available - load them but don't show yet
             currentChoices = storyRepository.getChoicesByDialogue(currentDialogue.dialogueId);
-            
             if (currentChoices != null && !currentChoices.isEmpty()) {
-                // Show indicator that choices are available
                 showChoiceIndicator();
                 currentTextState = TextState.CHOICE_PENDING;
-            } else {
-                // No valid choices, just progress
-                currentTextState = TextState.TEXT_COMPLETE;
             }
-        } else {
-            // No choices - ready to progress to next dialogue
-            currentTextState = TextState.TEXT_COMPLETE;
         }
     }
     
@@ -553,41 +780,84 @@ public class DialogueActivity extends AppCompatActivity {
     }
 
     /**
-     * Update character portrait based on speaker type.
-     * NOTE: Currently disabled - portrait logic is commented out to prevent layout shifts.
-     * The view remains in XML for future reactivation when character images are added.
+     * Show character portraits for the given speaker.
+     *
+     * When ANY named character speaks, BOTH portraits are displayed so the
+     * player always sees who is present in the scene:
+     *   LEFT  (characterPortraitImageView) — miller's son / master
+     *   RIGHT (characterPortraitRight)      — cat / Puss-in-Boots
+     *
+     * "narrator" alone → both hidden (pure description with no characters nearby).
      */
     private void updateCharacterPortrait(String speakerType) {
-        // PORTRAIT FUNCTIONALITY DISABLED - Keep view but don't affect layout
-        // Uncomment below when character images are ready to be integrated
-        
-        /*
-        boolean isCat = "cat".equalsIgnoreCase(speakerType) || "puss".equalsIgnoreCase(speakerType);
-        
-        if (isCat) {
-            // Show character portrait at top
+        boolean isNamedCharacter = false;
+
+        if (speakerType != null) {
+            switch (speakerType.toLowerCase()) {
+                case "cat":
+                case "puss":
+                case "puss_in_boots":
+                case "master":
+                case "miller":
+                case "young_miller":
+                case "youth":
+                    isNamedCharacter = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // LEFT portrait — miller's son / master (appears only in Chapter 1).
+        // Other chapters will introduce their own characters in future updates.
+        boolean showMaster = isNamedCharacter && chapterNumber == 1;
+        if (showMaster) {
+            binding.characterPortraitImageView.setImageResource(R.drawable.master_full_height);
             binding.characterPortraitImageView.setVisibility(View.VISIBLE);
-            binding.characterPortraitImageView.setImageResource(R.drawable.cat_full_height);
-            
-            // Show character portrait overlay in text area
-            if (binding.characterPortraitOverlay != null) {
-                binding.characterPortraitOverlay.setVisibility(View.VISIBLE);
-                binding.characterPortraitOverlay.setImageResource(R.drawable.cat_full_height);
-            }
+            applyTopCrop(binding.characterPortraitImageView);
         } else {
-            // Hide character portraits for narrator
             binding.characterPortraitImageView.setVisibility(View.GONE);
-            if (binding.characterPortraitOverlay != null) {
-                binding.characterPortraitOverlay.setVisibility(View.GONE);
-            }
         }
-        */
-        
-        // Currently: Always keep portrait hidden to maintain stable layout
-        binding.characterPortraitImageView.setVisibility(View.GONE);
-        if (binding.characterPortraitOverlay != null) {
-            binding.characterPortraitOverlay.setVisibility(View.GONE);
+
+        // RIGHT portrait — cat (always shown when any named character speaks).
+        if (isNamedCharacter) {
+            binding.characterPortraitRight.setImageResource(R.drawable.cat_full_height);
+            binding.characterPortraitRight.setVisibility(View.VISIBLE);
+            applyTopCrop(binding.characterPortraitRight);
+        } else {
+            binding.characterPortraitRight.setVisibility(View.GONE);
         }
+    }
+
+    /**
+     * Scales the portrait so that exactly the TOP 50 % of the original image
+     * fills the view height — head and torso visible, legs clipped.
+     * Image is centered horizontally within the view.
+     * Requires scaleType="matrix" on the ImageView.
+     */
+    private void applyTopCrop(android.widget.ImageView view) {
+        view.post(() -> {
+            if (view.getDrawable() == null) return;
+            int vW = view.getWidth();
+            int vH = view.getHeight();
+            int iW = view.getDrawable().getIntrinsicWidth();
+            int iH = view.getDrawable().getIntrinsicHeight();
+            if (vW <= 0 || vH <= 0 || iW <= 0 || iH <= 0) return;
+
+            // Scale so the top 50 % of the image exactly fills the view height.
+            // If width-fill needs a larger scale, use that instead (stays readable).
+            float scaleByWidth  = (float) vW / iW;
+            float scaleFor50pct = (float) vH / (iH * 0.50f);
+            float scale = Math.max(scaleByWidth, scaleFor50pct);
+
+            // Center the (possibly wider) image horizontally.
+            float xOffset = (vW - iW * scale) / 2f;
+
+            Matrix m = new Matrix();
+            m.setScale(scale, scale);
+            m.postTranslate(xOffset, 0f);  // top Y = 0 → image starts from head
+            view.setImageMatrix(m);
+        });
     }
 
     /**
@@ -707,38 +977,53 @@ public class DialogueActivity extends AppCompatActivity {
         // Stop text animation
         stopTextAnimation();
         
-        // Update stats if choice has stat modifier
-        if (choice.statModifier != null && choice.statChange != 0) {
+        // Apply all 10 behavioral effect deltas accumulated from this choice.
+        {
             PlayerProgress progress = storyRepository.getProgress();
-            int oldCunning = progress.cunning;
-            int oldBravery = progress.bravery;
-            int oldCreativity = progress.creativity;
-            
-            switch (choice.statModifier.toLowerCase()) {
-                case "cunning":
-                    progress.cunning += choice.statChange;
-                    break;
-                case "bravery":
-                    progress.bravery += choice.statChange;
-                    break;
-                case "creativity":
-                    progress.creativity += choice.statChange;
-                    break;
-            }
-            storyRepository.updateStats(progress.cunning, progress.bravery, progress.creativity);
-            
-            // Log stats update
-            Log.d("DialogueActivity", "Stats updated after choice - " 
-                + "Cunning: " + oldCunning + " -> " + progress.cunning
-                + ", Bravery: " + oldBravery + " -> " + progress.bravery
-                + ", Creativity: " + oldCreativity + " -> " + progress.creativity);
-        } else {
-            // Log current stats even if no change
-            PlayerProgress progress = storyRepository.getProgress();
-            Log.d("DialogueActivity", "Current stats - " 
-                + "Cunning: " + progress.cunning
-                + ", Bravery: " + progress.bravery
-                + ", Creativity: " + progress.creativity);
+
+            float prevSociality            = progress.sociality;
+            float prevActivity             = progress.activity;
+            float prevEmotionalSensitivity = progress.emotionalSensitivity;
+            float prevAnxiety              = progress.anxiety;
+            float prevSelfControl          = progress.selfControl;
+            float prevImpulsivity          = progress.impulsivity;
+            float prevEgoFocus             = progress.egoFocus;
+            float prevRigidity             = progress.rigidity;
+            float prevNegativeAffect       = progress.negativeAffect;
+            float prevAdaptability         = progress.adaptability;
+
+            progress.applyEffects(
+                    choice.effectSociality,
+                    choice.effectActivity,
+                    choice.effectEmotionalSensitivity,
+                    choice.effectAnxiety,
+                    choice.effectSelfControl,
+                    choice.effectImpulsivity,
+                    choice.effectEgoFocus,
+                    choice.effectRigidity,
+                    choice.effectNegativeAffect,
+                    choice.effectAdaptability
+            );
+
+            storyRepository.updateBehavioralParams(progress);
+
+            Log.d("DialogueActivity", String.format(
+                "Behavioral params after choice [choiceId=%d]: " +
+                "soc %.3f→%.3f | act %.3f→%.3f | emp %.3f→%.3f | " +
+                "anx %.3f→%.3f | ctrl %.3f→%.3f | imp %.3f→%.3f | " +
+                "ego %.3f→%.3f | rig %.3f→%.3f | neg %.3f→%.3f | adp %.3f→%.3f",
+                choice.choiceId,
+                prevSociality,            progress.sociality,
+                prevActivity,             progress.activity,
+                prevEmotionalSensitivity, progress.emotionalSensitivity,
+                prevAnxiety,              progress.anxiety,
+                prevSelfControl,          progress.selfControl,
+                prevImpulsivity,          progress.impulsivity,
+                prevEgoFocus,             progress.egoFocus,
+                prevRigidity,             progress.rigidity,
+                prevNegativeAffect,       progress.negativeAffect,
+                prevAdaptability,         progress.adaptability
+            ));
         }
 
         // Update background if choice has one (choice background has highest priority)

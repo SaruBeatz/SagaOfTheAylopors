@@ -8,8 +8,22 @@ import androidx.room.PrimaryKey;
 import static androidx.room.ForeignKey.CASCADE;
 
 /**
- * Represents a player choice that appears after a dialogue.
- * Choices can affect story progression, character stats, or unlock different paths.
+ * A player choice that appears after a dialogue.
+ *
+ * Each choice carries 10 behavioral effect deltas (float, small values like ±0.03).
+ * They are accumulated into PlayerProgress and feed the ML personality classifier.
+ *
+ * JSON "effects" key → Java field mapping (snake_case → camelCase):
+ *   sociality              → effectSociality
+ *   activity               → effectActivity
+ *   emotional_sensitivity  → effectEmotionalSensitivity
+ *   anxiety                → effectAnxiety
+ *   self_control           → effectSelfControl
+ *   impulsivity            → effectImpulsivity
+ *   ego_focus              → effectEgoFocus
+ *   rigidity               → effectRigidity
+ *   negative_affect        → effectNegativeAffect
+ *   adaptability           → effectAdaptability
  */
 @Entity(
     tableName = "choices",
@@ -22,74 +36,59 @@ import static androidx.room.ForeignKey.CASCADE;
     indices = {@Index("dialogueId")}
 )
 public class Choice {
+
     @PrimaryKey
     public int choiceId;
-    
-    /**
-     * ID of the dialogue this choice appears after
-     */
+
+    /** ID of the dialogue this choice appears after */
     public int dialogueId;
-    
-    /**
-     * Order of choice (1, 2, 3, etc.) - determines display order
-     */
+
+    /** Display order within the choice set (1, 2, 3 …) */
     public int order;
-    
-    /**
-     * Localization key for the choice text
-     * Format: "chapter_{chapterId}_scene_{sceneId}_dialogue_{dialogueId}_choice_{order}"
-     */
+
+    /** Choice text stored directly (loaded from JSON) */
     public String textKey;
-    
-    /**
-     * Next dialogue ID to jump to when this choice is selected
-     * -1 if this choice leads to a different scene/chapter
-     */
+
+    /** Next dialogue ID; -1 if the choice goes to a different scene */
     public int nextDialogueId;
-    
-    /**
-     * Next scene ID if choice leads to different scene
-     * -1 if staying in same scene
-     */
+
+    /** Next scene ID; -1 if staying in the same scene */
     public int nextSceneId;
-    
-    /**
-     * Stat modifier: "cunning", "bravery", "creativity", etc.
-     * Can be null if choice doesn't affect stats
-     */
-    public String statModifier;
-    
-    /**
-     * Stat change value (positive or negative)
-     */
-    public int statChange;
-    
-    /**
-     * Whether this choice unlocks a new path or scene
-     */
+
+    /** Whether this choice unlocks a new narrative path */
     public boolean unlocksPath;
-    
+
     /**
-     * Drawable resource name for the background image (optional)
-     * Examples: "bg_ch1_mill_door_open", "bg_ch1_mill_thinking"
-     * Can be null if no background is specified
-     * If set, overrides dialogue and scene backgrounds
+     * Drawable resource name for the background image (optional).
+     * If set, overrides dialogue and scene backgrounds for this choice.
      */
     public String background;
-    
+
+    // ─── Behavioral effect deltas (float, range typically ±0.01 – ±0.05) ─────
+    // Positive values increase the parameter; negative values decrease it.
+    // All default to 0.0 (no effect).
+
+    public float effectSociality;
+    public float effectActivity;
+    public float effectEmotionalSensitivity;
+    public float effectAnxiety;
+    public float effectSelfControl;
+    public float effectImpulsivity;
+    public float effectEgoFocus;
+    public float effectRigidity;
+    public float effectNegativeAffect;
+    public float effectAdaptability;
+
     public Choice() {}
-    
-    public Choice(int choiceId, int dialogueId, int order, String textKey, 
-                  int nextDialogueId, int nextSceneId, String statModifier, 
-                  int statChange, boolean unlocksPath) {
+
+    public Choice(int choiceId, int dialogueId, int order, String textKey,
+                  int nextDialogueId, int nextSceneId, boolean unlocksPath) {
         this.choiceId = choiceId;
         this.dialogueId = dialogueId;
         this.order = order;
         this.textKey = textKey;
         this.nextDialogueId = nextDialogueId;
         this.nextSceneId = nextSceneId;
-        this.statModifier = statModifier;
-        this.statChange = statChange;
         this.unlocksPath = unlocksPath;
     }
 }

@@ -4,146 +4,93 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.util.Log;
 
-import java.util.Random;
-
 /**
  * Manages background music playback across activities.
- * Temporary implementation - future versions will have context-aware music.
+ * Music files are added to res/raw/ when ready.
+ * Until then all play/stop methods are safe no-ops.
  */
 public class MusicManager {
     private static final String TAG = "MusicManager";
     private static MusicManager instance;
     private MediaPlayer currentPlayer;
-    private float musicVolume = 0.7f; // Default 70%
-    private int currentTrack = -1;
-    
-    // Music track resource IDs
-    private static final int[] MUSIC_TRACKS = {
-        R.raw.chillmusic,
-        R.raw.background_nature_music,
-        R.raw.pause_music
-    };
-    
-    private static final int PAUSE_MUSIC = R.raw.pause_music;
-    
-    private MusicManager() {
-    }
-    
+    private float musicVolume = 0.7f;
+
+    // Add resource IDs here when music files are placed in res/raw/:
+    // e.g. R.raw.music_ch1_mystery, R.raw.music_main_theme, etc.
+    private static final int[] MUSIC_TRACKS = {};   // empty = no music yet
+    private static final int PAUSE_MUSIC_ID  = -1;  // -1 = no file yet
+
+    private MusicManager() {}
+
     public static synchronized MusicManager getInstance() {
         if (instance == null) {
             instance = new MusicManager();
         }
         return instance;
     }
-    
-    /**
-     * Play a random music track (for Map/Dialogue screens).
-     */
+
     public void playRandomMusic(Context context) {
+        if (MUSIC_TRACKS.length == 0) return;
         stopMusic();
-        
-        Random random = new Random();
-        int trackIndex = random.nextInt(MUSIC_TRACKS.length);
-        int trackResId = MUSIC_TRACKS[trackIndex];
-        
-        playMusic(context, trackResId, true);
+        int idx = (int) (Math.random() * MUSIC_TRACKS.length);
+        playMusic(context, MUSIC_TRACKS[idx], true);
     }
-    
-    /**
-     * Play pause music (looped).
-     */
+
     public void playPauseMusic(Context context) {
+        if (PAUSE_MUSIC_ID == -1) return;
         stopMusic();
-        playMusic(context, PAUSE_MUSIC, true);
+        playMusic(context, PAUSE_MUSIC_ID, true);
     }
-    
-    /**
-     * Play specific music track.
-     * @param context Application context
-     * @param trackResId Resource ID of the music track
-     * @param loop Whether to loop the music
-     */
-    private void playMusic(Context context, int trackResId, boolean loop) {
+
+    private void playMusic(Context context, int resId, boolean loop) {
+        if (resId <= 0) return;
         try {
-            if (currentPlayer != null) {
-                currentPlayer.release();
-            }
-            
-            currentPlayer = MediaPlayer.create(context, trackResId);
+            if (currentPlayer != null) currentPlayer.release();
+            currentPlayer = MediaPlayer.create(context, resId);
             if (currentPlayer != null) {
                 currentPlayer.setLooping(loop);
                 currentPlayer.setVolume(musicVolume, musicVolume);
                 currentPlayer.start();
-                currentTrack = trackResId;
-                Log.d(TAG, "Playing music track: " + trackResId + ", looping: " + loop);
-            } else {
-                Log.e(TAG, "Failed to create MediaPlayer for track: " + trackResId);
+                Log.d(TAG, "Playing track resId=" + resId);
             }
         } catch (Exception e) {
             Log.e(TAG, "Error playing music", e);
         }
     }
-    
-    /**
-     * Stop current music playback.
-     */
+
     public void stopMusic() {
         if (currentPlayer != null) {
             try {
-                if (currentPlayer.isPlaying()) {
-                    currentPlayer.stop();
-                }
+                if (currentPlayer.isPlaying()) currentPlayer.stop();
                 currentPlayer.release();
             } catch (Exception e) {
                 Log.e(TAG, "Error stopping music", e);
             }
             currentPlayer = null;
-            currentTrack = -1;
         }
     }
-    
-    /**
-     * Pause current music (can be resumed).
-     */
+
     public void pauseMusic() {
         if (currentPlayer != null && currentPlayer.isPlaying()) {
             currentPlayer.pause();
         }
     }
-    
-    /**
-     * Resume paused music.
-     */
+
     public void resumeMusic() {
         if (currentPlayer != null && !currentPlayer.isPlaying()) {
-            try {
-                currentPlayer.start();
-            } catch (Exception e) {
+            try { currentPlayer.start(); } catch (Exception e) {
                 Log.e(TAG, "Error resuming music", e);
             }
         }
     }
-    
-    /**
-     * Set music volume (0.0 to 1.0).
-     */
+
     public void setMusicVolume(float volume) {
         musicVolume = Math.max(0.0f, Math.min(1.0f, volume));
-        if (currentPlayer != null) {
-            currentPlayer.setVolume(musicVolume, musicVolume);
-        }
+        if (currentPlayer != null) currentPlayer.setVolume(musicVolume, musicVolume);
     }
-    
-    /**
-     * Get current music volume.
-     */
-    public float getMusicVolume() {
-        return musicVolume;
-    }
-    
-    /**
-     * Check if music is currently playing.
-     */
+
+    public float getMusicVolume() { return musicVolume; }
+
     public boolean isPlaying() {
         return currentPlayer != null && currentPlayer.isPlaying();
     }

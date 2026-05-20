@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout 
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,41 +8,42 @@
     android:background="@drawable/bg_menu"
     tools:context=".DialogueActivity">
 
-    <!-- Background ImageView -->
+    <!-- ─── Scene background ─────────────────────────────────────────────── -->
     <ImageView
         android:id="@+id/backgroundImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:contentDescription="@string/dialogue_chapter_title"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Overlay -->
+    <!-- ─── Global dark tint ─────────────────────────────────────────────── -->
     <View
-        android:id="@+id/view"
+        android:id="@+id/globalOverlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#955D4037"
+        android:background="#55000000"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Top Bar with Chapter Title and Pause Button -->
+    <!-- ─── Top bar ──────────────────────────────────────────────────────── -->
     <LinearLayout
         android:id="@+id/titleContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="#805D4037"
-        android:padding="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#7A5D4037"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -52,7 +53,7 @@
             android:layout_weight="1"
             android:text="@string/dialogue_chapter_title"
             android:textColor="@color/color_accent"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:fontFamily="@font/montserrat" />
 
@@ -61,100 +62,109 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_pause"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:fontFamily="@font/montserrat"
             android:background="@drawable/button_secondary"
             android:textColor="@color/color_text_light"
-            android:padding="12dp"
-            android:minHeight="40dp"
-            android:minWidth="100dp" />
+            android:padding="8dp"
+            android:minHeight="32dp"
+            android:minWidth="80dp" />
     </LinearLayout>
 
-    <!-- Character Portrait - Top (for cat narrator) 
-         NOTE: Currently disabled - view kept for future use but does not affect layout -->
+    <!--
+        ─── Character portraits ─────────────────────────────────────────────
+        Each portrait is constrained so its BOTTOM is at the TOP of textArea.
+        translationY="42dp" shifts them 42 dp DOWN — only feet overlap the
+        dialogue box. The rest (head + body) floats above it.
+        scaleType="matrix" + top-crop matrix set in code clips to top 50 %.
+        Declared BEFORE textArea → renders BEHIND it (lower z-order).
+
+        LEFT  → miller's son / master  (characterPortraitImageView)
+        RIGHT → cat / Puss-in-Boots    (characterPortraitRight)
+    -->
     <ImageView
         android:id="@+id/characterPortraitImageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
-        android:contentDescription="@string/speaker_puss"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        app:layout_constraintTop_toBottomOf="@id/titleContainer"
+        android:scaleType="matrix"
+        android:translationY="42dp"
+        app:layout_constraintWidth_percent="0.20"
+        app:layout_constraintHeight_percent="0.52"
+        app:layout_constraintBottom_toTopOf="@id/textArea"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.4" />
+        android:layout_marginStart="8dp" />
 
-    <!-- Text Area - Always at Bottom of Screen, Fixed Position -->
-    <!-- NOTE: No longer depends on characterPortraitImageView for positioning -->
+    <ImageView
+        android:id="@+id/characterPortraitRight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:scaleType="matrix"
+        android:translationY="42dp"
+        app:layout_constraintWidth_percent="0.20"
+        app:layout_constraintHeight_percent="0.52"
+        app:layout_constraintBottom_toTopOf="@id/textArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp" />
+
+    <!-- ─── Dialogue box — 40 % of screen height, pinned to bottom ──────── -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/textArea"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/bg_dialogue_box"
         android:clickable="true"
         android:focusable="true"
-        android:minHeight="180dp"
-        android:maxHeight="280dp"
-        android:padding="16dp"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintHeight_percent="0.40"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleContainer"
         app:layout_constraintVertical_bias="1.0">
 
-        <!-- Character Portrait Overlay (for cat narrator) - Inside text area -->
-        <ImageView
-            android:id="@+id/characterPortraitOverlay"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:visibility="gone"
-            android:contentDescription="@string/speaker_puss"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent="0.3" />
-
-        <!-- Speaker Name -->
+        <!-- Speaker name badge -->
         <TextView
             android:id="@+id/speakerNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="6dp"
             android:background="@drawable/bg_parchment"
             android:fontFamily="@font/montserrat"
-            android:padding="8dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
             android:text="@string/speaker_narrator"
             android:textColor="@color/color_accent"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Choice Indicator - Shows "..." when choices are available but not yet displayed -->
+        <!-- Choice pending indicator -->
         <TextView
             android:id="@+id/choiceIndicatorTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:visibility="gone"
             android:text="..."
             android:textColor="@color/color_accent"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:fontFamily="@font/montserrat"
-            android:alpha="0.7"
+            android:alpha="0.8"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Dialogue Text - Static (no scroll) -->
+        <!-- Dialogue text.
+             wrap_content height + maxLines acts as a hard cap so text never
+             overflows the dialogue box regardless of content length.
+             Pagination in DialogueActivity.java splits long texts into pages. -->
         <TextView
             android:id="@+id/dialogueTextView"
             android:layout_width="0dp"
@@ -162,18 +172,19 @@
             android:ellipsize="end"
             android:fontFamily="@font/montserrat"
             android:gravity="top|start"
-            android:lineSpacingMultiplier="1.3"
-            android:maxLines="8"
-            android:padding="8dp"
+            android:lineSpacingMultiplier="1.25"
+            android:maxLines="6"
+            android:padding="4dp"
             android:text="@string/test_dialog_line_1"
             android:textColor="@color/color_text_dark"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@id/choiceIndicatorTextView"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@id/speakerNameTextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/speakerNameTextView" />
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- ─── Choice buttons ───────────────────────────────────────────────── -->
     <LinearLayout
         android:id="@+id/choicesContainer"
         android:layout_width="0dp"
@@ -184,11 +195,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <!-- Choice buttons will be added dynamically -->
-    </LinearLayout>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
