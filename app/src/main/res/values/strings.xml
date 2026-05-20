@@ -14,6 +14,51 @@
     <string name="button_continue">Continue</string>
     <string name="button_settings">Settings</string>
     <string name="button_exit">Exit</string>
+    <string name="continue_locked_hint">Register first to unlock Continue</string>
+    <string name="continue_content_description_locked">Continue — locked until you register and start a new game</string>
+    <string name="continue_content_description_unlocked">Continue your adventure</string>
+    <string name="continue_locked_message">Please register first — then Continue will unlock!</string>
+    <string name="continue_unlocked_snackbar">«Continue» is now available!</string>
+
+    <!-- Privacy consent -->
+    <string name="consent_title">Personal data processing</string>
+    <string name="consent_body">To create an account, save progress, and sync your adventure, we process your email and optional profile data. Data is stored on secure Firebase servers. You can request deletion of your account and data by contacting support.\n\nFull privacy policy is available on our website. By continuing, you confirm that you have read this notice and agree to the processing of personal data under applicable law (including GDPR where applicable).</string>
+    <string name="consent_checkbox">I agree to the processing of my personal data</string>
+    <string name="consent_continue">Continue</string>
+    <string name="consent_decline">Back to menu</string>
+
+    <!-- Authentication -->
+    <string name="auth_login_title">Sign in</string>
+    <string name="auth_login_subtitle">Continue your saga on this device</string>
+    <string name="auth_login_action">Sign in</string>
+    <string name="auth_register_title">Create account</string>
+    <string name="auth_register_subtitle">A quick registration before your journey begins</string>
+    <string name="auth_register_action">Create account</string>
+    <string name="auth_forgot_title">Reset password</string>
+    <string name="auth_forgot_subtitle">We will send a reset link to your email</string>
+    <string name="auth_forgot_action">Send reset link</string>
+    <string name="auth_forgot_sent">Check your inbox for the reset link</string>
+    <string name="auth_forgot_password">Forgot password?</string>
+    <string name="auth_go_to_register">No account? Register</string>
+    <string name="auth_go_to_login">Already have an account? Sign in</string>
+    <string name="auth_back_to_login">Back to sign in</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_password_confirm">Confirm password</string>
+    <string name="auth_display_name">Display name</string>
+    <string name="auth_age">Age</string>
+    <string name="auth_phone_optional">Phone (optional)</string>
+    <string name="auth_phone_mask_hint">Phone (+7 xxx-xxx-xxxx)</string>
+    <string name="auth_error_display_name_required">Enter your in-game name</string>
+    <string name="auth_error_invalid_email">Enter a valid email address</string>
+    <string name="auth_error_weak_password">Password must be at least 8 characters</string>
+    <string name="auth_error_password_mismatch">Passwords do not match</string>
+    <string name="auth_error_wrong_password">Incorrect email or password</string>
+    <string name="auth_error_user_not_found">No account found for this email</string>
+    <string name="auth_error_email_in_use">This email is already registered</string>
+    <string name="auth_error_generic">Something went wrong. Please try again</string>
+    <string name="auth_error_invalid_age">Enter a valid age (5–120)</string>
+    <string name="auth_error_phone_mask">Use format: +7 xxx-xxx-xxxx</string>
     
     <!-- Character Selection -->
     <string name="character_select_title">Choose Your Hero</string>

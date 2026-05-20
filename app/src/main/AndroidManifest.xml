@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".SagaApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -81,6 +82,34 @@
             android:exported="false"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.SagaOfTheAylopors" />
+
+        <activity
+            android:name=".auth.ui.ConsentActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <activity
+            android:name=".auth.ui.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".auth.ui.RegisterActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".auth.ui.ForgotPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.SagaOfTheAylopors"
+            android:windowSoftInputMode="adjustResize" />
 
         <!-- Settings Activity -->
         <activity

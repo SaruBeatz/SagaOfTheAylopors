@@ -1,5 +1,7 @@
 package com.example.sagaoftheaylopors;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -9,18 +11,24 @@ import android.os.Looper;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import com.example.sagaoftheaylopors.auth.AuthFlowHelper;
+import com.example.sagaoftheaylopors.auth.SessionManager;
 import com.example.sagaoftheaylopors.data.database.StoryDataInitializer;
 import com.example.sagaoftheaylopors.databinding.ActivityMainMenuBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainMenuActivity extends AppCompatActivity {
 
     private ActivityMainMenuBinding binding;
+    private SessionManager sessionManager;
     private MediaPlayer backgroundMusic;
     private ObjectAnimator darkeningAnimator;
     private Handler animationHandler;
-    private static final long ANIMATION_DELAY = 4500; // 4.5 seconds
-    private static final long ANIMATION_DURATION = 5000; // 5 seconds
+    private boolean cinematicRunning = false;
+
+    private static final long DARKENING_DELAY_MS = 4500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,36 +36,129 @@ public class MainMenuActivity extends AppCompatActivity {
         binding = ActivityMainMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Initialize story database (Chapter 1 data)
+        sessionManager = new SessionManager(this);
         StoryDataInitializer.initializeChapter1(this);
 
-        // Initialize background music
+        updateContinueButtonState();
         initializeBackgroundMusic();
-
-        // Start darkening animation loop
         startDarkeningAnimation();
 
-        // New Game Button
-        binding.newGameButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainMenuActivity.this, CharacterSelectActivity.class);
-            startActivity(intent);
-        });
+        binding.newGameButton.setOnClickListener(v -> startNewGameCinematic());
 
-        // Continue Button - navigates to MapActivity for now
         binding.continueButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainMenuActivity.this, MapActivity.class);
-            startActivity(intent);
+            if (sessionManager.isContinueEnabled()) {
+                startActivity(new Intent(this, MapActivity.class));
+            } else {
+                Snackbar.make(
+                        binding.getRoot(),
+                        getString(R.string.continue_locked_message),
+                        Snackbar.LENGTH_LONG
+                ).setBackgroundTint(ContextCompat.getColor(this, R.color.color_primary))
+                        .setTextColor(ContextCompat.getColor(this, R.color.color_accent))
+                        .show();
+            }
         });
 
-        // Settings Button
-        binding.settingsButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainMenuActivity.this, SettingsActivity.class);
-            startActivity(intent);
-        });
+        binding.settingsButton.setOnClickListener(v ->
+                startActivity(new Intent(this, SettingsActivity.class)));
 
-        // Exit Button
         binding.exitButton.setOnClickListener(v -> finish());
     }
+
+    // ─── Cinematic "New Game" animation ──────────────────────────────────────
+
+    private void startNewGameCinematic() {
+        if (cinematicRunning) return;
+        cinematicRunning = true;
+
+        stopDarkeningAnimation();
+
+        // Fade out secondary UI
+        fadeOutViews(300, 0,
+                binding.titleTextView,
+                binding.continueButton,
+                binding.continueLockedHintText,
+                binding.settingsButton,
+                binding.exitButton);
+
+        // Fade out New Game button slightly later
+        binding.newGameButton.animate()
+                .alpha(0f)
+                .setDuration(500)
+                .setStartDelay(200)
+                .start();
+
+        // Zoom into background (camera push toward castle)
+        binding.backgroundImageView.animate()
+                .scaleX(1.45f)
+                .scaleY(1.45f)
+                .translationY(-80f)
+                .setDuration(1600)
+                .start();
+
+        // Darken with cinematic overlay
+        binding.cinematicFadeOverlay.setVisibility(View.VISIBLE);
+        binding.cinematicFadeOverlay.setAlpha(0f);
+        binding.cinematicFadeOverlay.animate()
+                .alpha(1f)
+                .setDuration(800)
+                .setStartDelay(800)
+                .setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        AuthFlowHelper.startNewGameFlow(MainMenuActivity.this);
+                        overridePendingTransition(android.R.anim.fade_in, 0);
+                    }
+                })
+                .start();
+    }
+
+    private void fadeOutViews(long duration, long startDelay, View... views) {
+        for (View v : views) {
+            v.animate().alpha(0f).setDuration(duration).setStartDelay(startDelay).start();
+        }
+    }
+
+    private void resetMenuState() {
+        cinematicRunning = false;
+
+        binding.backgroundImageView.animate().cancel();
+        binding.backgroundImageView.setScaleX(1f);
+        binding.backgroundImageView.setScaleY(1f);
+        binding.backgroundImageView.setTranslationY(0f);
+
+        binding.cinematicFadeOverlay.setAlpha(0f);
+        binding.cinematicFadeOverlay.setVisibility(View.INVISIBLE);
+
+        binding.titleTextView.setAlpha(1f);
+        binding.newGameButton.setAlpha(1f);
+        binding.settingsButton.setAlpha(1f);
+        binding.exitButton.setAlpha(1f);
+        binding.continueLockedHintText.setAlpha(1f);
+
+        // continueButton alpha is managed by updateContinueButtonState
+    }
+
+    // ─── Continue button state ────────────────────────────────────────────────
+
+    private void updateContinueButtonState() {
+        boolean enabled = sessionManager.isContinueEnabled();
+
+        binding.continueButton.setBackgroundResource(
+                enabled ? R.drawable.button_primary_minimal : R.drawable.button_continue_locked);
+
+        int textColorRes = enabled ? R.color.color_accent : android.R.color.white;
+        binding.continueButton.setTextColor(getColor(textColorRes));
+        binding.continueButton.setAlpha(enabled ? 1f : 0.75f);
+
+        binding.continueButton.setContentDescription(getString(
+                enabled ? R.string.continue_content_description_unlocked
+                        : R.string.continue_content_description_locked));
+
+        binding.continueLockedHintText.setVisibility(enabled ? View.GONE : View.VISIBLE);
+    }
+
+    // ─── Background music ─────────────────────────────────────────────────────
 
     private void initializeBackgroundMusic() {
         try {
@@ -72,48 +173,72 @@ public class MainMenuActivity extends AppCompatActivity {
         }
     }
 
+    // ─── Atmospheric darkening loop ───────────────────────────────────────────
+
     private void startDarkeningAnimation() {
         animationHandler = new Handler(Looper.getMainLooper());
         scheduleDarkeningAnimation();
     }
 
+    private void stopDarkeningAnimation() {
+        if (animationHandler != null) {
+            animationHandler.removeCallbacksAndMessages(null);
+        }
+        if (darkeningAnimator != null) {
+            darkeningAnimator.cancel();
+        }
+        binding.darkOverlay.setAlpha(0f);
+    }
+
     private void scheduleDarkeningAnimation() {
         animationHandler.postDelayed(() -> {
-            // Fade in dark overlay (darkening effect) - quick fade in
             View darkOverlay = binding.darkOverlay;
             darkOverlay.setAlpha(0.0f);
             darkeningAnimator = ObjectAnimator.ofFloat(darkOverlay, "alpha", 0.0f, 0.6f);
-            darkeningAnimator.setDuration(1000); // 1 second to fade in
+            darkeningAnimator.setDuration(1000);
             darkeningAnimator.start();
 
-            // After 5 seconds total (including fade in), fade back out
             animationHandler.postDelayed(() -> {
                 if (darkeningAnimator != null && darkeningAnimator.isRunning()) {
                     darkeningAnimator.cancel();
                 }
-                ObjectAnimator fadeOutAnimator = ObjectAnimator.ofFloat(darkOverlay, "alpha", 0.6f, 0.0f);
-                fadeOutAnimator.setDuration(1000); // 1 second to fade out
-                fadeOutAnimator.start();
-
-                // Schedule next animation cycle after fade out completes
-                animationHandler.postDelayed(() -> {
-                    scheduleDarkeningAnimation();
-                }, 1000);
-            }, 5000 - 1000); // 5 seconds total, minus fade in time
-        }, ANIMATION_DELAY);
+                ObjectAnimator fadeOut = ObjectAnimator.ofFloat(darkOverlay, "alpha", 0.6f, 0.0f);
+                fadeOut.setDuration(1000);
+                fadeOut.start();
+                animationHandler.postDelayed(this::scheduleDarkeningAnimation, 1000);
+            }, 4000);
+        }, DARKENING_DELAY_MS);
     }
+
+    // ─── Lifecycle ────────────────────────────────────────────────────────────
 
     @Override
     protected void onResume() {
         super.onResume();
+        resetMenuState();
+        updateContinueButtonState();
+
+        if (sessionManager.consumeJustRegistered()) {
+            Snackbar.make(
+                    binding.getRoot(),
+                    getString(R.string.continue_unlocked_snackbar),
+                    Snackbar.LENGTH_LONG
+            ).setBackgroundTint(ContextCompat.getColor(this, R.color.color_primary))
+                    .setTextColor(ContextCompat.getColor(this, R.color.color_accent))
+                    .show();
+        }
+
         if (backgroundMusic != null && !backgroundMusic.isPlaying()) {
             backgroundMusic.start();
         }
+
+        startDarkeningAnimation();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        stopDarkeningAnimation();
         if (backgroundMusic != null && backgroundMusic.isPlaying()) {
             backgroundMusic.pause();
         }
@@ -122,12 +247,7 @@ public class MainMenuActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (animationHandler != null) {
-            animationHandler.removeCallbacksAndMessages(null);
-        }
-        if (darkeningAnimator != null) {
-            darkeningAnimator.cancel();
-        }
+        stopDarkeningAnimation();
         if (backgroundMusic != null) {
             backgroundMusic.stop();
             backgroundMusic.release();
@@ -137,8 +257,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // Exit app from main menu
         finish();
     }
 }
-

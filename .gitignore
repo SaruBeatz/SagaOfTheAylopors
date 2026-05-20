@@ -7,9 +7,36 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+/.idea/appInsightsSettings.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+
+# --- Secrets & Firebase (never commit to public GitHub) ---
+# Real config from Firebase Console — keep only on your machine / CI secrets
+app/google-services.json
+**/GoogleService-Info.plist
+secrets/.env
+secrets/secrets.properties
+secrets/google-services.json
+secrets/*.json
+!secrets/README.md
+
+# Service accounts & tokens
+**/*-firebase-adminsdk-*.json
+**/serviceAccount*.json
+**/firebase-adminsdk*.json
+*.p12
+*.pem
+*.key
+.env
+.env.local
+.env.*.local
+
+# Android Studio / build outputs
+app/build/
+*.apk
+*.aab

@@ -14,6 +14,49 @@
     <string name="button_continue">Продолжить</string>
     <string name="button_settings">Настройки</string>
     <string name="button_exit">Выход</string>
+    <string name="continue_locked_hint">Зарегистрируйтесь, чтобы открыть «Продолжить»</string>
+    <string name="continue_content_description_locked">Продолжить — недоступно до регистрации и начала игры</string>
+    <string name="continue_content_description_unlocked">Продолжить приключение</string>
+    <string name="continue_locked_message">Сначала зарегистрируйтесь — тогда «Продолжить» откроется!</string>
+    <string name="continue_unlocked_snackbar">«Продолжить» теперь доступно!</string>
+
+    <string name="consent_title">Обработка персональных данных</string>
+    <string name="consent_body">Для создания аккаунта, сохранения прогресса и синхронизации мы обрабатываем email и необязательные данные профиля. Данные хранятся на защищённых серверах Firebase. Вы можете запросить удаление аккаунта, обратившись в поддержку.\n\nПолная политика конфиденциальности доступна на сайте. Продолжая, вы подтверждаете, что ознакомились с уведомлением и согласны на обработку персональных данных в соответствии с применимым законодательством.</string>
+    <string name="consent_checkbox">Я согласен(на) на обработку моих персональных данных</string>
+    <string name="consent_continue">Продолжить</string>
+    <string name="consent_decline">В меню</string>
+
+    <string name="auth_login_title">Вход</string>
+    <string name="auth_login_subtitle">Продолжите сагу на этом устройстве</string>
+    <string name="auth_login_action">Войти</string>
+    <string name="auth_register_title">Регистрация</string>
+    <string name="auth_register_subtitle">Короткая регистрация перед началом пути</string>
+    <string name="auth_register_action">Создать аккаунт</string>
+    <string name="auth_forgot_title">Восстановление пароля</string>
+    <string name="auth_forgot_subtitle">Мы отправим ссылку на ваш email</string>
+    <string name="auth_forgot_action">Отправить ссылку</string>
+    <string name="auth_forgot_sent">Проверьте почту — письмо уже отправлено</string>
+    <string name="auth_forgot_password">Забыли пароль?</string>
+    <string name="auth_go_to_register">Нет аккаунта? Регистрация</string>
+    <string name="auth_go_to_login">Уже есть аккаунт? Войти</string>
+    <string name="auth_back_to_login">Назад ко входу</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Пароль</string>
+    <string name="auth_password_confirm">Подтверждение пароля</string>
+    <string name="auth_display_name">Имя в игре</string>
+    <string name="auth_age">Возраст</string>
+    <string name="auth_phone_optional">Телефон (необязательно)</string>
+    <string name="auth_phone_mask_hint">Телефон (+7 xxx-xxx-xxxx)</string>
+    <string name="auth_error_display_name_required">Введите имя в игре</string>
+    <string name="auth_error_invalid_email">Введите корректный email</string>
+    <string name="auth_error_weak_password">Пароль не менее 8 символов</string>
+    <string name="auth_error_password_mismatch">Пароли не совпадают</string>
+    <string name="auth_error_wrong_password">Неверный email или пароль</string>
+    <string name="auth_error_user_not_found">Аккаунт с таким email не найден</string>
+    <string name="auth_error_email_in_use">Этот email уже зарегистрирован</string>
+    <string name="auth_error_generic">Ошибка. Попробуйте снова</string>
+    <string name="auth_error_invalid_age">Введите корректный возраст (5–120)</string>
+    <string name="auth_error_phone_mask">Используйте формат: +7 xxx-xxx-xxxx</string>
     
     <!-- Character Selection -->
     <string name="character_select_title">Выбери своего героя</string>
