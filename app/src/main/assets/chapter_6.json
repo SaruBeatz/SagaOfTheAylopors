@@ -1,393 +1,1612 @@
 {
   "chapter_id": 6,
-  "title": "Награда",
+  "title": "Цена Победы",
   "scenes": [
     {
       "id": "ch6_s1",
       "order": 1,
-      "background": "bg_ch6_valley",
+      "background": "bg_ch6_valley.png",
       "dialogues": [
         {
-          "id": "ch6_s1_d1",
+          "id": "ch6_s1_d01",
           "order": 1,
           "speaker": "Narrator",
-          "text": "Долгая дорога завершилась, но воздух вокруг всё ещё наполнен напряжением от последних событий. Кот идёт по тропе, ведущей из тёмной пещеры в мягкий свет открытой долины. На его спине рюкзак с найденными артефактами, рядом спутник шагает тихо, словно обдумывая каждое движение.",
+          "transition_before": "fade_in",
+          "camera_effect": "slow_zoom_out",
+          "portrait_mode": "none",
+          "text": "Пещера выпускает вас неохотно.",
           "has_choices": false,
-          "next_dialogue": "ch6_s1_d2"
+          "next_dialogue": "ch6_s1_d02"
         },
         {
-          "id": "ch6_s1_d2",
+          "id": "ch6_s1_d02",
           "order": 2,
           "speaker": "Narrator",
-          "text": "Тишина дороги даёт возможность услышать собственные мысли: прошлые сомнения, страхи, неожиданные решения — всё складывается в единую картину опыта.",
+          "portrait_mode": "none",
+          "text": "Сначала — холодный воздух. Потом — серый свет.",
           "has_choices": false,
-          "next_dialogue": "ch6_s1_d3"
+          "next_dialogue": "ch6_s1_d03"
         },
         {
-          "id": "ch6_s1_d3",
+          "id": "ch6_s1_d03",
           "order": 3,
-          "speaker": "Cat",
-          "text": "«Кажется, я понимаю… Не просто победа над драконом, а то, что было внутри меня всё это время. То, что я не замечал, пока шагал по тёмным тропам…»",
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Потом — звук воды, такой чистый, будто мир пытается сделать вид, что ничего не случилось.",
           "has_choices": false,
-          "next_dialogue": "ch6_s1_d4"
+          "next_dialogue": "ch6_s1_d04"
         },
         {
-          "id": "ch6_s1_d4",
+          "id": "ch6_s1_d04",
           "order": 4,
           "speaker": "Narrator",
-          "text": "Солнце скользит по холмам, отражая золотистый свет от утёсов и воды в долине. Тени от деревьев тянутся, будто показывая путь к новым горизонтам. Кот останавливается у маленького ручья. Спутник смотрит на него, наблюдая: это момент оценки, где победа ещё свежа, а последствия действий уже начинают проявляться.",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "За спиной остаётся мёртвый дракон.",
           "has_choices": false,
-          "next_dialogue": "ch6_s1_d5"
+          "next_dialogue": "ch6_s1_d05"
         },
         {
-          "id": "ch6_s1_d5",
+          "id": "ch6_s1_d05",
           "order": 5,
           "speaker": "Narrator",
-          "text": "Победа над внешним «демоном» отражается во внутреннем росте. Свет утреннего солнца озаряет тропу, по которой кот и спутник идут вперёд, но их шаги уже уверенные, сдержанные и полные нового понимания. С кем ты хочешь разделить этот момент осознания?",
+          "portrait_mode": "none",
+          "text": "В рюкзаке — Кристалл Абсолюта. Сквозь плотную ткань пробивается бледное сияние.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d06"
+        },
+        {
+          "id": "ch6_s1_d06",
+          "order": 6,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Оно не греет. Оно напоминает.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d07"
+        },
+        {
+          "id": "ch6_s1_d07",
+          "order": 7,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мы вышли.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d08"
+        },
+        {
+          "id": "ch6_s1_d08",
+          "order": 8,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Некрасиво. Не чисто.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d09"
+        },
+        {
+          "id": "ch6_s1_d09",
+          "order": 9,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Но живыми.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d10"
+        },
+        {
+          "id": "ch6_s1_d10",
+          "order": 10,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Живыми считается. Красиво бывает на портретах, не после боя с драконом. Сначала вода, потом перевязка, потом маршрут назад.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d11"
+        },
+        {
+          "id": "ch6_s1_d11",
+          "order": 11,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Живыми, с кристаллом и без хвоста в огне. Я бы назвал это редким коммерческим успехом.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d12"
+        },
+        {
+          "id": "ch6_s1_d12",
+          "order": 12,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Свет изменился. Не рассвет. Кристалл. Он продолжает влиять на воздух вокруг нас.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d13"
+        },
+        {
+          "id": "ch6_s1_d13",
+          "order": 13,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я рад, что небо ещё здесь. В пещере я начал сомневаться, что оно вообще было настоящим.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d14"
+        },
+        {
+          "id": "ch6_s1_d14",
+          "order": 14,
+          "speaker": "Narrator",
+          "background": "bg_ch6_stream",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Вы останавливаетесь у ручья. Вода журчит так спокойно, что почти кажется жестокой.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d15"
+        },
+        {
+          "id": "ch6_s1_d15",
+          "order": 15,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Ты смываешь с морды гарь. Ледяная вода кусает кожу и возвращает мысли на место.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d16"
+        },
+        {
+          "id": "ch6_s1_d16",
+          "order": 16,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "В отражении на тебя смотрит кто-то знакомый. Но не прежний.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d17"
+        },
+        {
+          "id": "ch6_s1_d17",
+          "order": 17,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Глаза стали жёстче. Плащ обгорел по краям. А молчание внутри стало глубже.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d18"
+        },
+        {
+          "id": "ch6_s1_d18",
+          "order": 18,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мы сделали это.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d19"
+        },
+        {
+          "id": "ch6_s1_d19",
+          "order": 19,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Тварь из Бездны мертва.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d20"
+        },
+        {
+          "id": "ch6_s1_d20",
+          "order": 20,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Сокровище богов лежит у моих лап.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d21"
+        },
+        {
+          "id": "ch6_s1_d21",
+          "order": 21,
+          "speaker": "Cat",
+          "pause_before": 2.0,
+          "portrait_mode": "cat_only",
+          "text": "— Но кем я стал, когда перешагнул через эту черту?",
           "has_choices": true,
           "choices": [
             {
-              "id": "ch6_s1_d5_c1",
-              "text": "Остаться с наставником, чтобы понять значение победы",
-              "next_scene": "ch6_s2"
+              "id": "ch6_s1_d21_c1",
+              "text": "«Я ощущаю свою неоспоримую власть. Теперь ни короли, ни людоеды мне не указ».",
+              "effects": {
+                "ego_focus": 0.13,
+                "negativism": 0.05,
+                "sociality": -0.07
+              },
+              "next_dialogue": "ch6_s1_d40"
             },
             {
-              "id": "ch6_s1_d5_c2",
-              "text": "Поделиться моментом с хитрым помощником",
-              "next_scene": "ch6_s3"
+              "id": "ch6_s1_d21_c2",
+              "text": "«Сила в умении сохранять абсолютное спокойствие в самом сердце бури».",
+              "effects": {
+                "self_control": 0.10,
+                "rigidity": 0.05,
+                "impulsivity": -0.05
+              },
+              "next_dialogue": "ch6_s1_d60"
             },
             {
-              "id": "ch6_s1_d5_c3",
-              "text": "Обсудить с слабым, но знающим союзником",
-              "next_scene": "ch6_s4"
-            },
-            {
-              "id": "ch6_s1_d5_c4",
-              "text": "Продолжить путь с сильным, но зависимым союзником",
-              "next_scene": "ch6_s5"
+              "id": "ch6_s1_d21_c3",
+              "text": "«Я не стал богом. Но мы выжили, потому что доверяли друг другу».",
+              "effects": {
+                "emotional_sensitivity": 0.10,
+                "sociality": 0.07,
+                "ego_focus": -0.07
+              },
+              "next_dialogue": "ch6_s1_d80"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ch6_s2",
-      "order": 2,
-      "background": "bg_ch6_valley",
-      "dialogues": [
-        {
-          "id": "ch6_s2_d1",
-          "order": 1,
-          "speaker": "Mentor",
-          "text": "— Видел, как ты справился в пещере. Но сила, что ты показал, — не только ловкость или хитрость. Ты научился чувствовать момент, предугадывать… И это сильнее любого меча.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s2_d2"
         },
+
         {
-          "id": "ch6_s2_d2",
-          "order": 2,
-          "speaker": "Cat",
-          "text": "Кот кивает, проходя рукой по воде, и видит отражение — не просто свой силуэт, а образ, в котором сплелись страх, смелость, хитрость и осторожность. Он впервые ощущает гармонию внутренней силы и понимания мира вокруг.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s2_d3"
-        },
-        {
-          "id": "ch6_s2_d3",
-          "order": 3,
-          "speaker": "Mentor",
-          "text": "— Ты приобрёл дар, но он не для себя. Теперь твоя сила и понимание — для того, чтобы помогать миру, а не просто защищать себя.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s2_d4"
-        },
-        {
-          "id": "ch6_s2_d4",
-          "order": 4,
-          "speaker": "Cat",
-          "text": "«Я больше не тот, кто вошёл в пещеру. И одновременно… я всё ещё учусь. Каждое решение, каждый шаг — это часть меня. И теперь я знаю, что могу использовать эту силу, не разрушая того, что ценю…»",
-          "has_choices": false,
-          "next_dialogue": "ch6_s2_d5"
-        },
-        {
-          "id": "ch6_s2_d5",
-          "order": 5,
-          "speaker": "Mentor",
-          "text": "— Внимание к структуре, понимание закономерностей — это первый дар: осознание силы, которой можно доверять и которой можно управлять.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s2_d6"
-        },
-        {
-          "id": "ch6_s2_d6",
-          "order": 6,
+          "id": "ch6_s1_d40",
+          "order": 40,
           "speaker": "Narrator",
-          "text": "Свет утреннего солнца озаряет тропу, по которой кот и Алвард идут вперёд, но их шаги уже уверенные, сдержанные и полные нового понимания. Это первый дар: осознание силы, которой можно доверять и которой можно управлять.",
+          "background": "bg_ch6_stream_dark",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты распрямляешь плечи. Усталость остаётся. Но под ней просыпается нечто горячее.",
           "has_choices": false,
-          "next_dialogue": "ch6_s6_d1"
-        }
-      ]
-    },
-    {
-      "id": "ch6_s3",
-      "order": 3,
-      "background": "bg_ch6_valley",
-      "dialogues": [
-        {
-          "id": "ch6_s3_d1",
-          "order": 1,
-          "speaker": "TrickyHelper",
-          "text": "— Видел, как ты справился в пещере. Но сила, что ты показал, — не только ловкость или хитрость. Ты научился использовать возможности, предугадывать… И это сильнее любого меча.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s3_d2"
+          "next_dialogue": "ch6_s1_d41"
         },
         {
-          "id": "ch6_s3_d2",
-          "order": 2,
-          "speaker": "Cat",
-          "text": "Кот кивает, проходя рукой по воде, и видит отражение — не просто свой силуэт, а образ, в котором сплелись страх, смелость, хитрость и осторожность. Он впервые ощущает гармонию внутренней силы и понимания мира вокруг.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s3_d3"
-        },
-        {
-          "id": "ch6_s3_d3",
-          "order": 3,
-          "speaker": "TrickyHelper",
-          "text": "— Ты приобрёл дар, но он не для себя. Теперь твоя сила и понимание — для того, чтобы видеть возможности там, где другие видят препятствия.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s3_d4"
-        },
-        {
-          "id": "ch6_s3_d4",
-          "order": 4,
-          "speaker": "Cat",
-          "text": "«Я больше не тот, кто вошёл в пещеру. И одновременно… я всё ещё учусь. Каждое решение, каждый шаг — это часть меня. И теперь я знаю, что могу использовать эту силу, не разрушая того, что ценю…»",
-          "has_choices": false,
-          "next_dialogue": "ch6_s3_d5"
-        },
-        {
-          "id": "ch6_s3_d5",
-          "order": 5,
-          "speaker": "TrickyHelper",
-          "text": "— Хитрость и изобретательность — это первый дар: осознание силы, которой можно доверять и которой можно управлять.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s3_d6"
-        },
-        {
-          "id": "ch6_s3_d6",
-          "order": 6,
+          "id": "ch6_s1_d41",
+          "order": 41,
           "speaker": "Narrator",
-          "text": "Свет утреннего солнца озаряет тропу, по которой кот и Локиан идут вперёд, но их шаги уже уверенные, сдержанные и полные нового понимания. Это первый дар: осознание силы, которой можно доверять и которой можно управлять.",
+          "portrait_mode": "cat_only",
+          "text": "Не радость. Власть.",
           "has_choices": false,
-          "next_dialogue": "ch6_s6_d1"
-        }
-      ]
-    },
-    {
-      "id": "ch6_s4",
-      "order": 4,
-      "background": "bg_ch6_valley",
-      "dialogues": [
-        {
-          "id": "ch6_s4_d1",
-          "order": 1,
-          "speaker": "WeakButKnowing",
-          "text": "— Видел, как ты справился в пещере. Но сила, что ты показал, — не только ловкость или хитрость. Ты научился видеть детали, предугадывать… И это сильнее любого меча.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s4_d2"
+          "next_dialogue": "ch6_s1_d42"
         },
         {
-          "id": "ch6_s4_d2",
-          "order": 2,
+          "id": "ch6_s1_d42",
+          "order": 42,
           "speaker": "Cat",
-          "text": "Кот кивает, проходя рукой по воде, и видит отражение — не просто свой силуэт, а образ, в котором сплелись страх, смелость, хитрость и осторожность. Он впервые ощущает гармонию внутренней силы и понимания мира вокруг.",
+          "portrait_mode": "cat_only",
+          "text": "— Король думает, что послал наёмника.",
           "has_choices": false,
-          "next_dialogue": "ch6_s4_d3"
+          "next_dialogue": "ch6_s1_d43"
         },
         {
-          "id": "ch6_s4_d3",
-          "order": 3,
-          "speaker": "WeakButKnowing",
-          "text": "— Ты приобрёл дар, но он не для себя. Теперь твоя сила и понимание — для того, чтобы видеть скрытые детали, которые другие не заметили бы.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s4_d4"
-        },
-        {
-          "id": "ch6_s4_d4",
-          "order": 4,
+          "id": "ch6_s1_d43",
+          "order": 43,
           "speaker": "Cat",
-          "text": "«Я больше не тот, кто вошёл в пещеру. И одновременно… я всё ещё учусь. Каждое решение, каждый шаг — это часть меня. И теперь я знаю, что могу использовать эту силу, не разрушая того, что ценю…»",
+          "portrait_mode": "cat_only",
+          "text": "— О, как он ошибается.",
           "has_choices": false,
-          "next_dialogue": "ch6_s4_d5"
+          "next_dialogue": "ch6_s1_d44"
         },
         {
-          "id": "ch6_s4_d5",
-          "order": 5,
-          "speaker": "WeakButKnowing",
-          "text": "— Знание и осторожность — это первый дар: осознание силы, которой можно доверять и которой можно управлять.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s4_d6"
-        },
-        {
-          "id": "ch6_s4_d6",
-          "order": 6,
-          "speaker": "Narrator",
-          "text": "Свет утреннего солнца озаряет тропу, по которой кот и Мирелин идут вперёд, но их шаги уже уверенные, сдержанные и полные нового понимания. Это первый дар: осознание силы, которой можно доверять и которой можно управлять.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s6_d1"
-        }
-      ]
-    },
-    {
-      "id": "ch6_s5",
-      "order": 5,
-      "background": "bg_ch6_valley",
-      "dialogues": [
-        {
-          "id": "ch6_s5_d1",
-          "order": 1,
-          "speaker": "StrongButDependent",
-          "text": "— Видел, как ты справился в пещере. Но сила, что ты показал, — не только ловкость или хитрость. Ты научился вести других, предугадывать… И это сильнее любого меча.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s5_d2"
-        },
-        {
-          "id": "ch6_s5_d2",
-          "order": 2,
+          "id": "ch6_s1_d44",
+          "order": 44,
           "speaker": "Cat",
-          "text": "Кот кивает, проходя рукой по воде, и видит отражение — не просто свой силуэт, а образ, в котором сплелись страх, смелость, хитрость и осторожность. Он впервые ощущает гармонию внутренней силы и понимания мира вокруг.",
+          "portrait_mode": "cat_only",
+          "text": "— Он разбудил тигра.",
           "has_choices": false,
-          "next_dialogue": "ch6_s5_d3"
+          "next_dialogue": "ch6_s1_d45"
         },
         {
-          "id": "ch6_s5_d3",
-          "order": 3,
-          "speaker": "StrongButDependent",
-          "text": "— Ты приобрёл дар, но он не для себя. Теперь твоя сила и понимание — для того, чтобы направлять других, давать им силу.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s5_d4"
-        },
-        {
-          "id": "ch6_s5_d4",
-          "order": 4,
+          "id": "ch6_s1_d45",
+          "order": 45,
           "speaker": "Cat",
-          "text": "«Я больше не тот, кто вошёл в пещеру. И одновременно… я всё ещё учусь. Каждое решение, каждый шаг — это часть меня. И теперь я знаю, что могу использовать эту силу, не разрушая того, что ценю…»",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Если я смог убить смерть...",
           "has_choices": false,
-          "next_dialogue": "ch6_s5_d5"
+          "next_dialogue": "ch6_s1_d46"
         },
         {
-          "id": "ch6_s5_d5",
-          "order": 5,
-          "speaker": "StrongButDependent",
-          "text": "— Сила и ответственность — это первый дар: осознание силы, которой можно доверять и которой можно управлять.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s5_d6"
-        },
-        {
-          "id": "ch6_s5_d6",
-          "order": 6,
-          "speaker": "Narrator",
-          "text": "Свет утреннего солнца озаряет тропу, по которой кот и Лаврик идут вперёд, но их шаги уже уверенные, сдержанные и полные нового понимания. Это первый дар: осознание силы, которой можно доверять и которой можно управлять.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s6_d1"
-        }
-      ]
-    },
-    {
-      "id": "ch6_s6",
-      "order": 6,
-      "background": "bg_ch6_valley",
-      "dialogues": [
-        {
-          "id": "ch6_s6_d1",
-          "order": 1,
-          "speaker": "Narrator",
-          "text": "Солнце уже опускается за холмы, окрашивая каменные башни и мостовую в золотисто-оранжевые оттенки. Кот и спутник идут по дороге, ведущей от старой крепости, и мир вокруг кажется одновременно знакомым и новым.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s6_d2"
-        },
-        {
-          "id": "ch6_s6_d2",
-          "order": 2,
+          "id": "ch6_s1_d46",
+          "order": 46,
           "speaker": "Cat",
-          "text": "Каждый звук, каждый шорох травы — теперь это информация, которую кот умеет читать. Он понимает: всё, что пережито, всё, чему научен, теперь складывается в внутреннюю карту мира.",
+          "portrait_mode": "cat_only",
+          "text": "— Кто остановит меня теперь?",
           "has_choices": false,
-          "next_dialogue": "ch6_s6_d3"
+          "next_dialogue": "ch6_s1_d47"
         },
         {
-          "id": "ch6_s6_d3",
-          "order": 3,
+          "id": "ch6_s1_d47",
+          "order": 47,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Самоуверенность убивает быстрее драконов. Но если ты хочешь власти, начни с дисциплины. Иначе власть начнёт управлять тобой.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d48"
+        },
+        {
+          "id": "ch6_s1_d48",
+          "order": 48,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Вот это взгляд. Такой взгляд обычно либо основывает империю, либо заканчивает жизнь на пике. Иногда оба пункта в один день.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d49"
+        },
+        {
+          "id": "ch6_s1_d49",
+          "order": 49,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Кристалл усиливает мысли, которые уже были внутри. Если сейчас слышите корону в голове, проверьте, ваш ли это голос.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d50"
+        },
+        {
+          "id": "ch6_s1_d50",
+          "order": 50,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Вы стали сильнее. Это правда. Но... пожалуйста, не становитесь страшнее, чем дракон. Мне не хочется снова выбирать, кого бояться.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d100"
+        },
+
+        {
+          "id": "ch6_s1_d60",
+          "order": 60,
           "speaker": "Narrator",
-          "text": "На пути встречаются деревья, покрытые тонкими плетями лиан и мхов, будто старые хроники природы, где можно прочитать историю каждого сезона, каждой ветки, каждого звука. Кот останавливается, наблюдает, как маленькая белка ловко перепрыгивает с ветки на ветку, а птицы в небе координируют свои полёты с удивительной точностью.",
+          "background": "bg_ch6_stream_calm",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты глубоко вдыхаешь. Холод входит в лёгкие.",
           "has_choices": false,
-          "next_dialogue": "ch6_s6_d4"
+          "next_dialogue": "ch6_s1_d61"
         },
         {
-          "id": "ch6_s6_d4",
-          "order": 4,
+          "id": "ch6_s1_d61",
+          "order": 61,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "И впервые за долгое время страх не командует тобой. Он просто стоит рядом.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d62"
+        },
+        {
+          "id": "ch6_s1_d62",
+          "order": 62,
           "speaker": "Cat",
-          "text": "«Каждое движение, каждое решение — часть целого. Я больше не просто прохожу путь. Я понимаю его. И могу влиять, не ломая, а направляя»",
+          "portrait_mode": "cat_only",
+          "text": "— Сила не в том, чтобы рычать громче дракона.",
           "has_choices": false,
-          "next_dialogue": "ch6_s6_d5"
+          "next_dialogue": "ch6_s1_d63"
         },
         {
-          "id": "ch6_s6_d5",
-          "order": 5,
-          "speaker": "Mentor",
-          "text": "— Ты приобрёл дар, но он не для себя. Теперь твоя сила и понимание — для того, чтобы помогать миру, а не просто защищать себя. И скоро придёт момент, когда это станет не метафорой, а настоящим испытанием.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s6_d6"
-        },
-        {
-          "id": "ch6_s6_d6",
-          "order": 6,
-          "speaker": "TrickyHelper",
-          "text": "— Хитрость и изобретательность помогут тебе видеть возможности там, где другие видят препятствия.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s6_d7"
-        },
-        {
-          "id": "ch6_s6_d7",
-          "order": 7,
-          "speaker": "WeakButKnowing",
-          "text": "— Знание и осторожность позволят тебе видеть скрытые детали, которые другие не заметили бы.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s6_d8"
-        },
-        {
-          "id": "ch6_s6_d8",
-          "order": 8,
-          "speaker": "StrongButDependent",
-          "text": "— Сила и ответственность помогут тебе направлять других, давать им силу.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s6_d9"
-        },
-        {
-          "id": "ch6_s6_d9",
-          "order": 9,
-          "speaker": "Narrator",
-          "text": "На горизонте появляется дым: отдалённое место, где ходят люди и животные, где смешиваются страх и надежда, жизнь и опасность. Кот понимает, что скоро путь приведёт его туда, где придётся применять всё, чему научился.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s6_d10"
-        },
-        {
-          "id": "ch6_s6_d10",
-          "order": 10,
-          "speaker": "Narrator",
-          "text": "Рассказчик тихо замечает:\n— Всё, что ты получил, не заканчивается здесь. Дар — это подготовка к последнему шагу. Понимание того, кто ты, и сила, чтобы действовать, станут ключом к завершению пути.",
-          "has_choices": false,
-          "next_dialogue": "ch6_s6_d11"
-        },
-        {
-          "id": "ch6_s6_d11",
-          "order": 11,
+          "id": "ch6_s1_d63",
+          "order": 63,
           "speaker": "Cat",
-          "text": "Кот и спутник продолжают движение по дороге, ощущая свежесть вечернего ветра, мягкость света, и каждый звук вокруг словно говорит им: впереди — финальная проверка, момент, где полученное станет решающим.",
+          "portrait_mode": "cat_only",
+          "text": "— Сила в том, чтобы держать клинок ровно, когда рушится свод.",
           "has_choices": false,
-          "next_dialogue": "ch6_s6_d12"
+          "next_dialogue": "ch6_s1_d64"
         },
         {
-          "id": "ch6_s6_d12",
-          "order": 12,
+          "id": "ch6_s1_d64",
+          "order": 64,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Я не победил страх.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d65"
+        },
+        {
+          "id": "ch6_s1_d65",
+          "order": 65,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я научил его идти в строю.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d66"
+        },
+        {
+          "id": "ch6_s1_d66",
+          "order": 66,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Хороший вывод. Страх не враг, если он подчинён порядку. Запомни это лучше, чем саму победу.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d67"
+        },
+        {
+          "id": "ch6_s1_d67",
+          "order": 67,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Звучит мудро. Почти пугающе. Обычно после таких слов люди начинают хуже шутить. Очень надеюсь, с тобой этого не случится.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d68"
+        },
+        {
+          "id": "ch6_s1_d68",
+          "order": 68,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Это редкое состояние. Ясность после ужаса. Многие принимают её за бессмертие. Не ошибитесь.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d69"
+        },
+        {
+          "id": "ch6_s1_d69",
+          "order": 69,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мне нравится этот страх в строю. Мой пока ходит кругами, но я попробую его построить.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d100"
+        },
+
+        {
+          "id": "ch6_s1_d80",
+          "order": 80,
           "speaker": "Narrator",
-          "text": "И так, медленно, но уверенно, их шаги приводят к точке, где начинается новая глава, где герою предстоит вернуться домой, интегрируя опыт и силу, чтобы завершить круг приключения.",
+          "background": "bg_ch6_stream_together",
+          "transition_before": "fade_in",
+          "portrait_mode": "both",
+          "text": "Ты смотришь на спутника. На кровь, смешанную с водой. На ожоги.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d81"
+        },
+        {
+          "id": "ch6_s1_d81",
+          "order": 81,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "На руки, которые всё ещё дрожат, но не отпускают жизнь.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d82"
+        },
+        {
+          "id": "ch6_s1_d82",
+          "order": 82,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Одиночки гибнут первыми.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d83"
+        },
+        {
+          "id": "ch6_s1_d83",
+          "order": 83,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Этот бой выиграла не моя сабля.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d84"
+        },
+        {
+          "id": "ch6_s1_d84",
+          "order": 84,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Его выиграли мы.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d85"
+        },
+        {
+          "id": "ch6_s1_d85",
+          "order": 85,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "— Я вернулся не богом.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d86"
+        },
+        {
+          "id": "ch6_s1_d86",
+          "order": 86,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Я вернулся с другом.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d87"
+        },
+        {
+          "id": "ch6_s1_d87",
+          "order": 87,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Союз — это тоже система. Просто самая трудная. Её нельзя построить приказом, но без неё даже лучший план ломается.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d88"
+        },
+        {
+          "id": "ch6_s1_d88",
+          "order": 88,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Другом? Осторожнее с такими словами. Они тяжелее золота и хуже помещаются в карман. Но... я понял.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d89"
+        },
+        {
+          "id": "ch6_s1_d89",
+          "order": 89,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— В старых хрониках герои часто пишут «я победил». Вы сказали «мы». Это меняет всю историю.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d90"
+        },
+        {
+          "id": "ch6_s1_d90",
+          "order": 90,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я тоже вернулся с другом? Хорошо. Тогда я больше не просто тяжёлая часть плана.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d91"
+        },
+        {
+          "id": "ch6_s1_d91",
+          "order": 91,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Никогда не был.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d92"
+        },
+        {
+          "id": "ch6_s1_d92",
+          "order": 92,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Ты был очень убедительной частью плана.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d100"
+        },
+
+        {
+          "id": "ch6_s1_d100",
+          "order": 100,
+          "speaker": "Narrator",
+          "background": "bg_ch6_crystal",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Ты поворачиваешься к рюкзаку. Кристалл лежит тихо.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d101"
+        },
+        {
+          "id": "ch6_s1_d101",
+          "order": 101,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Но это не тишина камня. Это тишина существа, которое ждёт, пока его попросят.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d102"
+        },
+        {
+          "id": "ch6_s1_d102",
+          "order": 102,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Свет пульсирует. Мягко. Маняще.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d103"
+        },
+        {
+          "id": "ch6_s1_d103",
+          "order": 103,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Как второе сердце, которое не обязано биться по твоим правилам.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d104"
+        },
+        {
+          "id": "ch6_s1_d104",
+          "order": 104,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— В нём больше власти, чем во всём замке.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d105"
+        },
+        {
+          "id": "ch6_s1_d105",
+          "order": 105,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И он лежит здесь.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d106"
+        },
+        {
+          "id": "ch6_s1_d106",
+          "order": 106,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— У моих лап.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d107"
+        },
+        {
+          "id": "ch6_s1_d107",
+          "order": 107,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Не приближайся без решения. Артефакт — это поле боя, только без стен. Ошибки здесь происходят внутри головы.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d108"
+        },
+        {
+          "id": "ch6_s1_d108",
+          "order": 108,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Он светится так, будто знает цену каждому из нас и предлагает скидку только сегодня.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d109"
+        },
+        {
+          "id": "ch6_s1_d109",
+          "order": 109,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Пульсация реагирует на голос. Или на желание. Не говорите рядом с ним того, чего не готовы услышать обратно.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d110"
+        },
+        {
+          "id": "ch6_s1_d110",
+          "order": 110,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Он красивый. Но я не хочу, чтобы он был красивым. После дракона красивые вещи стали подозрительными.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d111"
+        },
+        {
+          "id": "ch6_s1_d111",
+          "order": 111,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Как поступить с этим сокровищем?",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch6_s1_d111_c1",
+              "text": "Коснуться Кристалла лапой. Попытаться впитать кроху его магии перед возвращением.",
+              "effects": {
+                "impulsivity": 0.10,
+                "ego_focus": 0.07,
+                "self_control": -0.07
+              },
+              "next_dialogue": "ch6_s1_d140"
+            },
+            {
+              "id": "ch6_s1_d111_c2",
+              "text": "Завернуть Кристалл в самую толстую ткань. Не позволять свету влиять на мысли.",
+              "effects": {
+                "anxiety": 0.07,
+                "self_control": 0.05,
+                "adaptability": -0.05
+              },
+              "next_dialogue": "ch6_s1_d160"
+            },
+            {
+              "id": "ch6_s1_d111_c3",
+              "text": "Смотреть, но не трогать. Сохранить артефакт для нанимателя.",
+              "effects": {
+                "rigidity": 0.07,
+                "self_control": 0.05,
+                "impulsivity": -0.05
+              },
+              "next_dialogue": "ch6_s1_d180"
+            }
+          ]
+        },
+
+        {
+          "id": "ch6_s1_d140",
+          "order": 140,
+          "speaker": "Narrator",
+          "background": "bg_ch6_crystal_tempt",
+          "transition_before": "fade_in",
+          "portrait_mode": "none",
+          "text": "Искушение не кричит. Оно говорит тихо. Почти твоим голосом.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d141"
+        },
+        {
+          "id": "ch6_s1_d141",
+          "order": 141,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Только капля.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d142"
+        },
+        {
+          "id": "ch6_s1_d142",
+          "order": 142,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Только часть силы.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d143"
+        },
+        {
+          "id": "ch6_s1_d143",
+          "order": 143,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я заслужил.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d144"
+        },
+        {
+          "id": "ch6_s1_d144",
+          "order": 144,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Ты касаешься Кристалла. Магия бьёт по венам. Мех искрится.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d145"
+        },
+        {
+          "id": "ch6_s1_d145",
+          "order": 145,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "На миг твои глаза вспыхивают чужим светом.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d146"
+        },
+        {
+          "id": "ch6_s1_d146",
+          "order": 146,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Отойди! Немедленно! Ты не берёшь силу, ты открываешь ей дверь. Закрой её, пока она не решила остаться.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d147"
+        },
+        {
+          "id": "ch6_s1_d147",
+          "order": 147,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Эй. Я люблю риск, но даже я не целую сундук, который может укусить душу. Отпусти эту штуку.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d148"
+        },
+        {
+          "id": "ch6_s1_d148",
+          "order": 148,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Свет вошёл под кожу. Не двигайтесь резко. Сопротивляйтесь мысли, которая кажется самой приятной. Она не ваша.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d149"
+        },
+        {
+          "id": "ch6_s1_d149",
+          "order": 149,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Кот! Пожалуйста. Ваши глаза... они не ваши. Отойдите от него. Я не хочу тащить вас обратно силой.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d150"
+        },
+        {
+          "id": "ch6_s1_d150",
+          "order": 150,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я забираю свою долю.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d151"
+        },
+        {
+          "id": "ch6_s1_d151",
+          "order": 151,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Свою долю от чуда.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d200"
+        },
+
+        {
+          "id": "ch6_s1_d160",
+          "order": 160,
+          "speaker": "Narrator",
+          "background": "bg_ch6_crystal_wrap",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты отворачиваешься первым. Это сложнее, чем казалось.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d161"
+        },
+        {
+          "id": "ch6_s1_d161",
+          "order": 161,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Потом достаёшь плотный плащ. Ещё один. И ещё.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d162"
+        },
+        {
+          "id": "ch6_s1_d162",
+          "order": 162,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Этой штуке не место под солнцем.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d163"
+        },
+        {
+          "id": "ch6_s1_d163",
+          "order": 163,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Она отравляет разум даже через красоту.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d164"
+        },
+        {
+          "id": "ch6_s1_d164",
+          "order": 164,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Верно. Изоляция, узлы, внешний слой без металлических застёжек. Чем меньше контакт, тем меньше неизвестных.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d165"
+        },
+        {
+          "id": "ch6_s1_d165",
+          "order": 165,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Упаковать безграничную мощь в старый плащ. В этом есть поэзия. И здравый смысл, что ещё более странно.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d166"
+        },
+        {
+          "id": "ch6_s1_d166",
+          "order": 166,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Свет стал слабее, но не исчез. Значит, ткань не блокирует влияние полностью. Нужно нести по очереди и не спать рядом.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d167"
+        },
+        {
+          "id": "ch6_s1_d167",
+          "order": 167,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я могу нести. У меня толстые руки. Если он начнёт говорить, я буду думать о каше. Это помогает не слушать важные вещи.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d168"
+        },
+        {
+          "id": "ch6_s1_d168",
+          "order": 168,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Пусть король сам сходит с ума от своей игрушки.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d169"
+        },
+        {
+          "id": "ch6_s1_d169",
+          "order": 169,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Нам нужна награда.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d170"
+        },
+        {
+          "id": "ch6_s1_d170",
+          "order": 170,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И желательно психика в рабочем состоянии.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d200"
+        },
+
+        {
+          "id": "ch6_s1_d180",
+          "order": 180,
+          "speaker": "Narrator",
+          "background": "bg_ch6_crystal_gaze",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты садишься рядом. Не тянешь лапу. Не отворачиваешься. Просто смотришь.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d181"
+        },
+        {
+          "id": "ch6_s1_d181",
+          "order": 181,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Это произведение искусства.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d182"
+        },
+        {
+          "id": "ch6_s1_d182",
+          "order": 182,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Безупречное дыхание глубокой древности.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d183"
+        },
+        {
+          "id": "ch6_s1_d183",
+          "order": 183,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— И, к несчастью, чужая собственность.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d184"
+        },
+        {
+          "id": "ch6_s1_d184",
+          "order": 184,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Самоконтроль подтверждён. Смотреть можно. Владеть взглядом нельзя. Запомни эту грань.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d185"
+        },
+        {
+          "id": "ch6_s1_d185",
+          "order": 185,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Ты просто смотришь? На бесценную магическую вещь? Я потрясён. Почти разочарован, но потрясён.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d186"
+        },
+        {
+          "id": "ch6_s1_d186",
+          "order": 186,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Он красив, потому что не нуждается в нас. Древние вещи редко соблазняют обещанием. Они соблазняют ощущением масштаба.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d187"
+        },
+        {
+          "id": "ch6_s1_d187",
+          "order": 187,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Смотреть можно. Хорошо. Смотреть я умею. Трогать не буду. Даже случайно. Я отодвинусь.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d188"
+        },
+        {
+          "id": "ch6_s1_d188",
+          "order": 188,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Любуйся, но руками не трогай.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d189"
+        },
+        {
+          "id": "ch6_s1_d189",
+          "order": 189,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мы профессионалы.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d190"
+        },
+        {
+          "id": "ch6_s1_d190",
+          "order": 190,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Как бы странно это ни звучало после всего, что я кричал дракону.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d200"
+        },
+
+        {
+          "id": "ch6_s1_d200",
+          "order": 200,
+          "speaker": "Narrator",
+          "background": "bg_ch6_road_back",
+          "transition_before": "fade_out_in",
+          "camera_effect": "panorama",
+          "portrait_mode": "none",
+          "text": "Солнце поднимается выше. Туман отступает от склонов.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d201"
+        },
+        {
+          "id": "ch6_s1_d201",
+          "order": 201,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Далеко внизу появляются шпили замка. Они кажутся тонкими. Почти хрупкими.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d202"
+        },
+        {
+          "id": "ch6_s1_d202",
+          "order": 202,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Странно видеть власть маленькой после того, как видел дракона.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d203"
+        },
+        {
+          "id": "ch6_s1_d203",
+          "order": 203,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Спутник опускается на плоский камень рядом. Стирает кровь с лица. Смотрит туда же, куда и ты.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d204"
+        },
+        {
+          "id": "ch6_s1_d204",
+          "order": 204,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Возвращение будет сложнее, чем подъём. Там ждут не чудовища, а люди. Они опаснее, потому что умеют улыбаться.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d205"
+        },
+        {
+          "id": "ch6_s1_d205",
+          "order": 205,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Внизу нас ждёт король, награда и, возможно, попытка нас тихо убрать. Люблю возвращения. В них всегда кто-то врёт.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d206"
+        },
+        {
+          "id": "ch6_s1_d206",
+          "order": 206,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Кристалл изменит двор ещё до того, как его внесут в зал. Некоторые вещи не нужно использовать, чтобы они начали войну.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d207"
+        },
+        {
+          "id": "ch6_s1_d207",
+          "order": 207,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мы вернёмся туда? К королю? После дракона? Хорошо. Только скажите заранее, если опять надо будет не верить красивым словам.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d208"
+        },
+        {
+          "id": "ch6_s1_d208",
+          "order": 208,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Хороший вопрос.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d209"
+        },
+        {
+          "id": "ch6_s1_d209",
+          "order": 209,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Жизнь больше не будет прежней.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d210"
+        },
+        {
+          "id": "ch6_s1_d210",
+          "order": 210,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Но у меня уже есть план.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch6_s1_d210_c1",
+              "text": "«Отдам камень, заберу золото и исчезну. Этот мир слишком велик, чтобы служить одному трону».",
+              "effects": {
+                "adaptability": 0.10,
+                "activity": 0.05,
+                "rigidity": -0.07
+              },
+              "next_dialogue": "ch6_s1_d240"
+            },
+            {
+              "id": "ch6_s1_d210_c2",
+              "text": "«Я займу место при дворе. Эта сила должна служить порядку».",
+              "effects": {
+                "rigidity": 0.10,
+                "self_control": 0.07,
+                "adaptability": -0.07
+              },
+              "next_dialogue": "ch6_s1_d260"
+            },
+            {
+              "id": "ch6_s1_d210_c3",
+              "text": "«Король получит камень. Но править за его спиной буду я».",
+              "effects": {
+                "ego_focus": 0.10,
+                "negativism": 0.05,
+                "emotional_sensitivity": -0.07
+              },
+              "next_dialogue": "ch6_s1_d280"
+            }
+          ]
+        },
+
+        {
+          "id": "ch6_s1_d240",
+          "order": 240,
+          "speaker": "Narrator",
+          "background": "bg_ch6_road_south",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты поправляешь сапог. Смотришь не на замок. А дальше. За него.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d241"
+        },
+        {
+          "id": "ch6_s1_d241",
+          "order": 241,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Замок — та же клетка.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d242"
+        },
+        {
+          "id": "ch6_s1_d242",
+          "order": 242,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Просто позолоченная и с лучшими занавесками.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d243"
+        },
+        {
+          "id": "ch6_s1_d243",
+          "order": 243,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Отдадим камень. Заберём сундуки. Купим корабль.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d244"
+        },
+        {
+          "id": "ch6_s1_d244",
+          "order": 244,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И поплывём на юг, где никто не знает, сколько стоит моя голова.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d245"
+        },
+        {
+          "id": "ch6_s1_d245",
+          "order": 245,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Свобода без плана быстро становится бегством. Но если план будет, юг возможен. Я составлю маршрут до порта.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d246"
+        },
+        {
+          "id": "ch6_s1_d246",
+          "order": 246,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Корабль, юг, золото и отсутствие королей? Наконец-то ты говоришь языком, на котором моя душа готова подписать договор.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d247"
+        },
+        {
+          "id": "ch6_s1_d247",
+          "order": 247,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Бежать от двора можно. От последствий Кристалла — сложнее. Но путь на юг даст время подумать, а время сейчас дороже золота.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d248"
+        },
+        {
+          "id": "ch6_s1_d248",
+          "order": 248,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— На корабле земля двигается, да? Я не уверен, что мне понравится. Но если там нет драконов, я готов попробовать.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d249"
+        },
+        {
+          "id": "ch6_s1_d249",
+          "order": 249,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Только ветер, море и свобода.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d250"
+        },
+        {
+          "id": "ch6_s1_d250",
+          "order": 250,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мой клинок принадлежит мне.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d300"
+        },
+
+        {
+          "id": "ch6_s1_d260",
+          "order": 260,
+          "speaker": "Narrator",
+          "background": "bg_ch6_road_castle",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Твой взгляд возвращается к замку. Теперь он не кажется добычей. Он кажется задачей.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d261"
+        },
+        {
+          "id": "ch6_s1_d261",
+          "order": 261,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Долина гниёт, потому что власть слаба.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d262"
+        },
+        {
+          "id": "ch6_s1_d262",
+          "order": 262,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Монстры растут там, где закон приходит поздно.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d263"
+        },
+        {
+          "id": "ch6_s1_d263",
+          "order": 263,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я это изменю.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d264"
+        },
+        {
+          "id": "ch6_s1_d264",
+          "order": 264,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Я займу место при дворе. Наведу порядок.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d265"
+        },
+        {
+          "id": "ch6_s1_d265",
+          "order": 265,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И если дворяне попробуют меня съесть, пусть подавятся серебряной вилкой.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d266"
+        },
+        {
+          "id": "ch6_s1_d266",
+          "order": 266,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Тогда начинай не с угроз, а со структуры. Гвардия, снабжение, суды, дороги. Порядок держится не на громком голосе, а на повторяемых правилах.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d267"
+        },
+        {
+          "id": "ch6_s1_d267",
+          "order": 267,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Ты хочешь зайти в дворец и починить его? Смело. Наивно. Потенциально прибыльно, если правильно брать плату за реформы.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d268"
+        },
+        {
+          "id": "ch6_s1_d268",
+          "order": 268,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Порядок опасен, когда считает себя добром без проверки. Но после того, что мы видели, я понимаю, почему вы хотите стены крепче.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d269"
+        },
+        {
+          "id": "ch6_s1_d269",
+          "order": 269,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Если вы будете главным, можно сделать так, чтобы сильные не били слабых просто потому, что могут? Тогда я за порядок.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d270"
+        },
+        {
+          "id": "ch6_s1_d270",
+          "order": 270,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Закон будет един для всех.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d271"
+        },
+        {
+          "id": "ch6_s1_d271",
+          "order": 271,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Даже для тех, кто привык покупать исключения.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d300"
+        },
+
+        {
+          "id": "ch6_s1_d280",
+          "order": 280,
+          "speaker": "Narrator",
+          "background": "bg_ch6_road_shadow",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты улыбаешься. Не широко. Достаточно, чтобы рассвет стал чуть холоднее.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d281"
+        },
+        {
+          "id": "ch6_s1_d281",
+          "order": 281,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Королю останется трон.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d282"
+        },
+        {
+          "id": "ch6_s1_d282",
+          "order": 282,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Кристалл. Парады, печати, торжественные речи.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d283"
+        },
+        {
+          "id": "ch6_s1_d283",
+          "order": 283,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— А мне достанутся дороги. Налоги. Слухи.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d284"
+        },
+        {
+          "id": "ch6_s1_d284",
+          "order": 284,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И люди, которые открывают двери до того, как их попросили.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d285"
+        },
+        {
+          "id": "ch6_s1_d285",
+          "order": 285,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Теневая власть требует большей дисциплины, чем открытая. Один неверный приказ, и паутина станет петлёй. Если идёшь туда, считай каждый узел.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d286"
+        },
+        {
+          "id": "ch6_s1_d286",
+          "order": 286,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— О, теперь ты говоришь почти идеально. Трон видят все. Ниточки — только тот, кто их дёргает. Я начинаю гордиться дурным влиянием мира на тебя.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d287"
+        },
+        {
+          "id": "ch6_s1_d287",
+          "order": 287,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Тени удобны, пока не начинаешь путать безопасность с тайной. Власть за спиной короля всё равно остаётся властью. Она тоже смотрит назад.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d288"
+        },
+        {
+          "id": "ch6_s1_d288",
+          "order": 288,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я не очень понимаю тени. Если кто-то делает плохо, я хочу видеть его лицо. Но если вы скажете, что так надо... я попробую понять.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d289"
+        },
+        {
+          "id": "ch6_s1_d289",
+          "order": 289,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Тот, кто держит ниточки, не обязан носить корону.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d290"
+        },
+        {
+          "id": "ch6_s1_d290",
+          "order": 290,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И не обязан подставлять под неё шею.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d300"
+        },
+
+        {
+          "id": "ch6_s1_d300",
+          "order": 300,
+          "speaker": "Narrator",
+          "background": "bg_ch6_road_dawn",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_out",
+          "portrait_mode": "none",
+          "text": "Туман окончательно уходит. Солнце открывает дорогу вниз.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d301"
+        },
+        {
+          "id": "ch6_s1_d301",
+          "order": 301,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "За спиной — пещера, где умерла легенда.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d302"
+        },
+        {
+          "id": "ch6_s1_d302",
+          "order": 302,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Впереди — замок, где легенду будут покупать.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d303"
+        },
+        {
+          "id": "ch6_s1_d303",
+          "order": 303,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Ты поднимаешь рюкзак. Кристалл внутри тихо пульсирует. Спутник идёт рядом.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d304"
+        },
+        {
+          "id": "ch6_s1_d304",
+          "order": 304,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "И каждый шаг вниз звучит уже не как возвращение.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d305"
+        },
+        {
+          "id": "ch6_s1_d305",
+          "order": 305,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Как начало последней игры.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d306"
+        },
+        {
+          "id": "ch6_s1_d306",
+          "order": 306,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Ну что ж.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d307"
+        },
+        {
+          "id": "ch6_s1_d307",
+          "order": 307,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Дракон был честнее двора.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d308"
+        },
+        {
+          "id": "ch6_s1_d308",
+          "order": 308,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Он хотя бы сразу пытался нас сжечь.",
+          "has_choices": false,
+          "next_dialogue": "ch6_s1_d309"
+        },
+        {
+          "id": "ch6_s1_d309",
+          "order": 309,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Посмотрим, как встретит нас король.",
           "has_choices": false,
           "next_dialogue": null
         }

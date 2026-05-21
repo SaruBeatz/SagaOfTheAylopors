@@ -1,105 +1,124 @@
 {
   "chapter_id": 7,
-  "title": "Возвращение",
+  "title": "Триумф и эпилог",
   "scenes": [
     {
       "id": "ch7_s1",
       "order": 1,
-      "background": "bg_ch7_village",
+      "background": "bg_ch7_village.png",
       "dialogues": [
         {
-          "id": "ch7_s1_d1",
+          "id": "ch7_s1_d01",
           "order": 1,
           "speaker": "Narrator",
-          "text": "Дорога простирается перед тобой, уже знакомая, но иная. Легкий утренний туман скользит по земле, как остатки сна, медленно растворяясь на солнечных камнях мостовой. Кот идёт рядом со спутником — массивная фигура рядом кажется спокойной, но внимательной, каждое движение выверено. Деревья по обочинам стоят в ожидании, листья тихо шелестят, и этот звук кажется новым, хотя раньше он просто терялся среди повседневного шума.",
+          "transition_before": "fade_in",
+          "camera_effect": "panorama",
+          "portrait_mode": "none",
+          "text": "Дорога возвращает вас к людям.",
           "has_choices": false,
-          "next_dialogue": "ch7_s1_d2"
+          "next_dialogue": "ch7_s1_d02"
         },
         {
-          "id": "ch7_s1_d2",
+          "id": "ch7_s1_d02",
           "order": 2,
-          "speaker": "Cat",
-          "text": "«Сколько раз я проходил здесь раньше? Но теперь дорога будто другая. Я другой.»",
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "После гор это кажется странным.",
           "has_choices": false,
-          "next_dialogue": "ch7_s1_d3"
+          "next_dialogue": "ch7_s1_d03"
         },
         {
-          "id": "ch7_s1_d3",
+          "id": "ch7_s1_d03",
           "order": 3,
           "speaker": "Narrator",
-          "text": "Слева виднеется деревня — крыши с красной черепицей, дымок из труб поднимается к ясному небу. Люди спешат по делам, торговцы раскладывают свои товары. Всё кажется знакомым, но кот замечает, как его взгляд цепляется за детали, которые раньше оставались незамеченными: трещины в стенах, маленькие таблички у дверей, еле слышные разговоры за закрытыми окнами.",
+          "portrait_mode": "none",
+          "text": "Слишком много голосов. Слишком много запахов.",
           "has_choices": false,
-          "next_dialogue": "ch7_s1_d4"
+          "next_dialogue": "ch7_s1_d04"
         },
         {
-          "id": "ch7_s1_d4",
+          "id": "ch7_s1_d04",
           "order": 4,
           "speaker": "Narrator",
-          "text": "Спутник рядом, высокий и внимательный, наблюдает за каждым движением кота. Его взгляд мягче, чем прежде: теперь он доверяет, что этот путь — совместный.",
+          "portrait_mode": "none",
+          "text": "Хлеб, дым, мокрая брусчатка, собаки, свежая краска на лавочных вывесках.",
           "has_choices": false,
-          "next_dialogue": "ch7_s1_d5"
+          "next_dialogue": "ch7_s1_d05"
         },
         {
-          "id": "ch7_s1_d5",
+          "id": "ch7_s1_d05",
           "order": 5,
-          "speaker": "Mentor",
-          "text": "— Возвращение всегда труднее, чем кажется. Всё, что было прежним, сейчас кажется чужим.",
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Мир не знает, как выглядит драконья смерть. Но слухи уже знают. Они бегут быстрее лошадей.",
           "has_choices": false,
-          "next_dialogue": "ch7_s1_d6"
+          "next_dialogue": "ch7_s1_d06"
         },
         {
-          "id": "ch7_s1_d6",
+          "id": "ch7_s1_d06",
           "order": 6,
           "speaker": "Cat",
-          "text": "— Может, и правда чужим… или просто я стал другим.",
+          "portrait_mode": "cat_only",
+          "text": "— Посмотри на них.",
           "has_choices": false,
-          "next_dialogue": "ch7_s1_d7"
+          "next_dialogue": "ch7_s1_d07"
         },
         {
-          "id": "ch7_s1_d7",
+          "id": "ch7_s1_d07",
           "order": 7,
-          "speaker": "Narrator",
-          "text": "По мере приближения к центру деревни люди начинают узнавать их: мелькающие улыбки, кивки, кто-то поднимает руку в знак приветствия. Здесь нет шума городской площади, нет гонок или стремительного движения, как в долине, через которую они шли раньше. Но каждый взгляд оценивает и запоминает.",
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Вчера они боялись севера.",
           "has_choices": false,
-          "next_dialogue": "ch7_s1_d8"
+          "next_dialogue": "ch7_s1_d08"
         },
         {
-          "id": "ch7_s1_d8",
+          "id": "ch7_s1_d08",
           "order": 8,
           "speaker": "Cat",
-          "text": "«Каждое место, каждый звук — теперь часть меня. И часть того, что я могу дать этому миру.»",
+          "portrait_mode": "cat_only",
+          "text": "— Сегодня они боятся пропустить наше возвращение.",
           "has_choices": false,
-          "next_dialogue": "ch7_s1_d9"
+          "next_dialogue": "ch7_s1_d09"
         },
         {
-          "id": "ch7_s1_d9",
+          "id": "ch7_s1_d09",
           "order": 9,
-          "speaker": "Narrator",
-          "text": "На краю площади стоит старый фонарь, из-за которого пробивается луч солнца, отражается на мостовой и отблеском ложится на лицо спутника. Тень кота скользит рядом с ним, почти касаясь ног прохожих. В этот момент становится ясно: возвращение — это не только путь назад, это возвращение к себе.",
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Толпа меняется быстрее строя. Не расслабляйся. Радость тоже может давить, толкать и ломать рёбра.",
           "has_choices": false,
           "next_dialogue": "ch7_s1_d10"
         },
         {
           "id": "ch7_s1_d10",
           "order": 10,
-          "speaker": "Narrator",
-          "text": "В глубине площади виднеется дом, где они начинали своё приключение. Он кажется одновременно маленьким и огромным, как символ старого мира и новых возможностей. Здесь всё напоминает о пройденных испытаниях — мосты, улицы, перекрестки — всё, через что они шли, отбрасывает тени прошлого опыта.",
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Слухи уже сделали нас выше, красивее и, подозреваю, мёртвыми три раза по дороге. Обожаю народное творчество.",
           "has_choices": false,
           "next_dialogue": "ch7_s1_d11"
         },
         {
           "id": "ch7_s1_d11",
           "order": 11,
-          "speaker": "Mentor",
-          "text": "— Смотри на это. Мир не изменился, но мы изменились. Всё, что мы узнали, — теперь в нас. И никто не сможет этого забрать.",
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Они смотрят не только на вас. На рюкзак тоже. Свет Кристалла виден даже через ткань.",
           "has_choices": false,
           "next_dialogue": "ch7_s1_d12"
         },
         {
           "id": "ch7_s1_d12",
           "order": 12,
-          "speaker": "Cat",
-          "text": "Кот кивает, ощущая это глубоко в груди. Каждый вдох наполняет его ощущением уверенности: сила, знание, мудрость — всё это уже не где-то там, а внутри. Он делает шаг вперёд, а мир перед ним начинает казаться не просто местом, а пространством, в котором он может действовать, менять, создавать.",
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Тут пахнет хлебом. После пещеры это почти пугает. Хорошо пугает. Я не знал, что так бывает.",
           "has_choices": false,
           "next_dialogue": "ch7_s1_d13"
         },
@@ -107,7 +126,1704 @@
           "id": "ch7_s1_d13",
           "order": 13,
           "speaker": "Narrator",
-          "text": "Возвращение — это не конец. Это момент, когда герой видит результат своего пути. Дорога, по которой он шёл, теперь лежит внутри него, и каждый шаг здесь — не только движение по земле, но и движение по новой жизни.",
+          "background": "bg_ch7_village_square",
+          "portrait_mode": "none",
+          "text": "Вы выходите на маленькую площадь. Разговоры стихают волной. Люди оборачиваются.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d14"
+        },
+        {
+          "id": "ch7_s1_d14",
+          "order": 14,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Кто-то крестится. Кто-то делает шаг назад. Кто-то улыбается так, будто увидел сказку живьём.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d15"
+        },
+        {
+          "id": "ch7_s1_d15",
+          "order": 15,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Старушка с корзиной яблок спешит через площадь. Она смотрит на тебя. На обгоревший плащ. На сапоги, покрытые пылью северных пещер. На свет за твоей спиной.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d16"
+        },
+        {
+          "id": "ch7_s1_d16",
+          "order": 16,
+          "speaker": "Narrator",
+          "background": "bg_ch7_apples",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Она спотыкается. Корзина падает. Яблоки стучат по камню.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d17"
+        },
+        {
+          "id": "ch7_s1_d17",
+          "order": 17,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Одно останавливается у самого носка твоего сапога.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d18"
+        },
+        {
+          "id": "ch7_s1_d18",
+          "order": 18,
+          "speaker": "OldWoman",
+          "portrait_mode": "none",
+          "text": "— Ох, небеса...",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d19"
+        },
+        {
+          "id": "ch7_s1_d19",
+          "order": 19,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Первый гражданский подвиг дня.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d20"
+        },
+        {
+          "id": "ch7_s1_d20",
+          "order": 20,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Яблочная катастрофа.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch7_s1_d20_c1",
+              "text": "Перешагнуть через яблоки и идти дальше. У героя нет времени на бытовые мелочи.",
+              "effects": {
+                "negativism": 0.07,
+                "ego_focus": 0.05,
+                "emotional_sensitivity": -0.07
+              },
+              "next_dialogue": "ch7_s1_d40"
+            },
+            {
+              "id": "ch7_s1_d20_c2",
+              "text": "Остановиться и собрать плоды обратно в корзину. Вернуть её старушке спокойно и без пафоса.",
+              "effects": {
+                "emotional_sensitivity": 0.10,
+                "sociality": 0.07,
+                "ego_focus": -0.05
+              },
+              "next_dialogue": "ch7_s1_d60"
+            },
+            {
+              "id": "ch7_s1_d20_c3",
+              "text": "Взмахнуть плащом и бросить ей золотую монету. Превратить неловкость в маленькое представление.",
+              "effects": {
+                "adaptability": 0.07,
+                "ego_focus": 0.07,
+                "rigidity": -0.05
+              },
+              "next_dialogue": "ch7_s1_d80"
+            }
+          ]
+        },
+
+        {
+          "id": "ch7_s1_d40",
+          "order": 40,
+          "speaker": "Narrator",
+          "background": "bg_ch7_apples_step",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты не замедляешь шаг.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d41"
+        },
+        {
+          "id": "ch7_s1_d41",
+          "order": 41,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Яблоки остаются на камнях. Красные. Маленькие. Неважные.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d42"
+        },
+        {
+          "id": "ch7_s1_d42",
+          "order": 42,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Пусть смотрит под ноги.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d43"
+        },
+        {
+          "id": "ch7_s1_d43",
+          "order": 43,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я только что спас королевство.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d44"
+        },
+        {
+          "id": "ch7_s1_d44",
+          "order": 44,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Не царское это дело — собирать чужой завтрак.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d45"
+        },
+        {
+          "id": "ch7_s1_d45",
+          "order": 45,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Герой, который не видит людей под ногами, быстро становится проблемой для тех, кого спас. Запомни это до дворца.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d46"
+        },
+        {
+          "id": "ch7_s1_d46",
+          "order": 46,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Холодно. Эффектно. Не бесплатно: толпа заметила. Иногда одно яблоко портит больше репутации, чем один украденный сундук.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d47"
+        },
+        {
+          "id": "ch7_s1_d47",
+          "order": 47,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Она запомнит не дракона. Она запомнит сапог рядом с яблоком. Люди хранят маленькие раны дольше больших легенд.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d48"
+        },
+        {
+          "id": "ch7_s1_d48",
+          "order": 48,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я... постараюсь не наступить. Они хорошие яблоки. Наверное.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d49"
+        },
+        {
+          "id": "ch7_s1_d49",
+          "order": 49,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Привыкай.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d50"
+        },
+        {
+          "id": "ch7_s1_d50",
+          "order": 50,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Легенды редко останавливаются из-за фруктов.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d100"
+        },
+
+        {
+          "id": "ch7_s1_d60",
+          "order": 60,
+          "speaker": "Narrator",
+          "background": "bg_ch7_apples_help",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты останавливаешься. Опускаешься на колено.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d61"
+        },
+        {
+          "id": "ch7_s1_d61",
+          "order": 61,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Собираешь яблоки быстро. Так же ловко, как недавно держал саблю.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d62"
+        },
+        {
+          "id": "ch7_s1_d62",
+          "order": 62,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Осторожнее, бабушка.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d63"
+        },
+        {
+          "id": "ch7_s1_d63",
+          "order": 63,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Гравитация сегодня бессердечна.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d64"
+        },
+        {
+          "id": "ch7_s1_d64",
+          "order": 64,
+          "speaker": "OldWoman",
+          "portrait_mode": "none",
+          "text": "— Храни тебя небеса, добрый рыцарь...",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d65"
+        },
+        {
+          "id": "ch7_s1_d65",
+          "order": 65,
+          "speaker": "OldWoman",
+          "portrait_mode": "none",
+          "text": "— В пушистом обличии.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d66"
+        },
+        {
+          "id": "ch7_s1_d66",
+          "order": 66,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Победа над монстрами ничего не стоит, если забыть, ради кого стараешься.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d67"
+        },
+        {
+          "id": "ch7_s1_d67",
+          "order": 67,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Верно. Дисциплина не только в бою. Иногда она в том, чтобы не позволить славе пройти мимо простого долга.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d68"
+        },
+        {
+          "id": "ch7_s1_d68",
+          "order": 68,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Очаровательно. Ты купил любовь площади ценой трёх секунд и пары яблок. Лучшая сделка за всё утро.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d69"
+        },
+        {
+          "id": "ch7_s1_d69",
+          "order": 69,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Посмотрите на толпу. Они выдохнули. Им нужен был знак, что герой всё ещё видит обычных людей.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d70"
+        },
+        {
+          "id": "ch7_s1_d70",
+          "order": 70,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я рад, что мы помогли. После дракона приятно победить что-то маленькое. Например, рассыпанные яблоки.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d100"
+        },
+
+        {
+          "id": "ch7_s1_d80",
+          "order": 80,
+          "speaker": "Narrator",
+          "background": "bg_ch7_apples_coin",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты останавливаешься. Плащ взлетает дугой.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d81"
+        },
+        {
+          "id": "ch7_s1_d81",
+          "order": 81,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Монета сверкает в воздухе. И падает прямо в корзину.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d82"
+        },
+        {
+          "id": "ch7_s1_d82",
+          "order": 82,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Не печальтесь, добрая женщина.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d83"
+        },
+        {
+          "id": "ch7_s1_d83",
+          "order": 83,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Эта монета купит вам новый сад.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d84"
+        },
+        {
+          "id": "ch7_s1_d84",
+          "order": 84,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Поминайте добрым словом Кота-Драконоборца.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d85"
+        },
+        {
+          "id": "ch7_s1_d85",
+          "order": 85,
+          "speaker": "OldWoman",
+          "portrait_mode": "none",
+          "text": "— Святые угодники...",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d86"
+        },
+        {
+          "id": "ch7_s1_d86",
+          "order": 86,
+          "speaker": "OldWoman",
+          "portrait_mode": "none",
+          "text": "— Золото!",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d87"
+        },
+        {
+          "id": "ch7_s1_d87",
+          "order": 87,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Ты решил проблему и устроил спектакль. Практический результат есть. Скромности нет.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d88"
+        },
+        {
+          "id": "ch7_s1_d88",
+          "order": 88,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Великолепно. Милосердие с рекламной вывеской. Народ такое запоминает и пересказывает с увеличением суммы в три раза.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d89"
+        },
+        {
+          "id": "ch7_s1_d89",
+          "order": 89,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Теперь эта монета станет семейной легендой. Иногда символ стоит дороже помощи. Иногда опаснее.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d90"
+        },
+        {
+          "id": "ch7_s1_d90",
+          "order": 90,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Она счастлива. Но яблоки всё ещё на земле. Мы... мы их тоже соберём?",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d91"
+        },
+        {
+          "id": "ch7_s1_d91",
+          "order": 91,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Лаврик, ты разрушишь мою драматическую композицию.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d100"
+        },
+
+        {
+          "id": "ch7_s1_d100",
+          "order": 100,
+          "speaker": "Narrator",
+          "background": "bg_ch7_palace_square",
+          "transition_before": "fade_out_in",
+          "camera_effect": "pan_up",
+          "portrait_mode": "none",
+          "text": "Чем ближе дворец, тем громче становится город.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d101"
+        },
+        {
+          "id": "ch7_s1_d101",
+          "order": 101,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Сначала — отдельные голоса. Потом — крики.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d102"
+        },
+        {
+          "id": "ch7_s1_d102",
+          "order": 102,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Потом — единый рёв тысяч глоток.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d103"
+        },
+        {
+          "id": "ch7_s1_d103",
+          "order": 103,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Они знают. Или думают, что знают. Для толпы между этими вещами почти нет разницы.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d104"
+        },
+        {
+          "id": "ch7_s1_d104",
+          "order": 104,
+          "speaker": "Crowd",
+          "portrait_mode": "none",
+          "text": "— Драконоборец!",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d105"
+        },
+        {
+          "id": "ch7_s1_d105",
+          "order": 105,
+          "speaker": "Crowd",
+          "portrait_mode": "none",
+          "text": "— Кот вернулся!",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d106"
+        },
+        {
+          "id": "ch7_s1_d106",
+          "order": 106,
+          "speaker": "Crowd",
+          "portrait_mode": "none",
+          "text": "— Покажите Кристалл!",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d107"
+        },
+        {
+          "id": "ch7_s1_d107",
+          "order": 107,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Ах.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d108"
+        },
+        {
+          "id": "ch7_s1_d108",
+          "order": 108,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мой скромный выход.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d109"
+        },
+        {
+          "id": "ch7_s1_d109",
+          "order": 109,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Держи центр прохода. Не подходи к краям. Руки из толпы могут не только приветствовать.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d110"
+        },
+        {
+          "id": "ch7_s1_d110",
+          "order": 110,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Если кто-то сейчас украдёт у нас кошель, я лично признаю его гением и потом всё равно сломаю ему карьеру.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d111"
+        },
+        {
+          "id": "ch7_s1_d111",
+          "order": 111,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Они кричат про Кристалл громче, чем про дракона. Это плохой знак. Чудо уже интересует их больше, чем спасение.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d112"
+        },
+        {
+          "id": "ch7_s1_d112",
+          "order": 112,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Их очень много. Они рады, да? Просто радость у них звучит как нападение.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d113"
+        },
+        {
+          "id": "ch7_s1_d113",
+          "order": 113,
+          "speaker": "Narrator",
+          "background": "bg_ch7_palace_passage",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Гвардейцы с трудом держат коридор. Лепестки падают на брусчатку.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d114"
+        },
+        {
+          "id": "ch7_s1_d114",
+          "order": 114,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Кто-то плачет. Кто-то смеётся.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d115"
+        },
+        {
+          "id": "ch7_s1_d115",
+          "order": 115,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Кто-то смотрит на свет за твоей спиной с таким голодом, что улыбка кажется маской.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d116"
+        },
+        {
+          "id": "ch7_s1_d116",
+          "order": 116,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Как принять это внимание?",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch7_s1_d116_c1",
+              "text": "Идти вальяжно, наслаждаясь восхищением. Приветствовать толпу как настоящий герой триумфа.",
+              "effects": {
+                "sociality": 0.07,
+                "ego_focus": 0.07,
+                "anxiety": -0.05
+              },
+              "next_dialogue": "ch7_s1_d140"
+            },
+            {
+              "id": "ch7_s1_d116_c2",
+              "text": "Натянуть шляпу на глаза и ускорить шаг. Меньше внимания — больше безопасности.",
+              "effects": {
+                "anxiety": 0.07,
+                "negativism": 0.05,
+                "sociality": -0.07
+              },
+              "next_dialogue": "ch7_s1_d160"
+            },
+            {
+              "id": "ch7_s1_d116_c3",
+              "text": "Останавливаться, пожимать руки, дружелюбно кивать. Быть не статуей, а живым героем.",
+              "effects": {
+                "emotional_sensitivity": 0.10,
+                "sociality": 0.07,
+                "ego_focus": -0.05
+              },
+              "next_dialogue": "ch7_s1_d180"
+            }
+          ]
+        },
+
+        {
+          "id": "ch7_s1_d140",
+          "order": 140,
+          "speaker": "Narrator",
+          "background": "bg_ch7_crowd_show",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты снимаешь шляпу. Плюмаж вспыхивает в солнечном свете.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d141"
+        },
+        {
+          "id": "ch7_s1_d141",
+          "order": 141,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Ты идёшь медленно. Так, чтобы все успели увидеть.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d142"
+        },
+        {
+          "id": "ch7_s1_d142",
+          "order": 142,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Слушайте эту музыку.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d143"
+        },
+        {
+          "id": "ch7_s1_d143",
+          "order": 143,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Они обожают меня.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d144"
+        },
+        {
+          "id": "ch7_s1_d144",
+          "order": 144,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— У истории сегодня прекрасный вкус.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d145"
+        },
+        {
+          "id": "ch7_s1_d145",
+          "order": 145,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Не растягивай шаг. Чем дольше мы здесь, тем больше риск. У триумфа тоже должен быть лимит времени.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d146"
+        },
+        {
+          "id": "ch7_s1_d146",
+          "order": 146,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Дай публике улыбку, но не дай им рюкзак. Любовь народа прекрасна, пока у народа заняты руки.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d147"
+        },
+        {
+          "id": "ch7_s1_d147",
+          "order": 147,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Они повторяют ваше имя как заклинание. Слава тоже магия. Только действует медленнее.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d148"
+        },
+        {
+          "id": "ch7_s1_d148",
+          "order": 148,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Они улыбаются вам. Мне тоже махать? Я могу махнуть. Только не слишком широко, чтобы никого не снести.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d149"
+        },
+        {
+          "id": "ch7_s1_d149",
+          "order": 149,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— У истории нет скромных героев.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d150"
+        },
+        {
+          "id": "ch7_s1_d150",
+          "order": 150,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Нужно дать публике сцену, которую она будет пересказывать.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d200"
+        },
+
+        {
+          "id": "ch7_s1_d160",
+          "order": 160,
+          "speaker": "Narrator",
+          "background": "bg_ch7_crowd_hide",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты опускаешь поля шляпы. Мир становится уже.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d161"
+        },
+        {
+          "id": "ch7_s1_d161",
+          "order": 161,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Проход. Двери. Рюкзак. Руки толпы.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d162"
+        },
+        {
+          "id": "ch7_s1_d162",
+          "order": 162,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Не останавливаемся.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d163"
+        },
+        {
+          "id": "ch7_s1_d163",
+          "order": 163,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Сегодня они бросают розы.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d164"
+        },
+        {
+          "id": "ch7_s1_d164",
+          "order": 164,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Завтра могут потребовать пламени.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d165"
+        },
+        {
+          "id": "ch7_s1_d165",
+          "order": 165,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Рационально. Держим темп. Глаза на балконах, не на толпе. Опасность любит высоту.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d166"
+        },
+        {
+          "id": "ch7_s1_d166",
+          "order": 166,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Паранойя делает походку некрасивой, но иногда спасает кошелёк и шею. Идём.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d167"
+        },
+        {
+          "id": "ch7_s1_d167",
+          "order": 167,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— В толпе есть люди, которые не кричат. Они считают. Нас. Гвардейцев. Расстояние до дверей.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d168"
+        },
+        {
+          "id": "ch7_s1_d168",
+          "order": 168,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я буду сбоку. Если кто-то полезет к рюкзаку, я скажу ему не надо. Очень убедительно скажу.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d169"
+        },
+        {
+          "id": "ch7_s1_d169",
+          "order": 169,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Слава переменчива.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d170"
+        },
+        {
+          "id": "ch7_s1_d170",
+          "order": 170,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я предпочитаю аплодисменты на безопасном расстоянии.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d200"
+        },
+
+        {
+          "id": "ch7_s1_d180",
+          "order": 180,
+          "speaker": "Narrator",
+          "background": "bg_ch7_crowd_touch",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты не ускоряешься. Не возвышаешься над ними.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d181"
+        },
+        {
+          "id": "ch7_s1_d181",
+          "order": 181,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Ты протягиваешь лапу.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d182"
+        },
+        {
+          "id": "ch7_s1_d182",
+          "order": 182,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Грязная человеческая ладонь сжимает её осторожно, будто боится разбудить легенду.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d183"
+        },
+        {
+          "id": "ch7_s1_d183",
+          "order": 183,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Спасибо.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d184"
+        },
+        {
+          "id": "ch7_s1_d184",
+          "order": 184,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Да, мы справились.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d185"
+        },
+        {
+          "id": "ch7_s1_d185",
+          "order": 185,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Нет, дракон был невежлив.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d186"
+        },
+        {
+          "id": "ch7_s1_d186",
+          "order": 186,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Ребёнок касается края твоего плаща. Ты киваешь ему.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d187"
+        },
+        {
+          "id": "ch7_s1_d187",
+          "order": 187,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "И толпа вдруг становится не массой. А людьми.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d188"
+        },
+        {
+          "id": "ch7_s1_d188",
+          "order": 188,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Ты рискуешь безопасностью ради контакта. Но я вижу эффект. Они идут за живым существом охотнее, чем за статуей.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d189"
+        },
+        {
+          "id": "ch7_s1_d189",
+          "order": 189,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Ты ведёшь себя как соседский булочник, который случайно убил дракона. Странно, но толпа это ест ложками.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d190"
+        },
+        {
+          "id": "ch7_s1_d190",
+          "order": 190,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Вы возвращаете им не Кристалл. Обычность. Мысль, что чудовище можно пережить и всё равно улыбнуться ребёнку.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d191"
+        },
+        {
+          "id": "ch7_s1_d191",
+          "order": 191,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мне нравится так. Они меньше кричат, когда видят, что вы настоящий. Настоящих легче не бояться.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d192"
+        },
+        {
+          "id": "ch7_s1_d192",
+          "order": 192,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Моя сабля остра.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d193"
+        },
+        {
+          "id": "ch7_s1_d193",
+          "order": 193,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Но сердце не обязано быть из камня.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d200"
+        },
+
+        {
+          "id": "ch7_s1_d200",
+          "order": 200,
+          "speaker": "Narrator",
+          "background": "bg_ch7_throne_antechamber",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Дворец глотает шум.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d201"
+        },
+        {
+          "id": "ch7_s1_d201",
+          "order": 201,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Снаружи осталась толпа. Здесь слышно только дыхание.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d202"
+        },
+        {
+          "id": "ch7_s1_d202",
+          "order": 202,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Твоё. Спутника. И тихий пульс Кристалла за спиной.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d203"
+        },
+        {
+          "id": "ch7_s1_d203",
+          "order": 203,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Перед вами — те самые двери.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d204"
+        },
+        {
+          "id": "ch7_s1_d204",
+          "order": 204,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Эбеновое дерево. Золотые петли.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d205"
+        },
+        {
+          "id": "ch7_s1_d205",
+          "order": 205,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Королевский герб, который теперь кажется не символом власти, а вопросом.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d206"
+        },
+        {
+          "id": "ch7_s1_d206",
+          "order": 206,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Дальше каждый жест будет считаться. Но до этого... есть личное дело.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d207"
+        },
+        {
+          "id": "ch7_s1_d207",
+          "order": 207,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Через минуту начнутся улыбки с зубами. Так что если есть что сказать без свидетелей, сейчас роскошный момент.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d208"
+        },
+        {
+          "id": "ch7_s1_d208",
+          "order": 208,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— У порога слова звучат иначе. Они становятся последней записью перед новой главой.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d209"
+        },
+        {
+          "id": "ch7_s1_d209",
+          "order": 209,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Подождите. Я хочу спросить. Пока двери закрыты и никто не делает вид, что всё просто.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d210"
+        },
+        {
+          "id": "ch7_s1_d210",
+          "order": 210,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Спутник останавливает тебя у самых дверей. Лицо усталое. Глаза ясные.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d211"
+        },
+        {
+          "id": "ch7_s1_d211",
+          "order": 211,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "После всего пройденного это почти опаснее любого вопроса короля.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d212"
+        },
+        {
+          "id": "ch7_s1_d212",
+          "order": 212,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Мы дошли. Работа выполнена. Но путь меняет людей, даже если они делают вид, что просто следовали плану. Что ты скажешь мне перед тем, как двор снова превратит нас в роли?",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d215"
+        },
+        {
+          "id": "ch7_s1_d213",
+          "order": 213,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Ну что, партнёр. Сейчас золото, король и, возможно, предательство в красивой упаковке. Скажи что-нибудь на память, пока я ещё способен сделать вид, что мне всё равно.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d215"
+        },
+        {
+          "id": "ch7_s1_d214",
+          "order": 214,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Я не знаю, кем мы выйдем из этого зала. Поэтому хочу спросить сейчас. Что останется между нами, когда история назовёт вас героем?",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d215"
+        },
+        {
+          "id": "ch7_s1_d215",
+          "order": 215,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мы ведь... были вместе, да? Не просто шли рядом. Я хочу знать, что сказать себе потом, если дороги разойдутся.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d216"
+        },
+        {
+          "id": "ch7_s1_d216",
+          "order": 216,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Что ответить тебе перед этими дверями?",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch7_s1_d216_c1",
+              "text": "Крепко пожать руку. «Моя доля награды — это и твоя доля. Мы братья».",
+              "effects": {
+                "sociality": 0.10,
+                "emotional_sensitivity": 0.07,
+                "ego_focus": -0.07
+              },
+              "next_dialogue": "ch7_s1_d230"
+            },
+            {
+              "id": "ch7_s1_d216_c2",
+              "text": "Ухмыльнуться. «Хорошая работа. Расходимся. Ничего личного».",
+              "effects": {
+                "ego_focus": 0.07,
+                "negativism": 0.07,
+                "emotional_sensitivity": -0.10
+              },
+              "next_dialogue": "ch7_s1_d250"
+            },
+            {
+              "id": "ch7_s1_d216_c3",
+              "text": "Серьёзно предупредить. «Смотри в оба, друг. Не дай им себя сожрать».",
+              "effects": {
+                "self_control": 0.07,
+                "anxiety": 0.05,
+                "adaptability": -0.03
+              },
+              "next_dialogue": "ch7_s1_d270"
+            }
+          ]
+        },
+
+        {
+          "id": "ch7_s1_d230",
+          "order": 230,
+          "speaker": "Narrator",
+          "background": "bg_ch7_farewell_hand",
+          "transition_before": "fade_in",
+          "portrait_mode": "both",
+          "text": "Ты протягиваешь лапу. Не театрально. Не для толпы. По-настоящему.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d231"
+        },
+        {
+          "id": "ch7_s1_d231",
+          "order": 231,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Мы выжили вместе.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d232"
+        },
+        {
+          "id": "ch7_s1_d232",
+          "order": 232,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Моя доля награды — твоя доля.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d233"
+        },
+        {
+          "id": "ch7_s1_d233",
+          "order": 233,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Кровь, огонь и страх делают больше, чем договор.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d234"
+        },
+        {
+          "id": "ch7_s1_d234",
+          "order": 234,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "— Мы братья.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d235"
+        },
+        {
+          "id": "ch7_s1_d235",
+          "order": 235,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Принято. Я не называю братством то, что не проверено делом. Наше проверено.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d236"
+        },
+        {
+          "id": "ch7_s1_d236",
+          "order": 236,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Братья, значит? Предупреждаю, я ужасный родственник. Но... пожалуй, я бы не стал менять эту сделку.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d237"
+        },
+        {
+          "id": "ch7_s1_d237",
+          "order": 237,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Тогда я запомню не только страх. Запомню, что в конце пути кто-то выбрал не власть, а связь.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d238"
+        },
+        {
+          "id": "ch7_s1_d238",
+          "order": 238,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Братья. Хорошо. Тогда если кто-то захочет вас обидеть, он сначала поговорит со мной. Недолго.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d239"
+        },
+        {
+          "id": "ch7_s1_d239",
+          "order": 239,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— А теперь пойдём.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d240"
+        },
+        {
+          "id": "ch7_s1_d240",
+          "order": 240,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Заберём то, что заслужили.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d300"
+        },
+
+        {
+          "id": "ch7_s1_d250",
+          "order": 250,
+          "speaker": "Narrator",
+          "background": "bg_ch7_farewell_cold",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты не смотришь сразу. Сначала поправляешь саблю. Потом ремень. Потом улыбку.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d251"
+        },
+        {
+          "id": "ch7_s1_d251",
+          "order": 251,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Не становись сентиментальным.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d252"
+        },
+        {
+          "id": "ch7_s1_d252",
+          "order": 252,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мы заключили сделку. Выполнили работу.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d253"
+        },
+        {
+          "id": "ch7_s1_d253",
+          "order": 253,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Получишь свою долю, я свою.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d254"
+        },
+        {
+          "id": "ch7_s1_d254",
+          "order": 254,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Ничего личного.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d255"
+        },
+        {
+          "id": "ch7_s1_d255",
+          "order": 255,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Понял. Сделка так сделка. Но даже договоры оставляют следы, если по ним прошли через огонь.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d256"
+        },
+        {
+          "id": "ch7_s1_d256",
+          "order": 256,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Ах, вот мы и вернулись к языку денег. Удобный язык. Жаль только, что после драконов он звучит беднее.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d257"
+        },
+        {
+          "id": "ch7_s1_d257",
+          "order": 257,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— «Ничего личного» — фраза, которой люди прячут самое личное. Но я не стану спорить у порога.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d258"
+        },
+        {
+          "id": "ch7_s1_d258",
+          "order": 258,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Хорошо. Если так надо. Просто... я думал, мы были больше, чем работа.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d259"
+        },
+        {
+          "id": "ch7_s1_d259",
+          "order": 259,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— В этом мире выживает тот, кто ни за кого не держится.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d260"
+        },
+        {
+          "id": "ch7_s1_d260",
+          "order": 260,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Пошли. Нас ждёт казна.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d300"
+        },
+
+        {
+          "id": "ch7_s1_d270",
+          "order": 270,
+          "speaker": "Narrator",
+          "background": "bg_ch7_farewell_warn",
+          "transition_before": "fade_in",
+          "portrait_mode": "both",
+          "text": "Ты смотришь на спутника долго. Не как герой.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d271"
+        },
+        {
+          "id": "ch7_s1_d271",
+          "order": 271,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Как тот, кто видел, что ждёт за красивыми дверями.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d272"
+        },
+        {
+          "id": "ch7_s1_d272",
+          "order": 272,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Смотри в оба.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d273"
+        },
+        {
+          "id": "ch7_s1_d273",
+          "order": 273,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— При дворе опаснее, чем в пещере.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d274"
+        },
+        {
+          "id": "ch7_s1_d274",
+          "order": 274,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Там дракон хотя бы был честен.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d275"
+        },
+        {
+          "id": "ch7_s1_d275",
+          "order": 275,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "— Забери деньги. Не пей из чужих кубков.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d276"
+        },
+        {
+          "id": "ch7_s1_d276",
+          "order": 276,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— И не дай им себя сожрать.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d277"
+        },
+        {
+          "id": "ch7_s1_d277",
+          "order": 277,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Совет принят. Взаимно: не позволяй победе нарушить твою дисциплину. Двор первым делом атакует гордость.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d278"
+        },
+        {
+          "id": "ch7_s1_d278",
+          "order": 278,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Не пить из чужих кубков? Обижаешь. Я сначала поменяю кубки местами, потом посмотрю, кто побледнеет.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d279"
+        },
+        {
+          "id": "ch7_s1_d279",
+          "order": 279,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Я прислушаюсь. Архивы полны людей, которые пережили чудовищ и умерли от улыбок.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d280"
+        },
+        {
+          "id": "ch7_s1_d280",
+          "order": 280,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я буду смотреть. Очень внимательно. Если кто-то попробует меня сожрать, я сначала спрошу, точно ли он хочет.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d281"
+        },
+        {
+          "id": "ch7_s1_d281",
+          "order": 281,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Держи порох сухим.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d282"
+        },
+        {
+          "id": "ch7_s1_d282",
+          "order": 282,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— А золото прячь в сапогах.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d300"
+        },
+
+        {
+          "id": "ch7_s1_d300",
+          "order": 300,
+          "speaker": "Narrator",
+          "background": "bg_ch7_throne_room",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Двери открываются.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d301"
+        },
+        {
+          "id": "ch7_s1_d301",
+          "order": 301,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Зал встречает вас золотом. Тишиной. И голодным взглядом короля.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d302"
+        },
+        {
+          "id": "ch7_s1_d302",
+          "order": 302,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Он смотрит не на шрамы. Не на обгоревший плащ.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d303"
+        },
+        {
+          "id": "ch7_s1_d303",
+          "order": 303,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Не на того, кто вернулся из пещеры. Он смотрит на свет за твоей спиной.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d304"
+        },
+        {
+          "id": "ch7_s1_d304",
+          "order": 304,
+          "speaker": "King",
+          "portrait_mode": "none",
+          "text": "— Ты принёс его.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d305"
+        },
+        {
+          "id": "ch7_s1_d305",
+          "order": 305,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я же говорил.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d306"
+        },
+        {
+          "id": "ch7_s1_d306",
+          "order": 306,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Моё слово дорого стоит.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d307"
+        },
+        {
+          "id": "ch7_s1_d307",
+          "order": 307,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Надеюсь, ваше золото тоже.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d308"
+        },
+        {
+          "id": "ch7_s1_d308",
+          "order": 308,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Помни формулировки договора. Он сейчас будет смотреть, где можно заплатить меньше.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d309"
+        },
+        {
+          "id": "ch7_s1_d309",
+          "order": 309,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Вот и финальная сцена. Все улыбаются, все хотят чужое. Почти дом родной.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d310"
+        },
+        {
+          "id": "ch7_s1_d310",
+          "order": 310,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Кристалл светит сильнее рядом с троном. Это не совпадение. Будьте осторожны.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d311"
+        },
+        {
+          "id": "ch7_s1_d311",
+          "order": 311,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Он смотрит на рюкзак так, как дракон слушал сердце. Мне это не нравится.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d312"
+        },
+        {
+          "id": "ch7_s1_d312",
+          "order": 312,
+          "speaker": "Narrator",
+          "background": "bg_ch7_throne_exit",
+          "camera_effect": "slow_zoom_out",
+          "portrait_mode": "none",
+          "text": "Ты делаешь шаг.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d313"
+        },
+        {
+          "id": "ch7_s1_d313",
+          "order": 313,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "За порогом остаётся дорога. Пещера. Мост.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d314"
+        },
+        {
+          "id": "ch7_s1_d314",
+          "order": 314,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Яблоки на брусчатке. Толпа за стенами.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d315"
+        },
+        {
+          "id": "ch7_s1_d315",
+          "order": 315,
+          "speaker": "Narrator",
+          "pause_before": 2.0,
+          "portrait_mode": "none",
+          "text": "Рождается легенда.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d316"
+        },
+        {
+          "id": "ch7_s1_d316",
+          "order": 316,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Но легенда — не конец.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d317"
+        },
+        {
+          "id": "ch7_s1_d317",
+          "order": 317,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Это только имя, которое мир даёт тому, кого ещё не понял.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d318"
+        },
+        {
+          "id": "ch7_s1_d318",
+          "order": 318,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Ну что ж, Ваше Величество.",
+          "has_choices": false,
+          "next_dialogue": "ch7_s1_d319"
+        },
+        {
+          "id": "ch7_s1_d319",
+          "order": 319,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Поговорим о награде.",
           "has_choices": false,
           "next_dialogue": null
         }
