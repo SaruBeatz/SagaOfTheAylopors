@@ -6,8 +6,13 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sagaoftheaylopors.data.entities.Chapter;
+import com.example.sagaoftheaylopors.data.entities.PlayerProgress;
 import com.example.sagaoftheaylopors.data.repository.StoryRepository;
 import com.example.sagaoftheaylopors.databinding.ActivityPauseStatsBinding;
+
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Pause screen activity with Continue, Save, Settings, and Exit options.
@@ -30,6 +35,7 @@ public class PauseActivity extends AppCompatActivity {
 
         // Start pause music (looped)
         musicManager.playPauseMusic(this);
+        refreshStatistics();
 
         // Resume Button - resumes current activity
         binding.resumeButton.setOnClickListener(v -> {
@@ -80,11 +86,47 @@ public class PauseActivity extends AppCompatActivity {
         }
     }
 
+    private void refreshStatistics() {
+        int totalChapters = 7;
+        int completedCount = 0;
+        List<Chapter> chapters = storyRepository.getAllChapters();
+        if (chapters != null) {
+            for (Chapter chapter : chapters) {
+                if (chapter != null && chapter.isCompleted) {
+                    completedCount++;
+                }
+            }
+            totalChapters = Math.max(totalChapters, chapters.size());
+        }
+        binding.chaptersCompletedTextView.setText(
+                getString(R.string.pause_chapters_completed, completedCount, totalChapters));
+
+        PlayerProgress progress = storyRepository.getProgress();
+        if (progress == null) {
+            binding.statsTextView.setText("");
+            return;
+        }
+        Locale locale = Locale.getDefault();
+        String statsBody = String.format(locale,
+                "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s",
+                getString(R.string.pause_stat_sociality, progress.sociality),
+                getString(R.string.pause_stat_activity, progress.activity),
+                getString(R.string.pause_stat_emotional, progress.emotionalSensitivity),
+                getString(R.string.pause_stat_anxiety, progress.anxiety),
+                getString(R.string.pause_stat_self_control, progress.selfControl),
+                getString(R.string.pause_stat_impulsivity, progress.impulsivity),
+                getString(R.string.pause_stat_ego, progress.egoFocus),
+                getString(R.string.pause_stat_rigidity, progress.rigidity),
+                getString(R.string.pause_stat_negative, progress.negativeAffect),
+                getString(R.string.pause_stat_adaptability, progress.adaptability));
+        binding.statsTextView.setText(statsBody);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-        // Resume music if it was paused
         musicManager.resumeMusic();
+        refreshStatistics();
     }
 
     @Override

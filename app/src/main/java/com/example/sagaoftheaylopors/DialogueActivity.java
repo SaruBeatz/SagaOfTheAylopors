@@ -19,7 +19,15 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sagaoftheaylopors.auth.AuthRepository;
+import com.example.sagaoftheaylopors.auth.SessionManager;
+import com.example.sagaoftheaylopors.cloud.ChoiceAnalyticsLog;
+import com.example.sagaoftheaylopors.cloud.ChoiceDebugExporter;
+import com.example.sagaoftheaylopors.cloud.PlaythroughRepository;
+import com.example.sagaoftheaylopors.cloud.StatsSnapshot;
 import com.example.sagaoftheaylopors.databinding.ActivityDialogueBinding;
+import com.example.sagaoftheaylopors.data.entities.PendingChoice;
+import com.example.sagaoftheaylopors.data.entities.Scene;
 import com.example.sagaoftheaylopors.data.database.StoryDataInitializer;
 import com.example.sagaoftheaylopors.data.entities.Choice;
 import com.example.sagaoftheaylopors.data.entities.Dialogue;
@@ -28,7 +36,17 @@ import com.example.sagaoftheaylopors.data.repository.StoryRepository;
 
 import java.util.List;
 
+/**
+ * Main story dialogue screen.
+ *
+ * TODO: Detect autoclicker / inhuman tap timing and flag or block for ML analytics.
+ * TODO: Add "speedrunner" mode — separate playthrough flag; choices/timings excluded from AI training set.
+ */
 public class DialogueActivity extends AppCompatActivity {
+
+    private static final float CAMERA_BASE_SCALE = 1.10f;
+    /** Pan range as fraction of view size (≈10% total travel with base zoom). */
+    private static final float CAMERA_PAN_FRACTION = 0.05f;
 
     // Text rendering state machine
     private enum TextState {
@@ -42,11 +60,26 @@ public class DialogueActivity extends AppCompatActivity {
 
     private ActivityDialogueBinding binding;
     private StoryRepository storyRepository;
+    private PlaythroughRepository playthroughRepository;
+    private AuthRepository authRepository;
+    private SessionManager sessionManager;
     private PlayerProgress playerProgress;
     private Dialogue currentDialogue;
     private List<Choice> currentChoices;
     private int chapterNumber = 1;
-    
+
+    // Play timing for cloud analytics
+    private long chapterPlayStartMs;
+    private long scenePlayStartMs;
+    private long dialogueShownAtMs;
+    private int lastTrackedSceneId = -1;
+    private long sessionResumeMs;
+    private boolean isProcessingChoice = false;
+
+    /** Last drawable actually shown; avoids reverting to scene bg after choice-only flashes. */
+    private String stickyBackgroundName = null;
+    private int lastBackgroundSceneId = -1;
+
     // Text animation state
     private String fullText;
     private int currentChunkStart = 0;
@@ -89,6 +122,11 @@ public class DialogueActivity extends AppCompatActivity {
 
         // Initialize database and repository
         storyRepository = StoryRepository.getInstance(this);
+        playthroughRepository = PlaythroughRepository.getInstance(this);
+        authRepository = new AuthRepository();
+        sessionManager = new SessionManager(this);
+        chapterPlayStartMs = System.currentTimeMillis();
+        scenePlayStartMs = chapterPlayStartMs;
         
         // Get chapter number from intent
         chapterNumber = getIntent().getIntExtra("chapter_number", 1);
@@ -182,6 +220,7 @@ public class DialogueActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        sessionResumeMs = System.currentTimeMillis();
         // Reload progress in case it was updated elsewhere
         playerProgress = storyRepository.getProgress();
         loadCurrentDialogue();
@@ -192,10 +231,34 @@ public class DialogueActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        // Stop text animation when paused
+        accumulateSessionPlayTime();
+        if (authRepository.isLoggedIn() && sessionManager.getActivePlaythroughId() != null && playerProgress != null) {
+            playthroughRepository.updateProgressCurrent(this, playerProgress);
+        }
         stopTextAnimation();
-        // Pause music when activity is paused
         MusicManager.getInstance().pauseMusic();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        flushChapterToCloudIfNeeded();
+    }
+
+    /** Sync pending choices when leaving screen (e.g. crash before chapter-end handler). */
+    private void flushChapterToCloudIfNeeded() {
+        if (!authRepository.isLoggedIn() || sessionManager.getActivePlaythroughId() == null) {
+            return;
+        }
+        playthroughRepository.syncCompletedChapterInBackground(
+                getApplicationContext(), chapterNumber);
+    }
+
+    private void accumulateSessionPlayTime() {
+        if (sessionResumeMs > 0) {
+            sessionManager.addPlayTimeMs(System.currentTimeMillis() - sessionResumeMs);
+            sessionResumeMs = 0;
+        }
     }
     
     @Override
@@ -251,34 +314,62 @@ public class DialogueActivity extends AppCompatActivity {
     // ── Camera effects ──────────────────────────────────────────────────
 
     /**
-     * Plays a background camera effect on the backgroundImageView.
-     * Previous animations are cancelled and transform is reset first.
+     * Camera pans start zoomed in 10% so edges stay covered (no brown letterboxing).
      */
     private void playCameraEffect(String effect) {
+        binding.backgroundImageView.post(() -> playCameraEffectAfterLayout(effect));
+    }
+
+    private void resetCameraTransformBase() {
         binding.backgroundImageView.animate().cancel();
-        binding.backgroundImageView.setScaleX(1f);
-        binding.backgroundImageView.setScaleY(1f);
+        binding.backgroundImageView.setScaleX(CAMERA_BASE_SCALE);
+        binding.backgroundImageView.setScaleY(CAMERA_BASE_SCALE);
         binding.backgroundImageView.setTranslationX(0f);
         binding.backgroundImageView.setTranslationY(0f);
+        binding.backgroundImageView.setPivotX(binding.backgroundImageView.getWidth() / 2f);
+        binding.backgroundImageView.setPivotY(binding.backgroundImageView.getHeight() / 2f);
+    }
+
+    private void playCameraEffectAfterLayout(String effect) {
+        resetCameraTransformBase();
+        int w = binding.backgroundImageView.getWidth();
+        int h = binding.backgroundImageView.getHeight();
+        if (w <= 0 || h <= 0) {
+            return;
+        }
+        float panX = w * CAMERA_PAN_FRACTION;
+        float panY = h * CAMERA_PAN_FRACTION;
 
         switch (effect) {
             case "pan_up":
                 binding.backgroundImageView.animate()
-                    .translationY(-dpToPx(50)).setDuration(5000).start();
+                        .translationY(-panY).setDuration(5000).start();
+                break;
+            case "pan_down":
+                binding.backgroundImageView.animate()
+                        .translationY(panY).setDuration(5000).start();
+                break;
+            case "pan_left":
+                binding.backgroundImageView.animate()
+                        .translationX(-panX).setDuration(4500).start();
                 break;
             case "slow_zoom_in":
                 binding.backgroundImageView.animate()
-                    .scaleX(1.18f).scaleY(1.18f).setDuration(4000).start();
+                        .scaleX(CAMERA_BASE_SCALE + 0.08f)
+                        .scaleY(CAMERA_BASE_SCALE + 0.08f)
+                        .setDuration(4000).start();
                 break;
             case "slow_zoom_out":
-                binding.backgroundImageView.setScaleX(1.18f);
-                binding.backgroundImageView.setScaleY(1.18f);
+                binding.backgroundImageView.setScaleX(CAMERA_BASE_SCALE + 0.08f);
+                binding.backgroundImageView.setScaleY(CAMERA_BASE_SCALE + 0.08f);
                 binding.backgroundImageView.animate()
-                    .scaleX(1.0f).scaleY(1.0f).setDuration(4000).start();
+                        .scaleX(CAMERA_BASE_SCALE)
+                        .scaleY(CAMERA_BASE_SCALE)
+                        .setDuration(4000).start();
                 break;
             case "panorama":
                 binding.backgroundImageView.animate()
-                    .translationX(dpToPx(55)).setDuration(4500).start();
+                        .translationX(panX).setDuration(4500).start();
                 break;
             default:
                 break;
@@ -386,11 +477,24 @@ public class DialogueActivity extends AppCompatActivity {
             return;
         }
 
+        if (!ensureProgressInActiveChapter()) {
+            return;
+        }
+
         // Load current dialogue
         currentDialogue = storyRepository.getDialogue(playerProgress.currentDialogueId);
 
         // Auto-skip companion-filtered dialogues that do not match the player's chosen companion
         currentDialogue = skipFilteredDialogues(currentDialogue);
+
+        if (playerProgress.currentSceneId != lastTrackedSceneId) {
+            scenePlayStartMs = System.currentTimeMillis();
+            lastTrackedSceneId = playerProgress.currentSceneId;
+        }
+
+        if (playerProgress.currentChapterId != chapterNumber) {
+            chapterPlayStartMs = System.currentTimeMillis();
+        }
 
         if (currentDialogue == null) {
             // Dialogue not found, try to find first dialogue in current scene
@@ -409,6 +513,9 @@ public class DialogueActivity extends AppCompatActivity {
                 return;
             }
         }
+
+        isProcessingChoice = false;
+        binding.choicesContainer.setEnabled(true);
 
         // Display dialogue
         displayDialogue(currentDialogue);
@@ -469,6 +576,8 @@ public class DialogueActivity extends AppCompatActivity {
     }
 
     private void displayDialogue(Dialogue dialogue) {
+        dialogueShownAtMs = System.currentTimeMillis();
+
         // Stop any existing animation
         stopTextAnimation();
         
@@ -727,7 +836,18 @@ public class DialogueActivity extends AppCompatActivity {
             case "youngerson":
                 return getString(R.string.speaker_young_son);
             case "guard":
-                return "Guard"; // Display as-is for now
+                return getString(R.string.speaker_guard);
+            case "alward":
+            case "alvard":
+                return getString(R.string.companion_alward);
+            case "lokian":
+                return getString(R.string.companion_lokian);
+            case "mirelin":
+                return getString(R.string.companion_mirelin);
+            case "lavrik":
+                return getString(R.string.companion_lavrik);
+            case "king":
+                return getString(R.string.speaker_king);
         }
         
         // Check if we're before chapter 4 (helpers haven't introduced themselves)
@@ -966,45 +1086,48 @@ public class DialogueActivity extends AppCompatActivity {
     }
 
     /**
-     * Update background image based on current dialogue or scene.
-     * Priority: Dialogue background > Scene background > Default
+     * Applies a background only when the drawable name changes.
+     * Scene change sets base bg; dialogue/choice updates stick until the next explicit change.
      */
+    private void applyBackgroundDrawable(String drawableName) {
+        if (drawableName == null || drawableName.isEmpty()) {
+            return;
+        }
+        if (drawableName.equals(stickyBackgroundName)) {
+            return;
+        }
+        try {
+            int resId = getResources().getIdentifier(drawableName, "drawable", getPackageName());
+            if (resId != 0) {
+                stickyBackgroundName = drawableName;
+                binding.backgroundImageView.setImageResource(resId);
+                binding.backgroundImageView.animate().cancel();
+                binding.backgroundImageView.setScaleX(1f);
+                binding.backgroundImageView.setScaleY(1f);
+                binding.backgroundImageView.setTranslationX(0f);
+                binding.backgroundImageView.setTranslationY(0f);
+                Log.d("DialogueActivity", "Background set: " + drawableName);
+            } else {
+                Log.w("DialogueActivity", "Background not found: " + drawableName);
+            }
+        } catch (Exception e) {
+            Log.e("DialogueActivity", "Background error: " + drawableName, e);
+        }
+    }
+
     private void updateBackground() {
-        String backgroundName = null;
-        String source = "none";
-        
-        // Try dialogue background first
-        if (currentDialogue != null && currentDialogue.background != null && !currentDialogue.background.isEmpty()) {
-            backgroundName = currentDialogue.background;
-            source = "dialogue";
-        } else {
-            // Fall back to scene background
-            com.example.sagaoftheaylopors.data.entities.Scene currentScene = 
+        com.example.sagaoftheaylopors.data.entities.Scene currentScene =
                 storyRepository.getScene(playerProgress.currentSceneId);
-            if (currentScene != null && currentScene.background != null && !currentScene.background.isEmpty()) {
-                backgroundName = currentScene.background;
-                source = "scene";
+        if (currentScene != null && currentScene.sceneId != lastBackgroundSceneId) {
+            lastBackgroundSceneId = currentScene.sceneId;
+            if (currentScene.background != null && !currentScene.background.isEmpty()) {
+                applyBackgroundDrawable(currentScene.background);
             }
         }
-        
-        // Set background if found
-        if (backgroundName != null) {
-            try {
-                int resId = getResources().getIdentifier(backgroundName, "drawable", getPackageName());
-                if (resId != 0) {
-                    binding.backgroundImageView.setImageResource(resId);
-                    Log.d("DialogueActivity", "Background loaded successfully - Name: " + backgroundName 
-                        + ", Source: " + source + ", Resource ID: " + resId);
-                } else {
-                    Log.w("DialogueActivity", "Background resource not found - Name: " + backgroundName 
-                        + ", Source: " + source + " (Resource ID is 0)");
-                }
-            } catch (Exception e) {
-                Log.e("DialogueActivity", "Error loading background - Name: " + backgroundName 
-                    + ", Source: " + source + ", Error: " + e.getMessage());
-            }
-        } else {
-            Log.d("DialogueActivity", "No background specified (dialogue or scene)");
+        if (currentDialogue != null
+                && currentDialogue.background != null
+                && !currentDialogue.background.isEmpty()) {
+            applyBackgroundDrawable(currentDialogue.background);
         }
     }
 
@@ -1074,17 +1197,34 @@ public class DialogueActivity extends AppCompatActivity {
 
     private void hideChoices() {
         binding.choicesContainer.setVisibility(View.GONE);
-        // Don't clear currentChoices here - they may be pending display
-        // Only clear when starting a new dialogue
+        binding.choicesContainer.removeAllViews();
     }
 
     private void onChoiceSelected(Choice choice) {
-        // Stop text animation
+        if (isProcessingChoice) {
+            ChoiceAnalyticsLog.warn("Ignored duplicate choice click (still processing)");
+            return;
+        }
+        if (currentTextState == TextState.CHOICE_PENDING) {
+            showChoices();
+        }
+        if (currentTextState != TextState.CHOICE_ACTIVE) {
+            ChoiceAnalyticsLog.warn("Ignored choice click — state=" + currentTextState);
+            return;
+        }
+        isProcessingChoice = true;
+        binding.choicesContainer.setEnabled(false);
+        binding.choicesContainer.setVisibility(View.GONE);
+        binding.choicesContainer.removeAllViews();
+
         stopTextAnimation();
-        
-        // Apply all 10 behavioral effect deltas accumulated from this choice.
+        accumulateSessionPlayTime();
+        long choiceTimeMs = System.currentTimeMillis();
+
         {
             PlayerProgress progress = storyRepository.getProgress();
+            java.util.Map<String, Object> statsBeforeMap = StatsSnapshot.fromProgress(progress);
+            String statsBeforeJson = StatsSnapshot.mapToJson(statsBeforeMap);
 
             float prevSociality            = progress.sociality;
             float prevActivity             = progress.activity;
@@ -1111,6 +1251,8 @@ public class DialogueActivity extends AppCompatActivity {
             );
 
             storyRepository.updateBehavioralParams(progress);
+            java.util.Map<String, Object> statsAfterMap = StatsSnapshot.fromProgress(progress);
+            recordPendingChoice(choice, progress, statsBeforeJson, StatsSnapshot.mapToJson(statsAfterMap), choiceTimeMs);
 
             // Persist the chosen companion so future chapters can reference it
             if (choice.saveCompanion != null && !choice.saveCompanion.isEmpty()) {
@@ -1138,51 +1280,41 @@ public class DialogueActivity extends AppCompatActivity {
             ));
         }
 
-        // Update background if choice has one (choice background has highest priority)
         if (choice.background != null && !choice.background.isEmpty()) {
-            try {
-                int resId = getResources().getIdentifier(choice.background, "drawable", getPackageName());
-                if (resId != 0) {
-                    binding.backgroundImageView.setImageResource(resId);
-                    Log.d("DialogueActivity", "Choice background loaded successfully - Name: " + choice.background 
-                        + ", Resource ID: " + resId);
-                } else {
-                    Log.w("DialogueActivity", "Choice background resource not found - Name: " + choice.background 
-                        + " (Resource ID is 0)");
-                }
-            } catch (Exception e) {
-                Log.e("DialogueActivity", "Error loading choice background - Name: " + choice.background 
-                    + ", Error: " + e.getMessage());
-            }
+            applyBackgroundDrawable(choice.background);
         }
 
-        // Hide choices
-        hideChoices();
-        
-        // Reset state machine
         currentTextState = TextState.TEXT_RENDERING;
 
         // Determine next dialogue/scene
         if (choice.nextSceneId > 0) {
-            // Jump to different scene
             int currentSceneId = playerProgress.currentSceneId;
             int nextSceneId = choice.nextSceneId;
-            
-            // CRITICAL FIX: Mark current scene as completed before jumping to next scene
-            // This ensures all scenes are marked complete as player progresses
+            Scene nextScene = storyRepository.getScene(nextSceneId);
+            if (nextScene != null && nextScene.chapterId != chapterNumber) {
+                ChoiceAnalyticsLog.chapterCompletionRejected(chapterNumber,
+                        "choice targets chapter " + nextScene.chapterId + " scene " + nextScene.jsonId);
+                isProcessingChoice = false;
+                binding.choicesContainer.setEnabled(true);
+                checkChapterCompletion();
+                return;
+            }
+
             if (currentSceneId != nextSceneId) {
-                Log.d("DialogueActivity", "Choice jumps from scene " + currentSceneId + " to scene " + nextSceneId + " - marking current scene as completed");
+                Log.d("DialogueActivity", "Choice jumps scene " + currentSceneId + " -> " + nextSceneId);
                 storyRepository.markSceneCompleted(currentSceneId);
             }
-            
+
             playerProgress.currentSceneId = nextSceneId;
             playerProgress.currentDialogueId = choice.nextDialogueId > 0 ? choice.nextDialogueId : 1;
+            playerProgress.currentChapterId = chapterNumber;
         } else if (choice.nextDialogueId > 0) {
             // Jump to different dialogue in same scene
             playerProgress.currentDialogueId = choice.nextDialogueId;
         } else {
-            // Default: progress to next dialogue
             progressToNextDialogue();
+            isProcessingChoice = false;
+            binding.choicesContainer.setEnabled(true);
             return;
         }
 
@@ -1195,6 +1327,85 @@ public class DialogueActivity extends AppCompatActivity {
 
         // Reload dialogue
         loadCurrentDialogue();
+    }
+
+    private void recordPendingChoice(
+            Choice choice,
+            PlayerProgress progress,
+            String statsBeforeJson,
+            String statsAfterJson,
+            long choiceTimeMs
+    ) {
+        Dialogue choiceDialogue = storyRepository.getDialogue(choice.dialogueId);
+        if (choiceDialogue == null) {
+            ChoiceAnalyticsLog.warn("recordPendingChoice: dialogue not found id=" + choice.dialogueId);
+            return;
+        }
+        String dialogueJsonId = choiceDialogue.jsonId;
+        String choiceJsonId = choice.jsonId;
+        if (dialogueJsonId == null || dialogueJsonId.isEmpty()
+                || choiceJsonId == null || choiceJsonId.isEmpty()) {
+            ChoiceAnalyticsLog.warn("Skipping pending choice — missing JSON ids (re-parse chapter?)");
+            return;
+        }
+
+        Scene scene = storyRepository.getScene(choiceDialogue.sceneId);
+        if (scene == null || scene.chapterId != chapterNumber) {
+            int actualChapter = scene != null ? scene.chapterId : -1;
+            ChoiceAnalyticsLog.warn("Choice dialogue chapter mismatch: activity=" + chapterNumber
+                    + " actual=" + actualChapter + " dialogue=" + dialogueJsonId);
+            return;
+        }
+        String sceneJsonId = scene.jsonId != null ? scene.jsonId : "";
+
+        PendingChoice pending = new PendingChoice();
+        pending.chapterId = scene.chapterId;
+        pending.sceneJsonId = sceneJsonId;
+        pending.dialogueJsonId = dialogueJsonId;
+        pending.selectedChoiceId = choiceJsonId;
+        pending.selectedChoiceIndex = choice.order;
+        pending.selectedChoiceText = choice.textKey != null ? choice.textKey : "";
+        pending.selectedAt = choiceTimeMs;
+        pending.timeFromDialogueShownMs = Math.max(0, choiceTimeMs - dialogueShownAtMs);
+        pending.timeFromSceneStartMs = Math.max(0, choiceTimeMs - scenePlayStartMs);
+        pending.timeFromChapterStartMs = Math.max(0, choiceTimeMs - chapterPlayStartMs);
+        pending.totalPlayTimeMsAtChoice = sessionManager.getTotalPlayTimeMs();
+        pending.statsBeforeJson = statsBeforeJson;
+        pending.statsAfterJson = statsAfterJson;
+
+        playthroughRepository.savePendingChoice(this, pending);
+
+        ChoiceAnalyticsLog.choiceRecorded(
+                chapterNumber,
+                pending.choicePointId != null ? pending.choicePointId : "?",
+                dialogueJsonId,
+                choiceJsonId,
+                progress
+        );
+
+        try {
+            java.util.Map<String, Object> beforeMap = StatsSnapshot.fromJson(statsBeforeJson);
+            java.util.Map<String, Object> afterMap = StatsSnapshot.fromJson(statsAfterJson);
+            if (beforeMap == null) {
+                beforeMap = StatsSnapshot.fromProgress(progress);
+            }
+            if (afterMap == null) {
+                afterMap = StatsSnapshot.fromProgress(progress);
+            }
+            ChoiceDebugExporter.logEvent(this, "choice_selected",
+                    ChoiceDebugExporter.eventPayload(
+                            chapterNumber,
+                            pending.choicePointId,
+                            dialogueJsonId,
+                            sceneJsonId,
+                            choiceJsonId,
+                            choice.order,
+                            beforeMap,
+                            afterMap
+                    ));
+        } catch (Exception e) {
+            Log.e("DialogueActivity", "Debug export failed", e);
+        }
     }
 
     private void progressToNextDialogue() {
@@ -1252,76 +1463,119 @@ public class DialogueActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Keeps Room progress aligned with the chapter from Map (prevents cross-chapter ID collisions).
+     */
+    private boolean ensureProgressInActiveChapter() {
+        Scene scene = storyRepository.getScene(playerProgress.currentSceneId);
+        if (scene != null && scene.chapterId == chapterNumber) {
+            playerProgress.currentChapterId = chapterNumber;
+            return true;
+        }
+        ChoiceAnalyticsLog.warn("Resetting progress to start of chapter " + chapterNumber
+                + " (was scene ch" + (scene != null ? scene.chapterId : -1) + ")");
+        List<com.example.sagaoftheaylopors.data.entities.Scene> scenes =
+                storyRepository.getScenesByChapter(chapterNumber);
+        if (scenes.isEmpty()) {
+            return false;
+        }
+        List<Dialogue> dialogues = storyRepository.getDialoguesByScene(scenes.get(0).sceneId);
+        if (dialogues.isEmpty()) {
+            return false;
+        }
+        playerProgress.currentChapterId = chapterNumber;
+        playerProgress.currentSceneId = scenes.get(0).sceneId;
+        playerProgress.currentDialogueId = dialogues.get(0).dialogueId;
+        storyRepository.updateProgress(
+                playerProgress.currentChapterId,
+                playerProgress.currentSceneId,
+                playerProgress.currentDialogueId
+        );
+        return true;
+    }
+
+    private boolean validateChapterReadyToComplete(int chapter) {
+        int completed = storyRepository.getCompletedSceneCount(chapter);
+        int total = storyRepository.getTotalSceneCount(chapter);
+        if (total <= 0 || completed != total) {
+            ChoiceAnalyticsLog.chapterCompletionRejected(chapter,
+                    "scenes incomplete " + completed + "/" + total);
+            return false;
+        }
+        Scene scene = storyRepository.getScene(playerProgress.currentSceneId);
+        if (scene == null || scene.chapterId != chapter) {
+            ChoiceAnalyticsLog.chapterCompletionRejected(chapter,
+                    "progress scene belongs to ch" + (scene != null ? scene.chapterId : -1));
+            return false;
+        }
+        ChoiceAnalyticsLog.chapterCompletionValidated(chapter, completed, total);
+        return true;
+    }
+
     private void checkChapterCompletion() {
-        Log.d("DialogueActivity", "=== CHECK CHAPTER COMPLETION ===");
-        Log.d("DialogueActivity", "Current chapter ID: " + playerProgress.currentChapterId);
-        Log.d("DialogueActivity", "Current scene ID: " + playerProgress.currentSceneId);
-        Log.d("DialogueActivity", "Current dialogue ID: " + playerProgress.currentDialogueId);
-        
-        // Check if all scenes in chapter are complete
-        boolean isComplete = storyRepository.isChapterComplete(playerProgress.currentChapterId);
-        Log.d("DialogueActivity", "Chapter " + playerProgress.currentChapterId + " complete status: " + isComplete);
-        
+        final int activeChapter = chapterNumber;
+        Log.d("DialogueActivity", "=== CHECK CHAPTER COMPLETION chapter=" + activeChapter + " ===");
+        Log.d("DialogueActivity", "progress.chapterId=" + playerProgress.currentChapterId
+                + " scene=" + playerProgress.currentSceneId
+                + " dialogue=" + playerProgress.currentDialogueId);
+
+        if (!validateChapterReadyToComplete(activeChapter)) {
+            finish();
+            return;
+        }
+
+        boolean isComplete = storyRepository.isChapterComplete(activeChapter);
+        Log.d("DialogueActivity", "Chapter " + activeChapter + " complete status: " + isComplete);
+
         if (isComplete) {
-            Log.d("DialogueActivity", "✓ Chapter " + playerProgress.currentChapterId + " is complete!");
-            Log.d("DialogueActivity", "Marking chapter " + playerProgress.currentChapterId + " as completed...");
-            
-            // Mark chapter as complete (this also unlocks next chapter)
-            storyRepository.markChapterCompleted(playerProgress.currentChapterId);
-            
-            // Verify chapter was marked complete
-            com.example.sagaoftheaylopors.data.entities.Chapter completedChapter = 
-                storyRepository.getChapter(playerProgress.currentChapterId);
+            storyRepository.markChapterCompleted(activeChapter);
+
+            com.example.sagaoftheaylopors.data.entities.Chapter completedChapter =
+                    storyRepository.getChapter(activeChapter);
             if (completedChapter != null && completedChapter.isCompleted) {
-                Log.d("DialogueActivity", "✓ Chapter " + playerProgress.currentChapterId + " verified as completed in database");
+                Log.d("DialogueActivity", "✓ Chapter " + activeChapter + " marked completed");
             } else {
-                Log.e("DialogueActivity", "✗ ERROR: Chapter " + playerProgress.currentChapterId + " NOT verified as completed!");
+                Log.e("DialogueActivity", "✗ Chapter " + activeChapter + " NOT marked completed!");
             }
-            
-            // Determine next chapter
-            int nextChapterId = playerProgress.currentChapterId + 1;
-            if (nextChapterId > 7) {
-                Log.d("DialogueActivity", "Chapter " + playerProgress.currentChapterId + " is the last chapter");
-            } else {
-                Log.d("DialogueActivity", "Next chapter should be: " + nextChapterId);
-                
-                // Verify next chapter is unlocked
-                com.example.sagaoftheaylopors.data.entities.Chapter nextChapter = 
-                    storyRepository.getChapter(nextChapterId);
-                if (nextChapter != null) {
-                    Log.d("DialogueActivity", "Next chapter " + nextChapterId + " exists in database");
-                    Log.d("DialogueActivity", "Next chapter unlocked: " + nextChapter.isUnlocked);
-                } else {
-                    Log.e("DialogueActivity", "✗ ERROR: Next chapter " + nextChapterId + " does NOT exist in database!");
+
+            int nextChapterId = activeChapter + 1;
+            if (nextChapterId <= 7) {
+                com.example.sagaoftheaylopors.data.entities.Chapter nextChapter =
+                        storyRepository.getChapter(nextChapterId);
+                if (nextChapter == null) {
+                    StoryDataInitializer.initializeChapterSyncBlocking(this, nextChapterId);
                 }
             }
-            
-            Log.d("DialogueActivity", "Returning to MapActivity with chapter completion info");
-            
-            // Check if all chapters are completed (7 chapters total)
-            if (playerProgress.currentChapterId >= 7) {
-                // All chapters completed - show final screen
-                Log.d("DialogueActivity", "All chapters completed - showing final screen");
-                Intent intent = new Intent(DialogueActivity.this, FinalScreenActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+
+            final int completedChapterId = activeChapter;
+            final boolean allChaptersDone = completedChapterId >= 7;
+
+            Runnable navigateAfterSync = () -> {
+                if (allChaptersDone) {
+                    Intent intent = new Intent(DialogueActivity.this, FinalScreenActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(DialogueActivity.this, MapActivity.class);
+                    intent.putExtra("completed_chapter", completedChapterId);
+                    intent.putExtra("show_path_animation", true);
+                    startActivity(intent);
+                }
                 finish();
-            } else {
-                // Go back to map with chapter completion info
-                Intent intent = new Intent(DialogueActivity.this, MapActivity.class);
-                intent.putExtra("completed_chapter", playerProgress.currentChapterId);
-                intent.putExtra("show_path_animation", true);
-                startActivity(intent);
-                finish();
+            };
+
+            if (authRepository.isLoggedIn() && sessionManager.getActivePlaythroughId() != null) {
+                ChoiceDebugExporter.writeSnapshot(this, "chapter_complete_" + completedChapterId);
+                playthroughRepository.syncCompletedChapterInBackground(
+                        getApplicationContext(), completedChapterId);
             }
+
+            navigateAfterSync.run();
         } else {
-            Log.d("DialogueActivity", "Chapter " + playerProgress.currentChapterId + " not yet complete - more scenes remain");
-            Log.d("DialogueActivity", "Returning to MapActivity (chapter not complete)");
-            
-            // Chapter not complete, but scene is - go back to map
+            Log.d("DialogueActivity", "Chapter " + activeChapter + " not yet complete — continue or return to map");
             finish();
         }
-        
+
         Log.d("DialogueActivity", "=== END CHECK CHAPTER COMPLETION ===");
     }
 }

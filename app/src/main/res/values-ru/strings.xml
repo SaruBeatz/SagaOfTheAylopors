@@ -19,6 +19,10 @@
     <string name="continue_content_description_unlocked">Продолжить приключение</string>
     <string name="continue_locked_message">Сначала зарегистрируйтесь — тогда «Продолжить» откроется!</string>
     <string name="continue_unlocked_snackbar">«Продолжить» теперь доступно!</string>
+    <string name="cloud_save_in_progress">Сохранение прогресса…</string>
+    <string name="cloud_save_failed">Не удалось сохранить в облако. Выборы будут отправлены при следующем входе.</string>
+    <string name="cloud_save_retry_hint">OK</string>
+    <string name="chapter_locked_play_in_order">Сначала пройдите главу %1$d</string>
 
     <string name="consent_title">Обработка персональных данных</string>
     <string name="consent_body">Для создания аккаунта, сохранения прогресса и синхронизации мы обрабатываем email и необязательные данные профиля. Данные хранятся на защищённых серверах Firebase. Вы можете запросить удаление аккаунта, обратившись в поддержку.\n\nПолная политика конфиденциальности доступна на сайте. Продолжая, вы подтверждаете, что ознакомились с уведомлением и согласны на обработку персональных данных в соответствии с применимым законодательством.</string>
@@ -101,6 +105,11 @@
     <string name="speaker_weak_but_knowing">Мирелин</string>
     <string name="speaker_strong_but_dependent">Лаврик</string>
     <string name="speaker_king">Король</string>
+    <string name="speaker_guard">Стражник</string>
+    <string name="companion_alward">Альвард</string>
+    <string name="companion_lokian">Локиан</string>
+    <string name="companion_mirelin">Мирелин</string>
+    <string name="companion_lavrik">Лаврик</string>
 
     <string name="test_dialog_line_1">Старый мельник умер, оставив троим сыновьям скромное наследство: мельницу, осла и кота.</string>
     <string name="test_dialog_line_2">Братья взяли мельницу и осла, а мне достался лишь этот кот. Что толку от такого наследства?</string>
@@ -116,6 +125,18 @@
     <string name="button_save_game">Сохранить игру</string>
     <string name="button_pause_settings">Настройки</string>
     <string name="button_main_menu">В главное меню</string>
+    <string name="pause_stats_title">Статистика</string>
+    <string name="pause_chapters_completed">Пройдено глав: %1$d/%2$d</string>
+    <string name="pause_stat_sociality">Общительность: %1$.2f</string>
+    <string name="pause_stat_activity">Энергичность: %1$.2f</string>
+    <string name="pause_stat_emotional">Эмпатия: %1$.2f</string>
+    <string name="pause_stat_anxiety">Тревожность: %1$.2f</string>
+    <string name="pause_stat_self_control">Самоконтроль: %1$.2f</string>
+    <string name="pause_stat_impulsivity">Импульсивность: %1$.2f</string>
+    <string name="pause_stat_ego">Потребность в признании: %1$.2f</string>
+    <string name="pause_stat_rigidity">Обидчивость: %1$.2f</string>
+    <string name="pause_stat_negative">Негативный аффект: %1$.2f</string>
+    <string name="pause_stat_adaptability">Гибкость: %1$.2f</string>
     
     <!-- Settings -->
     <string name="settings_title">Настройки пути</string>

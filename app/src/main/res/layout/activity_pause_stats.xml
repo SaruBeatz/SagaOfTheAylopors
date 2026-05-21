@@ -8,7 +8,6 @@
     android:background="#70000000"
     tools:context=".PauseActivity">
 
-    <!-- Semi-transparent background overlay -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Main Panel - Landscape Layout -->
     <LinearLayout
         android:id="@+id/mainPanel"
         android:layout_width="0dp"
@@ -33,7 +31,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Left Side - Stats -->
         <LinearLayout
             android:id="@+id/statsContainer"
             android:layout_width="0dp"
@@ -43,42 +40,61 @@
             android:padding="16dp"
             android:layout_marginEnd="24dp">
 
-            <!-- Title -->
             <TextView
                 android:id="@+id/titleTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/pause_title"
                 android:textColor="@color/color_accent"
-                android:textSize="28sp"
+                android:textSize="26sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/montserrat"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="24dp" />
+                android:gravity="center_horizontal"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginBottom="16dp" />
 
             <TextView
                 android:id="@+id/statsTitleTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Statistics"
-                android:textColor="@color/color_primary"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/montserrat"
-                android:layout_marginBottom="12dp" />
-
-            <TextView
-                android:id="@+id/statsTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chapters Completed: 0/7"
-                android:textColor="@color/color_text_dark"
+                android:text="@string/pause_stats_title"
+                android:textColor="@color/color_primary"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:fontFamily="@font/montserrat"
                 android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/chaptersCompletedTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginBottom="8dp"
+                tools:text="Chapters completed: 2/7" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true"
+                android:scrollbars="vertical">
+
+                <TextView
+                    android:id="@+id/statsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text_dark"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:fontFamily="@font/montserrat"
+                    tools:text="Sociality: 0.50" />
+            </ScrollView>
         </LinearLayout>
 
-        <!-- Right Side - Menu Buttons -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -87,7 +103,6 @@
             android:gravity="center"
             android:padding="12dp">
 
-            <!-- Resume Button -->
             <Button
                 android:id="@+id/resumeButton"
                 android:layout_width="match_parent"
@@ -102,7 +117,6 @@
                 android:textColor="@color/white"
                 android:padding="12dp" />
 
-            <!-- Save Button -->
             <Button
                 android:id="@+id/saveButton"
                 android:layout_width="match_parent"
@@ -117,7 +131,6 @@
                 android:textColor="@color/color_text_light"
                 android:padding="10dp" />
 
-            <!-- Settings Button -->
             <Button
                 android:id="@+id/settingsButton"
                 android:layout_width="match_parent"
@@ -132,7 +145,6 @@
                 android:textColor="@color/color_text_light"
                 android:padding="10dp" />
 
-            <!-- Main Menu Button -->
             <Button
                 android:id="@+id/mainMenuButton"
                 android:layout_width="match_parent"
