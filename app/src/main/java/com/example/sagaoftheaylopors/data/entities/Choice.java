@@ -40,6 +40,11 @@ public class Choice {
     @PrimaryKey
     public int choiceId;
 
+    /**
+     * Stable id from chapter JSON (e.g. ch2_s1_d32_c1). Used for Firestore analytics.
+     */
+    public String jsonId;
+
     /** ID of the dialogue this choice appears after */
     public int dialogueId;
 

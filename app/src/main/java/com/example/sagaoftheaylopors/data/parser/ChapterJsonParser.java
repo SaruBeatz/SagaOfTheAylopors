@@ -26,6 +26,16 @@ import com.example.sagaoftheaylopors.data.entities.Choice;
  */
 public class ChapterJsonParser {
     private static final String TAG = "ChapterJsonParser";
+
+    /**
+     * Room primary keys must be unique across all chapters.
+     * Chapter N uses ids [N*ID_BLOCK + 1 .. (N+1)*ID_BLOCK).
+     */
+    public static final int ID_BLOCK = 100_000;
+
+    public static int idBaseForChapter(int chapterId) {
+        return chapterId * ID_BLOCK;
+    }
     
     /**
      * Parse chapter JSON file and return structured data.
@@ -79,28 +89,29 @@ public class ChapterJsonParser {
             Map<String, Integer> dialogueIdMap = new HashMap<>(); // Map JSON dialogue IDs to numeric IDs
             Map<String, Integer> choiceIdMap = new HashMap<>(); // Map JSON choice IDs to numeric IDs
             
-            int sceneCounter = 1;
-            int dialogueCounter = 1;
-            int choiceCounter = 1;
-            
-            // First pass: map all IDs
+            final int idBase = idBaseForChapter(chapterId);
+            int sceneCounter = 0;
+            int dialogueCounter = 0;
+            int choiceCounter = 0;
+
+            // First pass: map all IDs (unique per chapter via idBase)
             for (int i = 0; i < scenesArray.length(); i++) {
                 JSONObject sceneJson = scenesArray.getJSONObject(i);
                 String sceneIdKey = sceneJson.getString("id");
-                sceneIdMap.put(sceneIdKey, sceneCounter++);
+                sceneIdMap.put(sceneIdKey, idBase + (++sceneCounter));
                 
                 JSONArray dialoguesArray = sceneJson.getJSONArray("dialogues");
                 for (int j = 0; j < dialoguesArray.length(); j++) {
                     JSONObject dialogueJson = dialoguesArray.getJSONObject(j);
                     String dialogueIdKey = dialogueJson.getString("id");
-                    dialogueIdMap.put(dialogueIdKey, dialogueCounter++);
+                    dialogueIdMap.put(dialogueIdKey, idBase + (++dialogueCounter));
                     
                     if (dialogueJson.has("choices")) {
                         JSONArray choicesArray = dialogueJson.getJSONArray("choices");
                         for (int k = 0; k < choicesArray.length(); k++) {
                             JSONObject choiceJson = choicesArray.getJSONObject(k);
                             String choiceIdKey = choiceJson.getString("id");
-                            choiceIdMap.put(choiceIdKey, choiceCounter++);
+                            choiceIdMap.put(choiceIdKey, idBase + (++choiceCounter));
                         }
                     }
                 }
@@ -115,6 +126,7 @@ public class ChapterJsonParser {
                 
                 Scene scene = new Scene();
                 scene.sceneId = sceneId;
+                scene.jsonId = sceneIdKey;
                 scene.chapterId = chapterId;
                 scene.order = order;
                 scene.nameKey = "";
@@ -149,6 +161,7 @@ public class ChapterJsonParser {
                     
                     Dialogue dialogue = new Dialogue();
                     dialogue.dialogueId = dialogueId;
+                    dialogue.jsonId = dialogueIdKey;
                     dialogue.sceneId = sceneId;
                     dialogue.order = dialogueOrder;
                     dialogue.speakerType = speaker.toLowerCase().replace(" ", "_");
@@ -216,6 +229,7 @@ public class ChapterJsonParser {
                             
                             Choice choice = new Choice();
                             choice.choiceId = choiceId;
+                            choice.jsonId = choiceIdKey;
                             choice.dialogueId = dialogueId;
                             choice.order = k + 1;
                             choice.textKey = choiceText; // Store text directly

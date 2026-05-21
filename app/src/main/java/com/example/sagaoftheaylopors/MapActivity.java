@@ -15,6 +15,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.sagaoftheaylopors.auth.AuthRepository;
+import com.example.sagaoftheaylopors.auth.SessionManager;
+import com.example.sagaoftheaylopors.cloud.PlaythroughRepository;
 import com.example.sagaoftheaylopors.data.database.StoryDataInitializer;
 import com.example.sagaoftheaylopors.data.entities.Chapter;
 import com.example.sagaoftheaylopors.data.repository.StoryRepository;
@@ -32,6 +35,9 @@ public class MapActivity extends AppCompatActivity {
     private StoryRepository storyRepository;
     private int currentChapter = 1; // Active chapter (orange)
     private int highestUnlockedChapter = 1;
+    /** Next chapter in order (completed+1); only this + replays are startable. */
+    private int nextPlayableChapter = 1;
+    private int highestCompletedChapter = 0;
     private Map<Integer, CardView> chapterNodes;
     private Map<Integer, PointF> chapterPositions;
     private PathView pathView;
@@ -60,6 +66,17 @@ public class MapActivity extends AppCompatActivity {
 
         // Check if we need to show path animation
         Intent intent = getIntent();
+        if (intent != null) {
+            int completedChapter = intent.getIntExtra("completed_chapter", -1);
+            AuthRepository authRepository = new AuthRepository();
+            SessionManager sessionManager = new SessionManager(this);
+            if (completedChapter > 0
+                    && authRepository.isLoggedIn()
+                    && sessionManager.getActivePlaythroughId() != null) {
+                PlaythroughRepository.getInstance(this)
+                        .syncCompletedChapterInBackground(this, completedChapter);
+            }
+        }
         if (intent != null && intent.getBooleanExtra("show_path_animation", false)) {
             int completedChapter = intent.getIntExtra("completed_chapter", -1);
             if (completedChapter > 0) {
@@ -88,10 +105,7 @@ public class MapActivity extends AppCompatActivity {
 
         // Start Chapter Button
         binding.startChapterButton.setOnClickListener(v -> {
-            // Check if chapter is unlocked
-            boolean canStart = currentChapter == 1 || currentChapter <= highestUnlockedChapter;
-            
-            if (canStart) {
+            if (canPlayChapter(currentChapter)) {
                 // Ensure the chapter is initialized before starting
                 com.example.sagaoftheaylopors.data.entities.Chapter chapter = storyRepository.getChapter(currentChapter);
                 if (chapter == null) {
@@ -254,8 +268,19 @@ public class MapActivity extends AppCompatActivity {
             highestUnlocked = currentChapter;
         }
         highestUnlockedChapter = highestUnlocked;
-        
-        Log.d(TAG, "Final state - Current chapter: " + currentChapter + ", Highest unlocked: " + highestUnlockedChapter);
+        highestCompletedChapter = highestCompleted;
+        nextPlayableChapter = 1;
+        for (int id = 1; id <= 7; id++) {
+            Chapter c = chapterMap.get(id);
+            if (c == null || !c.isCompleted) {
+                nextPlayableChapter = id;
+                break;
+            }
+        }
+
+        Log.d(TAG, "Final state - current=" + currentChapter
+                + " nextPlayable=" + nextPlayableChapter
+                + " highestUnlocked=" + highestUnlockedChapter);
         
         // Verify next chapter unlock status
         if (highestCompleted > 0 && highestCompleted < 7) {
@@ -298,13 +323,7 @@ public class MapActivity extends AppCompatActivity {
             }
             
             boolean isCompleted = completedMap.getOrDefault(chapterId, false);
-            // A chapter is unlocked if:
-            // 1. It's marked as unlocked in DB
-            // 2. It's chapter 1 (always unlocked)
-            // 3. It's <= highestUnlockedChapter (progression-based)
-            boolean isUnlocked = unlockedMap.getOrDefault(chapterId, false) 
-                || chapterId == 1 
-                || (chapterId <= highestUnlockedChapter);
+            boolean isUnlocked = canPlayChapter(chapterId);
             boolean isActive = (chapterId == currentChapter);
             
             // ALWAYS show ALL chapters (1-7) - force visibility
@@ -331,36 +350,29 @@ public class MapActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Linear progression: replay completed chapters or play the next one in order (no jump 3→7).
+     */
+    private boolean canPlayChapter(int chapterId) {
+        if (chapterId < 1 || chapterId > 7) {
+            return false;
+        }
+        if (chapterId == nextPlayableChapter) {
+            return true;
+        }
+        Chapter chapter = storyRepository.getChapter(chapterId);
+        return chapter != null && chapter.isCompleted;
+    }
+
     private void selectChapter(int chapterNumber) {
-        List<Chapter> chapters = storyRepository.getAllChapters();
-        boolean isUnlocked = false;
-        boolean isCompleted = false;
-        
-        for (Chapter chapter : chapters) {
-            if (chapter.chapterId == chapterNumber) {
-                isUnlocked = chapter.isUnlocked || chapter.isCompleted;
-                isCompleted = chapter.isCompleted;
-                break;
-            }
-        }
-        
-        // Also allow selecting chapter 1 by default
-        if (chapterNumber == 1) {
-            isUnlocked = true;
-        }
-        
-        // Check if chapter is unlocked based on progression
-        if (!isUnlocked && chapterNumber <= highestUnlockedChapter) {
-            isUnlocked = true;
-        }
-        
-        // Allow selecting if it's unlocked, completed, or is the next available chapter
-        if (isUnlocked || isCompleted || chapterNumber <= highestUnlockedChapter) {
+        if (canPlayChapter(chapterNumber)) {
             currentChapter = chapterNumber;
             updateChapterStates();
             updateStartChapterButton();
         } else {
-            Toast.makeText(this, "This chapter is not yet unlocked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,
+                    getString(R.string.chapter_locked_play_in_order, nextPlayableChapter),
+                    Toast.LENGTH_SHORT).show();
         }
     }
 

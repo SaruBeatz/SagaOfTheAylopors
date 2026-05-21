@@ -3,6 +3,8 @@ package com.example.sagaoftheaylopors.auth;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 
@@ -21,6 +23,9 @@ public class SessionManager {
     private static final String KEY_HAS_STARTED_GAME = "has_started_game";
     private static final String KEY_HAS_CLOUD_SAVE = "has_cloud_save";
     private static final String KEY_JUST_REGISTERED = "just_registered";
+    private static final String KEY_ACTIVE_PLAYTHROUGH_ID = "active_playthrough_id";
+    private static final String KEY_ATTEMPT_NUMBER = "playthrough_attempt_number";
+    private static final String KEY_TOTAL_PLAY_TIME_MS = "total_play_time_ms";
 
     private final SharedPreferences prefs;
     private final FirebaseAuth firebaseAuth;
@@ -74,11 +79,45 @@ public class SessionManager {
         return flag;
     }
 
+    @Nullable
+    public String getActivePlaythroughId() {
+        String id = prefs.getString(KEY_ACTIVE_PLAYTHROUGH_ID, null);
+        return (id != null && !id.isEmpty()) ? id : null;
+    }
+
+    public void setActivePlaythroughId(@NonNull String playthroughId) {
+        prefs.edit().putString(KEY_ACTIVE_PLAYTHROUGH_ID, playthroughId).apply();
+    }
+
+    public int incrementAndGetAttemptNumber() {
+        int next = prefs.getInt(KEY_ATTEMPT_NUMBER, 0) + 1;
+        prefs.edit().putInt(KEY_ATTEMPT_NUMBER, next).apply();
+        return next;
+    }
+
+    public long getTotalPlayTimeMs() {
+        return prefs.getLong(KEY_TOTAL_PLAY_TIME_MS, 0L);
+    }
+
+    public void setTotalPlayTimeMs(long ms) {
+        prefs.edit().putLong(KEY_TOTAL_PLAY_TIME_MS, ms).apply();
+    }
+
+    public void addPlayTimeMs(long deltaMs) {
+        if (deltaMs <= 0) {
+            return;
+        }
+        setTotalPlayTimeMs(getTotalPlayTimeMs() + deltaMs);
+    }
+
     public void clearSessionOnLogout() {
         prefs.edit()
                 .remove(KEY_HAS_STARTED_GAME)
                 .remove(KEY_HAS_CLOUD_SAVE)
                 .remove(KEY_JUST_REGISTERED)
+                .remove(KEY_ACTIVE_PLAYTHROUGH_ID)
+                .remove(KEY_ATTEMPT_NUMBER)
+                .remove(KEY_TOTAL_PLAY_TIME_MS)
                 .apply();
     }
 

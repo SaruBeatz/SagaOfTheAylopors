@@ -24,6 +24,11 @@ import static androidx.room.ForeignKey.CASCADE;
 public class Scene {
     @PrimaryKey
     public int sceneId;
+
+    /**
+     * Stable id from chapter JSON (e.g. ch2_s1). Used for Firestore analytics.
+     */
+    public String jsonId;
     
     /**
      * ID of the chapter this scene belongs to

@@ -11,7 +11,10 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sagaoftheaylopors.auth.AuthRepository;
+import com.example.sagaoftheaylopors.cloud.PlaythroughRepository;
 import com.example.sagaoftheaylopors.databinding.ActivityCharacterSelectBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 public class CharacterSelectActivity extends AppCompatActivity {
 
@@ -65,22 +68,32 @@ public class CharacterSelectActivity extends AppCompatActivity {
         // Set up select button click listener
         binding.selectCompanionButton.setOnClickListener(v -> {
             if (selectedCharacterIndex == CAT_INDEX) {
-                // Save selected companion to database
-                com.example.sagaoftheaylopors.data.repository.StoryRepository repository = 
-                    com.example.sagaoftheaylopors.data.repository.StoryRepository.getInstance(this);
+                com.example.sagaoftheaylopors.data.repository.StoryRepository repository =
+                        com.example.sagaoftheaylopors.data.repository.StoryRepository.getInstance(this);
                 com.example.sagaoftheaylopors.data.entities.PlayerProgress progress = repository.getProgress();
-                
-                // Map character index to character name
-                String characterName = "cat"; // Only cat is selectable for now
+
+                String characterName = "cat";
                 if (progress != null) {
                     progress.selectedCharacter = characterName;
-                    // Save progress with selected character
                     repository.saveProgress(progress);
                 }
-                
-                Intent intent = new Intent(CharacterSelectActivity.this, MapActivity.class);
-                intent.putExtra("selected_character", selectedCharacterIndex);
-                startActivity(intent);
+
+                AuthRepository authRepository = new AuthRepository();
+                if (authRepository.isLoggedIn()) {
+                    binding.selectCompanionButton.setEnabled(false);
+                    PlaythroughRepository.getInstance(this)
+                            .createPlaythrough(this, characterName)
+                            .addOnCompleteListener(task -> {
+                                binding.selectCompanionButton.setEnabled(true);
+                                if (task.isSuccessful()) {
+                                    goToMap();
+                                } else {
+                                    Snackbar.make(binding.getRoot(), R.string.cloud_save_failed, Snackbar.LENGTH_LONG).show();
+                                }
+                            });
+                } else {
+                    goToMap();
+                }
             }
         });
 
@@ -231,6 +244,12 @@ public class CharacterSelectActivity extends AppCompatActivity {
                 .alpha(enabled ? 1.0f : 0.5f)
                 .setDuration(200)
                 .setListener(null);
+    }
+
+    private void goToMap() {
+        Intent intent = new Intent(CharacterSelectActivity.this, MapActivity.class);
+        intent.putExtra("selected_character", selectedCharacterIndex);
+        startActivity(intent);
     }
 
     private View getIconContainer(int index) {

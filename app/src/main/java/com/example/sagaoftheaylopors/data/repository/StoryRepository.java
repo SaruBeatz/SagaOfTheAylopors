@@ -128,6 +128,14 @@ public class StoryRepository {
         return database.sceneDao().getSceneById(sceneId);
     }
     
+    public int getCompletedSceneCount(int chapterId) {
+        return database.sceneDao().getCompletedSceneCount(chapterId);
+    }
+
+    public int getTotalSceneCount(int chapterId) {
+        return database.sceneDao().getTotalSceneCount(chapterId);
+    }
+
     public boolean isChapterComplete(int chapterId) {
         int completed = database.sceneDao().getCompletedSceneCount(chapterId);
         int total = database.sceneDao().getTotalSceneCount(chapterId);
@@ -233,15 +241,9 @@ public class StoryRepository {
                 }
             }
             
-            // Check if all scenes in chapter are complete
-            Log.d(TAG, "Checking if all scenes in chapter " + sceneAfter.chapterId + " are complete...");
-            if (isChapterComplete(sceneAfter.chapterId)) {
-                Log.d(TAG, "✓✓✓ All scenes in chapter " + sceneAfter.chapterId + " are complete!");
-                Log.d(TAG, "Triggering chapter completion for chapter " + sceneAfter.chapterId);
-                markChapterCompleted(sceneAfter.chapterId);
-            } else {
-                Log.d(TAG, "Chapter " + sceneAfter.chapterId + " not yet complete - more scenes remain");
-            }
+            // Chapter unlock + cloud sync happen only in DialogueActivity.checkChapterCompletion()
+            Log.d(TAG, "Scenes done for chapter " + sceneAfter.chapterId
+                    + " — chapter flag set when DialogueActivity validates completion");
         } else {
             Log.e(TAG, "✗ ERROR: Scene " + sceneId + " not found after marking as completed!");
         }

@@ -9,11 +9,13 @@ import androidx.room.RoomDatabase;
 import com.example.sagaoftheaylopors.data.daos.ChapterDao;
 import com.example.sagaoftheaylopors.data.daos.ChoiceDao;
 import com.example.sagaoftheaylopors.data.daos.DialogueDao;
+import com.example.sagaoftheaylopors.data.daos.PendingChoiceDao;
 import com.example.sagaoftheaylopors.data.daos.PlayerProgressDao;
 import com.example.sagaoftheaylopors.data.daos.SceneDao;
 import com.example.sagaoftheaylopors.data.entities.Chapter;
 import com.example.sagaoftheaylopors.data.entities.Choice;
 import com.example.sagaoftheaylopors.data.entities.Dialogue;
+import com.example.sagaoftheaylopors.data.entities.PendingChoice;
 import com.example.sagaoftheaylopors.data.entities.PlayerProgress;
 import com.example.sagaoftheaylopors.data.entities.Scene;
 
@@ -23,9 +25,10 @@ import com.example.sagaoftheaylopors.data.entities.Scene;
         Scene.class,
         Dialogue.class,
         Choice.class,
-        PlayerProgress.class
+        PlayerProgress.class,
+        PendingChoice.class
     },
-    version = 7,
+    version = 9,
     exportSchema = false
 )
 public abstract class AppDatabase extends RoomDatabase {
@@ -36,6 +39,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract DialogueDao dialogueDao();
     public abstract ChoiceDao choiceDao();
     public abstract PlayerProgressDao playerProgressDao();
+    public abstract PendingChoiceDao pendingChoiceDao();
     
     public static AppDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {

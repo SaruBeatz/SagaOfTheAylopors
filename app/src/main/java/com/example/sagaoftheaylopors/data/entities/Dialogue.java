@@ -24,6 +24,11 @@ import static androidx.room.ForeignKey.CASCADE;
 public class Dialogue {
     @PrimaryKey
     public int dialogueId;
+
+    /**
+     * Stable id from chapter JSON (e.g. ch2_s1_d32). Used for Firestore analytics.
+     */
+    public String jsonId;
     
     /**
      * ID of the scene this dialogue belongs to
