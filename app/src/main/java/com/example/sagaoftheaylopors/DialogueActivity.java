@@ -388,6 +388,10 @@ public class DialogueActivity extends AppCompatActivity {
 
         // Load current dialogue
         currentDialogue = storyRepository.getDialogue(playerProgress.currentDialogueId);
+
+        // Auto-skip companion-filtered dialogues that do not match the player's chosen companion
+        currentDialogue = skipFilteredDialogues(currentDialogue);
+
         if (currentDialogue == null) {
             // Dialogue not found, try to find first dialogue in current scene
             List<Dialogue> dialogues = storyRepository.getDialoguesByScene(playerProgress.currentSceneId);
@@ -489,8 +493,8 @@ public class DialogueActivity extends AppCompatActivity {
         String speakerName = getSpeakerName(dialogue.speakerType);
         binding.speakerNameTextView.setText(speakerName);
 
-        // Update character portrait based on speaker type (currently disabled)
-        updateCharacterPortrait(dialogue.speakerType);
+        // Update character portrait based on portrait_mode field or legacy speaker type
+        updateCharacterPortrait(dialogue);
         
         // Update text area visual dominance based on speaker
         boolean hasSpeaker = dialogue.speakerType != null && 
@@ -784,12 +788,79 @@ public class DialogueActivity extends AppCompatActivity {
      *
      * When ANY named character speaks, BOTH portraits are displayed so the
      * player always sees who is present in the scene:
-     *   LEFT  (characterPortraitImageView) — miller's son / master
+     *   LEFT  (characterPortraitImageView) — miller's son / master (Ch1) or selected companion (Ch4+)
      *   RIGHT (characterPortraitRight)      — cat / Puss-in-Boots
      *
      * "narrator" alone → both hidden (pure description with no characters nearby).
+     *
+     * For dialogues with a "portrait_mode" field the explicit mode overrides legacy logic:
+     *   "cat_only"       — only the Cat portrait (right)
+     *   "companion_only" — only the companion portrait (left)
+     *   "both"           — Cat (right) and companion (left) both visible
+     *   "none"           — both hidden
      */
-    private void updateCharacterPortrait(String speakerType) {
+    private void updateCharacterPortrait(Dialogue dialogue) {
+        if (dialogue == null) return;
+
+        if (dialogue.portraitMode != null && !dialogue.portraitMode.isEmpty()) {
+            applyPortraitMode(dialogue.portraitMode);
+        } else {
+            updateCharacterPortraitLegacy(dialogue.speakerType);
+        }
+    }
+
+    /** Explicit portrait mode driven by the "portrait_mode" JSON field. */
+    private void applyPortraitMode(String mode) {
+        boolean showCat = false;
+        boolean showCompanion = false;
+
+        switch (mode.toLowerCase()) {
+            case "cat_only":       showCat = true; break;
+            case "companion_only": showCompanion = true; break;
+            case "both":           showCat = true; showCompanion = true; break;
+            case "none": default:  break;
+        }
+
+        // LEFT portrait — companion (Ch4+), identified by playerProgress.selectedCharacter
+        if (showCompanion) {
+            String companionId = (playerProgress != null) ? playerProgress.selectedCharacter : null;
+            int resId = getCompanionPortraitResId(companionId);
+            if (resId != 0) {
+                binding.characterPortraitImageView.setImageResource(resId);
+                binding.characterPortraitImageView.setVisibility(View.VISIBLE);
+                applyTopCrop(binding.characterPortraitImageView);
+            } else {
+                binding.characterPortraitImageView.setVisibility(View.GONE);
+            }
+        } else {
+            binding.characterPortraitImageView.setVisibility(View.GONE);
+        }
+
+        // RIGHT portrait — cat
+        if (showCat) {
+            binding.characterPortraitRight.setImageResource(R.drawable.cat_full_height);
+            binding.characterPortraitRight.setVisibility(View.VISIBLE);
+            applyTopCrop(binding.characterPortraitRight);
+        } else {
+            binding.characterPortraitRight.setVisibility(View.GONE);
+        }
+    }
+
+    /**
+     * Returns the drawable resource id for a companion portrait, or 0 if not found.
+     * Drawable naming convention: companion_{id} (e.g. companion_alward).
+     */
+    private int getCompanionPortraitResId(String companionId) {
+        if (companionId == null || companionId.isEmpty()) return 0;
+        return getResources().getIdentifier(
+            "companion_" + companionId.toLowerCase(),
+            "drawable",
+            getPackageName()
+        );
+    }
+
+    /** Legacy portrait logic — inferred from speaker type (used when portrait_mode is null). */
+    private void updateCharacterPortraitLegacy(String speakerType) {
         boolean isNamedCharacter = false;
 
         if (speakerType != null) {
@@ -809,7 +880,6 @@ public class DialogueActivity extends AppCompatActivity {
         }
 
         // LEFT portrait — miller's son / master (appears only in Chapter 1).
-        // Other chapters will introduce their own characters in future updates.
         boolean showMaster = isNamedCharacter && chapterNumber == 1;
         if (showMaster) {
             binding.characterPortraitImageView.setImageResource(R.drawable.master_full_height);
@@ -827,6 +897,41 @@ public class DialogueActivity extends AppCompatActivity {
         } else {
             binding.characterPortraitRight.setVisibility(View.GONE);
         }
+    }
+
+    /**
+     * Returns true if the given dialogue should be skipped because it is
+     * restricted to a specific companion and the player chose a different one.
+     */
+    private boolean shouldSkipDialogue(Dialogue d) {
+        if (d == null) return false;
+        if (d.onlyForCompanion == null || d.onlyForCompanion.isEmpty()) return false;
+        String selected = (playerProgress != null) ? playerProgress.selectedCharacter : null;
+        if (selected == null || selected.isEmpty()) return true; // no companion chosen yet → skip companion lines
+        return !d.onlyForCompanion.equalsIgnoreCase(selected);
+    }
+
+    /**
+     * Walks forward through the dialogue chain, skipping any entries that are
+     * filtered out by onlyForCompanion, until a displayable dialogue is found
+     * or the chain ends.  Updates playerProgress.currentDialogueId accordingly.
+     * A safety counter prevents infinite loops.
+     */
+    private Dialogue skipFilteredDialogues(Dialogue start) {
+        Dialogue d = start;
+        int safetyLimit = 60;
+        while (d != null && shouldSkipDialogue(d) && safetyLimit-- > 0) {
+            if (d.nextDialogueId > 0) {
+                d = storyRepository.getDialogue(d.nextDialogueId);
+            } else {
+                d = null;
+                break;
+            }
+        }
+        if (d != null) {
+            playerProgress.currentDialogueId = d.dialogueId;
+        }
+        return d;
     }
 
     /**
@@ -1006,6 +1111,13 @@ public class DialogueActivity extends AppCompatActivity {
             );
 
             storyRepository.updateBehavioralParams(progress);
+
+            // Persist the chosen companion so future chapters can reference it
+            if (choice.saveCompanion != null && !choice.saveCompanion.isEmpty()) {
+                playerProgress.selectedCharacter = choice.saveCompanion;
+                storyRepository.saveProgress(playerProgress);
+                Log.d("DialogueActivity", "Companion saved: " + choice.saveCompanion);
+            }
 
             Log.d("DialogueActivity", String.format(
                 "Behavioral params after choice [choiceId=%d]: " +

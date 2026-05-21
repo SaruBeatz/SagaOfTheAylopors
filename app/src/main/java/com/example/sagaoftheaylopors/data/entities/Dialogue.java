@@ -84,6 +84,24 @@ public class Dialogue {
      */
     public String transitionBefore;
 
+    /**
+     * Companion filter: if set, this dialogue is only shown when the player's selected
+     * companion matches this value. Null = shown for all companions (and when no companion
+     * has been chosen yet).
+     * Values: "alward", "lokian", "mirelin", "lavrik"
+     */
+    public String onlyForCompanion;
+
+    /**
+     * Portrait display mode for this dialogue.
+     * "cat_only"       — only the Cat portrait (right side)
+     * "companion_only" — only the companion portrait (left side)
+     * "both"           — Cat (right) and companion (left) both visible
+     * "none"           — both portraits hidden (pure atmosphere / transitions)
+     * null             — legacy behaviour: inferred from speakerType
+     */
+    public String portraitMode;
+
     public Dialogue() {}
     
     public Dialogue(int dialogueId, int sceneId, int order, String speakerType, 

@@ -5,645 +5,2532 @@
     {
       "id": "ch4_s1",
       "order": 1,
-      "background": "bg_ch4_market_square",
+      "background": "bg_ch4_palace_hall",
       "dialogues": [
         {
-          "id": "ch4_s1_d1",
+          "id": "ch4_s1_d01",
           "order": 1,
           "speaker": "Narrator",
-          "text": "Железные ворота скрипнули и распахнулись перед тобой, открывая вид на площадь, которая казалась живым организмом. Люди здесь двигались не просто вперёд — они пульсировали ритмом города. Сапоги стучали по булыжнику, телеги скрипели, а звон монет в руках торговцев смешивался с криком птиц и смехом детей. Яркие вывески отражались в мокрых от дождя лужах, а свет фонарей играл на крышах, словно маленькие звёзды на земле.",
+          "transition_before": "darkening",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Внешний город остаётся за дверями.",
           "has_choices": false,
-          "next_dialogue": "ch4_s1_d2"
+          "next_dialogue": "ch4_s1_d02"
         },
         {
-          "id": "ch4_s1_d2",
+          "id": "ch4_s1_d02",
           "order": 2,
           "speaker": "Narrator",
-          "text": "Кот внимательно наблюдает за торговцами, за спешащими прохожими, за детьми, играющими у фонарей. Он чувствует, что площадь живёт своими правилами, невидимыми для посторонних, но ясными для тех, кто умеет видеть.",
+          "portrait_mode": "none",
+          "text": "Там кричали торговцы.",
           "has_choices": false,
-          "next_dialogue": "ch4_s1_d3"
+          "next_dialogue": "ch4_s1_d03"
         },
         {
-          "id": "ch4_s1_d3",
+          "id": "ch4_s1_d03",
           "order": 3,
-          "speaker": "Cat",
-          "text": "«Каждый взгляд, каждый шаг — это экзамен. И кто-то помогает мне замечать его, не вмешиваясь в поток»",
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Там пахло дымом, грязью и жареным мясом.",
           "has_choices": false,
-          "next_dialogue": "ch4_s1_d4"
+          "next_dialogue": "ch4_s1_d04"
         },
         {
-          "id": "ch4_s1_d4",
+          "id": "ch4_s1_d04",
           "order": 4,
           "speaker": "Narrator",
-          "text": "Они подходят к старой деревянной двери на краю площади. Она выглядит неприметно: облупленная краска, скрипучие петли. Но именно через неё скрыт вход в лабиринт улиц, где каждое движение станет испытанием.",
+          "portrait_mode": "none",
+          "text": "Здесь пахнет воском, благовониями и страхом, который очень дорого одели.",
           "has_choices": false,
-          "next_dialogue": "ch4_s1_d5"
+          "next_dialogue": "ch4_s1_d05"
         },
         {
-          "id": "ch4_s1_d5",
+          "id": "ch4_s1_d05",
           "order": 5,
           "speaker": "Narrator",
-          "text": "Площадь вокруг живёт своей жизнью. Ты понимаешь, что здесь тебя ждут союзники, каждый со своим характером и путём. Какой путь выбрать?",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Внутреннее Кольцо не шумит.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d06"
+        },
+        {
+          "id": "ch4_s1_d06",
+          "order": 6,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Оно шепчет.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d07"
+        },
+        {
+          "id": "ch4_s1_d07",
+          "order": 7,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Каждый шаг по мрамору звучит так, будто дворец записывает его в книгу долгов.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d08"
+        },
+        {
+          "id": "ch4_s1_d08",
+          "order": 8,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Ох.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d09"
+        },
+        {
+          "id": "ch4_s1_d09",
+          "order": 9,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Какой изысканный запах опасности.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d10"
+        },
+        {
+          "id": "ch4_s1_d10",
+          "order": 10,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Почти хочется вести себя прилично.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d11"
+        },
+        {
+          "id": "ch4_s1_d11",
+          "order": 11,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Не почти. Будешь вести себя прилично. Здесь ошибка не заканчивается дракой. Здесь ошибка становится приговором.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d12"
+        },
+        {
+          "id": "ch4_s1_d12",
+          "order": 12,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Прилично? Нет, нет. Здесь надо выглядеть прилично, а думать неприлично. И желательно сразу в трёх направлениях.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d13"
+        },
+        {
+          "id": "ch4_s1_d13",
+          "order": 13,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— На гобеленах старые швы. Их снимали недавно. За ними могут быть слуховые ниши. Говорите тише, господин Кот.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d14"
+        },
+        {
+          "id": "ch4_s1_d14",
+          "order": 14,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я могу идти тише. Наверное. Если пол не будет скрипеть подо мной. Он дорогой, да? Я не хочу сломать дорогой пол.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d15"
+        },
+        {
+          "id": "ch4_s1_d15",
+          "order": 15,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Спокойно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d16"
+        },
+        {
+          "id": "ch4_s1_d16",
+          "order": 16,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "cat_only",
+          "text": "— Если ты сломаешь дворец, мы скажем, что это был архитектурный заговор.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d17"
+        },
+        {
+          "id": "ch4_s1_d17",
+          "order": 17,
+          "speaker": "Narrator",
+          "background": "bg_ch4_gallery",
+          "portrait_mode": "both",
+          "text": "Вы проходите через галерею.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d18"
+        },
+        {
+          "id": "ch4_s1_d18",
+          "order": 18,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Зеркала смотрят со стен, как придворные старухи.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d19"
+        },
+        {
+          "id": "ch4_s1_d19",
+          "order": 19,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "В каждом отражении Кот кажется меньше.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d20"
+        },
+        {
+          "id": "ch4_s1_d20",
+          "order": 20,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "И опаснее.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d21"
+        },
+        {
+          "id": "ch4_s1_d21",
+          "order": 21,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Впереди спешит фрейлина в платье цвета вечернего вина.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d22"
+        },
+        {
+          "id": "ch4_s1_d22",
+          "order": 22,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Она цепляет рукавом канделябр.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d23"
+        },
+        {
+          "id": "ch4_s1_d23",
+          "order": 23,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Тихий звон.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d24"
+        },
+        {
+          "id": "ch4_s1_d24",
+          "order": 24,
+          "speaker": "Narrator",
+          "background": "bg_ch4_gallery_bracelet",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "На мрамор падает тяжёлый браслет.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d25"
+        },
+        {
+          "id": "ch4_s1_d25",
+          "order": 25,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Золото. Изумруды. Цена маленькой фермы.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d26"
+        },
+        {
+          "id": "ch4_s1_d26",
+          "order": 26,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Какая беспечность.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d27"
+        },
+        {
+          "id": "ch4_s1_d27",
+          "order": 27,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Во внешнем городе ей бы отрезали руку вместе с браслетом.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d28"
+        },
+        {
+          "id": "ch4_s1_d28",
+          "order": 28,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И, возможно, извинились бы за неудобство.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d29"
+        },
+        {
+          "id": "ch4_s1_d29",
+          "order": 29,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Не трогай сразу. Дворцовые испытания редко выглядят как испытания. Сначала смотри на двери, потом на браслет.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d30"
+        },
+        {
+          "id": "ch4_s1_d30",
+          "order": 30,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Красивый. Слишком красивый. Либо удача, либо ловушка. А самые дорогие ловушки, знаешь ли, всегда стараются выглядеть как удача.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d31"
+        },
+        {
+          "id": "ch4_s1_d31",
+          "order": 31,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Изумруды потускнели по краям. На них мог быть реагент. Или метка. Во дворце вещи иногда помнят руки лучше людей.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d32"
+        },
+        {
+          "id": "ch4_s1_d32",
+          "order": 32,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Надо догнать её? Или не надо? Я могу догнать. Только если бегом, я, наверное, напугаю весь коридор.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d33"
+        },
+        {
+          "id": "ch4_s1_d33",
+          "order": 33,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Что делать с браслетом?",
           "has_choices": true,
           "choices": [
             {
-              "id": "ch4_s1_d5_c1",
-              "text": "Пойти с наставником, который учит видеть структуру мира",
-              "next_scene": "ch4_s2"
+              "id": "ch4_s1_d33_c1",
+              "text": "Незаметно поднять браслет и убрать в сумку. Это покроет расходы на зелья и снаряжение.",
+              "effects": {
+                "ego_focus": 0.07,
+                "rigidity": 0.05,
+                "emotional_sensitivity": -0.07
+              },
+              "next_dialogue": "ch4_s1_d50"
             },
             {
-              "id": "ch4_s1_d5_c2",
-              "text": "Пойти с хитрым помощником, который видит возможности",
-              "next_scene": "ch4_s3"
+              "id": "ch4_s1_d33_c2",
+              "text": "Не трогать вещь и пройти мимо. Чужое золото во дворце часто бывает приманкой.",
+              "effects": {
+                "self_control": 0.07,
+                "anxiety": 0.05,
+                "adaptability": -0.05
+              },
+              "next_dialogue": "ch4_s1_d70"
             },
             {
-              "id": "ch4_s1_d5_c3",
-              "text": "Пойти со слабым, но знающим союзником",
-              "next_scene": "ch4_s4"
-            },
-            {
-              "id": "ch4_s1_d5_c4",
-              "text": "Пойти с сильным, но зависимым союзником",
-              "next_scene": "ch4_s5"
+              "id": "ch4_s1_d33_c3",
+              "text": "Поднять браслет, догнать фрейлину и вернуть с поклоном. Связи при дворе стоят дороже золота.",
+              "effects": {
+                "sociality": 0.10,
+                "adaptability": 0.05,
+                "rigidity": -0.05
+              },
+              "next_dialogue": "ch4_s1_d90"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ch4_s2",
-      "order": 2,
-      "background": "bg_ch4_market_square",
-      "dialogues": [
+        },
+
         {
-          "id": "ch4_s2_d1",
-          "order": 1,
+          "id": "ch4_s1_d50",
+          "order": 50,
           "speaker": "Narrator",
-          "text": "Кот идёт рядом с Алвардом. Его внимание разделено между шумом площади и фигурой наставника, который ведёт его вдоль ряда лавок.",
+          "background": "bg_ch4_gallery_steal",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты поддеваешь браслет когтем. Одно плавное движение. Золото исчезает в сумке.",
           "has_choices": false,
-          "next_dialogue": "ch4_s2_d2"
+          "next_dialogue": "ch4_s1_d51"
         },
         {
-          "id": "ch4_s2_d2",
-          "order": 2,
-          "speaker": "Mentor",
-          "text": "— Смотри, кот, — говорит он тихо, — здесь всё говорит о людях. Не только крупные события, но и детали: как кто-то поднимает свёрток, как кто-то оценивает тебя взглядом. Мир здесь устроен хитро, и каждое движение отражается на твоей судьбе.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s2_d3"
-        },
-        {
-          "id": "ch4_s2_d3",
-          "order": 3,
-          "speaker": "Narrator",
-          "text": "Они толкают дверь вместе, скрип раздаётся эхом по переулку. Сразу за дверью площадь раскрывается во всей красе: разноцветные шатры, лавки с пряностями, музыканты с лютнями, дети, гоняющие деревянные колёса, и запахи хлеба, трав и дымка от костров. Мир кажется одновременно огромным и тесным, живым и напряжённым.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s2_d4"
-        },
-        {
-          "id": "ch4_s2_d4",
-          "order": 4,
-          "speaker": "Mentor",
-          "text": "— Пожалуй, мы пока не представились. Странно, правда? Кажется, здесь имена не важны до того, как пройдёшь порог.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s2_d5"
-        },
-        {
-          "id": "ch4_s2_d5",
-          "order": 5,
+          "id": "ch4_s1_d51",
+          "order": 51,
           "speaker": "Cat",
-          "text": "— Значит, только за дверью… интересно.",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Что упало, то прошло дворцовую проверку на нового владельца.",
           "has_choices": false,
-          "next_dialogue": "ch4_s2_d6"
+          "next_dialogue": "ch4_s1_d52"
         },
         {
-          "id": "ch4_s2_d6",
-          "order": 6,
-          "speaker": "Mentor",
-          "text": "— Я — Алвард. И теперь ты знаешь, кто ведёт тебя сквозь хаос этой площади.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s2_d7"
-        },
-        {
-          "id": "ch4_s2_d7",
-          "order": 7,
+          "id": "ch4_s1_d52",
+          "order": 52,
           "speaker": "Cat",
-          "text": "— А я… пока просто кот в сапогах.",
+          "portrait_mode": "cat_only",
+          "text": "— Поздравляю меня.",
           "has_choices": false,
-          "next_dialogue": "ch4_s2_d8"
+          "next_dialogue": "ch4_s1_d53"
         },
         {
-          "id": "ch4_s2_d8",
-          "order": 8,
-          "speaker": "Mentor",
-          "text": "— Здесь каждый шаг важен. Заметь, как люди реагируют на движение, на шум, на тебя. Кто-то боится, кто-то интересуется, кто-то наблюдает молча. Площадь учит внимательности и терпению.",
+          "id": "ch4_s1_d53",
+          "order": 53,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Теперь считай этот браслет не добычей, а риском. Если нас обыщут, говоришь первым, быстро и без шуток. Я ненавижу импровизацию, особенно когда она висит у нас на шее.",
           "has_choices": false,
-          "next_dialogue": "ch4_s2_d9"
+          "next_dialogue": "ch4_s1_d54"
         },
         {
-          "id": "ch4_s2_d9",
-          "order": 9,
-          "speaker": "Narrator",
-          "text": "Кот идёт рядом, наблюдая, как наставник останавливается у лавки с книгами и свитками. Он наклоняется, показывает на прилавок и шепчет:\n— Здесь скрыты знания, кот. Не только в книгах, но и в людях. Обрати внимание на мелочи: как кто-то обращается с товаром, как оценивает прохожих, как прячется от шума.",
+          "id": "ch4_s1_d54",
+          "order": 54,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Чудесно. Украсть драгоценность до аудиенции у короля — это либо безумие, либо талант. Я пока записываю оба варианта и жду, какой принесёт прибыль.",
           "has_choices": false,
-          "next_dialogue": "ch4_s2_d10"
+          "next_dialogue": "ch4_s1_d55"
         },
         {
-          "id": "ch4_s2_d10",
-          "order": 10,
+          "id": "ch4_s1_d55",
+          "order": 55,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Я бы завернул его в ткань. Не кожей. Тканью. Если на камнях есть следящая пыль, лучше пусть она запомнит сумку, а не вас.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d56"
+        },
+        {
+          "id": "ch4_s1_d56",
+          "order": 56,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мы... украли? Хорошо. То есть плохо. То есть если это надо для дела, я никому не скажу. Даже если меня очень строго спросят.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d57"
+        },
+        {
+          "id": "ch4_s1_d57",
+          "order": 57,
           "speaker": "Cat",
-          "text": "«Каждое движение, каждый взгляд — урок. И наставник помогает увидеть его, как будто я стою на краю карты, где всё видно, кроме того, что будет за поворотом»",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Вот и славно.",
           "has_choices": false,
-          "next_dialogue": "ch4_s2_d11"
+          "next_dialogue": "ch4_s1_d58"
         },
         {
-          "id": "ch4_s2_d11",
-          "order": 11,
-          "speaker": "Mentor",
-          "text": "— Этот город полон жизни, кот. Но помни: за каждым смехом и каждым взглядом скрывается проверка. Здесь проявляется характер, а не сила. И чем внимательнее ты наблюдаешь, тем больше шансов пройти дальше.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s2_d12"
-        },
-        {
-          "id": "ch4_s2_d12",
-          "order": 12,
+          "id": "ch4_s1_d58",
+          "order": 58,
           "speaker": "Cat",
-          "text": "«Я начинаю понимать. Сила здесь не в хитрости, не в ловкости, а в внимании, в способности видеть и слышать мир вокруг. И наставник показывает мне, как это делать»",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "cat_only",
+          "text": "— Молчание — первый признак хорошего соучастника.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d1"
-        }
-      ]
-    },
-    {
-      "id": "ch4_s3",
-      "order": 3,
-      "background": "bg_ch4_market_square",
-      "dialogues": [
+          "next_dialogue": "ch4_s1_d110"
+        },
+
         {
-          "id": "ch4_s3_d1",
-          "order": 1,
+          "id": "ch4_s1_d70",
+          "order": 70,
           "speaker": "Narrator",
-          "text": "Рядом с тобой идёт тот, кто помог пройти через ворота. Его движения ловкие, глаза блестят живостью. Он наблюдает за каждым человеком на площади, как будто видит то, что остальные пропускают.",
+          "background": "bg_ch4_gallery_leave",
+          "transition_before": "fade_in",
+          "portrait_mode": "none",
+          "text": "Ты переступаешь через браслет. Не замедляешь шага. Изумруды тускло мигают за спиной.",
           "has_choices": false,
-          "next_dialogue": "ch4_s3_d2"
+          "next_dialogue": "ch4_s1_d71"
         },
         {
-          "id": "ch4_s3_d2",
-          "order": 2,
-          "speaker": "TrickyHelper",
-          "text": "— Ну что ж, раз мы оказались здесь… пора представиться. Я Локиан.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s3_d3"
-        },
-        {
-          "id": "ch4_s3_d3",
-          "order": 3,
+          "id": "ch4_s1_d71",
+          "order": 71,
           "speaker": "Cat",
-          "text": "«Вот оно — имя. И сразу ощущение, что за ним стоит не только помощь, но и игра»",
+          "portrait_mode": "cat_only",
+          "text": "— Бесплатный сыр бывает только в королевских мышеловках.",
           "has_choices": false,
-          "next_dialogue": "ch4_s3_d4"
+          "next_dialogue": "ch4_s1_d72"
         },
         {
-          "id": "ch4_s3_d4",
-          "order": 4,
-          "speaker": "Narrator",
-          "text": "Локиан оглядывает площадь с лёгкой улыбкой. Он замечает мельчайшие детали: кто куда спешит, кто наблюдает, кто остаётся в тени. Его взгляд — быстрый, точный, выхватывающий возможности.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s3_d5"
-        },
-        {
-          "id": "ch4_s3_d5",
-          "order": 5,
-          "speaker": "TrickyHelper",
-          "text": "— Видишь всё это? Каждое движение, каждый взгляд… Всё это рассказывает о людях больше, чем слова. А теперь будем смотреть вместе.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s3_d6"
-        },
-        {
-          "id": "ch4_s3_d6",
-          "order": 6,
-          "speaker": "Narrator",
-          "text": "Кот идёт рядом, наблюдая, как Локиан легко лавирует между толпой, останавливаясь у каждого человека ненадолго, как будто проверяет реакцию, но не вмешивается.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s3_d7"
-        },
-        {
-          "id": "ch4_s3_d7",
-          "order": 7,
+          "id": "ch4_s1_d72",
+          "order": 72,
           "speaker": "Cat",
-          "text": "«Он видит то, чего я ещё не понимаю. И всё же идём вместе»",
+          "portrait_mode": "cat_only",
+          "text": "— А я слишком красив, чтобы умирать из-за украшения для запястья.",
           "has_choices": false,
-          "next_dialogue": "ch4_s3_d8"
+          "next_dialogue": "ch4_s1_d73"
         },
         {
-          "id": "ch4_s3_d8",
-          "order": 8,
-          "speaker": "Narrator",
-          "text": "Площадь вокруг жива. Локиан не спешит, но его присутствие заставляет пространство казаться более структурированным, как будто шум подчиняется его взгляду. Каждый жест союзника подчёркивает его хитрость и внимательность.",
+          "id": "ch4_s1_d73",
+          "order": 73,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Верное решение. Предмет на пути посланника перед аудиенцией — классическая проверка дисциплины. Ты только что прошёл её, даже если никто не хлопал.",
           "has_choices": false,
-          "next_dialogue": "ch4_s3_d9"
+          "next_dialogue": "ch4_s1_d74"
         },
         {
-          "id": "ch4_s3_d9",
-          "order": 9,
-          "speaker": "TrickyHelper",
-          "text": "— Ну вот, теперь мы знаем друг друга. Ты — кот, я — Локиан. Идём, смотри вокруг. Здесь каждая тень и каждый шаг важны.",
+          "id": "ch4_s1_d74",
+          "order": 74,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Какая трагедия. Такой браслет остался сиротой. Но да, сироты с изумрудами редко бывают без присмотра.",
           "has_choices": false,
-          "next_dialogue": "ch4_s3_d10"
+          "next_dialogue": "ch4_s1_d75"
         },
         {
-          "id": "ch4_s3_d10",
-          "order": 10,
+          "id": "ch4_s1_d75",
+          "order": 75,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— В зеркале слева шевельнулась тень. Кто-то смотрел. Вы правильно сделали, что не дали ему историю, которую можно записать против вас.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d76"
+        },
+        {
+          "id": "ch4_s1_d76",
+          "order": 76,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Хорошо. Я боялся наступить на него. Если бы он хрустнул, нас бы точно выгнали. Или казнили. Тут сложно угадать.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d77"
+        },
+        {
+          "id": "ch4_s1_d77",
+          "order": 77,
           "speaker": "Cat",
-          "text": "«Каждый союзник раскрывается постепенно. И этот — через наблюдение, через движение, через игру»",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Во дворце разница между «выгнали» и «казнили» зависит от настроения мебельщика.",
           "has_choices": false,
-          "next_dialogue": "ch4_s3_d11"
+          "next_dialogue": "ch4_s1_d110"
         },
+
         {
-          "id": "ch4_s3_d11",
-          "order": 11,
+          "id": "ch4_s1_d90",
+          "order": 90,
           "speaker": "Narrator",
-          "text": "Итак, первый шаг на площади сделан. Локиан ведёт тебя сквозь поток людей, показывая взглядом, где скрываются возможности, где скрыта опасность, и как шум оживляет или пугает. Мир вокруг стал ярче, плотнее и сложнее, но вместе с союзником он кажется управляемым.",
+          "background": "bg_ch4_gallery_freylina",
+          "transition_before": "fade_in",
+          "portrait_mode": "both",
+          "text": "Ты подхватываешь браслет. Быстрый прыжок. Тихий звон шпор. И ты уже перед фрейлиной.",
           "has_choices": false,
-          "next_dialogue": "ch4_s3_d12"
+          "next_dialogue": "ch4_s1_d91"
         },
         {
-          "id": "ch4_s3_d12",
-          "order": 12,
+          "id": "ch4_s1_d91",
+          "order": 91,
           "speaker": "Cat",
-          "text": "«Каждое движение, каждый взгляд… с ним я вижу город иначе. И это — только начало»",
+          "portrait_mode": "both",
+          "text": "— Мадемуазель.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d5"
-        }
-      ]
-    },
-    {
-      "id": "ch4_s4",
-      "order": 4,
-      "background": "bg_ch4_market_square",
-      "dialogues": [
-        {
-          "id": "ch4_s4_d1",
-          "order": 1,
-          "speaker": "Narrator",
-          "text": "Шумная площадь продолжается перед вами, словно поток, который нельзя остановить. Солнечный свет пробивается сквозь ряды высоких вывесок, отражается в лужах от недавнего дождя, танцует на металлических крышках лавок. Люди спешат, спорят, смеются, но каждый их шаг словно отмечен тайным ритмом, который кто-то может услышать только внимательно наблюдая.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s4_d2"
+          "next_dialogue": "ch4_s1_d92"
         },
         {
-          "id": "ch4_s4_d2",
-          "order": 2,
+          "id": "ch4_s1_d92",
+          "order": 92,
           "speaker": "Cat",
-          "text": "«Каждое движение здесь имеет смысл. И кто-то его видит»",
+          "portrait_mode": "both",
+          "text": "— Дворец стал беднее на одну прекрасную вещь.",
           "has_choices": false,
-          "next_dialogue": "ch4_s4_d3"
+          "next_dialogue": "ch4_s1_d93"
         },
         {
-          "id": "ch4_s4_d3",
-          "order": 3,
-          "speaker": "Narrator",
-          "text": "Рядом с тобой идёт тот, кто раньше показывал скрытые пути, указывал на рычаги и ловушки. Его движения сдержанны, осторожны, он почти не замечает толпу, но глаза — огромные, внимательные, ловят мельчайшие детали.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s4_d4"
-        },
-        {
-          "id": "ch4_s4_d4",
-          "order": 4,
-          "speaker": "WeakButKnowing",
-          "text": "— Ах… Извини за задержку. Я — Мирелин.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s4_d5"
-        },
-        {
-          "id": "ch4_s4_d5",
-          "order": 5,
+          "id": "ch4_s1_d93",
+          "order": 93,
           "speaker": "Cat",
-          "text": "«Имя прозвучало почти как шёпот, но сразу ощущение: это не просто союзник, а кто-то, кто видит глубже»",
+          "portrait_mode": "both",
+          "text": "— Позвольте вернуть её туда, где ей положено сиять.",
           "has_choices": false,
-          "next_dialogue": "ch4_s4_d6"
+          "next_dialogue": "ch4_s1_d94"
         },
         {
-          "id": "ch4_s4_d6",
-          "order": 6,
-          "speaker": "Narrator",
-          "text": "Мирелин скользит взглядом по площади, не спеша. Его руки слегка дрожат, но не от страха — от постоянного напряжения внимания. Он замечает разломанные доски у одной лавки, следы на земле, которых остальные не видят, и тихо указывает тебе:\n— Смотри на эти трещины в мостовой. Кто-то здесь часто ходит в спешке, а кто-то осторожно. Всё это говорит о привычках людей.",
+          "id": "ch4_s1_d94",
+          "order": 94,
+          "speaker": "Freylina",
+          "portrait_mode": "both",
+          "text": "— Ох!",
           "has_choices": false,
-          "next_dialogue": "ch4_s4_d7"
+          "next_dialogue": "ch4_s1_d95"
         },
         {
-          "id": "ch4_s4_d7",
-          "order": 7,
+          "id": "ch4_s1_d95",
+          "order": 95,
+          "speaker": "Freylina",
+          "portrait_mode": "both",
+          "text": "— Если бы королева узнала...",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d96"
+        },
+        {
+          "id": "ch4_s1_d96",
+          "order": 96,
+          "speaker": "Freylina",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "— Я у вас в долгу, господин... Кот.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d97"
+        },
+        {
+          "id": "ch4_s1_d97",
+          "order": 97,
           "speaker": "Cat",
-          "text": "«Он видит мир как карту. Каждая деталь — подсказка»",
+          "portrait_mode": "both",
+          "text": "— Запомните это чувство.",
           "has_choices": false,
-          "next_dialogue": "ch4_s4_d8"
+          "next_dialogue": "ch4_s1_d98"
         },
         {
-          "id": "ch4_s4_d8",
-          "order": 8,
-          "speaker": "Narrator",
-          "text": "Мирелин идёт медленно, внимательно проверяя каждый угол, каждую тень. Его присутствие заставляет тебя замедлить шаг и смотреть на площадь иначе. Здесь шум и движение не просто фон — это информация, которую нужно уметь читать.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s4_d9"
-        },
-        {
-          "id": "ch4_s4_d9",
-          "order": 9,
-          "speaker": "WeakButKnowing",
-          "text": "— В этом городе каждый звук и взгляд важны. Не торопись. Смотри, слушай… запоминай.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s4_d10"
-        },
-        {
-          "id": "ch4_s4_d10",
-          "order": 10,
+          "id": "ch4_s1_d98",
+          "order": 98,
           "speaker": "Cat",
-          "text": "«С ним я учусь внимательности. Мир вокруг словно раскрывается, если успеваешь замечать»",
+          "portrait_mode": "both",
+          "text": "— При дворе долги живут дольше любви.",
           "has_choices": false,
-          "next_dialogue": "ch4_s4_d11"
+          "next_dialogue": "ch4_s1_d99"
         },
         {
-          "id": "ch4_s4_d11",
-          "order": 11,
+          "id": "ch4_s1_d99",
+          "order": 99,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Полезная связь. Но не трать её на мелочь. Долг фрейлины может открыть дверь, которую не откроет даже королевская печать.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d100"
+        },
+        {
+          "id": "ch4_s1_d100",
+          "order": 100,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Великолепно. Ты не украл браслет, ты украл благодарность. Иногда это дороже, особенно если благодарность носит ключи от личных покоев.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d101"
+        },
+        {
+          "id": "ch4_s1_d101",
+          "order": 101,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Она боится королевы сильнее, чем потери золота. Значит, королева здесь не украшение трона. Запомните это.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d102"
+        },
+        {
+          "id": "ch4_s1_d102",
+          "order": 102,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Она улыбнулась. Кажется, мы сделали доброе дело. Мне нравится, когда доброе дело не требует никого бить.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d110"
+        },
+
+        {
+          "id": "ch4_s1_d110",
+          "order": 110,
           "speaker": "Narrator",
-          "text": "Мирелин идёт слегка в стороне, но всегда рядом. Он не вмешивается в происходящее, но каждое его движение аккуратно организует твой путь через толпу. Его внимательность делает пространство вокруг более понятным, словно шум превращается в язык.",
+          "background": "bg_ch4_waiting_hall",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_out",
+          "portrait_mode": "both",
+          "text": "Вас проводят дальше.",
           "has_choices": false,
-          "next_dialogue": "ch4_s4_d12"
+          "next_dialogue": "ch4_s1_d111"
         },
         {
-          "id": "ch4_s4_d12",
-          "order": 12,
+          "id": "ch4_s1_d111",
+          "order": 111,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Коридоры становятся шире. Окна выше. Голоса тише.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d112"
+        },
+        {
+          "id": "ch4_s1_d112",
+          "order": 112,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Чем ближе трон, тем меньше люди позволяют себе быть живыми.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d113"
+        },
+        {
+          "id": "ch4_s1_d113",
+          "order": 113,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Зал ожидания встречает холодом. Не зимним. Военным.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d114"
+        },
+        {
+          "id": "ch4_s1_d114",
+          "order": 114,
           "speaker": "Cat",
-          "text": "«Каждый союзник открывается по-своему. Этот — через детали, через наблюдение, через тишину в шуме»",
+          "portrait_mode": "cat_only",
+          "text": "— Очаровательно.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d8"
-        }
-      ]
-    },
-    {
-      "id": "ch4_s5",
-      "order": 5,
-      "background": "bg_ch4_market_square",
-      "dialogues": [
-        {
-          "id": "ch4_s5_d1",
-          "order": 1,
-          "speaker": "Narrator",
-          "text": "Широкая площадь раскрывается перед вами во всей своей яркости. Торговцы переговариваются, телеги скрипят, дети бегают между лавками, а запах свежего хлеба смешивается с ароматом масла и дыма костров. Кажется, что время здесь течёт быстрее, но каждый звук, каждый взгляд оставляет след.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s5_d2"
+          "next_dialogue": "ch4_s1_d115"
         },
         {
-          "id": "ch4_s5_d2",
-          "order": 2,
+          "id": "ch4_s1_d115",
+          "order": 115,
           "speaker": "Cat",
-          "text": "«Всё вокруг движется, но есть кто-то, кто идёт со мной — и это чувствуется»",
+          "portrait_mode": "cat_only",
+          "text": "— Комната, где даже воздух стоит по стойке смирно.",
           "has_choices": false,
-          "next_dialogue": "ch4_s5_d3"
+          "next_dialogue": "ch4_s1_d116"
         },
         {
-          "id": "ch4_s5_d3",
-          "order": 3,
+          "id": "ch4_s1_d116",
+          "order": 116,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Не отвечай на взгляд взглядом дольше трёх секунд. Это казарменная провокация. Они хотят понять, где у тебя кнопка.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d117"
+        },
+        {
+          "id": "ch4_s1_d117",
+          "order": 117,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Ставлю серебряный, что третий слева сейчас шагнёт. У него скука на лице и приказ в ботинках.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d118"
+        },
+        {
+          "id": "ch4_s1_d118",
+          "order": 118,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— У их лат одинаковые царапины у правого плеча. Они тренировались одним строем. Если начнётся бой, они ударят синхронно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d119"
+        },
+        {
+          "id": "ch4_s1_d119",
+          "order": 119,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Они смотрят на нас. Очень смотрят. Мне смотреть в ответ? Или не смотреть? Я могу смотреть страшно, если надо.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d120"
+        },
+        {
+          "id": "ch4_s1_d120",
+          "order": 120,
           "speaker": "Narrator",
-          "text": "Рядом с тобой идёт высокий, массивный союзник, плечи широкие, шаги уверенные, но взгляд немного тревожный. Он почти полностью полагается на твоё направление, осторожно повторяет движения, словно ожидая твоей команды.",
+          "background": "bg_ch4_guard_closeup",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "both",
+          "text": "Один из гвардейцев делает шаг. Тяжёлый. Нарочно громкий.",
           "has_choices": false,
-          "next_dialogue": "ch4_s5_d4"
+          "next_dialogue": "ch4_s1_d121"
         },
         {
-          "id": "ch4_s5_d4",
-          "order": 4,
-          "speaker": "StrongButDependent",
-          "text": "— Я… я Лаврик. Спасибо, что повёл меня дальше.",
+          "id": "ch4_s1_d121",
+          "order": 121,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Забрало падает с железным щелчком.",
           "has_choices": false,
-          "next_dialogue": "ch4_s5_d5"
+          "next_dialogue": "ch4_s1_d122"
         },
         {
-          "id": "ch4_s5_d5",
-          "order": 5,
+          "id": "ch4_s1_d122",
+          "order": 122,
           "speaker": "Cat",
-          "text": "«Имя звучит твёрдо, но его уверенность — отражение моей собственной»",
+          "portrait_mode": "cat_only",
+          "text": "— А вот и местная церемония гостеприимства.",
           "has_choices": false,
-          "next_dialogue": "ch4_s5_d6"
+          "next_dialogue": "ch4_s1_d123"
         },
         {
-          "id": "ch4_s5_d6",
-          "order": 6,
-          "speaker": "Narrator",
-          "text": "Лаврик идёт рядом, внимательно слушает каждое твоё слово и каждое действие. Он действует как сила, готовая раздвинуть препятствия, но полностью зависит от твоих решений. Когда вы проходите мимо толпы, он осторожно смещает людей, не причиняя никому вреда, его мощь ощутима, но сдержанна.",
+          "id": "ch4_s1_d123",
+          "order": 123,
+          "speaker": "Guard",
+          "portrait_mode": "both",
+          "text": "— Зверей обычно держат на цепи.",
           "has_choices": false,
-          "next_dialogue": "ch4_s5_d7"
+          "next_dialogue": "ch4_s1_d124"
         },
         {
-          "id": "ch4_s5_d7",
-          "order": 7,
-          "speaker": "StrongButDependent",
-          "text": "— Показывай путь. Я последую, куда скажешь.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s5_d8"
-        },
-        {
-          "id": "ch4_s5_d8",
-          "order": 8,
+          "id": "ch4_s1_d124",
+          "order": 124,
           "speaker": "Cat",
-          "text": "«Сила без инициативы — инструмент, но правильный инструмент может изменить многое»",
+          "portrait_mode": "cat_only",
+          "text": "— Людей тоже.",
           "has_choices": false,
-          "next_dialogue": "ch4_s5_d9"
+          "next_dialogue": "ch4_s1_d125"
         },
         {
-          "id": "ch4_s5_d9",
-          "order": 9,
-          "speaker": "Narrator",
-          "text": "Лаврик несёт уверенность твоему шагу, но его зависимость делает каждый твой жест значимым. Каждый сигнал — слово, каждый взгляд — команда. Он открывает узкие проходы, осторожно приподнимает тяжёлые двери, но делает это только по твоему указанию.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s5_d10"
-        },
-        {
-          "id": "ch4_s5_d10",
-          "order": 10,
+          "id": "ch4_s1_d125",
+          "order": 125,
           "speaker": "Cat",
-          "text": "«Здесь каждый союзник — это новый способ взаимодействия с миром. Этот учит меня ответственности: сила другого теперь — часть моего решения»",
-          "has_choices": false,
-          "next_dialogue": "ch4_s5_d11"
+          "portrait_mode": "cat_only",
+          "text": "— Но вам, смотрю, выдали доспех.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch4_s1_d125_c1",
+              "text": "Положить лапу на эфес сабли. Ответить гвардейцу тяжёлым взглядом.",
+              "effects": {
+                "activity": 0.07,
+                "impulsivity": 0.05,
+                "self_control": -0.05
+              },
+              "next_dialogue": "ch4_s1_d140"
+            },
+            {
+              "id": "ch4_s1_d125_c2",
+              "text": "Преувеличенно зевнуть и начать вылизывать лапу. Показать, что угроза скучна.",
+              "effects": {
+                "adaptability": 0.10,
+                "ego_focus": 0.05,
+                "anxiety": -0.05
+              },
+              "next_dialogue": "ch4_s1_d160"
+            },
+            {
+              "id": "ch4_s1_d125_c3",
+              "text": "Шепнуть спутнику «Спокойно» и замереть по стойке смирно.",
+              "effects": {
+                "self_control": 0.10,
+                "rigidity": 0.05,
+                "impulsivity": -0.07
+              },
+              "next_dialogue": "ch4_s1_d180"
+            }
+          ]
         },
+
         {
-          "id": "ch4_s5_d11",
-          "order": 11,
+          "id": "ch4_s1_d140",
+          "order": 140,
           "speaker": "Narrator",
-          "text": "Площадь вокруг пульсирует жизнью, но благодаря Лаврику твои движения становятся более уверенными. Он не отвлекает на себя внимание, но каждый шаг с ним ощущается как совместная работа. Твоя власть, его сила и зависимость создают уникальный ритм вашего движения.",
+          "background": "bg_ch4_guard_sword",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Твоя лапа ложится на саблю. Шерсть на загривке поднимается. Ты смотришь снизу вверх. Но угроза не всегда зависит от роста.",
           "has_choices": false,
-          "next_dialogue": "ch4_s5_d12"
+          "next_dialogue": "ch4_s1_d141"
         },
         {
-          "id": "ch4_s5_d12",
-          "order": 12,
+          "id": "ch4_s1_d141",
+          "order": 141,
           "speaker": "Cat",
-          "text": "«С этим союзником я учусь ответственности. Его доверие — отражение моей решимости»",
+          "portrait_mode": "cat_only",
+          "text": "— Сделай ещё шаг, железка.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d10"
-        }
-      ]
-    },
-    {
-      "id": "ch4_s6",
-      "order": 6,
-      "background": "bg_ch4_palace",
-      "dialogues": [
+          "next_dialogue": "ch4_s1_d142"
+        },
         {
-          "id": "ch4_s6_d1",
-          "order": 1,
+          "id": "ch4_s1_d142",
+          "order": 142,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я проверю, насколько хорошо твои латы держатся без ремней.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d143"
+        },
+        {
+          "id": "ch4_s1_d143",
+          "order": 143,
+          "speaker": "Guard",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "— Жди, зверь. Король скоро примет тебя.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d144"
+        },
+        {
+          "id": "ch4_s1_d144",
+          "order": 144,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Резко, но эффективно. В следующий раз угрожай после того, как посчитаешь выходы. Их здесь два. Один за нами. Второй за гвардейцем.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d145"
+        },
+        {
+          "id": "ch4_s1_d145",
+          "order": 145,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Красиво. Почти самоубийственно, но красиво. Если он потом захочет мести, я знаю три способа подставить вместо нас другого кота. Правда, понадобится мех.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d146"
+        },
+        {
+          "id": "ch4_s1_d146",
+          "order": 146,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Его дыхание ускорилось. Он отступил не из страха перед клинком, а потому что не ожидал контроля. Это важно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d147"
+        },
+        {
+          "id": "ch4_s1_d147",
+          "order": 147,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я уже хотел ударить его. Но вы посмотрели так, что мне стало ясно: сначала вы. Я правильно понял порядок?",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d148"
+        },
+        {
+          "id": "ch4_s1_d148",
+          "order": 148,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Безупречно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d149"
+        },
+        {
+          "id": "ch4_s1_d149",
+          "order": 149,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "cat_only",
+          "text": "— Я угрожаю. Ты превращаешь угрозу в архитектуру.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d200"
+        },
+
+        {
+          "id": "ch4_s1_d160",
+          "order": 160,
           "speaker": "Narrator",
-          "text": "Алвард стоит у главных ворот дворца и видит толпу придворных, торговцев и стражу. Король не принимает случайных посетителей — внутренняя дисциплина дворца почти непробиваема.",
+          "background": "bg_ch4_guard_floor",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты садишься прямо на мрамор. Широко зеваешь. Показываешь клыки. И начинаешь умываться.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d2"
+          "next_dialogue": "ch4_s1_d161"
         },
         {
-          "id": "ch4_s6_d2",
-          "order": 2,
+          "id": "ch4_s1_d161",
+          "order": 161,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мрр.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d162"
+        },
+        {
+          "id": "ch4_s1_d162",
+          "order": 162,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— В этих железках, наверное, ужасно чешется.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d163"
+        },
+        {
+          "id": "ch4_s1_d163",
+          "order": 163,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Бедная консервная душа.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d164"
+        },
+        {
+          "id": "ch4_s1_d164",
+          "order": 164,
           "speaker": "Narrator",
-          "text": "Алвард замечает древний узор на воротах — символы гербов предыдущих монархов. Он замечает, что один страж слегка сбился с позиции, следя за этим узором.",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Гвардеец останавливается. Угроза, которую не приняли всерьёз, повисает в воздухе без работы.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d3"
+          "next_dialogue": "ch4_s1_d165"
         },
         {
-          "id": "ch4_s6_d3",
-          "order": 3,
-          "speaker": "Mentor",
-          "text": "— Замечательный символ. Он хранит много знаний о правлении вашего дома. Я могу объяснить его значение и предложить способ улучшить охрану дворца.",
+          "id": "ch4_s1_d165",
+          "order": 165,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Нестандартно. Но сработало. Ты лишил его сценария. Солдаты плохо переносят, когда бой превращают в театр.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d4"
+          "next_dialogue": "ch4_s1_d166"
         },
         {
-          "id": "ch4_s6_d4",
-          "order": 4,
+          "id": "ch4_s1_d166",
+          "order": 166,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Ах, великолепно. Ты не победил его, ты сделал его декорацией. Я почти завидую. Почти.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d167"
+        },
+        {
+          "id": "ch4_s1_d167",
+          "order": 167,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Остальные гвардейцы отвели глаза. Не из уважения. Из страха засмеяться. Иногда смешное опаснее клинка.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d168"
+        },
+        {
+          "id": "ch4_s1_d168",
+          "order": 168,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Он злится. Но уже не знает, можно ли злиться на того, кто моет ухо. Это сильная магия?",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d169"
+        },
+        {
+          "id": "ch4_s1_d169",
+          "order": 169,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Древнейшая.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d170"
+        },
+        {
+          "id": "ch4_s1_d170",
+          "order": 170,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "cat_only",
+          "text": "— Называется чувство собственного превосходства.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d200"
+        },
+
+        {
+          "id": "ch4_s1_d180",
+          "order": 180,
           "speaker": "Narrator",
-          "text": "Страж, удивлённый точностью Алварда, кивает. Он докладывает королю: \"Есть посетитель, что знает больше, чем кажется.\" Король приглашает Алварда внутрь.",
+          "background": "bg_ch4_guard_still",
+          "transition_before": "darkening",
+          "portrait_mode": "both",
+          "text": "Ты не тянешься к сабле. Не улыбаешься. Не отвечаешь на приманку.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d13"
+          "next_dialogue": "ch4_s1_d181"
         },
         {
-          "id": "ch4_s6_d5",
-          "order": 5,
+          "id": "ch4_s1_d181",
+          "order": 181,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Спокойно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d182"
+        },
+        {
+          "id": "ch4_s1_d182",
+          "order": 182,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Они хотят получить нас до короля.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d183"
+        },
+        {
+          "id": "ch4_s1_d183",
+          "order": 183,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Не подарим им такой праздник.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d184"
+        },
+        {
+          "id": "ch4_s1_d184",
+          "order": 184,
           "speaker": "Narrator",
-          "text": "Локиан замечает, что стража проверяет каждый вход в дворец. Он видит старую карету с драгоценными товарами, которую почти оставили без охраны.",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Гвардеец ждёт вспышки. Но получает тишину. И тишина оказывается тяжелее рычания.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d6"
+          "next_dialogue": "ch4_s1_d185"
         },
         {
-          "id": "ch4_s6_d6",
-          "order": 6,
+          "id": "ch4_s1_d185",
+          "order": 185,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Хорошо. Держи линию плеч. Не смотри на оружие. Пусть видят не зверя, а офицера, которому случайно достались усы.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d186"
+        },
+        {
+          "id": "ch4_s1_d186",
+          "order": 186,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Молчание? Смело. Я бы добавил поклон, фальшивую улыбку и маленькую кражу достоинства, но твой вариант тоже неплох.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d187"
+        },
+        {
+          "id": "ch4_s1_d187",
+          "order": 187,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Он хотел шума. Шум здесь записали бы против нас. Тишину записывать труднее.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d188"
+        },
+        {
+          "id": "ch4_s1_d188",
+          "order": 188,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я молчу. Я очень молчу. Если молчание станет тяжелее, скажите, я помогу его держать.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d189"
+        },
+        {
+          "id": "ch4_s1_d189",
+          "order": 189,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Отлично.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d190"
+        },
+        {
+          "id": "ch4_s1_d190",
+          "order": 190,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мы выглядим благородно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d191"
+        },
+        {
+          "id": "ch4_s1_d191",
+          "order": 191,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я почти страдаю.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d200"
+        },
+
+        {
+          "id": "ch4_s1_d200",
+          "order": 200,
           "speaker": "Narrator",
-          "text": "Локиан решает рискнуть: он незаметно перевешивает часть груза, чтобы показать стражникам, что замок уязвим к хитрым манёврам.",
+          "background": "bg_ch4_throne_room",
+          "transition_before": "fade_out_in",
+          "camera_effect": "pan_up",
+          "portrait_mode": "both",
+          "text": "Двери открываются.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d7"
+          "next_dialogue": "ch4_s1_d201"
         },
         {
-          "id": "ch4_s6_d7",
-          "order": 7,
+          "id": "ch4_s1_d201",
+          "order": 201,
           "speaker": "Narrator",
-          "text": "Стражи в панике проверяют карету, находят, что ничего не пропало. Локиан выходит из тени, улыбаясь:\n— Слава охраны крепка, но даже она может быть усилена, если знать пути обхода. Его изобретательность, смелость и умение используют обстановку создают впечатление человека, который видит то, что упускают другие. Король, наблюдая за происходящим, посылает слугу пригласить Локиана.",
+          "portrait_mode": "both",
+          "text": "Свет витражей падает на мрамор, как разбитое пламя.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d13"
+          "next_dialogue": "ch4_s1_d202"
         },
         {
-          "id": "ch4_s6_d8",
-          "order": 8,
+          "id": "ch4_s1_d202",
+          "order": 202,
           "speaker": "Narrator",
-          "text": "Мирелин понимает, что обычный вход ему закрыт: стражники сомневаются в его силах. Он замечает дворцовый сад, где идёт подготовка к официальному приёму.",
+          "portrait_mode": "none",
+          "text": "Старый. Бледный. С глазами человека, который давно перестал отличать власть от голода.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d9"
+          "next_dialogue": "ch4_s1_d203"
         },
         {
-          "id": "ch4_s6_d9",
-          "order": 9,
+          "id": "ch4_s1_d203",
+          "order": 203,
           "speaker": "Narrator",
-          "text": "Мирелин тихо наблюдает за приготовлением к празднику. Он подмечает слабые места в расстановке стражи и тихо сообщает об этом королевскому слуге, который, испуганный возможной катастрофой, ведёт его к королю. Его проницательность и внимание к деталям привели к встрече, без физической силы, но с настоящей ценностью — знанием.",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "В конце зала ждёт трон.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d13"
+          "next_dialogue": "ch4_s1_d204"
         },
         {
-          "id": "ch4_s6_d10",
-          "order": 10,
-          "speaker": "Narrator",
-          "text": "Лаврик стоит у ворот дворца, когда внезапно из королевских садов вырывается огромный зверь — чудовище, которого держат в узде специально для тренировок дворцовой гвардии.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s6_d11"
-        },
-        {
-          "id": "ch4_s6_d11",
-          "order": 11,
-          "speaker": "Narrator",
-          "text": "Лаврик мгновенно реагирует, контролируя ситуацию: он обезвреживает зверя, не причинив вреда стражникам и гвардии.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s6_d12"
-        },
-        {
-          "id": "ch4_s6_d12",
-          "order": 12,
-          "speaker": "Narrator",
-          "text": "Стражи поражены его силой и умением действовать под давлением. Один из них ведёт Лаврика прямо к королю. Сила Лаврика в его способности доверять и следовать, одновременно управляя опасностью.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s6_d13"
-        },
-        {
-          "id": "ch4_s6_d13",
-          "order": 13,
+          "id": "ch4_s1_d204",
+          "order": 204,
           "speaker": "King",
-          "text": "— Друзья мои, — начал он ровным, властным голосом, — перед вами стоит испытание, которое проверит не только силу и смекалку, но и характер. В пещерах за северными горами скрывается дракон, хранитель древнего кристалла, обладающего магической силой, способной укрепить королевство и защитить его от надвигающейся войны. Но путь туда смертельно опасен. Только те, кто сумеет преодолеть страх и испытания, смогут вернуть кристалл и принести мне уверенность, что наш народ будет защищён.",
+          "portrait_mode": "both",
+          "text": "— Кот в сапогах.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d14"
+          "next_dialogue": "ch4_s1_d205"
         },
         {
-          "id": "ch4_s6_d14",
-          "order": 14,
+          "id": "ch4_s1_d205",
+          "order": 205,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Забавная легенда добралась до моего зала.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d206"
+        },
+        {
+          "id": "ch4_s1_d206",
+          "order": 206,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Легенды любят хорошие полы.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d207"
+        },
+        {
+          "id": "ch4_s1_d207",
+          "order": 207,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— По ним приятно входить эффектно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d208"
+        },
+        {
+          "id": "ch4_s1_d208",
+          "order": 208,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Ни слова лишнего. Он оценивает не шутку, а то, насколько ты боишься его трона.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d209"
+        },
+        {
+          "id": "ch4_s1_d209",
+          "order": 209,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Смотри на перстни. Он нервничает большим пальцем. Значит, просьба будет звучать как приказ, но пахнуть отчаянием.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d210"
+        },
+        {
+          "id": "ch4_s1_d210",
+          "order": 210,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— На знамёнах северный герб закрыт чёрной тканью. Там случилось что-то, о чём здесь не говорят.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d211"
+        },
+        {
+          "id": "ch4_s1_d211",
+          "order": 211,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Он маленький на таком большом троне. Но всё равно страшный. Так бывает?",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d212"
+        },
+        {
+          "id": "ch4_s1_d212",
+          "order": 212,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Постоянно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d213"
+        },
+        {
+          "id": "ch4_s1_d213",
+          "order": 213,
+          "speaker": "King",
+          "background": "bg_ch4_king_closeup",
+          "portrait_mode": "both",
+          "text": "— В северных пещерах скрывается Дракон.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d214"
+        },
+        {
+          "id": "ch4_s1_d214",
+          "order": 214,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Слепой, древний, упрямый зверь.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d215"
+        },
+        {
+          "id": "ch4_s1_d215",
+          "order": 215,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Он хранит Кристалл Абсолюта.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d216"
+        },
+        {
+          "id": "ch4_s1_d216",
+          "order": 216,
+          "speaker": "King",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "— Ты достанешь его для меня.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d217"
+        },
+        {
+          "id": "ch4_s1_d217",
+          "order": 217,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Награда будет щедрой.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d218"
+        },
+        {
+          "id": "ch4_s1_d218",
+          "order": 218,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Если вернёшься.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d219"
+        },
+        {
+          "id": "ch4_s1_d219",
+          "order": 219,
           "speaker": "Narrator",
-          "text": "Вознаграждение обещано великое: не только богатство и слава, но и редчайшие знания и умения, которые принесут внутреннюю силу, недоступную обычному человеку. Каждый шаг к драконьей пещере — это путь в самую глубину себя, путь к трансформации.",
+          "portrait_mode": "both",
+          "text": "Последние слова он произносит почти мягко. И от этого они звучат хуже.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d15"
+          "next_dialogue": "ch4_s1_d220"
         },
         {
-          "id": "ch4_s6_d15",
-          "order": 15,
+          "id": "ch4_s1_d220",
+          "order": 220,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Дракон спалил десяток моих лучших рыцарей.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d221"
+        },
+        {
+          "id": "ch4_s1_d221",
+          "order": 221,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Но рыцари шумят. А ты, говорят, умеешь идти там, где смерть смотрит в другую сторону.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d222"
+        },
+        {
+          "id": "ch4_s1_d222",
+          "order": 222,
           "speaker": "Cat",
-          "text": "Кот почувствовал, как напряжение зала передалось на его шерсть. Он слышал лёгкий шёпот за спинами спутников: каждый обдумывал свои следующие шаги, осознавая цену, которую придётся заплатить.",
+          "portrait_mode": "cat_only",
+          "text": "— Сгоревшие рыцари. Северные пещеры. Камень с названием, которое явно придумал человек без чувства меры.",
           "has_choices": false,
-          "next_dialogue": "ch4_s6_d16"
+          "next_dialogue": "ch4_s1_d223"
         },
         {
-          "id": "ch4_s6_d16",
-          "order": 16,
-          "speaker": "Mentor",
-          "text": "— Это задание… требует дисциплины и точного расчёта. Но именно через такие испытания растёт ум и характер. Я готов вести нас, если кот согласен следовать логике пути.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s6_d17"
-        },
-        {
-          "id": "ch4_s6_d17",
-          "order": 17,
-          "speaker": "TrickyHelper",
-          "text": "— Дракон, говоришь? И кристалл… Уверен, там есть пути обхода, лазейки, которые никто не заметит. Если мы сможем использовать ум и хитрость, награда станет моей, твоей… нашей.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s6_d18"
-        },
-        {
-          "id": "ch4_s6_d18",
-          "order": 18,
-          "speaker": "WeakButKnowing",
-          "text": "— Я… не силён, — говорит он, — но знаю тайные пути, укромные тропы и скрытые опасности. Если мы вместе, я могу обезопасить хотя бы часть пути. Я пойду, потому что правда ценнее жизни, а знание — дар, который нельзя терять.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s6_d19"
-        },
-        {
-          "id": "ch4_s6_d19",
-          "order": 19,
-          "speaker": "StrongButDependent",
-          "text": "— Я могу пройти там, где другие не смогут. Но… я не иду один. Кот — мой проводник. Моя сила служит только тем, кому я доверяю. Если это путь к драконьей пещере — я рядом, и никто не станет угрозой нашим решениям.",
-          "has_choices": false,
-          "next_dialogue": "ch4_s6_d20"
-        },
-        {
-          "id": "ch4_s6_d20",
-          "order": 20,
+          "id": "ch4_s1_d223",
+          "order": 223,
           "speaker": "Cat",
-          "text": "«Все испытания лишь подготовка. Дорога становится яснее, но теперь я знаю: сила, знание, хитрость и забота — всё это работает только вместе. И каждый союзник оставит свой след»",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Звучит как начало очень дорогого вечера.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch4_s1_d223_c1",
+              "text": "Грациозно поклониться до самого пола: «Я готов. Кристалл станет вашим».",
+              "effects": {
+                "rigidity": 0.07,
+                "sociality": 0.05,
+                "ego_focus": -0.05
+              },
+              "next_dialogue": "ch4_s1_d230"
+            },
+            {
+              "id": "ch4_s1_d223_c2",
+              "text": "Игриво покрутить ус и потребовать доплату за клыки и риск обугленной шерсти.",
+              "effects": {
+                "adaptability": 0.07,
+                "ego_focus": 0.07,
+                "rigidity": -0.07
+              },
+              "next_dialogue": "ch4_s1_d250"
+            },
+            {
+              "id": "ch4_s1_d223_c3",
+              "text": "Холодно уточнить — не избавляется ли король от героев после работы.",
+              "effects": {
+                "anxiety": 0.07,
+                "negative_affect": 0.05,
+                "sociality": -0.07
+              },
+              "next_dialogue": "ch4_s1_d270"
+            }
+          ]
+        },
+
+        {
+          "id": "ch4_s1_d230",
+          "order": 230,
+          "speaker": "Narrator",
+          "background": "bg_ch4_king_bow",
+          "transition_before": "fade_in",
+          "portrait_mode": "both",
+          "text": "Ты снимаешь шляпу. Плюмаж мягко касается пола. Поклон выходит безупречным.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d231"
+        },
+        {
+          "id": "ch4_s1_d231",
+          "order": 231,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Моё лезвие и моё слово к вашим услугам, сир.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d232"
+        },
+        {
+          "id": "ch4_s1_d232",
+          "order": 232,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Дракон падёт. Кристалл ляжет к вашим ногам.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d233"
+        },
+        {
+          "id": "ch4_s1_d233",
+          "order": 233,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Хорошие слова. Надеюсь, твой клинок так же остёр, как манеры.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d234"
+        },
+        {
+          "id": "ch4_s1_d234",
+          "order": 234,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Верная подача. Монархам нравится слышать порядок в голосе. Теперь он считает тебя инструментом. Инструменты иногда живут дольше героев.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d235"
+        },
+        {
+          "id": "ch4_s1_d235",
+          "order": 235,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Очень красиво. Почти слишком честно. Если начнёшь светиться благородством, предупреждай — я надену тёмные очки.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d236"
+        },
+        {
+          "id": "ch4_s1_d236",
+          "order": 236,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Он расслабил руку на подлокотнике. Вы дали ему то, что он хотел услышать. Но не то, что он боялся услышать.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d237"
+        },
+        {
+          "id": "ch4_s1_d237",
+          "order": 237,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Хороший поклон. Я так не умею. Если я поклонюсь слишком низко, могу неудачно встать и разрушить торжественность.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d238"
+        },
+        {
+          "id": "ch4_s1_d238",
+          "order": 238,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Тогда оставим низкие поклоны профессионалам.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d290"
+        },
+
+        {
+          "id": "ch4_s1_d250",
+          "order": 250,
+          "speaker": "Narrator",
+          "background": "bg_ch4_king_lean",
+          "transition_before": "fade_in",
+          "portrait_mode": "both",
+          "text": "Ты не спешишь кланяться. Чуть наклоняешь голову — ровно настолько, чтобы это могло сойти за уважение.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d251"
+        },
+        {
+          "id": "ch4_s1_d251",
+          "order": 251,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Дракон — это прекрасно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d252"
+        },
+        {
+          "id": "ch4_s1_d252",
+          "order": 252,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Но обугленная шерсть стоит дорого.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d253"
+        },
+        {
+          "id": "ch4_s1_d253",
+          "order": 253,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Кристалл вам. Сокровища пещеры мне. А за клыки — отдельный сундучок.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d254"
+        },
+        {
+          "id": "ch4_s1_d254",
+          "order": 254,
+          "speaker": "King",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "— Наглец.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d255"
+        },
+        {
+          "id": "ch4_s1_d255",
+          "order": 255,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "На мгновение зал становится неподвижным.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d256"
+        },
+        {
+          "id": "ch4_s1_d256",
+          "order": 256,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Но мне нравятся те, кто знает цену своей шкуре.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d257"
+        },
+        {
+          "id": "ch4_s1_d257",
+          "order": 257,
+          "speaker": "King",
+          "portrait_mode": "both",
+          "text": "— Договорились.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d258"
+        },
+        {
+          "id": "ch4_s1_d258",
+          "order": 258,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Ты поднял цену до заключения приказа. Смело. Запомни формулировку короля. «Договорились» — слово, которое потом можно будет предъявить.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d259"
+        },
+        {
+          "id": "ch4_s1_d259",
+          "order": 259,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— О, это было почти музыкально. Ты оставил ему трон, забрал прибыль и ещё заставил думать, что он выиграл. Я начинаю испытывать профессиональную нежность.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d260"
+        },
+        {
+          "id": "ch4_s1_d260",
+          "order": 260,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Он согласился слишком быстро. Либо кристалл ценнее всех сокровищ пещеры, либо он не собирается платить полностью.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d261"
+        },
+        {
+          "id": "ch4_s1_d261",
+          "order": 261,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мы теперь богаты? Или сначала надо победить дракона? Я иногда путаю порядок радости и опасности.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d262"
+        },
+        {
+          "id": "ch4_s1_d262",
+          "order": 262,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Сначала опасность.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d263"
+        },
+        {
+          "id": "ch4_s1_d263",
+          "order": 263,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "cat_only",
+          "text": "— Радость дороже, когда за неё чуть не сгорел.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d290"
+        },
+
+        {
+          "id": "ch4_s1_d270",
+          "order": 270,
+          "speaker": "Narrator",
+          "background": "bg_ch4_king_shadow",
+          "transition_before": "darkening",
+          "portrait_mode": "both",
+          "text": "Ты смотришь прямо на короля. Без поклона. Без улыбки.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d271"
+        },
+        {
+          "id": "ch4_s1_d271",
+          "order": 271,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Я выполню уговор.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d272"
+        },
+        {
+          "id": "ch4_s1_d272",
+          "order": 272,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Но скажите честно, сир.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d273"
+        },
+        {
+          "id": "ch4_s1_d273",
+          "order": 273,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— У вас нет привычки избавляться от героев после того, как работа сделана?",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d274"
+        },
+        {
+          "id": "ch4_s1_d274",
+          "order": 274,
+          "speaker": "King",
+          "pause_before": 2.0,
+          "portrait_mode": "both",
+          "text": "— Как ты смеешь?",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d275"
+        },
+        {
+          "id": "ch4_s1_d275",
+          "order": 275,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Осторожно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d276"
+        },
+        {
+          "id": "ch4_s1_d276",
+          "order": 276,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Я смею осторожно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d277"
+        },
+        {
+          "id": "ch4_s1_d277",
+          "order": 277,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Если по возвращении меня встретят арбалеты, я вернусь к вам ещё раз. Уже без придворных манер.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d278"
+        },
+        {
+          "id": "ch4_s1_d278",
+          "order": 278,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Опасно, но ясно. Ты обозначил цену предательства. Теперь главное — выйти из зала до того, как его гордость догонит страх.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d279"
+        },
+        {
+          "id": "ch4_s1_d279",
+          "order": 279,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Прямой удар по короне. Обычно за такое теряют голову, но иногда приобретают репутацию безумца. Второе полезнее, если первое не случилось.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d280"
+        },
+        {
+          "id": "ch4_s1_d280",
+          "order": 280,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Он не отрицал сразу. Запомните это. Невиновные возмущаются иначе.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d281"
+        },
+        {
+          "id": "ch4_s1_d281",
+          "order": 281,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Если он нас предаст, я сломаю трон. Можно? Не сейчас. Потом. Когда будет предательство.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d282"
+        },
+        {
+          "id": "ch4_s1_d282",
+          "order": 282,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Запиши это как дипломатический вариант.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d290"
+        },
+
+        {
+          "id": "ch4_s1_d290",
+          "order": 290,
+          "speaker": "Narrator",
+          "background": "bg_ch4_archive_corridor",
+          "transition_before": "fade_out_in",
+          "portrait_mode": "both",
+          "text": "Король отпускает вас мановением руки. Так машут не гостям. Так отправляют стрелу.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d291"
+        },
+        {
+          "id": "ch4_s1_d291",
+          "order": 291,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Слуги выдают пайки. Верёвки. Кремни. Маленькие фляги с горьким зельем против ожогов.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d292"
+        },
+        {
+          "id": "ch4_s1_d292",
+          "order": 292,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Как заботливо.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d293"
+        },
+        {
+          "id": "ch4_s1_d293",
+          "order": 293,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Они уже подобрали нам мазь для будущих страданий.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d294"
+        },
+        {
+          "id": "ch4_s1_d294",
+          "order": 294,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Возьми две верёвки. Не одну. Одна нужна для плана. Вторая нужна, когда план узнаёт, что он был наивен.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d295"
+        },
+        {
+          "id": "ch4_s1_d295",
+          "order": 295,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Зелье против ожогов? Берём. Если не пригодится нам, продадим тому, кто загорится первым.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d296"
+        },
+        {
+          "id": "ch4_s1_d296",
+          "order": 296,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Фляги старые, но печати целы. Плохое зелье от ожогов иногда делает кожу очень честной. Она сразу покидает тело.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d297"
+        },
+        {
+          "id": "ch4_s1_d297",
+          "order": 297,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я понесу всё тяжёлое. Только скажите, что именно тяжёлое, а что важное. Иногда важное выглядит маленьким.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d298"
+        },
+        {
+          "id": "ch4_s1_d298",
+          "order": 298,
+          "speaker": "Narrator",
+          "background": "bg_ch4_archive_books",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "У самого выхода воздух меняется. Воск уступает место пыли. Благовония — старому пергаменту.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d299"
+        },
+        {
+          "id": "ch4_s1_d299",
+          "order": 299,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Из тени стеллажей выходит согбенный архивариус.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d300"
+        },
+        {
+          "id": "ch4_s1_d300",
+          "order": 300,
+          "speaker": "Archivist",
+          "portrait_mode": "none",
+          "text": "— Кот... Подожди.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d301"
+        },
+        {
+          "id": "ch4_s1_d301",
+          "order": 301,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Его пальцы хватают твой рукав. Не сильно. Отчаянно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d302"
+        },
+        {
+          "id": "ch4_s1_d302",
+          "order": 302,
+          "speaker": "Archivist",
+          "portrait_mode": "both",
+          "text": "— Дракон слеп.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d303"
+        },
+        {
+          "id": "ch4_s1_d303",
+          "order": 303,
+          "speaker": "Archivist",
+          "portrait_mode": "both",
+          "text": "— Веками во тьме.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d304"
+        },
+        {
+          "id": "ch4_s1_d304",
+          "order": 304,
+          "speaker": "Archivist",
+          "pause_before": 2.0,
+          "portrait_mode": "both",
+          "text": "— Но он слышит сердце.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d305"
+        },
+        {
+          "id": "ch4_s1_d305",
+          "order": 305,
+          "speaker": "Archivist",
+          "portrait_mode": "both",
+          "text": "— Не шаги. Не голос. Сердце.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d306"
+        },
+        {
+          "id": "ch4_s1_d306",
+          "order": 306,
+          "speaker": "Archivist",
+          "portrait_mode": "both",
+          "text": "— Помни это, когда войдёшь в его чертоги.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d307"
+        },
+        {
+          "id": "ch4_s1_d307",
+          "order": 307,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Прекрасно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d308"
+        },
+        {
+          "id": "ch4_s1_d308",
+          "order": 308,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Монстр, который охотится на тревогу.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d309"
+        },
+        {
+          "id": "ch4_s1_d309",
+          "order": 309,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Наконец-то достойный критик моей нервной системы.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d310"
+        },
+        {
+          "id": "ch4_s1_d310",
+          "order": 310,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Значит, бой нельзя начинать как бой. Дыхание, дистанция, ритм. Мы составим порядок движений до входа в пещеру.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d311"
+        },
+        {
+          "id": "ch4_s1_d311",
+          "order": 311,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Слышит сердце? Тогда надо дать ему чужое. Мешок с часами, клетка с птицей, что-нибудь живое и очень несчастное. Я подумаю.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d312"
+        },
+        {
+          "id": "ch4_s1_d312",
+          "order": 312,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Я читал об этом. Не легенду. Отчёт. Там выжил только тот, кто понял: тишина — это не отсутствие звука, а управление страхом.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d313"
+        },
+        {
+          "id": "ch4_s1_d313",
+          "order": 313,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Моё сердце громкое. Когда я боюсь, оно будто бьёт в дверь. Я постараюсь бояться тише.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d314"
+        },
+        {
+          "id": "ch4_s1_d314",
+          "order": 314,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Итак, дракон слышит сердца. Что ж, это меняет планы.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch4_s1_d314_c1",
+              "text": "Кивнуть с благодарностью. Любая информация о враге — на вес золота.",
+              "effects": {
+                "self_control": 0.07,
+                "adaptability": 0.05,
+                "ego_focus": -0.03
+              },
+              "next_dialogue": "ch4_s1_d330"
+            },
+            {
+              "id": "ch4_s1_d314_c2",
+              "text": "Фыркнуть и вырвать рукав. Книжные черви не знают настоящих чудовищ.",
+              "effects": {
+                "negative_affect": 0.07,
+                "ego_focus": 0.05,
+                "emotional_sensitivity": -0.05
+              },
+              "next_dialogue": "ch4_s1_d350"
+            },
+            {
+              "id": "ch4_s1_d314_c3",
+              "text": "Сглотнуть ком в горле. Сердце уже стучит слишком громко.",
+              "effects": {
+                "anxiety": 0.10,
+                "self_control": -0.05
+              },
+              "next_dialogue": "ch4_s1_d370"
+            }
+          ]
+        },
+
+        {
+          "id": "ch4_s1_d330",
+          "order": 330,
+          "speaker": "Narrator",
+          "background": "bg_ch4_archive_bow",
+          "transition_before": "fade_in",
+          "portrait_mode": "both",
+          "text": "Ты мягко высвобождаешь рукав. Но не отталкиваешь старика.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d331"
+        },
+        {
+          "id": "ch4_s1_d331",
+          "order": 331,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Благодарю.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d332"
+        },
+        {
+          "id": "ch4_s1_d332",
+          "order": 332,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Информация, сказанная шёпотом, часто стоит дороже приказа, сказанного с трона.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d333"
+        },
+        {
+          "id": "ch4_s1_d333",
+          "order": 333,
+          "speaker": "Archivist",
+          "portrait_mode": "both",
+          "text": "— Не шуми там, странный зверь.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d334"
+        },
+        {
+          "id": "ch4_s1_d334",
+          "order": 334,
+          "speaker": "Archivist",
+          "portrait_mode": "both",
+          "text": "— И не позволяй страху идти первым.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d335"
+        },
+        {
+          "id": "ch4_s1_d335",
+          "order": 335,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Мы учтём. С этого момента убираем всё лишнее железо, закрепляем пряжки тканью, тренируем дыхание перед переходом.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d336"
+        },
+        {
+          "id": "ch4_s1_d336",
+          "order": 336,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Хороший старик. Появился из тени, сказал страшную вещь и исчезнет, не взяв платы. Подозрительно приятный человек.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d337"
+        },
+        {
+          "id": "ch4_s1_d337",
+          "order": 337,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Я хочу поговорить с ним ещё минуту. Если он знает источник, мы получим не слух, а схему выживания.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d338"
+        },
+        {
+          "id": "ch4_s1_d338",
+          "order": 338,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я буду слушать. И сердце тоже попробую слушать. Если оно начнёт слишком громко, я скажу ему прекратить.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d339"
+        },
+        {
+          "id": "ch4_s1_d339",
+          "order": 339,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Отлично.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d340"
+        },
+        {
+          "id": "ch4_s1_d340",
+          "order": 340,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Командуем уже внутренними органами. Мы растём.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d390"
+        },
+
+        {
+          "id": "ch4_s1_d350",
+          "order": 350,
+          "speaker": "Narrator",
+          "background": "bg_ch4_archive_sleeve",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты резко выдёргиваешь рукав. Пыль слетает с ткани.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d351"
+        },
+        {
+          "id": "ch4_s1_d351",
+          "order": 351,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Драконы, сердца, вековая тьма...",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d352"
+        },
+        {
+          "id": "ch4_s1_d352",
+          "order": 352,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Скажите, старче, в ваших книгах есть глава, где чудовище вежливо ждёт, пока герой дочитает примечания?",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d353"
+        },
+        {
+          "id": "ch4_s1_d353",
+          "order": 353,
+          "speaker": "Archivist",
+          "portrait_mode": "both",
+          "text": "— Смейся, если хочешь.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d354"
+        },
+        {
+          "id": "ch4_s1_d354",
+          "order": 354,
+          "speaker": "Archivist",
+          "portrait_mode": "both",
+          "text": "— Но тьма смеётся последней.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d355"
+        },
+        {
+          "id": "ch4_s1_d355",
+          "order": 355,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Даже сомнительный источник может содержать полезный факт. Отбрасывай страх в его словах, но не саму информацию.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d356"
+        },
+        {
+          "id": "ch4_s1_d356",
+          "order": 356,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Я люблю презирать чужие предупреждения, но предпочитаю делать это после того, как украду из них пользу.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d357"
+        },
+        {
+          "id": "ch4_s1_d357",
+          "order": 357,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Архивы не дерутся, это правда. Но они помнят тех, кто дрался и умер. Иногда мёртвые учат лучше живых.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d358"
+        },
+        {
+          "id": "ch4_s1_d358",
+          "order": 358,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— А вдруг он прав? Если он прав, моё сердце уже ведёт себя очень неосторожно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d359"
+        },
+        {
+          "id": "ch4_s1_d359",
+          "order": 359,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Если он прав, мы будем импровизировать.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d360"
+        },
+        {
+          "id": "ch4_s1_d360",
+          "order": 360,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Если он неправ, я буду очень громко этим наслаждаться.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d390"
+        },
+
+        {
+          "id": "ch4_s1_d370",
+          "order": 370,
+          "speaker": "Narrator",
+          "background": "bg_ch4_archive_shadow",
+          "transition_before": "darkening",
+          "portrait_mode": "cat_only",
+          "text": "Твоё сердце стучит. Слишком ясно. Слишком близко. Будто уже слышит пещеру впереди.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d371"
+        },
+        {
+          "id": "ch4_s1_d371",
+          "order": 371,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Слышит сердце...",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d372"
+        },
+        {
+          "id": "ch4_s1_d372",
+          "order": 372,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Как заставить сердце не биться, когда на тебя идёт дракон?",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d373"
+        },
+        {
+          "id": "ch4_s1_d373",
+          "order": 373,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Надо было остаться на мельнице.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d374"
+        },
+        {
+          "id": "ch4_s1_d374",
+          "order": 374,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мыши хотя бы не слушают твою душу.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d375"
+        },
+        {
+          "id": "ch4_s1_d375",
+          "order": 375,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Страх не отменяется. Он подчиняется распорядку. Смотри на меня, дыши на четыре счёта, выдыхай на шесть. Начинаем сейчас.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d376"
+        },
+        {
+          "id": "ch4_s1_d376",
+          "order": 376,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Спокойно. Если сердце выдаёт нас, мы устроим так, чтобы вокруг билось что-нибудь ещё. Мир полон глупых способов отвлечь смерть.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d377"
+        },
+        {
+          "id": "ch4_s1_d377",
+          "order": 377,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Бояться разумно. Паниковать вредно. Между ними есть узкая дорожка, и мы пройдём по ней медленно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d378"
+        },
+        {
+          "id": "ch4_s1_d378",
+          "order": 378,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я тоже боюсь. Но если страшно вместе, значит, можно идти рядом. Большой страх пусть сначала встретит меня.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d379"
+        },
+        {
+          "id": "ch4_s1_d379",
+          "order": 379,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Как трогательно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d380"
+        },
+        {
+          "id": "ch4_s1_d380",
+          "order": 380,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И ужасно непрактично.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d381"
+        },
+        {
+          "id": "ch4_s1_d381",
+          "order": 381,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "— Ладно.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d382"
+        },
+        {
+          "id": "ch4_s1_d382",
+          "order": 382,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Практично тоже.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d390"
+        },
+
+        {
+          "id": "ch4_s1_d390",
+          "order": 390,
+          "speaker": "Narrator",
+          "background": "bg_ch4_palace_exit",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_out",
+          "portrait_mode": "both",
+          "text": "Дворец остаётся позади.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d391"
+        },
+        {
+          "id": "ch4_s1_d391",
+          "order": 391,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Его золото гаснет за спиной.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d392"
+        },
+        {
+          "id": "ch4_s1_d392",
+          "order": 392,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Впереди лежит северная дорога.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d393"
+        },
+        {
+          "id": "ch4_s1_d393",
+          "order": 393,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "И где-то там, в каменной тьме, спит чудовище, которое слышит сердца.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d394"
+        },
+        {
+          "id": "ch4_s1_d394",
+          "order": 394,
+          "speaker": "Narrator",
+          "pause_before": 2.0,
+          "portrait_mode": "none",
+          "text": "Ночь холодная. Дорога длинная.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d395"
+        },
+        {
+          "id": "ch4_s1_d395",
+          "order": 395,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Ну что ж.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d396"
+        },
+        {
+          "id": "ch4_s1_d396",
+          "order": 396,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Король хочет кристалл.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d397"
+        },
+        {
+          "id": "ch4_s1_d397",
+          "order": 397,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Дракон хочет тишину.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d398"
+        },
+        {
+          "id": "ch4_s1_d398",
+          "order": 398,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— А я хочу прожить достаточно долго, чтобы получить оплату.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d399"
+        },
+        {
+          "id": "ch4_s1_d399",
+          "order": 399,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Тогда начнём с порядка. Ночь для пути, рассвет для привала, разговоры только по необходимости.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d400"
+        },
+        {
+          "id": "ch4_s1_d400",
+          "order": 400,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— А я хочу, чтобы оплата была в золоте, тайниках и неприятных сюрпризах для всех, кроме нас.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d401"
+        },
+        {
+          "id": "ch4_s1_d401",
+          "order": 401,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Я хочу найти запись о Кристалле до того, как он найдёт нас. Название слишком громкое для простой реликвии.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d402"
+        },
+        {
+          "id": "ch4_s1_d402",
+          "order": 402,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я хочу, чтобы мы вернулись. С кристаллом. И с оплатой. И чтобы никто больше не говорил про сердца в темноте.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d403"
+        },
+        {
+          "id": "ch4_s1_d403",
+          "order": 403,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Прекрасный план.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d404"
+        },
+        {
+          "id": "ch4_s1_d404",
+          "order": 404,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Чуть наивный.",
+          "has_choices": false,
+          "next_dialogue": "ch4_s1_d405"
+        },
+        {
+          "id": "ch4_s1_d405",
+          "order": 405,
+          "speaker": "Cat",
+          "transition_before": "darkening",
+          "portrait_mode": "cat_only",
+          "text": "— Но с хорошей осанкой.",
           "has_choices": false,
           "next_dialogue": null
         }

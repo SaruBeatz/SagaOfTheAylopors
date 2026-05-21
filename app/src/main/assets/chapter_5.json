@@ -1,6 +1,6 @@
 {
   "chapter_id": 5,
-  "title": "Бездна",
+  "title": "Пламя и Тьма",
   "scenes": [
     {
       "id": "ch5_s1",
@@ -8,594 +8,2614 @@
       "background": "bg_ch5_mountain_path",
       "dialogues": [
         {
-          "id": "ch5_s1_d1",
+          "id": "ch5_s1_d01",
           "order": 1,
           "speaker": "Narrator",
-          "text": "Туман плотно стелется между скал, скрывая сквозные тропы. Скалы поднимаются над головой, обрывы обнажаются снизу, а ветер срывает с уступов камни, которые глухо падают в ущелье. Дорога петляет, то сужаясь до узкой тропинки, то раздвигаясь в открытые участки, где река бурлит между валунами, как будто предупреждает о своей силе.",
+          "transition_before": "darkening",
+          "camera_effect": "panorama",
+          "portrait_mode": "none",
+          "text": "Северные горы встречают вас без приветствий.",
           "has_choices": false,
-          "next_dialogue": "ch5_s1_d2"
+          "next_dialogue": "ch5_s1_d02"
         },
         {
-          "id": "ch5_s1_d2",
+          "id": "ch5_s1_d02",
           "order": 2,
           "speaker": "Narrator",
-          "text": "Кот осторожно ступает по влажной земле, лапы скользят по сырому камню, хвост балансирует на ветру. Спутник идёт рядом, держа глаза на поверхности скал, показывая безопасные уступы и предупреждая о расшатанных камнях.",
+          "portrait_mode": "none",
+          "text": "Здесь даже воздух кажется острым.",
           "has_choices": false,
-          "next_dialogue": "ch5_s1_d3"
+          "next_dialogue": "ch5_s1_d03"
         },
         {
-          "id": "ch5_s1_d3",
+          "id": "ch5_s1_d03",
           "order": 3,
           "speaker": "Narrator",
-          "text": "Путешественники двигаются молча, иногда слышны только их шаги и скрип гальки под лапами кота. Вдоль тропы растут кусты с острыми колючками, а камни кажутся чужими, будто следы предыдущих путников смылись и дорога теперь принадлежит только текущему испытанию.",
+          "portrait_mode": "none",
+          "text": "Он режет горло, забирается под плащ и шепчет, что назад идти разумнее.",
           "has_choices": false,
-          "next_dialogue": "ch5_s1_d4"
+          "next_dialogue": "ch5_s1_d04"
         },
         {
-          "id": "ch5_s1_d4",
+          "id": "ch5_s1_d04",
           "order": 4,
           "speaker": "Narrator",
-          "text": "Вдалеке слышен глухой низкий гул — как если бы где-то далеко жил огромный зверь. Скалы сжимают тропу, а впереди нависают каменные арки, будто старые кости великана. Между ними — первые следы древних предупреждений: символы, выгравированные когтями, частично стертые временем.",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Тропа становится уже. Камни уходят вниз. Дна ущелья не видно.",
           "has_choices": false,
-          "next_dialogue": "ch5_s1_d5"
+          "next_dialogue": "ch5_s1_d05"
         },
         {
-          "id": "ch5_s1_d5",
+          "id": "ch5_s1_d05",
           "order": 5,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Великолепно.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d06"
+        },
+        {
+          "id": "ch5_s1_d06",
+          "order": 6,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Место, где каждый шаг подписывает завещание.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d07"
+        },
+        {
+          "id": "ch5_s1_d07",
+          "order": 7,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Не смотри вниз дольше секунды. Глаза цепляются за глубину, тело теряет равновесие. Смотри на точки опоры.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d08"
+        },
+        {
+          "id": "ch5_s1_d08",
+          "order": 8,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Если тут кто-то поставил мост, значит, кто-то хотел, чтобы люди думали: «Да, пожалуй, я рискну». Самая древняя форма мошенничества.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d09"
+        },
+        {
+          "id": "ch5_s1_d09",
+          "order": 9,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Камень под ногами тёплый. Странно для такой высоты. Пещеры под нами живые. Или слишком близко к огню.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d10"
+        },
+        {
+          "id": "ch5_s1_d10",
+          "order": 10,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я бросил камешек. Он не сказал «тук». Это плохо. Обычно камни говорят «тук», когда заканчивают падать.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d11"
+        },
+        {
+          "id": "ch5_s1_d11",
+          "order": 11,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Спасибо, Лаврик.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d12"
+        },
+        {
+          "id": "ch5_s1_d12",
+          "order": 12,
+          "speaker": "Cat",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "cat_only",
+          "text": "— Теперь я официально скучаю по земле, которая отвечает.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d13"
+        },
+        {
+          "id": "ch5_s1_d13",
+          "order": 13,
           "speaker": "Narrator",
-          "text": "Тропа сужается, скалы нависают почти над головой, а река превращается в бурлящий поток, который нужно пересечь через узкий мост из старых бревен. Впереди замаячил первый намёк на логово: дымок из узкой пещеры, тяжелый запах серы и гари. Какой путь выбрать?",
+          "background": "bg_ch5_bridge",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Мост висит между скалами.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d14"
+        },
+        {
+          "id": "ch5_s1_d14",
+          "order": 14,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Слишком старый, чтобы называться дорогой.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d15"
+        },
+        {
+          "id": "ch5_s1_d15",
+          "order": 15,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Слишком упрямый, чтобы уже упасть.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d16"
+        },
+        {
+          "id": "ch5_s1_d16",
+          "order": 16,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Каждый порыв ветра заставляет его скрипеть, словно виселица вспоминает работу.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d17"
+        },
+        {
+          "id": "ch5_s1_d17",
+          "order": 17,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Только глупцы верят, что у котов девять жизней.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d18"
+        },
+        {
+          "id": "ch5_s1_d18",
+          "order": 18,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Умные коты берегут первую.",
           "has_choices": true,
           "choices": [
             {
-              "id": "ch5_s1_d5_c1",
-              "text": "Следовать с наставником, который учит видеть структуру опасности",
-              "next_scene": "ch5_s2"
+              "id": "ch5_s1_d18_c1",
+              "text": "Идти плавно, вцепившись когтями в канаты. Проверять каждую доску перед переносом веса.",
+              "effects": {
+                "self_control": 0.07,
+                "anxiety": 0.05,
+                "activity": -0.05
+              },
+              "next_dialogue": "ch5_s1_d40"
             },
             {
-              "id": "ch5_s1_d5_c2",
-              "text": "Идти с хитрым помощником, который видит скрытые пути",
-              "next_scene": "ch5_s3"
+              "id": "ch5_s1_d18_c2",
+              "text": "Пробежать мост рывком. Прыгать по целым доскам, пока мост не успел раскачаться.",
+              "effects": {
+                "activity": 0.10,
+                "impulsivity": 0.07,
+                "self_control": -0.07
+              },
+              "next_dialogue": "ch5_s1_d60"
             },
             {
-              "id": "ch5_s1_d5_c3",
-              "text": "Продолжать со слабым, но знающим союзником",
-              "next_scene": "ch5_s4"
-            },
-            {
-              "id": "ch5_s1_d5_c4",
-              "text": "Следовать с сильным, но зависимым союзником",
-              "next_scene": "ch5_s5"
+              "id": "ch5_s1_d18_c3",
+              "text": "Найти корни и лианы. Обвязать себя и спутника страховкой перед переходом.",
+              "effects": {
+                "adaptability": 0.10,
+                "rigidity": 0.05,
+                "anxiety": -0.03
+              },
+              "next_dialogue": "ch5_s1_d80"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ch5_s2",
-      "order": 2,
-      "background": "bg_ch5_mountain_path",
-      "dialogues": [
+        },
+
         {
-          "id": "ch5_s2_d1",
-          "order": 1,
-          "speaker": "Mentor",
-          "text": "— Смотри сюда, кот. Здесь недавно кто-то прошёл — следы глубокие, но разрозненные. Следовать им — не значит идти по пути чужой ловкости.",
+          "id": "ch5_s1_d40",
+          "order": 40,
+          "speaker": "Narrator",
+          "background": "bg_ch5_bridge_cautious",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты выпускаешь когти. Шаг. Проверка. Ещё шаг.",
           "has_choices": false,
-          "next_dialogue": "ch5_s2_d2"
+          "next_dialogue": "ch5_s1_d41"
         },
         {
-          "id": "ch5_s2_d2",
-          "order": 2,
+          "id": "ch5_s1_d41",
+          "order": 41,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Мост отвечает тихим стоном дерева.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d42"
+        },
+        {
+          "id": "ch5_s1_d42",
+          "order": 42,
           "speaker": "Cat",
-          "text": "Кот наклоняет голову, оценивая следы. Понимает, что дорога дальше полна неожиданных препятствий. Скалы теснятся, тропинка становится всё уже. Между валунами виднеются трещины, из которых ветер вырывает сухие ветки и обрывки земли.",
+          "portrait_mode": "cat_only",
+          "text": "— Не смотреть вниз.",
           "has_choices": false,
-          "next_dialogue": "ch5_s2_d3"
+          "next_dialogue": "ch5_s1_d43"
         },
         {
-          "id": "ch5_s2_d3",
-          "order": 3,
-          "speaker": "Mentor",
-          "text": "— Здесь важно не торопиться. Спешка прячет мелкие детали, а они иногда важнее всего.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s2_d4"
-        },
-        {
-          "id": "ch5_s2_d4",
-          "order": 4,
-          "speaker": "Narrator",
-          "text": "Кот кивает, переминаясь с лапы на лапу, замечая узкие тропинки, ведущие к обрывам, и едва заметные выступы, за которыми могут скрываться опасности. Алвард указывает на мелкие трещины и неровности, объясняя, куда лучше ставить лапы, а где держать баланс.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s2_d5"
-        },
-        {
-          "id": "ch5_s2_d5",
-          "order": 5,
-          "speaker": "Mentor",
-          "text": "— Внимание к деталям — единственное, что позволит пройти дальше, незаметно и без травм.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s2_d6"
-        },
-        {
-          "id": "ch5_s2_d6",
-          "order": 6,
-          "speaker": "Narrator",
-          "text": "Кот прислушивается к каждому движению ветра, к каждому глухому звуку, который доносится из ущелья. Он видит, как камни двигаются под порывами ветра, как река рвётся вниз, и ощущает, что дальше дорога становится более непредсказуемой, чем здесь, в начале пути.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s2_d7"
-        },
-        {
-          "id": "ch5_s2_d7",
-          "order": 7,
-          "speaker": "Mentor",
-          "text": "— Пройди медленно, кот. Не нужно бежать. Здесь важен расчёт и осторожность.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s2_d8"
-        },
-        {
-          "id": "ch5_s2_d8",
-          "order": 8,
-          "speaker": "Narrator",
-          "text": "Кот переставляет лапу за лапой, балансируя, иногда заглядывая вниз — в грохочущую реку, иногда на спутника, который тихо указывает на проблемные участки. Тишина вокруг кажется густой, и только скрип бревен и шорох ветра нарушают её.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s2_d9"
-        },
-        {
-          "id": "ch5_s2_d9",
-          "order": 9,
-          "speaker": "Mentor",
-          "text": "— Там начинается то, ради чего мы пришли. Не знаю, что там встретится, но мы пройдём это вместе.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s2_d10"
-        },
-        {
-          "id": "ch5_s2_d10",
-          "order": 10,
+          "id": "ch5_s1_d43",
+          "order": 43,
           "speaker": "Cat",
-          "text": "Кот делает последний шаг на скользкое основание тропы перед пещерой, чувствуя, как воздух густеет и наполнен обещанием опасности и открытий.",
+          "portrait_mode": "cat_only",
+          "text": "— Не думать о вниз.",
           "has_choices": false,
-          "next_dialogue": "ch5_s6_d1"
-        }
-      ]
-    },
-    {
-      "id": "ch5_s3",
-      "order": 3,
-      "background": "bg_ch5_mountain_path",
-      "dialogues": [
-        {
-          "id": "ch5_s3_d1",
-          "order": 1,
-          "speaker": "TrickyHelper",
-          "text": "— Смотри сюда, кот. Здесь недавно кто-то прошёл — следы глубокие, но разрозненные. Может, найдём скрытые пути, которые другие не заметили?",
-          "has_choices": false,
-          "next_dialogue": "ch5_s3_d2"
+          "next_dialogue": "ch5_s1_d44"
         },
         {
-          "id": "ch5_s3_d2",
-          "order": 2,
+          "id": "ch5_s1_d44",
+          "order": 44,
           "speaker": "Cat",
-          "text": "Кот наклоняет голову, оценивая следы. Локиан уже изучает скрытые выступы и трещины, как будто видит то, что остальные пропускают.",
+          "portrait_mode": "cat_only",
+          "text": "— Вниз вообще не существует.",
           "has_choices": false,
-          "next_dialogue": "ch5_s3_d3"
+          "next_dialogue": "ch5_s1_d45"
         },
         {
-          "id": "ch5_s3_d3",
-          "order": 3,
-          "speaker": "TrickyHelper",
-          "text": "— Здесь важно не торопиться, но и не медлить. Видишь эти трещины? За ними могут скрываться короткие пути.",
+          "id": "ch5_s1_d45",
+          "order": 45,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Ритм верный. Доска, вес, канат. Повтори. Не ускоряйся, когда испугаешься. Страх любит ломать строй.",
           "has_choices": false,
-          "next_dialogue": "ch5_s3_d4"
+          "next_dialogue": "ch5_s1_d46"
         },
         {
-          "id": "ch5_s3_d4",
-          "order": 4,
+          "id": "ch5_s1_d46",
+          "order": 46,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Если мы выживем, я продам эту технику как «кошачий метод преодоления смерти». Половина дохода моя за моральную поддержку.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d47"
+        },
+        {
+          "id": "ch5_s1_d47",
+          "order": 47,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Не наступайте на доски с серым налётом. Это не изморозь. Это грибок. Дерево под ним пустое.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d48"
+        },
+        {
+          "id": "ch5_s1_d48",
+          "order": 48,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я иду точно по вашим следам. Очень точно. Если след маленький, я всё равно стараюсь. Мосту это не нравится.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d49"
+        },
+        {
+          "id": "ch5_s1_d49",
+          "order": 49,
           "speaker": "Narrator",
-          "text": "Кот следует за Локианом, который легко лавирует между опасными участками, показывая безопасные уступы и скрытые тропинки. Его движения ловкие, глаза блестят живостью, он наблюдает за каждым камнем, как будто видит возможности там, где другие видят препятствия.",
+          "pause_before": 1.0,
+          "portrait_mode": "both",
+          "text": "Последняя доска скрипит громче остальных. Но выдерживает.",
           "has_choices": false,
-          "next_dialogue": "ch5_s3_d5"
+          "next_dialogue": "ch5_s1_d50"
         },
         {
-          "id": "ch5_s3_d5",
-          "order": 5,
-          "speaker": "TrickyHelper",
-          "text": "— Хитрость и внимательность — вот что позволит пройти дальше, используя каждую возможность.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s3_d6"
-        },
-        {
-          "id": "ch5_s3_d6",
-          "order": 6,
-          "speaker": "Narrator",
-          "text": "Кот видит, как Локиан использует выступы скал для баланса, как он находит устойчивые камни там, где другие не заметили бы. Река рвётся вниз, но Локиан уже заметил брод в узком месте.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s3_d7"
-        },
-        {
-          "id": "ch5_s3_d7",
-          "order": 7,
-          "speaker": "TrickyHelper",
-          "text": "— Быстро, но осторожно. Здесь важна скорость реакции и умение использовать окружение.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s3_d8"
-        },
-        {
-          "id": "ch5_s3_d8",
-          "order": 8,
-          "speaker": "Narrator",
-          "text": "Кот следует за Локианом через узкие проходы и обходные тропинки. Тишина вокруг кажется густой, но Локиан уже заметил признаки близости пещеры.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s3_d9"
-        },
-        {
-          "id": "ch5_s3_d9",
-          "order": 9,
-          "speaker": "TrickyHelper",
-          "text": "— Там начинается то, ради чего мы пришли. Используй всё, чему научился, и мы пройдём это вместе.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s3_d10"
-        },
-        {
-          "id": "ch5_s3_d10",
-          "order": 10,
+          "id": "ch5_s1_d50",
+          "order": 50,
           "speaker": "Cat",
-          "text": "Кот делает последний шаг на скользкое основание тропы перед пещерой, чувствуя, как воздух густеет и наполнен обещанием опасности и открытий.",
+          "portrait_mode": "cat_only",
+          "text": "— Я не поседел.",
           "has_choices": false,
-          "next_dialogue": "ch5_s6_d5"
-        }
-      ]
-    },
-    {
-      "id": "ch5_s4",
-      "order": 4,
-      "background": "bg_ch5_mountain_path",
-      "dialogues": [
-        {
-          "id": "ch5_s4_d1",
-          "order": 1,
-          "speaker": "WeakButKnowing",
-          "text": "— Смотри сюда, кот. Здесь недавно кто-то прошёл — следы глубокие, но разрозненные. Я вижу скрытые опасности, которые другие не заметили бы.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s4_d2"
+          "next_dialogue": "ch5_s1_d51"
         },
         {
-          "id": "ch5_s4_d2",
-          "order": 2,
+          "id": "ch5_s1_d51",
+          "order": 51,
           "speaker": "Cat",
-          "text": "Кот наклоняет голову, оценивая следы. Мирелин скользит взглядом по тропе, не спеша, его руки слегка дрожат, но не от страха — от постоянного напряжения внимания.",
+          "portrait_mode": "cat_only",
+          "text": "— Это иней.",
           "has_choices": false,
-          "next_dialogue": "ch5_s4_d3"
+          "next_dialogue": "ch5_s1_d52"
         },
         {
-          "id": "ch5_s4_d3",
-          "order": 3,
-          "speaker": "WeakButKnowing",
-          "text": "— Здесь важно не торопиться. Видишь эти трещины? Они говорят о нестабильности. А там, за углом, скрыта ловушка.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s4_d4"
-        },
-        {
-          "id": "ch5_s4_d4",
-          "order": 4,
-          "speaker": "Narrator",
-          "text": "Кот следует за Мирелином, который медленно, внимательно проверяет каждый угол, каждую тень. Его присутствие заставляет тебя замедлить шаг и смотреть на тропу иначе. Здесь каждый камень, каждое движение ветра — это информация, которую нужно уметь читать.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s4_d5"
-        },
-        {
-          "id": "ch5_s4_d5",
-          "order": 5,
-          "speaker": "WeakButKnowing",
-          "text": "— Знание и осторожность — единственное, что позволит пройти дальше, избегая опасностей.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s4_d6"
-        },
-        {
-          "id": "ch5_s4_d6",
-          "order": 6,
-          "speaker": "Narrator",
-          "text": "Кот видит, как Мирелин замечает каждую неровность, каждую расшатанную плиту. Он указывает на безопасные участки, объясняя, почему именно здесь можно ступить, а там нельзя.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s4_d7"
-        },
-        {
-          "id": "ch5_s4_d7",
-          "order": 7,
-          "speaker": "WeakButKnowing",
-          "text": "— Медленно, но верно. Здесь важно не скорость, а правильность каждого шага.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s4_d8"
-        },
-        {
-          "id": "ch5_s4_d8",
-          "order": 8,
-          "speaker": "Narrator",
-          "text": "Кот следует за Мирелином, который идёт слегка в стороне, но всегда рядом. Он не спешит, но каждое его движение аккуратно организует путь через опасную тропу.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s4_d9"
-        },
-        {
-          "id": "ch5_s4_d9",
-          "order": 9,
-          "speaker": "WeakButKnowing",
-          "text": "— Там начинается то, ради чего мы пришли. Знание защитит нас, если мы будем внимательны.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s4_d10"
-        },
-        {
-          "id": "ch5_s4_d10",
-          "order": 10,
+          "id": "ch5_s1_d52",
+          "order": 52,
           "speaker": "Cat",
-          "text": "Кот делает последний шаг на скользкое основание тропы перед пещерой, чувствуя, как воздух густеет и наполнен обещанием опасности и открытий.",
+          "portrait_mode": "cat_only",
+          "text": "— Очень испуганный иней.",
           "has_choices": false,
-          "next_dialogue": "ch5_s6_d8"
-        }
-      ]
-    },
-    {
-      "id": "ch5_s5",
-      "order": 5,
-      "background": "bg_ch5_mountain_path",
-      "dialogues": [
+          "next_dialogue": "ch5_s1_d100"
+        },
+
         {
-          "id": "ch5_s5_d1",
-          "order": 1,
-          "speaker": "StrongButDependent",
-          "text": "— Я вижу следы, кот. Здесь недавно кто-то прошёл. Но я следую за тобой — покажи, куда идти.",
+          "id": "ch5_s1_d60",
+          "order": 60,
+          "speaker": "Narrator",
+          "background": "bg_ch5_bridge_dash",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты припадаешь к доскам. Мир сужается до трёх вещей.",
           "has_choices": false,
-          "next_dialogue": "ch5_s5_d2"
+          "next_dialogue": "ch5_s1_d61"
         },
         {
-          "id": "ch5_s5_d2",
-          "order": 2,
+          "id": "ch5_s1_d61",
+          "order": 61,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Целая доска. Следующая доска. Прыжок.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d62"
+        },
+        {
+          "id": "ch5_s1_d62",
+          "order": 62,
           "speaker": "Cat",
-          "text": "Кот наклоняет голову, оценивая следы. Лаврик стоит рядом, его широкие плечи и уверенные шаги готовы раздвинуть препятствия, но он полностью зависит от твоих решений.",
+          "portrait_mode": "cat_only",
+          "text": "— Скорость — это тоже молитва!",
           "has_choices": false,
-          "next_dialogue": "ch5_s5_d3"
+          "next_dialogue": "ch5_s1_d63"
         },
         {
-          "id": "ch5_s5_d3",
-          "order": 3,
-          "speaker": "StrongButDependent",
-          "text": "— Я готов идти, но ты веди. Моя сила служит только тем, кому я доверяю.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s5_d4"
-        },
-        {
-          "id": "ch5_s5_d4",
-          "order": 4,
+          "id": "ch5_s1_d63",
+          "order": 63,
           "speaker": "Narrator",
-          "text": "Кот выбирает путь, а Лаврик следует за ним, осторожно смещая крупные камни, открывая узкие проходы, но делает это только по твоему указанию. Его мощь ощутима, но сдержанна, каждый сигнал — слово, каждый взгляд — команда.",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "Мост даже не успевает понять, что по нему бегут.",
           "has_choices": false,
-          "next_dialogue": "ch5_s5_d5"
+          "next_dialogue": "ch5_s1_d64"
         },
         {
-          "id": "ch5_s5_d5",
-          "order": 5,
-          "speaker": "StrongButDependent",
-          "text": "— Сила и доверие — вот что позволит пройти дальше, вместе.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s5_d6"
-        },
-        {
-          "id": "ch5_s5_d6",
-          "order": 6,
+          "id": "ch5_s1_d64",
+          "order": 64,
           "speaker": "Narrator",
-          "text": "Кот ведёт путь, а Лаврик поддерживает его, осторожно приподнимая тяжёлые двери из камней, открывая проходы там, где другие не смогли бы. Его зависимость делает каждый твой жест значимым.",
+          "portrait_mode": "cat_only",
+          "text": "Последние два метра ты пролетаешь в прыжке. За спиной доска уходит в бездну.",
           "has_choices": false,
-          "next_dialogue": "ch5_s5_d7"
+          "next_dialogue": "ch5_s1_d65"
         },
         {
-          "id": "ch5_s5_d7",
-          "order": 7,
-          "speaker": "StrongButDependent",
-          "text": "— Показывай путь. Я последую, куда скажешь, и защищу тебя.",
+          "id": "ch5_s1_d65",
+          "order": 65,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Безрассудно. Но траектория была чистой. В следующий раз предупреждай до того, как превращаешь план в молнию.",
           "has_choices": false,
-          "next_dialogue": "ch5_s5_d8"
+          "next_dialogue": "ch5_s1_d66"
         },
         {
-          "id": "ch5_s5_d8",
-          "order": 8,
-          "speaker": "Narrator",
-          "text": "Кот идёт впереди, а Лаврик позади, его присутствие даёт уверенность, но его зависимость делает тебя ответственным за каждый шаг. Каждый шаг с ним ощущается как совместная работа.",
+          "id": "ch5_s1_d66",
+          "order": 66,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Ха! Вот это вход. Мост проиграл, пропасть обиделась, а я почти захотел аплодировать обеими руками. Почти, потому что одна держалась за жизнь.",
           "has_choices": false,
-          "next_dialogue": "ch5_s5_d9"
+          "next_dialogue": "ch5_s1_d67"
         },
         {
-          "id": "ch5_s5_d9",
-          "order": 9,
-          "speaker": "StrongButDependent",
-          "text": "— Там начинается то, ради чего мы пришли. Моя сила теперь — часть твоего решения.",
+          "id": "ch5_s1_d67",
+          "order": 67,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Вы активировали все слабые точки разом и ушли до разрушения. Это... рискованная математика. Но математика.",
           "has_choices": false,
-          "next_dialogue": "ch5_s5_d10"
+          "next_dialogue": "ch5_s1_d68"
         },
         {
-          "id": "ch5_s5_d10",
-          "order": 10,
+          "id": "ch5_s1_d68",
+          "order": 68,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мне тоже бежать? Я большой. Когда я бегу, вещи иногда принимают это лично.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d69"
+        },
+        {
+          "id": "ch5_s1_d69",
+          "order": 69,
           "speaker": "Cat",
-          "text": "Кот делает последний шаг на скользкое основание тропы перед пещерой, чувствуя, как воздух густеет и наполнен обещанием опасности и открытий.",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Беги красиво.",
           "has_choices": false,
-          "next_dialogue": "ch5_s6_d10"
-        }
-      ]
-    },
-    {
-      "id": "ch5_s6",
-      "order": 6,
-      "background": "bg_ch5_cave",
-      "dialogues": [
-        {
-          "id": "ch5_s6_d1",
-          "order": 1,
-          "speaker": "Narrator",
-          "text": "Внутри пещеры воздух плотный и тяжёлый, с запахом серы и влаги. Каменные стены блестят под слабым светом, пробивающимся сквозь трещины. Алвард идёт рядом, держа взгляд на стенах и полу.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d2"
+          "next_dialogue": "ch5_s1_d70"
         },
         {
-          "id": "ch5_s6_d2",
-          "order": 2,
-          "speaker": "Mentor",
-          "text": "— Следи за отражениями. Здесь всё может быть не тем, чем кажется.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d3"
-        },
-        {
-          "id": "ch5_s6_d3",
-          "order": 3,
-          "speaker": "Narrator",
-          "text": "Кот внимательно изучает пол — трещины и неровности, которые кажутся случайными, на самом деле образуют тонкую сеть ловушек. Алвард указывает на каждую опасность, объясняя структуру ловушек.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d4"
-        },
-        {
-          "id": "ch5_s6_d4",
-          "order": 4,
-          "speaker": "Mentor",
-          "text": "— Внимание к структуре — единственный способ пройти безопасно.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d13"
-        },
-        {
-          "id": "ch5_s6_d5",
-          "order": 5,
-          "speaker": "Narrator",
-          "text": "Внутри пещеры воздух плотный и тяжёлый, с запахом серы и влаги. Локиан легко лавирует между опасностями, показывая скрытые пути и обходные тропинки.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d6"
-        },
-        {
-          "id": "ch5_s6_d6",
-          "order": 6,
-          "speaker": "TrickyHelper",
-          "text": "— Следи за отражениями. Здесь всё может быть не тем, чем кажется. Но я вижу пути обхода.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d7"
-        },
-        {
-          "id": "ch5_s6_d7",
-          "order": 7,
-          "speaker": "Narrator",
-          "text": "Кот следует за Локианом, который находит скрытые выступы и безопасные участки. Его хитрость и изобретательность открывают пути там, где другие видят только стены.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d13"
-        },
-        {
-          "id": "ch5_s6_d8",
-          "order": 8,
-          "speaker": "Narrator",
-          "text": "Внутри пещеры воздух плотный и тяжёлый, с запахом серы и влаги. Мирелин скользит взглядом по стенам, замечая каждую деталь.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d9"
-        },
-        {
-          "id": "ch5_s6_d9",
-          "order": 9,
-          "speaker": "WeakButKnowing",
-          "text": "— Следи за отражениями. Здесь всё может быть не тем, чем кажется. Я вижу скрытые опасности, которые другие не заметили бы.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d13"
-        },
-        {
-          "id": "ch5_s6_d10",
-          "order": 10,
-          "speaker": "Narrator",
-          "text": "Внутри пещеры воздух плотный и тяжёлый, с запахом серы и влаги. Лаврик следует за котом, готовый раздвинуть препятствия, но полностью зависит от твоих решений.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d11"
-        },
-        {
-          "id": "ch5_s6_d11",
-          "order": 11,
-          "speaker": "StrongButDependent",
-          "text": "— Следи за отражениями. Я готов защитить, но ты покажи путь.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d12"
-        },
-        {
-          "id": "ch5_s6_d12",
-          "order": 12,
-          "speaker": "Narrator",
-          "text": "Кот ведёт путь, а Лаврик следует, его сила готова раздвинуть препятствия, но он делает это только по твоему указанию.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d13"
-        },
-        {
-          "id": "ch5_s6_d13",
-          "order": 13,
-          "speaker": "Narrator",
-          "text": "Вдруг из темноты перед ними выскакивает первая группа мелких стражей — двуногие создания с острыми когтями и глазами, светящимися в темноте. Они не сильны по отдельности, но их скорость и внезапность заставляют кота напрячься.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d14"
-        },
-        {
-          "id": "ch5_s6_d14",
-          "order": 14,
-          "speaker": "Narrator",
-          "text": "Кот мгновенно реагирует: прыжок в сторону, скользящий удар лапой, скидывая одного противника на землю. Спутник помогает, направляя следующий удар и блокируя путь третьему.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d15"
-        },
-        {
-          "id": "ch5_s6_d15",
-          "order": 15,
-          "speaker": "Narrator",
-          "text": "В пещере начинают раздаваться эхо ударов, скрежет когтей по камню, шелест крыльев от скрытых ловушек. Ловушки срабатывают — падают камни, разбрасываются острые обломки. Спутник подсказывает безопасную тропу сквозь хаос.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d16"
-        },
-        {
-          "id": "ch5_s6_d16",
-          "order": 16,
-          "speaker": "Narrator",
-          "text": "Вскоре они натыкаются на узкую галерею, где стены буквально дышат: из трещин вырываются струйки пара и маленькие каменные обломки. В глубине галереи они видят странный узор на полу — светящиеся линии, образующие сложный лабиринт ловушек.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d17"
-        },
-        {
-          "id": "ch5_s6_d17",
-          "order": 17,
-          "speaker": "Narrator",
-          "text": "Спутник показывает безопасный путь через лабиринт. Кот внимательно наблюдает, копируя движения через узкую и опасную полосу. Когда они проходят через лабиринт, слышен вздох облегчения. Но впереди слышен глухой рёв, который заставляет землю дрожать.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d18"
-        },
-        {
-          "id": "ch5_s6_d18",
-          "order": 18,
-          "speaker": "Narrator",
-          "text": "В дальнем конце пещеры воздух становится горячим, и гул подземной реки усиливается. Свет пробивается через трещины в скале, освещая гигантский силуэт. Перед ними стоит демон: огромный, с чешуйчатой кожей, острыми кривыми рогами и глазами, светящимися красным.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d19"
-        },
-        {
-          "id": "ch5_s6_d19",
-          "order": 19,
-          "speaker": "Narrator",
-          "text": "Бой превращается в танец: кот и спутник двигаются слаженно, реагируют друг на друга без слов, предугадывая шаги демона. Каждый прыжок кота вызывает эхо по скале, каждый удар спутника отражается в стуке по камню. Демон пытается изменить ритм, но союзники удерживают инициативу.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d20"
-        },
-        {
-          "id": "ch5_s6_d20",
-          "order": 20,
-          "speaker": "Narrator",
-          "text": "Звуки боя затихают, когда демон, раненый и измотанный, отступает к дальнейшему углу пещеры. Пыль оседает, свет проникает сквозь трещины, освещая мерцающий глаз демона, который ещё следит, но силы его на исходе.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d21"
-        },
-        {
-          "id": "ch5_s6_d21",
-          "order": 21,
-          "speaker": "Narrator",
-          "text": "Спутник подходит к коту:\n— Это не конец, но мы доказали, что можем действовать вместе.",
-          "has_choices": false,
-          "next_dialogue": "ch5_s6_d22"
-        },
-        {
-          "id": "ch5_s6_d22",
-          "order": 22,
+          "id": "ch5_s1_d70",
+          "order": 70,
           "speaker": "Cat",
-          "text": "Кот отходит, внимательно наблюдая за каждым движением демона. Они стоят рядом, тяжело дыша, но чувствуют себя сильнее, чем когда-либо: союз, проверенный боем, выдержал первую настоящую угрозу.",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "cat_only",
+          "text": "— Если умрём, пусть хотя бы с композицией.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d100"
+        },
+
+        {
+          "id": "ch5_s1_d80",
+          "order": 80,
+          "speaker": "Narrator",
+          "background": "bg_ch5_bridge_rope",
+          "transition_before": "fade_in",
+          "portrait_mode": "both",
+          "text": "Ты достаёшь нож. Срезаешь крепкие корни у скалы. Пальцы работают быстро. Узел за узлом.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d81"
+        },
+        {
+          "id": "ch5_s1_d81",
+          "order": 81,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Если один падает, второй получает шанс громко пожалеть о дружбе.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d82"
+        },
+        {
+          "id": "ch5_s1_d82",
+          "order": 82,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Но шанс всё-таки получает.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d83"
+        },
+        {
+          "id": "ch5_s1_d83",
+          "order": 83,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Узел держит. Страховка распределит рывок на основной канат. Хорошее решение. Наконец-то ты сначала думаешь, а потом рискуешь.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d84"
+        },
+        {
+          "id": "ch5_s1_d84",
+          "order": 84,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Связать себя с чужой судьбой перед пропастью. Романтично. Глупо. Практично. Ненавижу, когда вещь бывает всем сразу.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d85"
+        },
+        {
+          "id": "ch5_s1_d85",
+          "order": 85,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Корни свежие. Значит, в скале есть влага. Значит, мост мог гнить снизу быстрее, чем кажется. Страховка нужна.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d86"
+        },
+        {
+          "id": "ch5_s1_d86",
+          "order": 86,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Если я начну падать, не держите меня просто лапами. Я тяжёлый. Держите скалу. Скала, кажется, сильнее нас обоих.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d87"
+        },
+        {
+          "id": "ch5_s1_d87",
+          "order": 87,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Переход длится долго. Один раз страховка натягивается до хруста.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d88"
+        },
+        {
+          "id": "ch5_s1_d88",
+          "order": 88,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Но выдерживает.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d89"
+        },
+        {
+          "id": "ch5_s1_d89",
+          "order": 89,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Вот так.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d90"
+        },
+        {
+          "id": "ch5_s1_d90",
+          "order": 90,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Смерть надо обманывать до того, как она заметила тебя в списке.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d100"
+        },
+
+        {
+          "id": "ch5_s1_d100",
+          "order": 100,
+          "speaker": "Narrator",
+          "background": "bg_ch5_cave_entrance",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "both",
+          "text": "В пещере нет ветра.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d101"
+        },
+        {
+          "id": "ch5_s1_d101",
+          "order": 101,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "И от этого становится хуже.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d102"
+        },
+        {
+          "id": "ch5_s1_d102",
+          "order": 102,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Снаружи мир хотя бы пытался тебя столкнуть. Здесь он просто ждёт.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d103"
+        },
+        {
+          "id": "ch5_s1_d103",
+          "order": 103,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Приятное место.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d104"
+        },
+        {
+          "id": "ch5_s1_d104",
+          "order": 104,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Если ты плесень.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d105"
+        },
+        {
+          "id": "ch5_s1_d105",
+          "order": 105,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Факел ниже. Свет на полу важнее стен. В пещерах умирают не от красоты потолка.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d106"
+        },
+        {
+          "id": "ch5_s1_d106",
+          "order": 106,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Запах серы, следы когтей, подозрительная тишина. Как дешёвая таверна, только чаевые берут костями.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d107"
+        },
+        {
+          "id": "ch5_s1_d107",
+          "order": 107,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— На стенах царапины разной глубины. Мелкие твари ходят стаями. Большой зверь здесь не охотится. Он ждёт дальше.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d108"
+        },
+        {
+          "id": "ch5_s1_d108",
+          "order": 108,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мне не нравится, что пещера молчит. Большие места обычно шумят. Это молчит специально.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d109"
+        },
+        {
+          "id": "ch5_s1_d109",
+          "order": 109,
+          "speaker": "Narrator",
+          "background": "bg_ch5_trap_hall",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "both",
+          "text": "Факел вспыхивает ярче. И тьма отдаёт первый долг.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d110"
+        },
+        {
+          "id": "ch5_s1_d110",
+          "order": 110,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "На полу — плиты. Половина чуть выше остальных.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d111"
+        },
+        {
+          "id": "ch5_s1_d111",
+          "order": 111,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "В стенах — узкие щели. Из них пахнет ядом и старым железом.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d112"
+        },
+        {
+          "id": "ch5_s1_d112",
+          "order": 112,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "А сверху, со стен, начинают падать Слепые Проглоты.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d113"
+        },
+        {
+          "id": "ch5_s1_d113",
+          "order": 113,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— О.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d114"
+        },
+        {
+          "id": "ch5_s1_d114",
+          "order": 114,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Пещера решила подать закуску.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d115"
+        },
+        {
+          "id": "ch5_s1_d115",
+          "order": 115,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Мелкие твари раскрывают пасти. Глаз у них нет. Только зубы, когти и голод.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d116"
+        },
+        {
+          "id": "ch5_s1_d116",
+          "order": 116,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Как встретим этих гостей?",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch5_s1_d116_c1",
+              "text": "Броситься в гущу тварей. Рубить наотмашь, не давая стае окружить вас.",
+              "effects": {
+                "activity": 0.10,
+                "impulsivity": 0.05,
+                "self_control": -0.07
+              },
+              "next_dialogue": "ch5_s1_d140"
+            },
+            {
+              "id": "ch5_s1_d116_c2",
+              "text": "Отскакивать по безопасным плитам. Заставить монстров активировать ловушки своими тушами.",
+              "effects": {
+                "self_control": 0.10,
+                "adaptability": 0.07,
+                "impulsivity": -0.05
+              },
+              "next_dialogue": "ch5_s1_d160"
+            },
+            {
+              "id": "ch5_s1_d116_c3",
+              "text": "Встать спина к спине со спутником. Держать безопасную точку и не делать лишних шагов.",
+              "effects": {
+                "sociality": 0.07,
+                "rigidity": 0.05,
+                "activity": -0.03
+              },
+              "next_dialogue": "ch5_s1_d180"
+            }
+          ]
+        },
+
+        {
+          "id": "ch5_s1_d140",
+          "order": 140,
+          "speaker": "Narrator",
+          "background": "bg_ch5_fight_aggro",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты врываешься в стаю. Сабля режет воздух. Потом чешую. Потом снова воздух.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d141"
+        },
+        {
+          "id": "ch5_s1_d141",
+          "order": 141,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Ко мне, мерзкие кожаные кошельки!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d142"
+        },
+        {
+          "id": "ch5_s1_d142",
+          "order": 142,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я сделаю из вас дорожные ремни!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d143"
+        },
+        {
+          "id": "ch5_s1_d143",
+          "order": 143,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "Плита щёлкает под лапой. Копьё вылетает из стены. Но ты уже не там.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d144"
+        },
+        {
+          "id": "ch5_s1_d144",
+          "order": 144,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Слева! Третья плита живая! Если уж решил быть бурей, хотя бы будь бурей с маршрутом!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d145"
+        },
+        {
+          "id": "ch5_s1_d145",
+          "order": 145,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Я обожаю планы, где половина комнаты пытается нас убить, а ты делаешь вид, что это аплодисменты!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d146"
+        },
+        {
+          "id": "ch5_s1_d146",
+          "order": 146,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Они слышат металл! Ударяйте клинком по камню справа, стая повернёт туда!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d147"
+        },
+        {
+          "id": "ch5_s1_d147",
+          "order": 147,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я держу этих! Они кусаются, но у них маленькие головы. Это удобно!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d148"
+        },
+        {
+          "id": "ch5_s1_d148",
+          "order": 148,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Когда последняя тварь падает, пол усеян копьями и дымящейся чешуёй.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d149"
+        },
+        {
+          "id": "ch5_s1_d149",
+          "order": 149,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мёртвые не кусаются.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d150"
+        },
+        {
+          "id": "ch5_s1_d150",
+          "order": 150,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Хотя эти, кажется, пытались из принципа.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d200"
+        },
+
+        {
+          "id": "ch5_s1_d160",
+          "order": 160,
+          "speaker": "Narrator",
+          "background": "bg_ch5_fight_tactical",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты не встречаешь стаю лоб в лоб. Ты ведёшь её.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d161"
+        },
+        {
+          "id": "ch5_s1_d161",
+          "order": 161,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Шаг назад. Прыжок на выступ. Поворот. Щелчок.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d162"
+        },
+        {
+          "id": "ch5_s1_d162",
+          "order": 162,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Господа, экскурсия бесплатная.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d163"
+        },
+        {
+          "id": "ch5_s1_d163",
+          "order": 163,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Копья включены в стоимость.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d164"
+        },
+        {
+          "id": "ch5_s1_d164",
+          "order": 164,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Стены выплёвывают железо. Твари сами бросаются в ловушки, не понимая, что охота сменила владельца.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d165"
+        },
+        {
+          "id": "ch5_s1_d165",
+          "order": 165,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Чисто. Ты превратил поле боя в чертёж. Продолжай держать дистанцию и не увлекайся красивыми прыжками.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d166"
+        },
+        {
+          "id": "ch5_s1_d166",
+          "order": 166,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Вот это я люблю. Пусть древние строители работают за нас. Мёртвым архитекторам всё равно некуда жаловаться.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d167"
+        },
+        {
+          "id": "ch5_s1_d167",
+          "order": 167,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Плиты с тёмным краем срабатывают сразу. Светлые — с задержкой. Можно вести стаю через них волнами.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d168"
+        },
+        {
+          "id": "ch5_s1_d168",
+          "order": 168,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мне не двигаться? Хорошо. Я буду большим камнем. Камни редко наступают на ловушки.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d169"
+        },
+        {
+          "id": "ch5_s1_d169",
+          "order": 169,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Шах и мат.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d170"
+        },
+        {
+          "id": "ch5_s1_d170",
+          "order": 170,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Всегда заставляй комнату ненавидеть врагов больше, чем тебя.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d200"
+        },
+
+        {
+          "id": "ch5_s1_d180",
+          "order": 180,
+          "speaker": "Narrator",
+          "background": "bg_ch5_fight_defense",
+          "transition_before": "fade_in",
+          "portrait_mode": "both",
+          "text": "Ты замечаешь монолитную плиту. Единственную, без швов. Без щелей. Без обещаний смерти.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d181"
+        },
+        {
+          "id": "ch5_s1_d181",
+          "order": 181,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Спина к спине!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d182"
+        },
+        {
+          "id": "ch5_s1_d182",
+          "order": 182,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Периметр — полтора метра.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d183"
+        },
+        {
+          "id": "ch5_s1_d183",
+          "order": 183,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Кто сделает лишний шаг, тот станет уроком анатомии.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d184"
+        },
+        {
+          "id": "ch5_s1_d184",
+          "order": 184,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Держу правый сектор. Удар только после прыжка твари. Экономь движение. Здесь лишний героизм дороже крови.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d185"
+        },
+        {
+          "id": "ch5_s1_d185",
+          "order": 185,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Стоять на месте, пока зубы бегут к нам сами. Не мой стиль, но признаю: обслуживание у этой стратегии отличное.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d186"
+        },
+        {
+          "id": "ch5_s1_d186",
+          "order": 186,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Их слух слабее на низком звуке. Говорите тише. Пусть они прыгают на силуэт, не на голос.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d187"
+        },
+        {
+          "id": "ch5_s1_d187",
+          "order": 187,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я понял. Не шагать. Бить. Не шагать. Бить. Это хороший план. В нём мало сложных слов.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d188"
+        },
+        {
+          "id": "ch5_s1_d188",
+          "order": 188,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Стая накатывает волнами. И разбивается. Не о силу. О порядок.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d189"
+        },
+        {
+          "id": "ch5_s1_d189",
+          "order": 189,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Дисциплина спасает там, где хаос убивает.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d190"
+        },
+        {
+          "id": "ch5_s1_d190",
+          "order": 190,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Запомните, твари. Хотя уже поздно.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d200"
+        },
+
+        {
+          "id": "ch5_s1_d200",
+          "order": 200,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_lair",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_out",
+          "portrait_mode": "none",
+          "text": "Дальше пещера раскрывается. Не как зал. Как рана в земле.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d201"
+        },
+        {
+          "id": "ch5_s1_d201",
+          "order": 201,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Магма пульсирует в трещинах. Свод теряется в дыму.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d202"
+        },
+        {
+          "id": "ch5_s1_d202",
+          "order": 202,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "В центре спит Дракон.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d203"
+        },
+        {
+          "id": "ch5_s1_d203",
+          "order": 203,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Чёрный, как ночь под землёй. Такой огромный, что сначала разум отказывается считать его живым.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d204"
+        },
+        {
+          "id": "ch5_s1_d204",
+          "order": 204,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Вот он.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d205"
+        },
+        {
+          "id": "ch5_s1_d205",
+          "order": 205,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Главный аргумент против самоуверенности.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d206"
+        },
+        {
+          "id": "ch5_s1_d206",
+          "order": 206,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Не двигаться без команды. Сначала маршрут к кристаллу, потом маршрут назад. Герои умирают на второй половине плана.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d207"
+        },
+        {
+          "id": "ch5_s1_d207",
+          "order": 207,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Кристалл рядом с драконом. Разумеется. Никто никогда не кладёт бесценные вещи в удобный ящик у выхода.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d208"
+        },
+        {
+          "id": "ch5_s1_d208",
+          "order": 208,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Кристалл светит не на стены, а внутрь них. Это не просто реликвия. Он будто держит пещеру бодрствующей.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d209"
+        },
+        {
+          "id": "ch5_s1_d209",
+          "order": 209,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Он очень большой. Я знал, что драконы большие, но это... слишком большое слово для «большой».",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d210"
+        },
+        {
+          "id": "ch5_s1_d210",
+          "order": 210,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_eyes",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Камешек срывается из-под ноги. Падает. Ударяется о породу.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d211"
+        },
+        {
+          "id": "ch5_s1_d211",
+          "order": 211,
+          "speaker": "Narrator",
+          "pause_before": 2.0,
+          "portrait_mode": "none",
+          "text": "Дракон открывает глаза.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d212"
+        },
+        {
+          "id": "ch5_s1_d212",
+          "order": 212,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Молочные. Слепые. И всё равно смотрящие точно в вашу сторону.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d213"
+        },
+        {
+          "id": "ch5_s1_d213",
+          "order": 213,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Пасть раскрывается. Внутри рождается белое пламя.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d214"
+        },
+        {
+          "id": "ch5_s1_d214",
+          "order": 214,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Ненавижу, когда архивариусы оказываются правы.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch5_s1_d214_c1",
+              "text": "Броситься за ближайший сталагмит. Укрыться от потока белого пламени.",
+              "effects": {
+                "adaptability": 0.07,
+                "self_control": 0.05
+              },
+              "next_dialogue": "ch5_s1_d240"
+            },
+            {
+              "id": "ch5_s1_d214_c2",
+              "text": "Метнуть кинжал в разверзнутую пасть. Сбить дыхание зверя до выдоха.",
+              "effects": {
+                "activity": 0.10,
+                "impulsivity": 0.05,
+                "self_control": -0.03
+              },
+              "next_dialogue": "ch5_s1_d260"
+            },
+            {
+              "id": "ch5_s1_d214_c3",
+              "text": "Повалить союзника на землю. Закрыть его плащом, рискуя собой.",
+              "effects": {
+                "emotional_sensitivity": 0.10,
+                "sociality": 0.07,
+                "ego_focus": -0.07
+              },
+              "next_dialogue": "ch5_s1_d280"
+            }
+          ]
+        },
+
+        {
+          "id": "ch5_s1_d240",
+          "order": 240,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_fire_dodge",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Инстинкт бьёт раньше мысли. Ты бросаешься в сторону.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d241"
+        },
+        {
+          "id": "ch5_s1_d241",
+          "order": 241,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Белое пламя проходит там, где секунду назад была твоя голова.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d242"
+        },
+        {
+          "id": "ch5_s1_d242",
+          "order": 242,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Горячо!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d243"
+        },
+        {
+          "id": "ch5_s1_d243",
+          "order": 243,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Как в печи у пекаря, который ненавидит клиентов!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d244"
+        },
+        {
+          "id": "ch5_s1_d244",
+          "order": 244,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Укрытие тает. Через три удара сердца меняем позицию. Не жди второго выдоха здесь.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d245"
+        },
+        {
+          "id": "ch5_s1_d245",
+          "order": 245,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Если это первый раунд, я уже не люблю правила. Но камень пока выигрывает. Держись за победителя.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d246"
+        },
+        {
+          "id": "ch5_s1_d246",
+          "order": 246,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Пламя белое, не красное. Магическое. Оно жжёт воздух вокруг, не только то, чего касается. Дышите ниже!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d247"
+        },
+        {
+          "id": "ch5_s1_d247",
+          "order": 247,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Камень плавится. Камень не должен плавиться так быстро. Я больше не доверяю камням.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d248"
+        },
+        {
+          "id": "ch5_s1_d248",
+          "order": 248,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Первый раунд за тобой, переросток.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d249"
+        },
+        {
+          "id": "ch5_s1_d249",
+          "order": 249,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Но я всё ещё слишком жив для твоего вкуса.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d300"
+        },
+
+        {
+          "id": "ch5_s1_d260",
+          "order": 260,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_counter",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Другие бы отступили. Ты шагаешь навстречу.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d261"
+        },
+        {
+          "id": "ch5_s1_d261",
+          "order": 261,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Кинжал срывается с лапы. Серебряная дуга в белом свете.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d262"
+        },
+        {
+          "id": "ch5_s1_d262",
+          "order": 262,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Подавись, королевская проблема!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d263"
+        },
+        {
+          "id": "ch5_s1_d263",
+          "order": 263,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Клинок входит в мягкое нёбо. Пламя сбивается. Взрывается внутри пасти.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d264"
+        },
+        {
+          "id": "ch5_s1_d264",
+          "order": 264,
+          "speaker": "Dragon",
+          "portrait_mode": "none",
+          "text": "— РРРААААА!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d265"
+        },
+        {
+          "id": "ch5_s1_d265",
+          "order": 265,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Хорошо. Боль нарушила ритм дыхания. Используй окно, пока он не восстановил контроль.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d266"
+        },
+        {
+          "id": "ch5_s1_d266",
+          "order": 266,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Великолепно! Ты только что заставил дракона съесть столовый прибор. Жаль, никто не принимает ставки на изжогу.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d267"
+        },
+        {
+          "id": "ch5_s1_d267",
+          "order": 267,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Он мотает головой вправо. Там старый шрам у основания челюсти. Возможно, слабое место.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d268"
+        },
+        {
+          "id": "ch5_s1_d268",
+          "order": 268,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Вы бросили нож в дракона. Внутрь дракона. Я запомню это как пример смелости и очень плохой идеи.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d269"
+        },
+        {
+          "id": "ch5_s1_d269",
+          "order": 269,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Любишь остренькое?",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d270"
+        },
+        {
+          "id": "ch5_s1_d270",
+          "order": 270,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Надеюсь, у тебя несварение.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d300"
+        },
+
+        {
+          "id": "ch5_s1_d280",
+          "order": 280,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_protect",
+          "transition_before": "darkening",
+          "portrait_mode": "both",
+          "text": "Спутник замирает. На один миг. В бою с драконом этого достаточно, чтобы стать пеплом.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d281"
+        },
+        {
+          "id": "ch5_s1_d281",
+          "order": 281,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Ты бросаешься первым.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d282"
+        },
+        {
+          "id": "ch5_s1_d282",
+          "order": 282,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Лежать!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d283"
+        },
+        {
+          "id": "ch5_s1_d283",
+          "order": 283,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— И если будешь дышать, делай это тихо и благодарно!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d284"
+        },
+        {
+          "id": "ch5_s1_d284",
+          "order": 284,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Пламя проходит над вами. Плащ дымится. Мех пахнет палёной гордостью.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d285"
+        },
+        {
+          "id": "ch5_s1_d285",
+          "order": 285,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Ты нарушил позицию ради меня. Это было неправильно по схеме... и правильно по сути. Я в долгу. Встаём.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d286"
+        },
+        {
+          "id": "ch5_s1_d286",
+          "order": 286,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Ты спас мне жизнь. Ненавижу такие долги. Они дороже золота и хуже всего продаются.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d287"
+        },
+        {
+          "id": "ch5_s1_d287",
+          "order": 287,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Я видел пламя сквозь ткань. Оно искало воздух. Вы закрыли не только меня. Вы закрыли звук моего страха.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d288"
+        },
+        {
+          "id": "ch5_s1_d288",
+          "order": 288,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Вы могли убежать. Но не убежали. Я... я теперь точно не дам ему вас съесть.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d289"
+        },
+        {
+          "id": "ch5_s1_d289",
+          "order": 289,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Мы пришли вместе.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d290"
+        },
+        {
+          "id": "ch5_s1_d290",
+          "order": 290,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— Моя работа — вернуть нас обоих.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d291"
+        },
+        {
+          "id": "ch5_s1_d291",
+          "order": 291,
+          "speaker": "Cat",
+          "portrait_mode": "both",
+          "text": "— А теперь соберись.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d300"
+        },
+
+        {
+          "id": "ch5_s1_d300",
+          "order": 300,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_rage",
+          "transition_before": "fade_out_in",
+          "camera_effect": "pan_up",
+          "portrait_mode": "none",
+          "text": "Зверь приходит в ярость. Хвост ломает каменные колонны. Свод отвечает дождём обломков.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d301"
+        },
+        {
+          "id": "ch5_s1_d301",
+          "order": 301,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Но глаза дракона ничего не ищут. Они давно бесполезны.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d302"
+        },
+        {
+          "id": "ch5_s1_d302",
+          "order": 302,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Он слушает. Каждый вдох. Каждый камешек. Каждое сердце.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d303"
+        },
+        {
+          "id": "ch5_s1_d303",
+          "order": 303,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Он ищет нас.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d304"
+        },
+        {
+          "id": "ch5_s1_d304",
+          "order": 304,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Не глазами.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d305"
+        },
+        {
+          "id": "ch5_s1_d305",
+          "order": 305,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И это, к сожалению, очень невежливо.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d306"
+        },
+        {
+          "id": "ch5_s1_d306",
+          "order": 306,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Дыхание вниз. Сердце не остановить, но можно убрать лишнее движение. Мы живы, пока он сомневается.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d307"
+        },
+        {
+          "id": "ch5_s1_d307",
+          "order": 307,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Если он слушает сердца, надо дать ему концерт в другой стороне. Желательно дорогой и звенящий.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d308"
+        },
+        {
+          "id": "ch5_s1_d308",
+          "order": 308,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Он наклоняет голову перед рывком. Сначала слушает, потом бьёт. Между этим есть промежуток. Маленький, но есть.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d309"
+        },
+        {
+          "id": "ch5_s1_d309",
+          "order": 309,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Моё сердце сейчас очень громкое. Я пытаюсь его уговорить. Оно не слушает.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d310"
+        },
+        {
+          "id": "ch5_s1_d310",
+          "order": 310,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Нужно что-то придумать, пока он нас не нашёл.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch5_s1_d310_c1",
+              "text": "Замереть намертво. Задержать дыхание и замедлить пульс.",
+              "effects": {
+                "self_control": 0.10,
+                "rigidity": 0.05,
+                "activity": -0.05
+              },
+              "next_dialogue": "ch5_s1_d340"
+            },
+            {
+              "id": "ch5_s1_d310_c2",
+              "text": "Метнуть кошель с монетами в другой конец зала. Создать ложную цель для слуха дракона.",
+              "effects": {
+                "adaptability": 0.10,
+                "ego_focus": 0.05
+              },
+              "next_dialogue": "ch5_s1_d360"
+            },
+            {
+              "id": "ch5_s1_d310_c3",
+              "text": "Выпрыгнуть с криком. Принять внимание дракона на себя, пока спутник ищет слабость.",
+              "effects": {
+                "activity": 0.07,
+                "impulsivity": 0.07,
+                "self_control": -0.07
+              },
+              "next_dialogue": "ch5_s1_d380"
+            }
+          ]
+        },
+
+        {
+          "id": "ch5_s1_d340",
+          "order": 340,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_still",
+          "transition_before": "darkening",
+          "portrait_mode": "cat_only",
+          "text": "Ты закрываешь глаза. Не двигаешься. Не дышишь. Даже страху запрещено шевелиться.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d341"
+        },
+        {
+          "id": "ch5_s1_d341",
+          "order": 341,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я камень.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d342"
+        },
+        {
+          "id": "ch5_s1_d342",
+          "order": 342,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я пустота.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d343"
+        },
+        {
+          "id": "ch5_s1_d343",
+          "order": 343,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Меня здесь нет.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d344"
+        },
+        {
+          "id": "ch5_s1_d344",
+          "order": 344,
+          "speaker": "Narrator",
+          "pause_before": 2.0,
+          "portrait_mode": "none",
+          "text": "Морда дракона опускается совсем близко. Сера. Жар. Зубы размером с кинжалы.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d345"
+        },
+        {
+          "id": "ch5_s1_d345",
+          "order": 345,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Но он не слышит жизни.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d346"
+        },
+        {
+          "id": "ch5_s1_d346",
+          "order": 346,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Держи. Ещё три счёта. Ещё два. Сейчас он потеряет уверенность.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d347"
+        },
+        {
+          "id": "ch5_s1_d347",
+          "order": 347,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Никогда не думал, что буду завидовать камню. Но камень сейчас делает карьеру лучше нас.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d348"
+        },
+        {
+          "id": "ch5_s1_d348",
+          "order": 348,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Его слух цепляется за ритм. Вы сломали ритм. Он не понимает, где вы заканчиваетесь и где начинается пещера.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d349"
+        },
+        {
+          "id": "ch5_s1_d349",
+          "order": 349,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я тоже камень. Большой камень. Очень испуганный большой камень.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d350"
+        },
+        {
+          "id": "ch5_s1_d350",
+          "order": 350,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Сработало.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d351"
+        },
+        {
+          "id": "ch5_s1_d351",
+          "order": 351,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Абсолютный контроль разума над телом.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d352"
+        },
+        {
+          "id": "ch5_s1_d352",
+          "order": 352,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Ужасно неудобный талант.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d400"
+        },
+
+        {
+          "id": "ch5_s1_d360",
+          "order": 360,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_coin",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты срываешь кошель с пояса. На миг становится больно. Не физически. Финансово.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d361"
+        },
+        {
+          "id": "ch5_s1_d361",
+          "order": 361,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Эй, чешуйчатый!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d362"
+        },
+        {
+          "id": "ch5_s1_d362",
+          "order": 362,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Подаяние для слепого искусства!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d363"
+        },
+        {
+          "id": "ch5_s1_d363",
+          "order": 363,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Кошель летит в темноту. Звон. Золото рассыпается по камням.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d364"
+        },
+        {
+          "id": "ch5_s1_d364",
+          "order": 364,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Дракон бросается туда, ломая всё на пути.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d365"
+        },
+        {
+          "id": "ch5_s1_d365",
+          "order": 365,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Ложная цель сработала. Обход справа. У нас есть семь секунд, если он не поймёт разницу между золотом и сердцем.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d366"
+        },
+        {
+          "id": "ch5_s1_d366",
+          "order": 366,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Я скорблю о монетах. Но признаю: они умерли красиво, громко и с пользой для дела.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d367"
+        },
+        {
+          "id": "ch5_s1_d367",
+          "order": 367,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Он атакует звук, но не сразу возвращается к нам. Значит, слух у него точный, но ярость сильнее анализа.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d368"
+        },
+        {
+          "id": "ch5_s1_d368",
+          "order": 368,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Золото помогло. Я раньше думал, золото только спорит людей. Оказывается, оно ещё отвлекает драконов.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d369"
+        },
+        {
+          "id": "ch5_s1_d369",
+          "order": 369,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Даже драконы ведутся на звон монет.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d370"
+        },
+        {
+          "id": "ch5_s1_d370",
+          "order": 370,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Мир ужасно последователен.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d400"
+        },
+
+        {
+          "id": "ch5_s1_d380",
+          "order": 380,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_taunt",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты выпрыгиваешь из укрытия. Клинок бьёт по камню. Лязг раскалывает воздух.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d381"
+        },
+        {
+          "id": "ch5_s1_d381",
+          "order": 381,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— СЮДА!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d382"
+        },
+        {
+          "id": "ch5_s1_d382",
+          "order": 382,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Я здесь, ты слепая гора с зубами!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d383"
+        },
+        {
+          "id": "ch5_s1_d383",
+          "order": 383,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Попробуй поймать!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d384"
+        },
+        {
+          "id": "ch5_s1_d384",
+          "order": 384,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "Дракон бросается на звук. Челюсти захлопываются там, где ты был мгновение назад.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d385"
+        },
+        {
+          "id": "ch5_s1_d385",
+          "order": 385,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Безумец! Но он открыл шею. Держи его на дуге, не беги по прямой!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d386"
+        },
+        {
+          "id": "ch5_s1_d386",
+          "order": 386,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Это самый громкий способ сказать «пожалуйста, убей меня», который я слышал. К счастью, он работает!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d387"
+        },
+        {
+          "id": "ch5_s1_d387",
+          "order": 387,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Под чешуёй у основания шеи есть просвет! Ведите его левее, к треснувшей колонне!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d388"
+        },
+        {
+          "id": "ch5_s1_d388",
+          "order": 388,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я вижу место! Маленькое! Очень маленькое! Я ударю, когда он повернётся!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d389"
+        },
+        {
+          "id": "ch5_s1_d389",
+          "order": 389,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Не стой столбом!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d390"
+        },
+        {
+          "id": "ch5_s1_d390",
+          "order": 390,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Бей ему под чешую, пока он занят моей великолепной персоной!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d400"
+        },
+
+        {
+          "id": "ch5_s1_d400",
+          "order": 400,
+          "speaker": "Narrator",
+          "background": "bg_ch5_dragon_fall",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Манёвр срабатывает. Дракон врезается в несущую колонну. Камень трескается.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d401"
+        },
+        {
+          "id": "ch5_s1_d401",
+          "order": 401,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Тело зверя заваливается набок.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d402"
+        },
+        {
+          "id": "ch5_s1_d402",
+          "order": 402,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "portrait_mode": "none",
+          "text": "На пару секунд открывается шея. Не вся. Только узкая полоска мягкой плоти между броневыми пластинами.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d403"
+        },
+        {
+          "id": "ch5_s1_d403",
+          "order": 403,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Но иногда судьба выглядит именно так.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d404"
+        },
+        {
+          "id": "ch5_s1_d404",
+          "order": 404,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Вот оно.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d405"
+        },
+        {
+          "id": "ch5_s1_d405",
+          "order": 405,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Маленькое окно в очень большой проблеме.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch5_s1_d405_c1",
+              "text": "Взмыть по падающей колонне. Вонзить клинок двумя лапами в горло монстра.",
+              "effects": {
+                "activity": 0.10,
+                "impulsivity": 0.05,
+                "self_control": -0.05
+              },
+              "next_dialogue": "ch5_s1_d430"
+            },
+            {
+              "id": "ch5_s1_d405_c2",
+              "text": "Уйти с линии атаки. Полоснуть по треснувшей опоре и обрушить свод на дракона.",
+              "effects": {
+                "adaptability": 0.07,
+                "self_control": 0.05
+              },
+              "next_dialogue": "ch5_s1_d460"
+            },
+            {
+              "id": "ch5_s1_d405_c3",
+              "text": "Спокойно прицелиться. Нанести точный укол между пластинами брони.",
+              "effects": {
+                "self_control": 0.10,
+                "rigidity": 0.05,
+                "impulsivity": -0.07
+              },
+              "next_dialogue": "ch5_s1_d480"
+            }
+          ]
+        },
+
+        {
+          "id": "ch5_s1_d430",
+          "order": 430,
+          "speaker": "Narrator",
+          "background": "bg_ch5_kill_jump",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты отталкиваешься от камня. Потом от колонны. Потом уже не от чего.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d431"
+        },
+        {
+          "id": "ch5_s1_d431",
+          "order": 431,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Только воздух, жар и клинок в двух лапах.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d432"
+        },
+        {
+          "id": "ch5_s1_d432",
+          "order": 432,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— ПОЛУЧАЙ СВОЁ!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d433"
+        },
+        {
+          "id": "ch5_s1_d433",
+          "order": 433,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Сабля входит по рукоять. Горячая кровь бьёт вверх. Дракон издаёт хрип, от которого дрожит магма.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d434"
+        },
+        {
+          "id": "ch5_s1_d434",
+          "order": 434,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Удар подтверждён! Назад! Не стой на теле, пока мышцы ещё двигаются!",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d435"
+        },
+        {
+          "id": "ch5_s1_d435",
+          "order": 435,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Вот это финал! Если бы мы продавали билеты, я бы уже был богат и лгал о своей храбрости.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d436"
+        },
+        {
+          "id": "ch5_s1_d436",
+          "order": 436,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Нервный узел повреждён. Он падает. Отходите от хвоста, посмертный спазм может убить не хуже укуса.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d437"
+        },
+        {
+          "id": "ch5_s1_d437",
+          "order": 437,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Вы прыгнули на дракона. На дракона. Я видел. Я никому не позволю сказать, что коты маленькие.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d438"
+        },
+        {
+          "id": "ch5_s1_d438",
+          "order": 438,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Никто...",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d439"
+        },
+        {
+          "id": "ch5_s1_d439",
+          "order": 439,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Слышишь?",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d440"
+        },
+        {
+          "id": "ch5_s1_d440",
+          "order": 440,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Никто не смеет недооценивать котов.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d500"
+        },
+
+        {
+          "id": "ch5_s1_d460",
+          "order": 460,
+          "speaker": "Narrator",
+          "background": "bg_ch5_kill_collapse",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты не идёшь к шее. Ты смотришь выше. На трещину. На опору. На то, что уже просится упасть.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d461"
+        },
+        {
+          "id": "ch5_s1_d461",
+          "order": 461,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Прощай.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d462"
+        },
+        {
+          "id": "ch5_s1_d462",
+          "order": 462,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Пора принять гравитацию.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d463"
+        },
+        {
+          "id": "ch5_s1_d463",
+          "order": 463,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Удар. Камень отвечает гулом. Свод обрушивается на спину дракона. Рёв тонет под породой.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d464"
+        },
+        {
+          "id": "ch5_s1_d464",
+          "order": 464,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Чистое решение. Минимум контакта, максимум результата. Отходим к боковой стене, вторичный обвал возможен.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d465"
+        },
+        {
+          "id": "ch5_s1_d465",
+          "order": 465,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Прекрасно. Ты убил дракона недвижимостью. Никогда не недооценивай рынок камня.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d466"
+        },
+        {
+          "id": "ch5_s1_d466",
+          "order": 466,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Опора держала верхний карман породы. Теперь пещера меняет форму. Быстрее к кристаллу, пока проход не закрылся.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d467"
+        },
+        {
+          "id": "ch5_s1_d467",
+          "order": 467,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Камни сильные. Хорошо, что они были на нашей стороне. Они ведь были на нашей стороне?",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d468"
+        },
+        {
+          "id": "ch5_s1_d468",
+          "order": 468,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Грязная работа доверена природе.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d469"
+        },
+        {
+          "id": "ch5_s1_d469",
+          "order": 469,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Эффективно.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d470"
+        },
+        {
+          "id": "ch5_s1_d470",
+          "order": 470,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— И почти безопасно, если забыть о падающей горе.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d500"
+        },
+
+        {
+          "id": "ch5_s1_d480",
+          "order": 480,
+          "speaker": "Narrator",
+          "background": "bg_ch5_kill_precise",
+          "transition_before": "fade_in",
+          "portrait_mode": "cat_only",
+          "text": "Ты не кричишь. Не прыгаешь. Не торопишься.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d481"
+        },
+        {
+          "id": "ch5_s1_d481",
+          "order": 481,
+          "speaker": "Narrator",
+          "portrait_mode": "cat_only",
+          "text": "Мир сужается до линии между чешуйками.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d482"
+        },
+        {
+          "id": "ch5_s1_d482",
+          "order": 482,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Угол сорок пять градусов.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d483"
+        },
+        {
+          "id": "ch5_s1_d483",
+          "order": 483,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Третье сочленение.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d484"
+        },
+        {
+          "id": "ch5_s1_d484",
+          "order": 484,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Один удар.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d485"
+        },
+        {
+          "id": "ch5_s1_d485",
+          "order": 485,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Клинок входит точно. Дракон дёргается один раз. И вся его огромная тьма становится неподвижной.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d486"
+        },
+        {
+          "id": "ch5_s1_d486",
+          "order": 486,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Безупречно. Ни лишнего движения. Ни лишнего риска. Так заканчивают бой те, кто собирается пережить победу.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d487"
+        },
+        {
+          "id": "ch5_s1_d487",
+          "order": 487,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Тихо, аккуратно, без зрителей. Почти преступление. Мне нравится.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d488"
+        },
+        {
+          "id": "ch5_s1_d488",
+          "order": 488,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Вы попали в нервный узел. Он умер до того, как понял, что удар уже случился.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d489"
+        },
+        {
+          "id": "ch5_s1_d489",
+          "order": 489,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Я даже не успел испугаться второй раз. Это было... очень точно. Страшно точно.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d490"
+        },
+        {
+          "id": "ch5_s1_d490",
+          "order": 490,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Хирургическая точность.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d491"
+        },
+        {
+          "id": "ch5_s1_d491",
+          "order": 491,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Бой окончен.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d500"
+        },
+
+        {
+          "id": "ch5_s1_d500",
+          "order": 500,
+          "speaker": "Narrator",
+          "background": "bg_ch5_crystal",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_in",
+          "portrait_mode": "none",
+          "text": "Тишина возвращается не сразу.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d501"
+        },
+        {
+          "id": "ch5_s1_d501",
+          "order": 501,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Сначала уходит рёв. Потом треск камней.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d502"
+        },
+        {
+          "id": "ch5_s1_d502",
+          "order": 502,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Потом собственное сердце перестаёт звучать как барабан войны.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d503"
+        },
+        {
+          "id": "ch5_s1_d503",
+          "order": 503,
+          "speaker": "Narrator",
+          "pause_before": 2.0,
+          "portrait_mode": "none",
+          "text": "В центре логова ждёт Кристалл Абсолюта.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d504"
+        },
+        {
+          "id": "ch5_s1_d504",
+          "order": 504,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Он светится бледно. Не как сокровище.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d505"
+        },
+        {
+          "id": "ch5_s1_d505",
+          "order": 505,
+          "speaker": "Narrator",
+          "portrait_mode": "none",
+          "text": "Как вопрос, на который никто ещё не осмелился ответить.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d506"
+        },
+        {
+          "id": "ch5_s1_d506",
+          "order": 506,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Ну вот.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d507"
+        },
+        {
+          "id": "ch5_s1_d507",
+          "order": 507,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Королевская игрушка.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d508"
+        },
+        {
+          "id": "ch5_s1_d508",
+          "order": 508,
+          "speaker": "Cat",
+          "portrait_mode": "cat_only",
+          "text": "— Дракон умер за неё. Рыцари сгорели за неё.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d509"
+        },
+        {
+          "id": "ch5_s1_d509",
+          "order": 509,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "portrait_mode": "cat_only",
+          "text": "— Надеюсь, она хотя бы подходит к моим глазам.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d510"
+        },
+        {
+          "id": "ch5_s1_d510",
+          "order": 510,
+          "speaker": "Alward",
+          "only_for_companion": "alward",
+          "portrait_mode": "both",
+          "text": "— Не трогай голой лапой. Сначала осмотр. Победа заканчивается только после проверки трофея.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d511"
+        },
+        {
+          "id": "ch5_s1_d511",
+          "order": 511,
+          "speaker": "Lokian",
+          "only_for_companion": "lokian",
+          "portrait_mode": "both",
+          "text": "— Если эта штука стоит меньше обещанной награды, я лично вернусь и оживлю дракона из принципа.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d512"
+        },
+        {
+          "id": "ch5_s1_d512",
+          "order": 512,
+          "speaker": "Mirelin",
+          "only_for_companion": "mirelin",
+          "portrait_mode": "both",
+          "text": "— Он не просто светится. Он реагирует на нас. Точнее... на вас. Очень осторожно, господин Кот.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d513"
+        },
+        {
+          "id": "ch5_s1_d513",
+          "order": 513,
+          "speaker": "Lavrik",
+          "only_for_companion": "lavrik",
+          "portrait_mode": "both",
+          "text": "— Мы победили? Правда? Тогда можно я сяду? Ноги ещё думают, что мост под нами.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d514"
+        },
+        {
+          "id": "ch5_s1_d514",
+          "order": 514,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Пламя позади гаснет.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d515"
+        },
+        {
+          "id": "ch5_s1_d515",
+          "order": 515,
+          "speaker": "Narrator",
+          "portrait_mode": "both",
+          "text": "Тьма впереди отступает.",
+          "has_choices": false,
+          "next_dialogue": "ch5_s1_d516"
+        },
+        {
+          "id": "ch5_s1_d516",
+          "order": 516,
+          "speaker": "Narrator",
+          "transition_before": "darkening",
+          "portrait_mode": "none",
+          "text": "Но кристалл продолжает сиять.",
           "has_choices": false,
           "next_dialogue": null
         }

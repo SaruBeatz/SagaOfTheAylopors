@@ -79,6 +79,14 @@ public class Choice {
     public float effectNegativeAffect;
     public float effectAdaptability;
 
+    /**
+     * Companion identifier to save when this choice is selected (optional).
+     * Set via JSON "save_companion" field on choices where the player picks a companion.
+     * Stored in PlayerProgress.selectedCharacter for future chapters.
+     * Example values: "alward", "lokian", "mirelin", "lavrik".
+     */
+    public String saveCompanion;
+
     public Choice() {}
 
     public Choice(int choiceId, int dialogueId, int order, String textKey,

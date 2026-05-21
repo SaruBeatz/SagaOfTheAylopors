@@ -167,6 +167,14 @@ public class ChapterJsonParser {
                     dialogue.transitionBefore = dialogueJson.has("transition_before") && !dialogueJson.isNull("transition_before")
                         ? dialogueJson.getString("transition_before") : null;
 
+                    // Companion filter — skip this dialogue if player chose a different companion
+                    dialogue.onlyForCompanion = dialogueJson.has("only_for_companion") && !dialogueJson.isNull("only_for_companion")
+                        ? dialogueJson.getString("only_for_companion") : null;
+
+                    // Portrait display mode for this dialogue entry
+                    dialogue.portraitMode = dialogueJson.has("portrait_mode") && !dialogueJson.isNull("portrait_mode")
+                        ? dialogueJson.getString("portrait_mode") : null;
+
                     dialogues.add(dialogue);
                     
                     // Parse choices if present
@@ -234,6 +242,11 @@ public class ChapterJsonParser {
                             }
                             
                             choice.unlocksPath = false;
+
+                            // Parse optional companion-save tag (used for ВЫБОР 3.3 and similar key choices)
+                            choice.saveCompanion = choiceJson.has("save_companion") && !choiceJson.isNull("save_companion")
+                                ? choiceJson.getString("save_companion") : null;
+
                             choices.add(choice);
                         }
                     }

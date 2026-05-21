@@ -5,101 +5,90 @@
     {
       "id": "ch3_s1",
       "order": 1,
-      "background": "bg_ch3_foreign_valley",
       "dialogues": [
+
         {
-          "id": "ch3_s1_d1",
+          "id": "ch3_s1_d01",
           "order": 1,
           "speaker": "Narrator",
-          "text": "Ты не отвечаешь сразу. Смотришь на герб над воротами, затем — обратно на стражника. Пауза затягивается. Очередь начинает шептаться.",
+          "background": "bg_ch3_valley_edge",
+          "transition_before": "darkening",
+          "camera_effect": "panorama",
+          "text": "Лес остаётся за спиной.",
           "has_choices": false,
-          "next_dialogue": "ch3_s1_d2"
+          "next_dialogue": "ch3_s1_d02"
         },
         {
-          "id": "ch3_s1_d2",
+          "id": "ch3_s1_d02",
           "order": 2,
-          "speaker": "Guard",
-          "text": "— Я спросил",
+          "speaker": "Narrator",
+          "text": "Не сразу.",
           "has_choices": false,
-          "next_dialogue": "ch3_s1_d3"
+          "next_dialogue": "ch3_s1_d03"
         },
         {
-          "id": "ch3_s1_d3",
+          "id": "ch3_s1_d03",
           "order": 3,
           "speaker": "Narrator",
-          "text": "Ты отвечаешь коротко. Одним словом. Не объясняя. Стражник хмурится. Затем делает шаг назад.",
+          "text": "Он будто ещё держит край плаща холодными ветками.",
           "has_choices": false,
-          "next_dialogue": "ch3_s1_d4"
+          "next_dialogue": "ch3_s1_d04"
         },
         {
-          "id": "ch3_s1_d4",
+          "id": "ch3_s1_d04",
           "order": 4,
-          "speaker": "Guard",
-          "text": "— Проходи. Но знай: здесь не любят тех, кто держит всё при себе.",
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Впереди шумит Долина Изгоев.",
           "has_choices": false,
-          "next_dialogue": "ch3_s1_d5"
+          "next_dialogue": "ch3_s1_d05"
         },
         {
-          "id": "ch3_s1_d5",
+          "id": "ch3_s1_d05",
           "order": 5,
           "speaker": "Narrator",
-          "text": "Когда ты входишь, кто-то в толпе тихо смеётся. Не зло — нервно. Внутри ты чувствуешь, что придётся доказывать своё место. За воротами мир меняется: дороги конкурируют, люди идут быстро, разговоры короче, взгляды острее. Ты проходишь мимо лавок, где торгуют не только товарами, но и слухами. Здесь знают, кто пришёл, зачем и сколько продержится.",
+          "text": "Место, где закон давно продали.",
           "has_choices": false,
-          "next_dialogue": "ch3_s1_d6"
+          "next_dialogue": "ch3_s1_d06"
         },
         {
-          "id": "ch3_s1_d6",
+          "id": "ch3_s1_d06",
           "order": 6,
           "speaker": "Narrator",
-          "text": "У одной из лавок происходит спор. Торговец обвиняет молодого парня в краже. Парень отступает, оглядываясь, ищет выход. Никто не вмешивается. Это и есть испытание. Не объявленное. Не обязательное. Но заметное.",
+          "text": "И, судя по запаху, недорого.",
           "has_choices": false,
-          "next_dialogue": "ch3_s1_d7"
+          "next_dialogue": "ch3_s1_d07"
         },
         {
-          "id": "ch3_s1_d7",
+          "id": "ch3_s1_d07",
           "order": 7,
-          "speaker": "Narrator",
-          "text": "Ты можешь вмешаться, пройти мимо или наблюдать издалека. Мир фиксирует твой выбор.",
-          "has_choices": true,
-          "choices": [
-            {
-              "id": "ch3_s1_d7_c1",
-              "text": "Вмешаться",
-              "next_dialogue": "ch3_s1_d8"
-            },
-            {
-              "id": "ch3_s1_d7_c2",
-              "text": "Пройти мимо",
-              "next_dialogue": "ch3_s1_d9"
-            },
-            {
-              "id": "ch3_s1_d7_c3",
-              "text": "Наблюдать издалека",
-              "next_dialogue": "ch3_s1_d10"
-            }
-          ]
+          "speaker": "Cat",
+          "text": "— Ах.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d08"
         },
         {
-          "id": "ch3_s1_d8",
+          "id": "ch3_s1_d08",
           "order": 8,
-          "speaker": "Narrator",
-          "text": "Ты делаешь шаг вперёд, не обвиняя и не защищая. Торговец замолкает, удивлённый. Парень поднимает взгляд. Ситуация разрешается без шума. Кто-то кивает тебе, кто-то запоминает.",
+          "speaker": "Cat",
+          "text": "— Цивилизация.",
           "has_choices": false,
-          "next_dialogue": "ch3_s1_d11"
+          "next_dialogue": "ch3_s1_d09"
         },
         {
-          "id": "ch3_s1_d9",
+          "id": "ch3_s1_d09",
           "order": 9,
-          "speaker": "Narrator",
-          "text": "Ты проходишь мимо. Здесь каждый отвечает за себя. Позади слышится крик, затем тишина. На следующий день несколько торговцев смотрят на тебя с уважением: ты не вмешиваешься в чужие дела.",
+          "speaker": "Cat",
+          "text": "— Какое несчастье.",
           "has_choices": false,
-          "next_dialogue": "ch3_s1_d11"
+          "next_dialogue": "ch3_s1_d10"
         },
         {
           "id": "ch3_s1_d10",
           "order": 10,
           "speaker": "Narrator",
-          "text": "Ты остаёшься в тени. Смотришь, кто и как реагирует. Один из стражей наблюдает за сценой, но не вмешивается. Позже этот же страж пропускает тебя без вопросов через закрытый проход.",
+          "background": "bg_ch3_outer_road",
+          "text": "Дорога сужается.",
           "has_choices": false,
           "next_dialogue": "ch3_s1_d11"
         },
@@ -107,246 +96,1750 @@
           "id": "ch3_s1_d11",
           "order": 11,
           "speaker": "Narrator",
-          "text": "Ты уходишь дальше вглубь территории. Впереди — шумнее, плотнее, сложнее. Где-то там тебя ждёт встреча, которая не будет случайной.",
+          "text": "Камни под сапогами становятся острыми.",
           "has_choices": false,
-          "next_dialogue": "ch3_s2_d1"
-        }
-      ]
-    },
-    {
-      "id": "ch3_s2",
-      "order": 2,
-      "background": "bg_ch3_foreign_valley",
-      "dialogues": [
-        {
-          "id": "ch3_s2_d1",
-          "order": 1,
-          "speaker": "Narrator",
-          "text": "Улицы становятся уже. Крыши соседних домов почти сливаются, свет пробивается сквозь сеть вывесок и верёвок. Здесь каждый звук, взгляд и шаг важны. Ты чувствуешь наблюдение. Кто-то ждёт твоего движения.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d2"
+          "next_dialogue": "ch3_s1_d12"
         },
         {
-          "id": "ch3_s2_d2",
-          "order": 2,
-          "speaker": "Narrator",
-          "text": "Сначала появляется наставник — старший мужчина с аккуратным плащом, книги на ремне, пергаменты под мышкой. Его взгляд холодный и внимательный.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d3"
-        },
-        {
-          "id": "ch3_s2_d3",
-          "order": 3,
-          "speaker": "Mentor",
-          "text": "— Ты прошёл через ворота. Иди дальше, если хочешь понять правила. Но помни: те, кто ищет лёгкий путь, обычно возвращаются назад.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d4"
-        },
-        {
-          "id": "ch3_s2_d4",
-          "order": 4,
-          "speaker": "Cat",
-          "text": "«Помощь будет ценой дисциплины. Следовать его логике или идти своим путём…»",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d5"
-        },
-        {
-          "id": "ch3_s2_d5",
-          "order": 5,
-          "speaker": "Narrator",
-          "text": "За углом на шумной площади появляется хитрый помощник — молодой человек с лукавой улыбкой, мешком инструментов и картой узких улиц. Он предлагает быстрый путь через площадь, где обычно собираются недруги. Каждая помощь здесь — сделка, а не дружба.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d6"
-        },
-        {
-          "id": "ch3_s2_d6",
-          "order": 6,
-          "speaker": "Narrator",
-          "text": "На пересечении переулков в тени сидит слабый, но знающий — хрупкий человек в пыльной одежде, глаза большие и внимательные. Он предлагает помощь за твою ответственность за обоих.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d7"
-        },
-        {
-          "id": "ch3_s2_d7",
-          "order": 7,
-          "speaker": "Narrator",
-          "text": "На площади замечаешь сильного, но зависимого — массивная фигура в доспехах, взгляд тревожный. Он предлагает пройти туда, куда ты боишься, но требует управления твоим решением.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d8"
-        },
-        {
-          "id": "ch3_s2_d8",
-          "order": 8,
-          "speaker": "Cat",
-          "text": "«Каждый путь — не дорога. Каждая помощь — не просто помощь. Здесь нет случайных встреч. И теперь никто не идёт один»",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d9"
-        },
-        {
-          "id": "ch3_s2_d9",
-          "order": 9,
-          "speaker": "Narrator",
-          "text": "Ты проходишь по площади перед лавкой с весами. Перед тобой свёрток с золотом и небольшой дневник. Каждый выбор — взять, оставить или отдать нуждающемуся — оставляет след.",
-          "has_choices": true,
-          "choices": [
-            {
-              "id": "ch3_s2_d9_c1",
-              "text": "Взять золото",
-              "next_dialogue": "ch3_s2_d10"
-            },
-            {
-              "id": "ch3_s2_d9_c2",
-              "text": "Оставить золото",
-              "next_dialogue": "ch3_s2_d11"
-            },
-            {
-              "id": "ch3_s2_d9_c3",
-              "text": "Отдать золото нуждающемуся",
-              "next_dialogue": "ch3_s2_d12"
-            }
-          ]
-        },
-        {
-          "id": "ch3_s2_d10",
-          "order": 10,
-          "speaker": "Narrator",
-          "text": "Ты спрятал свёрток под плащ, никто не заметил. Через несколько шагов торговец замечает пропажу и ищет виновного. Теперь твой путь сопровождается скрытым вниманием, союзники реагируют осторожнее.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d13"
-        },
-        {
-          "id": "ch3_s2_d11",
-          "order": 11,
-          "speaker": "Narrator",
-          "text": "Ты проходишь мимо. Торговец кивает, одобряет честность. Лёгкость внутри, но мир остаётся сложным. С каждым шагом новые проверки.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d13"
-        },
-        {
-          "id": "ch3_s2_d12",
+          "id": "ch3_s1_d12",
           "order": 12,
           "speaker": "Narrator",
-          "text": "Ты отдаёшь свёрток бедному прохожему. Его действия вызывают доверие у одних и подозрение у других. Каждый шаг создаёт новые связи.",
+          "text": "Где-то бьют молотом по железу.",
           "has_choices": false,
-          "next_dialogue": "ch3_s2_d13"
+          "next_dialogue": "ch3_s1_d13"
         },
         {
-          "id": "ch3_s2_d13",
+          "id": "ch3_s1_d13",
           "order": 13,
           "speaker": "Narrator",
-          "text": "Дорога сужается, перед тобой массивная арка с железными воротами. Герб с короной над замком. Теперь решение зависит от союзников и твоего выбора пути.",
+          "text": "Где-то смеются так, будто только что выиграли чужую жизнь.",
           "has_choices": false,
-          "next_dialogue": "ch3_s2_d14"
+          "next_dialogue": "ch3_s1_d14"
         },
         {
-          "id": "ch3_s2_d14",
+          "id": "ch3_s1_d14",
           "order": 14,
           "speaker": "Cat",
-          "text": "«Каждое действие, каждое решение — теперь отражается в том, кто сможет пройти со мной дальше»",
+          "text": "— Милые люди.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d15"
+        },
+        {
+          "id": "ch3_s1_d15",
+          "order": 15,
+          "speaker": "Cat",
+          "text": "— Почти хочется украсть у них кошель.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d16"
+        },
+        {
+          "id": "ch3_s1_d16",
+          "order": 16,
+          "speaker": "Cat",
+          "text": "— Из уважения к традициям.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d17"
+        },
+        {
+          "id": "ch3_s1_d17",
+          "order": 17,
+          "speaker": "Narrator",
+          "background": "bg_ch3_outer_gate",
+          "camera_effect": "slow_zoom_in",
+          "text": "У ворот стоят двое стражников.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d18"
+        },
+        {
+          "id": "ch3_s1_d18",
+          "order": 18,
+          "speaker": "Narrator",
+          "text": "Они выглядят скучающими.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d19"
+        },
+        {
+          "id": "ch3_s1_d19",
+          "order": 19,
+          "speaker": "Narrator",
+          "text": "Но руки держат оружие слишком правильно.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d20"
+        },
+        {
+          "id": "ch3_s1_d20",
+          "order": 20,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Один делает шаг вперёд.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d21"
+        },
+        {
+          "id": "ch3_s1_d21",
+          "order": 21,
+          "speaker": "Narrator",
+          "text": "Алебарда опускается поперёк дороги.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d22"
+        },
+        {
+          "id": "ch3_s1_d22",
+          "order": 22,
+          "speaker": "Guard",
+          "text": "— Стоять.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d23"
+        },
+        {
+          "id": "ch3_s1_d23",
+          "order": 23,
+          "speaker": "Guard",
+          "text": "— Чей такой пушистый?",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d24"
+        },
+        {
+          "id": "ch3_s1_d24",
+          "order": 24,
+          "speaker": "Guard",
+          "text": "— Назови цель.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d25"
+        },
+        {
+          "id": "ch3_s1_d25",
+          "order": 25,
+          "speaker": "Guard",
+          "text": "— Или пойдёшь кому-нибудь на воротник.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d26"
+        },
+        {
+          "id": "ch3_s1_d26",
+          "order": 26,
+          "speaker": "Cat",
+          "text": "— Как грубо.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d27"
+        },
+        {
+          "id": "ch3_s1_d27",
+          "order": 27,
+          "speaker": "Cat",
+          "text": "— И как тематично.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d28"
+        },
+        {
+          "id": "ch3_s1_d28",
+          "order": 28,
+          "speaker": "Cat",
+          "pause_before": 1.0,
+          "text": "— Он спрашивает не про документы.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d29"
+        },
+        {
+          "id": "ch3_s1_d29",
+          "order": 29,
+          "speaker": "Cat",
+          "text": "— Он нюхает слабину.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d30"
+        },
+        {
+          "id": "ch3_s1_d30",
+          "order": 30,
+          "speaker": "Cat",
+          "text": "— Плохая привычка рядом с когтями.",
           "has_choices": true,
           "choices": [
             {
-              "id": "ch3_s2_d14_c1",
-              "text": "Использовать наставника",
-              "next_dialogue": "ch3_s2_d15"
+              "id": "ch3_s1_d30_c1",
+              "text": "Вскинуть голову: «Иду взять то, что мне причитается».",
+              "effects": {
+                "activity": 0.07,
+                "rigidity": 0.05,
+                "sociality": -0.03
+              },
+              "next_dialogue": "ch3_s1_d40"
             },
             {
-              "id": "ch3_s2_d14_c2",
-              "text": "Использовать хитрого помощника",
-              "next_dialogue": "ch3_s2_d16"
+              "id": "ch3_s1_d30_c2",
+              "text": "Усмехнуться: «Пришёл за слухами и звоном золота».",
+              "effects": {
+                "adaptability": 0.07,
+                "ego_focus": 0.05,
+                "rigidity": -0.07
+              },
+              "next_dialogue": "ch3_s1_d50"
             },
             {
-              "id": "ch3_s2_d14_c3",
-              "text": "Использовать слабого, но знающего союзника",
-              "next_dialogue": "ch3_s2_d17"
-            },
-            {
-              "id": "ch3_s2_d14_c4",
-              "text": "Использовать сильного, но зависимого союзника",
-              "next_dialogue": "ch3_s2_d18"
+              "id": "ch3_s1_d30_c3",
+              "text": "Не сказать ни слова. Выдержать взгляд ледяным молчанием.",
+              "effects": {
+                "self_control": 0.10,
+                "negative_affect": 0.05,
+                "sociality": -0.07
+              },
+              "next_dialogue": "ch3_s1_d60"
             }
           ]
         },
+
         {
-          "id": "ch3_s2_d15",
-          "order": 15,
-          "speaker": "Mentor",
-          "text": "— Хорошо, ты справился, следуя правилам. Но запомни: эти правила будут преследовать тебя дальше. Ты научишься видеть структуру города, пока другие действуют наугад.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d19"
-        },
-        {
-          "id": "ch3_s2_d16",
-          "order": 16,
-          "speaker": "TrickyHelper",
-          "text": "— Видишь? Быстро и просто. Но не думай, что за этим не следят. Следы остаются, и кое-кто уже заметил тебя.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d19"
-        },
-        {
-          "id": "ch3_s2_d17",
-          "order": 17,
-          "speaker": "WeakButKnowing",
-          "text": "— Смотри, здесь слабые прутья, там скрытые рычаги. Если будешь внимателен, сможешь пройти незаметно и собрать информацию о месте.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d19"
-        },
-        {
-          "id": "ch3_s2_d18",
-          "order": 18,
-          "speaker": "StrongButDependent",
-          "text": "— Я готов, но ты веди. Покажи, куда идти.",
-          "has_choices": false,
-          "next_dialogue": "ch3_s2_d19"
-        },
-        {
-          "id": "ch3_s2_d19",
-          "order": 19,
+          "id": "ch3_s1_d40",
+          "order": 40,
           "speaker": "Narrator",
-          "text": "Ворота открываются. Каждый союзник проявил свои особенности: дисциплина, хитрость, знание, сила. Теперь дорога перед тобой — плотнее, сложнее, насыщеннее. Ты чувствуешь ответственность за каждого, кто идёт рядом.",
+          "background": "bg_ch3_gate_halberd",
+          "transition_before": "fade_in",
+          "text": "Твой голос звучит ровно.",
           "has_choices": false,
-          "next_dialogue": "ch3_s2_d20"
+          "next_dialogue": "ch3_s1_d41"
         },
         {
-          "id": "ch3_s2_d20",
-          "order": 20,
+          "id": "ch3_s1_d41",
+          "order": 41,
           "speaker": "Narrator",
-          "text": "Ты проходишь через арку. Площадь освещена мягким светом фонарей, воздух наполняет запах старого камня и древесины. Узкие улочки ведут к центральной площади, где виднеется замок с высокими башнями. Корона над ним блестит в вечернем свете.",
+          "text": "Не громко.",
           "has_choices": false,
-          "next_dialogue": "ch3_s2_d21"
+          "next_dialogue": "ch3_s1_d42"
         },
         {
-          "id": "ch3_s2_d21",
-          "order": 21,
+          "id": "ch3_s1_d42",
+          "order": 42,
+          "speaker": "Narrator",
+          "text": "Но в нём есть сталь.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d43"
+        },
+        {
+          "id": "ch3_s1_d43",
+          "order": 43,
+          "speaker": "Guard",
+          "text": "— Вот как.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d44"
+        },
+        {
+          "id": "ch3_s1_d44",
+          "order": 44,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Стражник медленно убирает алебарду.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d45"
+        },
+        {
+          "id": "ch3_s1_d45",
+          "order": 45,
+          "speaker": "Narrator",
+          "text": "Он ещё хмурится.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d46"
+        },
+        {
+          "id": "ch3_s1_d46",
+          "order": 46,
+          "speaker": "Narrator",
+          "text": "Но уже не смеётся.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d47"
+        },
+        {
+          "id": "ch3_s1_d47",
+          "order": 47,
+          "speaker": "Guard",
+          "text": "— Проходи.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d48"
+        },
+        {
+          "id": "ch3_s1_d48",
+          "order": 48,
+          "speaker": "Guard",
+          "text": "— Только не бери то, что причитается мне.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d49"
+        },
+        {
+          "id": "ch3_s1_d49",
+          "order": 49,
           "speaker": "Cat",
-          "text": "«Теперь не важно, какой путь был выбран. Каждый союзник показал свои особенности. Мир изменился: кто доверяет, кто сомневается, кто наблюдает и кто готов действовать вместе со мной»",
+          "text": "— Обещаю. Если оно не блестит.",
           "has_choices": false,
-          "next_dialogue": "ch3_s2_d22"
+          "next_dialogue": "ch3_s1_d70"
         },
+
         {
-          "id": "ch3_s2_d22",
-          "order": 22,
+          "id": "ch3_s1_d50",
+          "order": 50,
           "speaker": "Narrator",
-          "text": "Ты идёшь по узкой улице к центральной площади. За каждым углом скрываются возможности и ловушки. Каждый шаг требует внимания: кто-то наблюдает, кто-то готов действовать вместе с тобой, а кто-то — ждать твоей ошибки.",
+          "background": "bg_ch3_gate_campfire",
+          "transition_before": "fade_in",
+          "text": "Ты улыбаешься первым.",
           "has_choices": false,
-          "next_dialogue": "ch3_s2_d23"
+          "next_dialogue": "ch3_s1_d51"
         },
         {
-          "id": "ch3_s2_d23",
-          "order": 23,
+          "id": "ch3_s1_d51",
+          "order": 51,
           "speaker": "Narrator",
-          "text": "Ты оказываешься на площади перед замком. Башни высокие, корона сияет в вечернем свете. Здесь ждут новые тайны, новые трудности и новый день приключений. Твоя история продолжается, а решения, принятые здесь, будут влиять на каждого союзника и каждого наблюдателя.",
+          "text": "В таких местах это опасно.",
           "has_choices": false,
-          "next_dialogue": "ch3_s2_d24"
+          "next_dialogue": "ch3_s1_d52"
         },
         {
-          "id": "ch3_s2_d24",
-          "order": 24,
+          "id": "ch3_s1_d52",
+          "order": 52,
+          "speaker": "Narrator",
+          "text": "И потому почти вежливо.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d53"
+        },
+        {
+          "id": "ch3_s1_d53",
+          "order": 53,
+          "speaker": "Guard",
+          "text": "— Ха.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d54"
+        },
+        {
+          "id": "ch3_s1_d54",
+          "order": 54,
+          "speaker": "Guard",
+          "text": "— Кот с языком торговца.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d55"
+        },
+        {
+          "id": "ch3_s1_d55",
+          "order": 55,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Он отступает. Толпа за воротами шумит громче.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d56"
+        },
+        {
+          "id": "ch3_s1_d56",
+          "order": 56,
+          "speaker": "Guard",
+          "text": "— Проходи, золотоискатель.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d57"
+        },
+        {
+          "id": "ch3_s1_d57",
+          "order": 57,
+          "speaker": "Guard",
+          "text": "— Главное, сам не стань добычей.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d58"
+        },
+        {
+          "id": "ch3_s1_d58",
+          "order": 58,
           "speaker": "Cat",
-          "text": "«Все испытания лишь подготовка. Дорога становится яснее, но теперь я знаю: сила, знание, хитрость и забота — всё это работает только вместе. И каждый союзник оставил свой след»",
+          "text": "— Добычей? С этой шляпой? Прошу вас.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d70"
+        },
+
+        {
+          "id": "ch3_s1_d60",
+          "order": 60,
+          "speaker": "Narrator",
+          "background": "bg_ch3_gate_iron",
+          "transition_before": "darkening",
+          "text": "Ты молчишь.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d61"
+        },
+        {
+          "id": "ch3_s1_d61",
+          "order": 61,
+          "speaker": "Narrator",
+          "text": "Ветер треплет край шляпы.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d62"
+        },
+        {
+          "id": "ch3_s1_d62",
+          "order": 62,
+          "speaker": "Narrator",
+          "text": "Стражник ждёт.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d63"
+        },
+        {
+          "id": "ch3_s1_d63",
+          "order": 63,
+          "speaker": "Narrator",
+          "pause_before": 2.0,
+          "text": "Ты не моргаешь.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d64"
+        },
+        {
+          "id": "ch3_s1_d64",
+          "order": 64,
+          "speaker": "Narrator",
+          "text": "И в этом молчании что-то щёлкает.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d65"
+        },
+        {
+          "id": "ch3_s1_d65",
+          "order": 65,
+          "speaker": "Guard",
+          "text": "— Неправильный ты кот.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d66"
+        },
+        {
+          "id": "ch3_s1_d66",
+          "order": 66,
+          "speaker": "Guard",
+          "text": "— Ладно.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d67"
+        },
+        {
+          "id": "ch3_s1_d67",
+          "order": 67,
+          "speaker": "Guard",
+          "text": "— Топай, пока я добрый.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d68"
+        },
+        {
+          "id": "ch3_s1_d68",
+          "order": 68,
+          "speaker": "Cat",
+          "text": "— Какое счастье.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d69"
+        },
+        {
+          "id": "ch3_s1_d69",
+          "order": 69,
+          "speaker": "Cat",
+          "text": "— Я успел увидеть вашу доброту.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d70"
+        },
+
+        {
+          "id": "ch3_s1_d70",
+          "order": 70,
+          "speaker": "Narrator",
+          "background": "bg_ch3_gate_arch",
+          "transition_before": "fade_out_in",
+          "text": "Ворота остаются позади.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d71"
+        },
+        {
+          "id": "ch3_s1_d71",
+          "order": 71,
+          "speaker": "Narrator",
+          "text": "И тишина леса окончательно умирает.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d72"
+        },
+        {
+          "id": "ch3_s1_d72",
+          "order": 72,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Долина встречает тебя криком.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d73"
+        },
+        {
+          "id": "ch3_s1_d73",
+          "order": 73,
+          "speaker": "Narrator",
+          "text": "Смехом.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d74"
+        },
+        {
+          "id": "ch3_s1_d74",
+          "order": 74,
+          "speaker": "Narrator",
+          "text": "Лаем собак.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d75"
+        },
+        {
+          "id": "ch3_s1_d75",
+          "order": 75,
+          "speaker": "Narrator",
+          "text": "И запахом жареного мяса неизвестного происхождения.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d76"
+        },
+        {
+          "id": "ch3_s1_d76",
+          "order": 76,
+          "speaker": "Cat",
+          "text": "— Я не спрашиваю, чьё это мясо.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d77"
+        },
+        {
+          "id": "ch3_s1_d77",
+          "order": 77,
+          "speaker": "Cat",
+          "text": "— Я взрослею.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d78"
+        },
+        {
+          "id": "ch3_s1_d78",
+          "order": 78,
+          "speaker": "Narrator",
+          "background": "bg_ch3_market_street",
+          "camera_effect": "panorama",
+          "text": "Рынок сжимает тебя со всех сторон.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d79"
+        },
+        {
+          "id": "ch3_s1_d79",
+          "order": 79,
+          "speaker": "Narrator",
+          "text": "Плащи трутся о плечи.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d80"
+        },
+        {
+          "id": "ch3_s1_d80",
+          "order": 80,
+          "speaker": "Narrator",
+          "text": "Колёса телег режут грязь.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d81"
+        },
+        {
+          "id": "ch3_s1_d81",
+          "order": 81,
+          "speaker": "Narrator",
+          "text": "Монеты звенят чаще, чем молитвы.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d82"
+        },
+        {
+          "id": "ch3_s1_d82",
+          "order": 82,
+          "speaker": "Cat",
+          "text": "— Вот он.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d83"
+        },
+        {
+          "id": "ch3_s1_d83",
+          "order": 83,
+          "speaker": "Cat",
+          "text": "— Настоящий храм человечества.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d84"
+        },
+        {
+          "id": "ch3_s1_d84",
+          "order": 84,
+          "speaker": "Cat",
+          "text": "— Грязь, жадность и скидки.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d85"
+        },
+        {
+          "id": "ch3_s1_d85",
+          "order": 85,
+          "speaker": "Narrator",
+          "background": "bg_ch3_narrow_alley",
+          "text": "Кто-то толкает тебя в плечо.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d86"
+        },
+        {
+          "id": "ch3_s1_d86",
+          "order": 86,
+          "speaker": "Narrator",
+          "text": "Слишком резко.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d87"
+        },
+        {
+          "id": "ch3_s1_d87",
+          "order": 87,
+          "speaker": "Narrator",
+          "text": "Слишком точно.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d88"
+        },
+        {
+          "id": "ch3_s1_d88",
+          "order": 88,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Тонкие пальцы уже тянутся к твоему кошелю.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d89"
+        },
+        {
+          "id": "ch3_s1_d89",
+          "order": 89,
+          "speaker": "Narrator",
+          "text": "Мальчишка.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d90"
+        },
+        {
+          "id": "ch3_s1_d90",
+          "order": 90,
+          "speaker": "Narrator",
+          "text": "Сажа на лице.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d91"
+        },
+        {
+          "id": "ch3_s1_d91",
+          "order": 91,
+          "speaker": "Narrator",
+          "text": "Голод в глазах.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d92"
+        },
+        {
+          "id": "ch3_s1_d92",
+          "order": 92,
+          "speaker": "Boy",
+          "text": "— Тихо...",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d93"
+        },
+        {
+          "id": "ch3_s1_d93",
+          "order": 93,
+          "speaker": "Boy",
+          "text": "— Только тихо...",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d94"
+        },
+        {
+          "id": "ch3_s1_d94",
+          "order": 94,
+          "speaker": "Cat",
+          "text": "— Ох, малыш.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d95"
+        },
+        {
+          "id": "ch3_s1_d95",
+          "order": 95,
+          "speaker": "Cat",
+          "text": "— Ты выбрал худший кошелёк на этой улице.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d96"
+        },
+        {
+          "id": "ch3_s1_d96",
+          "order": 96,
+          "speaker": "Cat",
+          "text": "— Мой.",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch3_s1_d96_c1",
+              "text": "Резко перехватить запястье и зарычать.",
+              "effects": {
+                "rigidity": 0.07,
+                "negative_affect": 0.05,
+                "emotional_sensitivity": -0.07
+              },
+              "next_dialogue": "ch3_s1_d110"
+            },
+            {
+              "id": "ch3_s1_d96_c2",
+              "text": "Мягко отвести руку и вложить монету в ладонь.",
+              "effects": {
+                "emotional_sensitivity": 0.10,
+                "sociality": 0.05,
+                "rigidity": -0.07
+              },
+              "next_dialogue": "ch3_s1_d120"
+            },
+            {
+              "id": "ch3_s1_d96_c3",
+              "text": "Поймать руку изящно и шепнуть: «Слишком медленно, парень».",
+              "effects": {
+                "adaptability": 0.07,
+                "ego_focus": 0.05,
+                "self_control": -0.03
+              },
+              "next_dialogue": "ch3_s1_d130"
+            }
+          ]
+        },
+
+        {
+          "id": "ch3_s1_d110",
+          "order": 110,
+          "speaker": "Narrator",
+          "background": "bg_ch3_alley_knife",
+          "transition_before": "fade_in",
+          "text": "Ты выкручиваешь руку ровно настолько, чтобы он понял.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d111"
+        },
+        {
+          "id": "ch3_s1_d111",
+          "order": 111,
+          "speaker": "Narrator",
+          "text": "Ещё миг — и было бы слишком поздно.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d112"
+        },
+        {
+          "id": "ch3_s1_d112",
+          "order": 112,
+          "speaker": "Boy",
+          "text": "— Ай!",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d113"
+        },
+        {
+          "id": "ch3_s1_d113",
+          "order": 113,
+          "speaker": "Boy",
+          "text": "— Пустите!",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d114"
+        },
+        {
+          "id": "ch3_s1_d114",
+          "order": 114,
+          "speaker": "Cat",
+          "text": "— Запомни урок.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d115"
+        },
+        {
+          "id": "ch3_s1_d115",
+          "order": 115,
+          "speaker": "Cat",
+          "text": "— Маленькие зубы тоже можно выбить.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d116"
+        },
+        {
+          "id": "ch3_s1_d116",
+          "order": 116,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Он вырывается и исчезает в толпе.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d117"
+        },
+        {
+          "id": "ch3_s1_d117",
+          "order": 117,
+          "speaker": "Narrator",
+          "text": "Торговец у жаровни одобрительно кивает.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d118"
+        },
+        {
+          "id": "ch3_s1_d118",
+          "order": 118,
+          "speaker": "Narrator",
+          "text": "В этом городе милосердие считают слабостью.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d119"
+        },
+        {
+          "id": "ch3_s1_d119",
+          "order": 119,
+          "speaker": "Cat",
+          "text": "— Варварское место. Почти практичное.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d140"
+        },
+
+        {
+          "id": "ch3_s1_d120",
+          "order": 120,
+          "speaker": "Narrator",
+          "background": "bg_ch3_alley_coin",
+          "transition_before": "fade_in",
+          "text": "Мальчишка ждёт удара.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d121"
+        },
+        {
+          "id": "ch3_s1_d121",
+          "order": 121,
+          "speaker": "Narrator",
+          "text": "Он даже не пытается закрыться.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d122"
+        },
+        {
+          "id": "ch3_s1_d122",
+          "order": 122,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Вместо боли в его ладонь падает монета.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d123"
+        },
+        {
+          "id": "ch3_s1_d123",
+          "order": 123,
+          "speaker": "Boy",
+          "text": "— Это...",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d124"
+        },
+        {
+          "id": "ch3_s1_d124",
+          "order": 124,
+          "speaker": "Boy",
+          "text": "— Мне?",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d125"
+        },
+        {
+          "id": "ch3_s1_d125",
+          "order": 125,
+          "speaker": "Cat",
+          "text": "— Нет.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d126"
+        },
+        {
+          "id": "ch3_s1_d126",
+          "order": 126,
+          "speaker": "Cat",
+          "text": "— Моему великому чувству драматизма.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d127"
+        },
+        {
+          "id": "ch3_s1_d127",
+          "order": 127,
+          "speaker": "Cat",
+          "text": "— Но ты можешь купить хлеб.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d128"
+        },
+        {
+          "id": "ch3_s1_d128",
+          "order": 128,
+          "speaker": "Narrator",
+          "text": "Мальчишка сжимает серебро так, будто это сердце.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d129"
+        },
+        {
+          "id": "ch3_s1_d129",
+          "order": 129,
+          "speaker": "Narrator",
+          "text": "Потом исчезает. Быстро. Пока город не передумал быть добрым.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d140"
+        },
+
+        {
+          "id": "ch3_s1_d130",
+          "order": 130,
+          "speaker": "Narrator",
+          "background": "bg_ch3_alley_red",
+          "transition_before": "fade_in",
+          "text": "Ты ловишь его легко.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d131"
+        },
+        {
+          "id": "ch3_s1_d131",
+          "order": 131,
+          "speaker": "Narrator",
+          "text": "Почти изящно.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d132"
+        },
+        {
+          "id": "ch3_s1_d132",
+          "order": 132,
+          "speaker": "Narrator",
+          "text": "Будто это не кража, а приглашение к танцу.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d133"
+        },
+        {
+          "id": "ch3_s1_d133",
+          "order": 133,
+          "speaker": "Cat",
+          "text": "— Слишком медленно, парень.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d134"
+        },
+        {
+          "id": "ch3_s1_d134",
+          "order": 134,
+          "speaker": "Cat",
+          "text": "— Кошель режут здесь.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d135"
+        },
+        {
+          "id": "ch3_s1_d135",
+          "order": 135,
+          "speaker": "Cat",
+          "text": "— А уходят туда.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d136"
+        },
+        {
+          "id": "ch3_s1_d136",
+          "order": 136,
+          "speaker": "Narrator",
+          "text": "Ты показываешь взглядом на боковую щель между шатрами.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d137"
+        },
+        {
+          "id": "ch3_s1_d137",
+          "order": 137,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Мальчишка краснеет от стыда. И от восхищения тоже.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d138"
+        },
+        {
+          "id": "ch3_s1_d138",
+          "order": 138,
+          "speaker": "Boy",
+          "text": "— Вы... вор?",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d139"
+        },
+        {
+          "id": "ch3_s1_d139",
+          "order": 139,
+          "speaker": "Cat",
+          "text": "— Я артист с гибкой моралью.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d140"
+        },
+
+        {
+          "id": "ch3_s1_d140",
+          "order": 140,
+          "speaker": "Narrator",
+          "background": "bg_ch3_inner_square",
+          "transition_before": "fade_out_in",
+          "text": "Рынок остаётся позади.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d141"
+        },
+        {
+          "id": "ch3_s1_d141",
+          "order": 141,
+          "speaker": "Narrator",
+          "text": "Перед тобой поднимается Внутреннее Кольцо.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d142"
+        },
+        {
+          "id": "ch3_s1_d142",
+          "order": 142,
+          "speaker": "Narrator",
+          "text": "Стена такая высокая, что заслоняет небо.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d143"
+        },
+        {
+          "id": "ch3_s1_d143",
+          "order": 143,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Там начинается город короля.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d144"
+        },
+        {
+          "id": "ch3_s1_d144",
+          "order": 144,
+          "speaker": "Narrator",
+          "text": "Или людоеда.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d145"
+        },
+        {
+          "id": "ch3_s1_d145",
+          "order": 145,
+          "speaker": "Narrator",
+          "text": "В этих землях титулы часто зависят от ужина.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d146"
+        },
+        {
+          "id": "ch3_s1_d146",
+          "order": 146,
+          "speaker": "Cat",
+          "text": "— Прекрасно.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d147"
+        },
+        {
+          "id": "ch3_s1_d147",
+          "order": 147,
+          "speaker": "Cat",
+          "text": "— Политика.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d148"
+        },
+        {
+          "id": "ch3_s1_d148",
+          "order": 148,
+          "speaker": "Cat",
+          "text": "— Единственная охота, где добыча носит корону.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d149"
+        },
+        {
+          "id": "ch3_s1_d149",
+          "order": 149,
+          "speaker": "Narrator",
+          "background": "bg_ch3_square_fountain",
+          "text": "Один трактирщик продал тебе имя площади.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d150"
+        },
+        {
+          "id": "ch3_s1_d150",
+          "order": 150,
+          "speaker": "Narrator",
+          "text": "Другой продал молчание.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d151"
+        },
+        {
+          "id": "ch3_s1_d151",
+          "order": 151,
+          "speaker": "Narrator",
+          "text": "Третий продал слух.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d152"
+        },
+        {
+          "id": "ch3_s1_d152",
+          "order": 152,
+          "speaker": "Narrator",
+          "text": "Все трое завысили цену.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d153"
+        },
+        {
+          "id": "ch3_s1_d153",
+          "order": 153,
+          "speaker": "Cat",
+          "text": "— Я уважаю профессионалов.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d154"
+        },
+        {
+          "id": "ch3_s1_d154",
+          "order": 154,
+          "speaker": "Cat",
+          "text": "— И презираю их счёт.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d155"
+        },
+        {
+          "id": "ch3_s1_d155",
+          "order": 155,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Здесь ждут проводники.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d156"
+        },
+        {
+          "id": "ch3_s1_d156",
+          "order": 156,
+          "speaker": "Narrator",
+          "text": "Не слуги.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d157"
+        },
+        {
+          "id": "ch3_s1_d157",
+          "order": 157,
+          "speaker": "Narrator",
+          "text": "Не друзья.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d158"
+        },
+        {
+          "id": "ch3_s1_d158",
+          "order": 158,
+          "speaker": "Narrator",
+          "text": "Люди, которые знают, где город прячет зубы.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d159"
+        },
+        {
+          "id": "ch3_s1_d159",
+          "order": 159,
+          "speaker": "Narrator",
+          "background": "bg_ch3_square_choice",
+          "camera_effect": "panorama",
+          "text": "У фонтана стоит мужчина в чёрном.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d160"
+        },
+        {
+          "id": "ch3_s1_d160",
+          "order": 160,
+          "speaker": "Narrator",
+          "text": "Каждый ремень на его броне затянут идеально. Каждый взгляд — как приказ.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d161"
+        },
+        {
+          "id": "ch3_s1_d161",
+          "order": 161,
+          "speaker": "Alward",
+          "text": "— Опоздал на три минуты. Значит, жив.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d162"
+        },
+        {
+          "id": "ch3_s1_d162",
+          "order": 162,
+          "speaker": "Cat",
+          "text": "— А вы, видимо, весельчак.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d163"
+        },
+        {
+          "id": "ch3_s1_d163",
+          "order": 163,
+          "speaker": "Narrator",
+          "text": "Это Алвард. Наставник. Дисциплина, расчёт, порядок.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d164"
+        },
+        {
+          "id": "ch3_s1_d164",
+          "order": 164,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "На ящиках развалился юноша с монетой в пальцах. Он улыбается так, будто уже знает твой секрет.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d165"
+        },
+        {
+          "id": "ch3_s1_d165",
+          "order": 165,
+          "speaker": "Lokian",
+          "text": "— Кот в сапогах. Или сапоги с котом? Ставлю два к одному, что второе.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d166"
+        },
+        {
+          "id": "ch3_s1_d166",
+          "order": 166,
+          "speaker": "Cat",
+          "text": "— Ставьте зубы. Будет честнее.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d167"
+        },
+        {
+          "id": "ch3_s1_d167",
+          "order": 167,
+          "speaker": "Narrator",
+          "text": "Это Локиан. Плут, игрок, мастер обходных путей.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d168"
+        },
+        {
+          "id": "ch3_s1_d168",
+          "order": 168,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "В тени стены стоит человек в тяжёлом плаще. Он выглядит больным. Но глаза у него слишком живые.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d169"
+        },
+        {
+          "id": "ch3_s1_d169",
+          "order": 169,
+          "speaker": "Mirelin",
+          "text": "— У вас на сапоге пепел не с этой улицы. Значит, вы пришли из леса. И лес вас отпустил.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d170"
+        },
+        {
+          "id": "ch3_s1_d170",
+          "order": 170,
+          "speaker": "Cat",
+          "text": "— Он рыдал. Но я был непреклонен.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d171"
+        },
+        {
+          "id": "ch3_s1_d171",
+          "order": 171,
+          "speaker": "Narrator",
+          "text": "Это Мирелин. Знающий. Слабое тело, острый ум, память о тайных знаках.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d172"
+        },
+        {
+          "id": "ch3_s1_d172",
+          "order": 172,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "У кузни сидит гигант.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d173"
+        },
+        {
+          "id": "ch3_s1_d173",
+          "order": 173,
+          "speaker": "Narrator",
+          "text": "Плечи шире двери.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d174"
+        },
+        {
+          "id": "ch3_s1_d174",
+          "order": 174,
+          "speaker": "Narrator",
+          "text": "Взгляд тише дождя.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d175"
+        },
+        {
+          "id": "ch3_s1_d175",
+          "order": 175,
+          "speaker": "Lavrik",
+          "text": "— Мне сказали ждать. Я ждал. Если надо, я могу сломать ворота.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d176"
+        },
+        {
+          "id": "ch3_s1_d176",
+          "order": 176,
+          "speaker": "Cat",
+          "text": "— Чудесно. Наконец-то дипломат.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d177"
+        },
+        {
+          "id": "ch3_s1_d177",
+          "order": 177,
+          "speaker": "Narrator",
+          "text": "Это Лаврик. Сила, которая боится собственного решения.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d178"
+        },
+        {
+          "id": "ch3_s1_d178",
+          "order": 178,
+          "speaker": "Narrator",
+          "background": "bg_ch3_inner_gate_half",
+          "camera_effect": "slow_zoom_in",
+          "text": "Внутренний Город ждёт.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d179"
+        },
+        {
+          "id": "ch3_s1_d179",
+          "order": 179,
+          "speaker": "Narrator",
+          "text": "Его улицы не любят одиночек.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d180"
+        },
+        {
+          "id": "ch3_s1_d180",
+          "order": 180,
+          "speaker": "Narrator",
+          "text": "Его стража не верит красивым словам.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d181"
+        },
+        {
+          "id": "ch3_s1_d181",
+          "order": 181,
+          "speaker": "Narrator",
+          "text": "Его двери открываются только тем, кто знает цену входа.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d182"
+        },
+        {
+          "id": "ch3_s1_d182",
+          "order": 182,
+          "speaker": "Cat",
+          "text": "— Мне нужен союзник.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d183"
+        },
+        {
+          "id": "ch3_s1_d183",
+          "order": 183,
+          "speaker": "Cat",
+          "text": "— Не лучший.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d184"
+        },
+        {
+          "id": "ch3_s1_d184",
+          "order": 184,
+          "speaker": "Cat",
+          "text": "— Подходящий.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d185"
+        },
+        {
+          "id": "ch3_s1_d185",
+          "order": 185,
+          "speaker": "Cat",
+          "pause_before": 2.0,
+          "text": "— Каким станет мой путь?",
+          "has_choices": true,
+          "choices": [
+            {
+              "id": "ch3_s1_d185_c1",
+              "text": "Алвард — порядок и дисциплина.",
+              "effects": {
+                "self_control": 0.13,
+                "rigidity": 0.10,
+                "impulsivity": -0.10
+              },
+              "save_companion": "alward",
+              "next_dialogue": "ch3_s1_d200"
+            },
+            {
+              "id": "ch3_s1_d185_c2",
+              "text": "Локиан — тайные тропы и хитрость.",
+              "effects": {
+                "adaptability": 0.13,
+                "ego_focus": 0.10,
+                "rigidity": -0.10
+              },
+              "save_companion": "lokian",
+              "next_dialogue": "ch3_s1_d210"
+            },
+            {
+              "id": "ch3_s1_d185_c3",
+              "text": "Мирелин — знание и наблюдение.",
+              "effects": {
+                "emotional_sensitivity": 0.13,
+                "sociality": 0.07,
+                "activity": -0.05
+              },
+              "save_companion": "mirelin",
+              "next_dialogue": "ch3_s1_d220"
+            },
+            {
+              "id": "ch3_s1_d185_c4",
+              "text": "Лаврик — сила и надёжность.",
+              "effects": {
+                "activity": 0.10,
+                "ego_focus": 0.07,
+                "emotional_sensitivity": -0.05
+              },
+              "save_companion": "lavrik",
+              "next_dialogue": "ch3_s1_d230"
+            }
+          ]
+        },
+
+        {
+          "id": "ch3_s1_d200",
+          "order": 200,
+          "speaker": "Narrator",
+          "background": "bg_ch3_alward_map",
+          "transition_before": "fade_in",
+          "text": "Алвард не улыбается.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d201"
+        },
+        {
+          "id": "ch3_s1_d201",
+          "order": 201,
+          "speaker": "Narrator",
+          "text": "Он просто кивает.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d202"
+        },
+        {
+          "id": "ch3_s1_d202",
+          "order": 202,
+          "speaker": "Alward",
+          "text": "— Будешь слушать команды.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d203"
+        },
+        {
+          "id": "ch3_s1_d203",
+          "order": 203,
+          "speaker": "Alward",
+          "text": "— Будешь жить.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d204"
+        },
+        {
+          "id": "ch3_s1_d204",
+          "order": 204,
+          "speaker": "Cat",
+          "text": "— Какое заманчивое рабство.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d205"
+        },
+        {
+          "id": "ch3_s1_d205",
+          "order": 205,
+          "speaker": "Alward",
+          "text": "— Какое редкое понимание.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d206"
+        },
+        {
+          "id": "ch3_s1_d206",
+          "order": 206,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Союз заключён без рукопожатий.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d207"
+        },
+        {
+          "id": "ch3_s1_d207",
+          "order": 207,
+          "speaker": "Narrator",
+          "text": "Только маршрут. Только правила. Только шаг вперёд.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d240"
+        },
+
+        {
+          "id": "ch3_s1_d210",
+          "order": 210,
+          "speaker": "Narrator",
+          "background": "bg_ch3_lokian_coin",
+          "transition_before": "fade_in",
+          "text": "Локиан спрыгивает с ящиков.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d211"
+        },
+        {
+          "id": "ch3_s1_d211",
+          "order": 211,
+          "speaker": "Narrator",
+          "text": "Монета исчезает в рукаве.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d212"
+        },
+        {
+          "id": "ch3_s1_d212",
+          "order": 212,
+          "speaker": "Lokian",
+          "text": "— Половина добычи моя.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d213"
+        },
+        {
+          "id": "ch3_s1_d213",
+          "order": 213,
+          "speaker": "Cat",
+          "text": "— Треть.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d214"
+        },
+        {
+          "id": "ch3_s1_d214",
+          "order": 214,
+          "speaker": "Lokian",
+          "text": "— Половина.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d215"
+        },
+        {
+          "id": "ch3_s1_d215",
+          "order": 215,
+          "speaker": "Cat",
+          "text": "— Треть и возможность хвастаться знакомством.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d216"
+        },
+        {
+          "id": "ch3_s1_d216",
+          "order": 216,
+          "speaker": "Lokian",
+          "pause_before": 1.0,
+          "text": "— Опасный кот.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d217"
+        },
+        {
+          "id": "ch3_s1_d217",
+          "order": 217,
+          "speaker": "Cat",
+          "text": "— Дорогой кот.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d218"
+        },
+        {
+          "id": "ch3_s1_d218",
+          "order": 218,
+          "speaker": "Narrator",
+          "text": "Сделка рождается в усмешке. И пахнет неприятностями.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d240"
+        },
+
+        {
+          "id": "ch3_s1_d220",
+          "order": 220,
+          "speaker": "Narrator",
+          "background": "bg_ch3_mirelin_runes",
+          "transition_before": "fade_in",
+          "text": "Мирелин смотрит не на тебя.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d221"
+        },
+        {
+          "id": "ch3_s1_d221",
+          "order": 221,
+          "speaker": "Narrator",
+          "text": "Он смотрит на твою тень.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d222"
+        },
+        {
+          "id": "ch3_s1_d222",
+          "order": 222,
+          "speaker": "Mirelin",
+          "text": "— Внутри есть двери, которые кусаются.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d223"
+        },
+        {
+          "id": "ch3_s1_d223",
+          "order": 223,
+          "speaker": "Mirelin",
+          "text": "— Я увижу их.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d224"
+        },
+        {
+          "id": "ch3_s1_d224",
+          "order": 224,
+          "speaker": "Mirelin",
+          "text": "— Вы не дадите мне умереть.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d225"
+        },
+        {
+          "id": "ch3_s1_d225",
+          "order": 225,
+          "speaker": "Cat",
+          "text": "— Прекрасное начало дружбы. Сразу к сути.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d226"
+        },
+        {
+          "id": "ch3_s1_d226",
+          "order": 226,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Ты замечаешь, как дрожат его пальцы. Но свиток он держит крепко.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d227"
+        },
+        {
+          "id": "ch3_s1_d227",
+          "order": 227,
+          "speaker": "Narrator",
+          "text": "Иногда слабость просто знает больше.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d240"
+        },
+
+        {
+          "id": "ch3_s1_d230",
+          "order": 230,
+          "speaker": "Narrator",
+          "background": "bg_ch3_lavrik_forge",
+          "transition_before": "fade_in",
+          "text": "Лаврик встаёт.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d231"
+        },
+        {
+          "id": "ch3_s1_d231",
+          "order": 231,
+          "speaker": "Narrator",
+          "text": "Площадь будто становится меньше.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d232"
+        },
+        {
+          "id": "ch3_s1_d232",
+          "order": 232,
+          "speaker": "Lavrik",
+          "text": "— Вы скажете.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d233"
+        },
+        {
+          "id": "ch3_s1_d233",
+          "order": 233,
+          "speaker": "Lavrik",
+          "text": "— Я сделаю.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d234"
+        },
+        {
+          "id": "ch3_s1_d234",
+          "order": 234,
+          "speaker": "Cat",
+          "text": "— Чудесно. Наконец-то кто-то понял идеальную форму общества.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d235"
+        },
+        {
+          "id": "ch3_s1_d235",
+          "order": 235,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "Гигант смотрит на тебя с надеждой.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d236"
+        },
+        {
+          "id": "ch3_s1_d236",
+          "order": 236,
+          "speaker": "Narrator",
+          "text": "Не как оружие.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d237"
+        },
+        {
+          "id": "ch3_s1_d237",
+          "order": 237,
+          "speaker": "Cat",
+          "text": "— Не бойся, мой массивный друг. Я приказываю очень красиво.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d238"
+        },
+        {
+          "id": "ch3_s1_d238",
+          "order": 238,
+          "speaker": "Narrator",
+          "text": "Он кивает так, будто это лучшее обещание, какое он слышал.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d240"
+        },
+
+        {
+          "id": "ch3_s1_d240",
+          "order": 240,
+          "speaker": "Narrator",
+          "background": "bg_ch3_inner_gate_open",
+          "transition_before": "fade_out_in",
+          "camera_effect": "slow_zoom_out",
+          "text": "Союз заключён.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d241"
+        },
+        {
+          "id": "ch3_s1_d241",
+          "order": 241,
+          "speaker": "Narrator",
+          "text": "Теперь ты идёшь не один.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d242"
+        },
+        {
+          "id": "ch3_s1_d242",
+          "order": 242,
+          "speaker": "Narrator",
+          "pause_before": 1.0,
+          "text": "И это меняет всё.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d243"
+        },
+        {
+          "id": "ch3_s1_d243",
+          "order": 243,
+          "speaker": "Narrator",
+          "text": "Грязный рынок остаётся за спиной.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d244"
+        },
+        {
+          "id": "ch3_s1_d244",
+          "order": 244,
+          "speaker": "Narrator",
+          "text": "Впереди — камень, стража и королевские интриги.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d245"
+        },
+        {
+          "id": "ch3_s1_d245",
+          "order": 245,
+          "speaker": "Narrator",
+          "text": "Впереди — город, где улыбки прячут ножи.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d246"
+        },
+        {
+          "id": "ch3_s1_d246",
+          "order": 246,
+          "speaker": "Cat",
+          "text": "— Ну что ж.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d247"
+        },
+        {
+          "id": "ch3_s1_d247",
+          "order": 247,
+          "speaker": "Cat",
+          "text": "— Лес пытался меня напугать.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d248"
+        },
+        {
+          "id": "ch3_s1_d248",
+          "order": 248,
+          "speaker": "Cat",
+          "text": "— Город попробует меня купить.",
+          "has_choices": false,
+          "next_dialogue": "ch3_s1_d249"
+        },
+        {
+          "id": "ch3_s1_d249",
+          "order": 249,
+          "speaker": "Cat",
+          "transition_before": "darkening",
+          "text": "— Посмотрим, у кого хватит золота.",
           "has_choices": false,
           "next_dialogue": null
         }
+
       ]
     }
   ]
