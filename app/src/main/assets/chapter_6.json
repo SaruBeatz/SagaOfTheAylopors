@@ -5,7 +5,7 @@
     {
       "id": "ch6_s1",
       "order": 1,
-      "background": "bg_ch6_valley.png",
+      "background": "bg_ch6_valley",
       "dialogues": [
         {
           "id": "ch6_s1_d01",
