@@ -1,0 +1,71 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function staffDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function isStaff() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && staffDoc().data.role in ['admin', 'psychologist'];
+    }
+
+    function staffUserUpdateAllowed() {
+      let diff = request.resource.data.diff(resource.data);
+      return !diff.affectedKeys().hasAny(['uid', 'createdAt', 'lastLoginAt']);
+    }
+
+    match /practice/_data/clients/{clientId} {
+      allow read, write: if isStaff();
+
+      match /sessions/{sessionId} {
+        allow read, write: if isStaff();
+      }
+
+      match /emails/{emailId} {
+        allow read, write: if isStaff();
+      }
+
+      match /activity/{activityId} {
+        allow read, write: if isStaff();
+      }
+
+      match /notes/{noteId} {
+        allow read, write: if isStaff();
+      }
+    }
+
+    match /practice/_data/settings/{docId} {
+      allow read, write: if isStaff();
+    }
+
+    match /users/{userId} {
+      allow read: if request.auth != null
+        && (request.auth.uid == userId || isStaff());
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if (request.auth != null && request.auth.uid == userId)
+        || (isStaff() && staffUserUpdateAllowed());
+      allow delete: if false;
+
+      match /progress/{doc} {
+        allow read: if request.auth != null
+          && (request.auth.uid == userId || isStaff());
+        allow write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      match /playthroughs/{playthroughId} {
+        allow read: if request.auth != null
+          && (request.auth.uid == userId || isStaff());
+        allow write: if request.auth != null && request.auth.uid == userId;
+
+        match /choices/{choiceId} {
+          allow read: if request.auth != null
+            && (request.auth.uid == userId || isStaff());
+          allow write: if request.auth != null && request.auth.uid == userId;
+        }
+      }
+    }
+  }
+}
