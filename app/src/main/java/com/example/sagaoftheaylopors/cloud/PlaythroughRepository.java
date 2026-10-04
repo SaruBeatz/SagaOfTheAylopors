@@ -15,6 +15,8 @@ import com.example.sagaoftheaylopors.data.entities.PendingChoice;
 import com.example.sagaoftheaylopors.data.entities.PlayerProgress;
 import com.example.sagaoftheaylopors.data.entities.Scene;
 import com.example.sagaoftheaylopors.data.repository.StoryRepository;
+import com.example.sagaoftheaylopors.ml.AccentuationPredictionResult;
+import com.example.sagaoftheaylopors.ml.AccentuationPredictor;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.FirebaseUser;
@@ -86,6 +88,33 @@ public class PlaythroughRepository {
 
     private DocumentReference playthroughRef(@NonNull String uid, @NonNull String playthroughId) {
         return userRef(uid).collection(COLLECTION_PLAYTHROUGHS).document(playthroughId);
+    }
+
+    /**
+     * Hidden chapter-end ML inference; written to playthrough + progress/current as {@code predictions}.
+     */
+    @Nullable
+    private Map<String, Object> buildPredictionsMap(
+            @NonNull Context context,
+            @NonNull PlayerProgress progress,
+            int completedChapterId
+    ) {
+        try {
+            AccentuationPredictionResult result = AccentuationPredictor.getInstance(context)
+                    .predict(progress, completedChapterId);
+            if (completedChapterId >= 7) {
+                SessionManager sm = new SessionManager(context);
+                sm.saveFinalAccentuationForDisplay(
+                        result.primaryLabel,
+                        result.primaryProbability,
+                        result.itemsToJson()
+                );
+            }
+            return result.toFirestoreMap();
+        } catch (Exception e) {
+            Log.e(TAG, "Accentuation prediction failed for chapter " + completedChapterId, e);
+            return null;
+        }
     }
 
     /**
@@ -254,6 +283,11 @@ public class PlaythroughRepository {
         if (completedChapterId >= 7) {
             playthroughUpdate.put("finishedAt", FieldValue.serverTimestamp());
         }
+
+        Map<String, Object> predictionsMap = buildPredictionsMap(context, progress, completedChapterId);
+        if (predictionsMap != null) {
+            playthroughUpdate.put("predictions", predictionsMap);
+        }
         batch.set(playthroughDoc, playthroughUpdate, SetOptions.merge());
 
         Map<String, Object> progressUpdate = new HashMap<>();
@@ -266,6 +300,9 @@ public class PlaythroughRepository {
         progressUpdate.put("totalPlayTimeMs", totalPlayTimeMs);
         progressUpdate.put("lastPlayedAt", FieldValue.serverTimestamp());
         progressUpdate.put("stats", StatsSnapshot.fromProgress(progress));
+        if (predictionsMap != null) {
+            progressUpdate.put("predictions", predictionsMap);
+        }
         batch.set(progressCurrentRef(uid), progressUpdate, SetOptions.merge());
 
         final String finalPlaythroughId = playthroughId;

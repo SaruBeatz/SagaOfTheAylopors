@@ -26,6 +26,9 @@ public class SessionManager {
     private static final String KEY_ACTIVE_PLAYTHROUGH_ID = "active_playthrough_id";
     private static final String KEY_ATTEMPT_NUMBER = "playthrough_attempt_number";
     private static final String KEY_TOTAL_PLAY_TIME_MS = "total_play_time_ms";
+    private static final String KEY_FINAL_ACCENTUATION_LABEL = "final_accentuation_label";
+    private static final String KEY_FINAL_ACCENTUATION_PROB = "final_accentuation_prob";
+    private static final String KEY_FINAL_ACCENTUATION_ITEMS_JSON = "final_accentuation_items_json";
 
     private final SharedPreferences prefs;
     private final FirebaseAuth firebaseAuth;
@@ -110,6 +113,36 @@ public class SessionManager {
         setTotalPlayTimeMs(getTotalPlayTimeMs() + deltaMs);
     }
 
+    /**
+     * Stores chapter-7 prediction for {@link com.example.sagaoftheaylopors.FinalScreenActivity}.
+     * {@code itemsJson} is a JSON array of {@code {label, probability}} objects.
+     */
+    public void saveFinalAccentuationForDisplay(
+            @NonNull String primaryLabel,
+            double primaryProbability,
+            @NonNull String itemsJson
+    ) {
+        prefs.edit()
+                .putString(KEY_FINAL_ACCENTUATION_LABEL, primaryLabel)
+                .putFloat(KEY_FINAL_ACCENTUATION_PROB, (float) primaryProbability)
+                .putString(KEY_FINAL_ACCENTUATION_ITEMS_JSON, itemsJson)
+                .apply();
+    }
+
+    @Nullable
+    public String getFinalAccentuationLabel() {
+        return prefs.getString(KEY_FINAL_ACCENTUATION_LABEL, null);
+    }
+
+    public float getFinalAccentuationProbability() {
+        return prefs.getFloat(KEY_FINAL_ACCENTUATION_PROB, 0f);
+    }
+
+    @Nullable
+    public String getFinalAccentuationItemsJson() {
+        return prefs.getString(KEY_FINAL_ACCENTUATION_ITEMS_JSON, null);
+    }
+
     public void clearSessionOnLogout() {
         prefs.edit()
                 .remove(KEY_HAS_STARTED_GAME)
@@ -118,6 +151,9 @@ public class SessionManager {
                 .remove(KEY_ACTIVE_PLAYTHROUGH_ID)
                 .remove(KEY_ATTEMPT_NUMBER)
                 .remove(KEY_TOTAL_PLAY_TIME_MS)
+                .remove(KEY_FINAL_ACCENTUATION_LABEL)
+                .remove(KEY_FINAL_ACCENTUATION_PROB)
+                .remove(KEY_FINAL_ACCENTUATION_ITEMS_JSON)
                 .apply();
     }
 
