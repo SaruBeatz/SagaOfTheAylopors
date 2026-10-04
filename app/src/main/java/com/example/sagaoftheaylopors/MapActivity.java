@@ -55,8 +55,8 @@ public class MapActivity extends AppCompatActivity {
         // Initialize PathView reference
         pathView = binding.pathView;
         
-        // Start random background music
-        MusicManager.getInstance().playRandomMusic(this);
+        MusicManager musicManager = MusicManager.getInstance();
+        musicManager.initialize(this);
 
         // Initialize chapter nodes map
         initializeChapterNodes();
@@ -66,8 +66,10 @@ public class MapActivity extends AppCompatActivity {
 
         // Check if we need to show path animation
         Intent intent = getIntent();
+        int completedChapterForMusic = -1;
         if (intent != null) {
             int completedChapter = intent.getIntExtra("completed_chapter", -1);
+            completedChapterForMusic = completedChapter;
             AuthRepository authRepository = new AuthRepository();
             SessionManager sessionManager = new SessionManager(this);
             if (completedChapter > 0
@@ -76,6 +78,12 @@ public class MapActivity extends AppCompatActivity {
                 PlaythroughRepository.getInstance(this)
                         .syncCompletedChapterInBackground(this, completedChapter);
             }
+        }
+
+        if (completedChapterForMusic > 0) {
+            musicManager.enterInterChapterDuck(this);
+        } else {
+            musicManager.enterGameplay(this);
         }
         if (intent != null && intent.getBooleanExtra("show_path_animation", false)) {
             int completedChapter = intent.getIntExtra("completed_chapter", -1);
@@ -627,8 +635,7 @@ public class MapActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Stop music when activity is destroyed
-        MusicManager.getInstance().stopMusic();
+        // BGM continues into DialogueActivity — do not stop here.
     }
 
     @Override

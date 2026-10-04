@@ -24,10 +24,8 @@ public class EndGameActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         musicManager = MusicManager.getInstance();
-        
-        // Play celebratory music (use pause music as placeholder for now)
-        // Future: dedicated end-game music track
-        musicManager.playPauseMusic(this);
+        musicManager.initialize(this);
+        musicManager.enterPause(this);
 
         // Set developer info
         binding.developerNameTextView.setText("Дмитрий Гурлив ПИм-404");
@@ -47,7 +45,7 @@ public class EndGameActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         // Stop music when leaving end game screen
-        musicManager.stopMusic();
+        musicManager.stopAll();
     }
 
     @Override

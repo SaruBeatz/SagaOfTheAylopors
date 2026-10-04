@@ -36,10 +36,18 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         musicManager = MusicManager.getInstance();
+        musicManager.initialize(this);
+        musicManager.loadPreferences();
         prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 
-        // Load saved settings
-        int savedMusicVolume = prefs.getInt(KEY_MUSIC_VOLUME, 70);
+        // Load saved settings (music uses MusicManager prefs; mirror legacy key)
+        int savedMusicVolume = musicManager.getUserVolumePercent();
+        if (!prefs.contains(KEY_MUSIC_VOLUME)) {
+            prefs.edit().putInt(KEY_MUSIC_VOLUME, savedMusicVolume).apply();
+        } else {
+            savedMusicVolume = prefs.getInt(KEY_MUSIC_VOLUME, savedMusicVolume);
+            musicManager.saveUserVolumePercent(savedMusicVolume);
+        }
         int savedSoundVolume = prefs.getInt(KEY_SOUND_VOLUME, 80);
         String savedLanguage = prefs.getString(KEY_LANGUAGE, "ru");
 
@@ -56,20 +64,13 @@ public class SettingsActivity extends AppCompatActivity {
             binding.languageRussianRadio.setChecked(true);
         }
 
-        // Apply initial music volume
-        float volume = savedMusicVolume / 100.0f;
-        musicManager.setMusicVolume(volume);
-
-        // Music Volume SeekBar
+        // Music Volume SeekBar — app multiplier only, not device STREAM_MUSIC
         binding.musicVolumeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 binding.musicVolumeTextView.setText(getString(R.string.percent_format, progress));
                 if (fromUser) {
-                    // Apply music volume immediately
-                    float volume = progress / 100.0f;
-                    musicManager.setMusicVolume(volume);
-                    // Save to preferences
+                    musicManager.saveUserVolumePercent(progress);
                     prefs.edit().putInt(KEY_MUSIC_VOLUME, progress).apply();
                 }
             }

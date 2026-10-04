@@ -22,5 +22,6 @@ public class SagaApplication extends Application {
                 .setPersistenceEnabled(true)
                 .build();
         firestore.setFirestoreSettings(settings);
+        MusicManager.getInstance().initialize(this);
     }
 }

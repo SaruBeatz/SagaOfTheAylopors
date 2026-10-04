@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -23,7 +22,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private ActivityMainMenuBinding binding;
     private SessionManager sessionManager;
-    private MediaPlayer backgroundMusic;
     private ObjectAnimator darkeningAnimator;
     private Handler animationHandler;
     private boolean cinematicRunning = false;
@@ -40,7 +38,8 @@ public class MainMenuActivity extends AppCompatActivity {
         StoryDataInitializer.initializeChapter1(this);
 
         updateContinueButtonState();
-        initializeBackgroundMusic();
+        MusicManager.getInstance().initialize(this);
+        MusicManager.getInstance().enterMainMenu(this);
         startDarkeningAnimation();
 
         binding.newGameButton.setOnClickListener(v -> startNewGameCinematic());
@@ -158,21 +157,6 @@ public class MainMenuActivity extends AppCompatActivity {
         binding.continueLockedHintText.setVisibility(enabled ? View.GONE : View.VISIBLE);
     }
 
-    // ─── Background music ─────────────────────────────────────────────────────
-
-    private void initializeBackgroundMusic() {
-        try {
-            backgroundMusic = MediaPlayer.create(this, R.raw.chillmusic);
-            if (backgroundMusic != null) {
-                backgroundMusic.setLooping(true);
-                backgroundMusic.setVolume(0.5f, 0.5f);
-                backgroundMusic.start();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     // ─── Atmospheric darkening loop ───────────────────────────────────────────
 
     private void startDarkeningAnimation() {
@@ -228,10 +212,7 @@ public class MainMenuActivity extends AppCompatActivity {
                     .show();
         }
 
-        if (backgroundMusic != null && !backgroundMusic.isPlaying()) {
-            backgroundMusic.start();
-        }
-
+        MusicManager.getInstance().enterMainMenu(this);
         startDarkeningAnimation();
     }
 
@@ -239,20 +220,13 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         stopDarkeningAnimation();
-        if (backgroundMusic != null && backgroundMusic.isPlaying()) {
-            backgroundMusic.pause();
-        }
+        MusicManager.getInstance().pauseForAppBackground();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         stopDarkeningAnimation();
-        if (backgroundMusic != null) {
-            backgroundMusic.stop();
-            backgroundMusic.release();
-            backgroundMusic = null;
-        }
     }
 
     @Override
