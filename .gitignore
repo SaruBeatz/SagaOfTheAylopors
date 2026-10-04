@@ -1,19 +1,15 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-/.idea/appInsightsSettings.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+
+# IDE — keep local only
+.idea/
 
 # --- Secrets & Firebase (never commit to public GitHub) ---
 # Real config from Firebase Console — keep only on your machine / CI secrets
@@ -40,3 +36,28 @@ secrets/*.json
 app/build/
 *.apk
 *.aab
+
+# Python ML lives in companion repo ../SagaoftheAylopors_ML
+/ml/
+__pycache__/
+*.pyc
+*.joblib
+
+# Local prototypes (not tracked)
+/design1/
+/design2/
+/ml/
+node_modules/
+
+# Secrets
+/secrets/*.json
+/secrets/*.jks
+/secrets/*.keystore
+local.properties
+
+# IDE & Build
+.idea/
+*.iml
+.gradle/
+build/
+app/build/
